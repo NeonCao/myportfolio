@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import ProjectList from './components/ProjectList';
 import InteractivePiggyBank from './pages/InteractivePiggyBank';
+import TellingOvertownStories from './pages/TellingOvertownStories';
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects/interactive-piggy-bank" element={<InteractivePiggyBank />} />
+        <Route path="/projects/telling-overtown-stories" element={<TellingOvertownStories />} />
       </Routes>
     </BrowserRouter>
   );
