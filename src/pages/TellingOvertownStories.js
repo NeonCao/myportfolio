@@ -1,12 +1,13 @@
 import ProjectHero from '../components/ProjectHero';
 import ProjectBackground from '../components/ProjectBackground';
+import heroImg from '../assets/images/overtown/overtown_hero.png';
 
 function TellingOvertownStories() {
   return (
     <div className="min-h-screen bg-base-200">
       <ProjectHero
         title="Telling Overtown Stories, Saying Their Names"
-        image="https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp"
+        image={heroImg}
       />
       <ProjectBackground
         variant="L"
