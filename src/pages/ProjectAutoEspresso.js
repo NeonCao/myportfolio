@@ -106,31 +106,6 @@ function ProjectAutoEspresso() {
         />
       </div>
 
-      {/* V1 Demo Video */}
-      <div id="demo" className="bg-base-100 mt-16">
-        <div className="max-w-4xl mx-auto px-6 py-16">
-          <h2 className="text-3xl font-bold mb-8">Demo Video</h2>
-          <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
-            <iframe
-              src="https://www.youtube.com/embed/QYC5_dHZU3c?rel=0&controls=1"
-              title="Project Espresso - Demo Video"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full rounded-box"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* V1 Code */}
-      <div id="code" className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-4">Code</h2>
-        <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code.py" target="_blank" rel="noreferrer" className="link link-primary break-all">
-          https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code.py
-        </a>
-      </div>
-
       {/* ── V2 Divider ── */}
       <div className="max-w-6xl mx-auto px-6">
         <SectionDivider label="Version 2 — Refined" />
@@ -191,29 +166,50 @@ function ProjectAutoEspresso() {
         />
       </div>
 
-      {/* V2 Demo Video */}
+      {/* Demo Videos + Code side by side */}
       <div className="bg-base-100 mt-16">
-        <div className="max-w-4xl mx-auto px-6 py-16">
-          <h2 className="text-3xl font-bold mb-8">V2 Demo Video</h2>
-          <div className="relative w-full" style={{ paddingTop: '75%' }}>
-            <iframe
-              src="https://www.youtube.com/embed/7ZJGDpsL6N4"
-              title="Espresso Helper V2 Demo"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full rounded-box"
-            />
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <h2 className="text-3xl font-bold mb-8">Demo Videos</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {/* V1 */}
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-50 mb-3">Version 1</p>
+              <div className="relative w-full mb-4" style={{ paddingTop: '56.25%' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/QYC5_dHZU3c?rel=0&controls=1"
+                  title="Project Espresso - Demo Video"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full rounded-box"
+                />
+              </div>
+              <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code.py" target="_blank" rel="noreferrer" className="link link-primary text-sm break-all">
+                github.com — Espresso_Code.py
+              </a>
+            </div>
+
+            {/* V2 */}
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-50 mb-3">Version 2</p>
+              <div className="relative w-full mb-4" style={{ paddingTop: '56.25%' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/7ZJGDpsL6N4"
+                  title="Espresso Helper V2 Demo"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full rounded-box"
+                />
+              </div>
+              <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code_V2.py" target="_blank" rel="noreferrer" className="link link-primary text-sm break-all">
+                github.com — Espresso_Code_V2.py
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
-
-      {/* V2 Code */}
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-4">Code — V2</h2>
-        <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code_V2.py" target="_blank" rel="noreferrer" className="link link-primary break-all">
-          https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code_V2.py
-        </a>
       </div>
 
     </div>
