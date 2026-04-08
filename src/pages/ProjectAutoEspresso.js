@@ -185,6 +185,7 @@ function ProjectAutoEspresso() {
                   className="absolute inset-0 w-full h-full rounded-box"
                 />
               </div>
+              <p className="text-sm tracking-widest opacity-80 mb-3">V1 Code: </p>
               <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code.py" target="_blank" rel="noreferrer" className="link link-primary text-sm break-all">
                 github.com — Espresso_Code.py
               </a>
@@ -203,6 +204,7 @@ function ProjectAutoEspresso() {
                   className="absolute inset-0 w-full h-full rounded-box"
                 />
               </div>
+              <p className="text-sm tracking-widest opacity-80 mb-3">V2 Code: </p>
               <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code_V2.py" target="_blank" rel="noreferrer" className="link link-primary text-sm break-all">
                 github.com — Espresso_Code_V2.py
               </a>
