@@ -100,6 +100,11 @@ function ingredientMatches(cocktail, query) {
   return cocktail.searchText.includes(query.toLowerCase());
 }
 
+function matchesActiveFilters(cocktail, search, activeFamily) {
+  const familyMatch = activeFamily === 'All' || cocktail.family === activeFamily;
+  return familyMatch && ingredientMatches(cocktail, search);
+}
+
 const familyTheme = {
   All: {
     badge: 'badge-neutral',
@@ -153,6 +158,68 @@ const familyTheme = {
   },
 };
 
+const cocktailPositions = {
+  0: { row: 8, column: 1 },
+  1: { row: 1, column: 1 },
+  2: { row: 1, column: 2 },
+  3: { row: 1, column: 11 },
+  4: { row: 2, column: 1 },
+  5: { row: 2, column: 2 },
+  6: { row: 2, column: 10 },
+  7: { row: 2, column: 11 },
+  8: { row: 3, column: 1 },
+  9: { row: 3, column: 2 },
+  10: { row: 3, column: 3 },
+  11: { row: 3, column: 4 },
+  12: { row: 3, column: 5 },
+  13: { row: 3, column: 6 },
+  14: { row: 3, column: 7 },
+  15: { row: 3, column: 8 },
+  16: { row: 3, column: 9 },
+  17: { row: 3, column: 10 },
+  18: { row: 3, column: 11 },
+  19: { row: 4, column: 1 },
+  20: { row: 4, column: 2 },
+  21: { row: 4, column: 3 },
+  22: { row: 4, column: 4 },
+  23: { row: 4, column: 5 },
+  24: { row: 4, column: 6 },
+  25: { row: 4, column: 7 },
+  26: { row: 4, column: 8 },
+  27: { row: 4, column: 9 },
+  28: { row: 4, column: 10 },
+  29: { row: 4, column: 11 },
+  30: { row: 5, column: 1 },
+  31: { row: 5, column: 2 },
+  32: { row: 5, column: 3 },
+  33: { row: 5, column: 4 },
+  34: { row: 5, column: 5 },
+  35: { row: 5, column: 6 },
+  36: { row: 5, column: 7 },
+  37: { row: 5, column: 8 },
+  38: { row: 5, column: 9 },
+  39: { row: 5, column: 10 },
+  40: { row: 5, column: 11 },
+  41: { row: 6, column: 1 },
+  42: { row: 6, column: 2 },
+  43: { row: 7, column: 4 },
+  44: { row: 7, column: 5 },
+  45: { row: 7, column: 6 },
+  46: { row: 7, column: 7 },
+  47: { row: 7, column: 8 },
+  48: { row: 7, column: 9 },
+  49: { row: 7, column: 10 },
+  50: { row: 7, column: 11 },
+  51: { row: 8, column: 4 },
+  52: { row: 8, column: 5 },
+  53: { row: 8, column: 6 },
+  54: { row: 8, column: 7 },
+  55: { row: 8, column: 8 },
+  56: { row: 8, column: 9 },
+  57: { row: 8, column: 10 },
+  58: { row: 8, column: 11 },
+};
+
 const cocktails = mixologyData.map((cocktail) => {
   const ingredientList = splitIngredients(cocktail.ingredients);
   const family = cocktail.index === 0 ? 'Custom' : inferFamily(cocktail.ingredients);
@@ -161,6 +228,7 @@ const cocktails = mixologyData.map((cocktail) => {
     ...cocktail,
     family,
     ingredientList,
+    position: cocktailPositions[cocktail.index],
     imageSrc: resolveAsset(mixologyImageContext, cocktail.imageFile),
     iconSrc: resolveAsset(mixologyIconContext, cocktail.iconFile),
     searchText: `${cocktail.name} ${cocktail.symbol} ${cocktail.ingredients} ${family}`.toLowerCase(),
@@ -188,10 +256,9 @@ function MixologyExplorer() {
     )
   );
 
-  const filteredCocktails = regularCocktails.filter((cocktail) => {
-    const familyMatch = activeFamily === 'All' || cocktail.family === activeFamily;
-    return familyMatch && ingredientMatches(cocktail, search);
-  });
+  const matchedCount = regularCocktails.filter((cocktail) =>
+    matchesActiveFilters(cocktail, search, activeFamily)
+  ).length;
 
   const selectedCocktail =
     cocktails.find((cocktail) => cocktail.index === selectedCocktailId) || regularCocktails[0];
@@ -389,111 +456,155 @@ function MixologyExplorer() {
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(360px,0.9fr)]">
-      <div className="space-y-6">
-        <div className="card bg-base-100 shadow-xl border border-base-300">
-          <div className="card-body gap-5">
-            <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-              <div>
-                <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Interactive Explorer</p>
-                <h2 className="mt-2 text-4xl font-bold">Periodic Table of Mixology</h2>
-                <p className="mt-3 max-w-3xl text-base-content/70">
-                  Search by ingredient, browse by spirit family, or turn on mix mode to predict what happens
-                  when two archived cocktails collide.
-                </p>
-              </div>
-              <button
-                type="button"
-                className={`btn ${mixMode ? 'btn-accent' : 'btn-outline'}`}
-                onClick={toggleMixMode}
-              >
-                {mixMode ? 'Exit Mix Mode' : 'Start Mix Mode'}
-              </button>
+    <div className="space-y-8">
+      <div className="card bg-base-100 shadow-xl border border-base-300">
+        <div className="card-body gap-5">
+          <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Interactive Explorer</p>
+              <h2 className="mt-2 text-4xl font-bold">Periodic Table of Mixology</h2>
+              <p className="mt-3 max-w-3xl text-base-content/70">
+                Search by ingredient, browse by spirit family, or turn on mix mode to predict what happens
+                when two archived cocktails collide.
+              </p>
             </div>
+            <button
+              type="button"
+              className={`btn ${mixMode ? 'btn-accent' : 'btn-outline'}`}
+              onClick={toggleMixMode}
+            >
+              {mixMode ? 'Exit Mix Mode' : 'Start Mix Mode'}
+            </button>
+          </div>
 
-            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto]">
-              <label className="form-control">
-                <div className="label">
-                  <span className="label-text uppercase tracking-[0.3em] text-base-content/50">
-                    Search Ingredients
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  className="input input-bordered w-full"
-                  value={search}
-                  onChange={(event) => setSearch(event.target.value)}
-                  placeholder="Try lime, vodka, cranberry, pineapple..."
-                />
-              </label>
-              <div className="stats shadow bg-base-200">
-                <div className="stat px-6">
-                  <div className="stat-title">Visible</div>
-                  <div className="stat-value text-3xl">{filteredCocktails.length}</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {families.map((family) => {
-                const theme = familyTheme[family] || familyTheme.All;
-                const isActive = activeFamily === family;
-
-                return (
-                  <button
-                    key={family}
-                    type="button"
-                    className={`btn btn-sm ${isActive ? '' : 'btn-outline'}`}
-                    onClick={() => setActiveFamily(family)}
-                  >
-                    <span className={`badge ${theme.badge} border-0`}>{family}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {mixMode ? (
-              <div className="alert alert-info">
-                <span>
-                  Select up to two cocktails from the table. The detail panel will turn into a combined flavor
-                  forecast as soon as both are chosen.
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto]">
+            <label className="form-control">
+              <div className="label">
+                <span className="label-text uppercase tracking-[0.3em] text-base-content/50">
+                  Search Ingredients
                 </span>
               </div>
-            ) : null}
+              <input
+                type="text"
+                className="input input-bordered w-full"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Try lime, vodka, cranberry, pineapple..."
+              />
+            </label>
+            <div className="stats shadow bg-base-200">
+              <div className="stat px-6">
+                <div className="stat-title">Matches</div>
+                <div className="stat-value text-3xl">{matchedCount}</div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-6">
-          {[customCocktail, ...filteredCocktails].map((cocktail) => {
+          <div className="flex flex-wrap gap-2">
+            {families.map((family) => {
+              const theme = familyTheme[family] || familyTheme.All;
+              const isActive = activeFamily === family;
+
+              return (
+                <button
+                  key={family}
+                  type="button"
+                  className={`btn btn-sm ${isActive ? '' : 'btn-outline'}`}
+                  onClick={() => setActiveFamily(family)}
+                >
+                  <span className={`badge ${theme.badge} border-0`}>{family}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {mixMode ? (
+            <div className="alert alert-info">
+              <span>
+                Select up to two cocktails from the table. The detail panel will turn into a combined flavor
+                forecast as soon as both are chosen.
+              </span>
+            </div>
+          ) : (
+            <div className="alert">
+              <span>
+                Filters keep the original periodic-table positions intact. Non-matching cocktails stay in place
+                and fade back so the table shape remains readable.
+              </span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="overflow-x-auto pb-2">
+        <div
+          className="grid gap-2 rounded-[2rem] border border-base-300 bg-base-100 p-4 shadow-2xl"
+          style={{
+            gridTemplateColumns: 'repeat(11, minmax(82px, 1fr))',
+            gridTemplateRows: 'repeat(8, minmax(82px, 1fr))',
+            minWidth: '1120px',
+          }}
+        >
+          <div
+            className="flex flex-col items-center justify-center rounded-[1.75rem] border border-base-300 bg-gradient-to-br from-base-200 via-base-100 to-base-200 px-6 py-4 text-center shadow-inner"
+            style={{ gridColumn: '3 / 10', gridRow: '1 / 3' }}
+          >
+            <p className="text-xs uppercase tracking-[0.45em] text-base-content/50">Periodic Table</p>
+            <h3 className="mt-3 text-2xl font-bold leading-tight xl:text-4xl">
+              Periodic Table
+              <br />
+              <span className="italic font-medium">of</span>
+              <br />
+              Mixology
+            </h3>
+            <p className="mt-3 max-w-md text-xs leading-relaxed text-base-content/65 xl:text-sm">
+              Same cocktail positions as the original poster-inspired prototype, rebuilt with React state and
+              DaisyUI components.
+            </p>
+          </div>
+
+          {[customCocktail, ...regularCocktails].map((cocktail) => {
             const theme = familyTheme[cocktail.family] || familyTheme.All;
             const isSelected = !mixMode && selectedCocktailId === cocktail.index;
             const isMixed = mixSelection.includes(cocktail.index);
+            const isMatch =
+              cocktail.index === 0 ? true : matchesActiveFilters(cocktail, search, activeFamily);
 
             return (
               <button
                 key={cocktail.index}
                 type="button"
                 onClick={() => handleCardSelect(cocktail)}
-                className={`card min-h-40 border bg-base-100 text-left shadow-lg transition hover:-translate-y-1 hover:shadow-2xl ${
+                className={`card aspect-square border text-left shadow-lg transition hover:-translate-y-1 hover:shadow-2xl ${
                   isSelected || isMixed ? `ring-2 ${theme.ring}` : 'border-base-300'
-                } ${cocktail.index === 0 && mixMode ? 'opacity-50' : ''}`}
+                } ${cocktail.index === 0 && mixMode ? 'opacity-50' : ''} ${
+                  isMatch ? 'bg-base-100' : 'bg-base-200/80 opacity-35 grayscale'
+                }`}
                 disabled={cocktail.index === 0 && mixMode}
+                style={{
+                  gridColumn: cocktail.position.column,
+                  gridRow: cocktail.position.row,
+                }}
               >
-                <div className="card-body justify-between gap-4 p-4">
-                  <div className="flex items-start justify-between gap-3">
+                <div className="card-body justify-between gap-2 p-3">
+                  <div className="flex items-start justify-between gap-2">
                     <div>
                       <p className="text-xs uppercase tracking-[0.3em] text-base-content/50">
                         {cocktail.index === 0 ? 'Custom' : String(cocktail.index).padStart(2, '0')}
                       </p>
-                      <h3 className="mt-2 text-2xl font-bold">{cocktail.symbol}</h3>
+                      <h3 className="mt-1 text-xl font-bold xl:text-2xl">{cocktail.symbol}</h3>
                     </div>
                     {cocktail.iconSrc ? (
-                      <img src={cocktail.iconSrc} alt="" className="h-12 w-12 object-contain opacity-90" />
+                      <img
+                        src={cocktail.iconSrc}
+                        alt=""
+                        className="h-9 w-9 object-contain opacity-90 xl:h-12 xl:w-12"
+                      />
                     ) : null}
                   </div>
                   <div>
-                    <p className="font-semibold leading-tight">{cocktail.name}</p>
-                    <p className="mt-2 text-xs text-base-content/60">
+                    <p className="text-sm font-semibold leading-tight xl:text-base">{cocktail.name}</p>
+                    <p className="mt-2 text-[10px] text-base-content/60 xl:text-xs">
                       {cocktail.index === 0 ? 'Build a brand-new combo' : cocktail.family}
                     </p>
                   </div>
@@ -504,8 +615,8 @@ function MixologyExplorer() {
         </div>
       </div>
 
-      <div className="space-y-6">
-        {renderDetailPanel()}
+      <div className="grid gap-6 xl:grid-cols-[minmax(380px,0.95fr)_minmax(260px,0.55fr)]">
+        <div>{renderDetailPanel()}</div>
 
         <div className="card bg-base-100 shadow-xl border border-base-300">
           <div className="card-body">

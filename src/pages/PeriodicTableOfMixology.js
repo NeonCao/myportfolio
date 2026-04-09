@@ -161,7 +161,7 @@ function PeriodicTableOfMixology() {
         </div>
       </section>
 
-      <section id="mixology-explorer" className="mx-auto max-w-6xl px-6 py-16">
+      <section id="mixology-explorer" className="mx-auto w-full max-w-[96rem] px-6 py-16">
         <MixologyExplorer />
       </section>
 
