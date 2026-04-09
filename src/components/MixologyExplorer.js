@@ -542,7 +542,7 @@ function MixologyExplorer() {
           className="grid gap-1.5 rounded-[2rem] border border-base-300 bg-base-100 p-3 shadow-2xl"
           style={{
             gridTemplateColumns: 'repeat(11, minmax(72px, 1fr))',
-            gridTemplateRows: 'repeat(8, minmax(58px, 1fr))',
+            gridTemplateRows: 'repeat(8, minmax(72px, 1fr))',
             minWidth: '930px',
           }}
         >
@@ -575,13 +575,13 @@ function MixologyExplorer() {
 
               return (
                 <button
-                key={cocktail.index}
-                type="button"
-                onClick={() => handleCardSelect(cocktail)}
-                className={`card aspect-[1.08/1] border text-left shadow-lg transition hover:-translate-y-1 hover:shadow-2xl ${
-                  isSelected || isMixed ? `ring-2 ${theme.ring}` : 'border-base-300'
-                } ${cocktail.index === 0 && mixMode ? 'opacity-50' : ''} ${
-                  isMatch ? 'bg-base-100' : 'bg-base-200/80 opacity-35 grayscale'
+                  key={cocktail.index}
+                  type="button"
+                  onClick={() => handleCardSelect(cocktail)}
+                  className={`hover-3d card aspect-[1.03/1] overflow-hidden border text-left shadow-lg transition hover:-translate-y-1 hover:shadow-2xl ${
+                    isSelected || isMixed ? `ring-2 ${theme.ring}` : 'border-base-300'
+                  } ${cocktail.index === 0 && mixMode ? 'opacity-50' : ''} ${
+                    isMatch ? 'bg-base-100' : 'bg-base-200/80 opacity-35 grayscale'
                   }`}
                   disabled={cocktail.index === 0 && mixMode}
                   style={{
@@ -589,13 +589,13 @@ function MixologyExplorer() {
                     gridRow: cocktail.position.row,
                   }}
                 >
-                  <div className="card-body justify-between gap-1 p-2 xl:p-2.5">
+                  <div className="card-body h-full justify-between gap-0.5 p-2 xl:p-2.5">
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <p className="text-[10px] uppercase tracking-[0.24em] text-base-content/50 xl:text-xs">
                           {cocktail.index === 0 ? 'Custom' : String(cocktail.index).padStart(2, '0')}
                         </p>
-                        <h3 className="mt-0.5 text-base font-bold xl:text-lg">{cocktail.symbol}</h3>
+                        <h3 className="mt-0 text-base font-bold leading-none xl:text-lg">{cocktail.symbol}</h3>
                       </div>
                       {cocktail.iconSrc ? (
                         <img
@@ -606,12 +606,20 @@ function MixologyExplorer() {
                       ) : null}
                     </div>
                     <div>
-                      <p className="text-[11px] font-semibold leading-tight xl:text-xs">{cocktail.name}</p>
-                      <p className="mt-1 text-[8px] text-base-content/60 xl:text-[9px]">
+                      <p className="text-[11px] font-semibold leading-[1.05] xl:text-xs">{cocktail.name}</p>
+                      <p className="mt-0.5 text-[8px] leading-none text-base-content/60 xl:text-[9px]">
                         {cocktail.index === 0 ? 'Build a brand-new combo' : cocktail.family}
                       </p>
                     </div>
                   </div>
+                  <div aria-hidden="true"></div>
+                  <div aria-hidden="true"></div>
+                  <div aria-hidden="true"></div>
+                  <div aria-hidden="true"></div>
+                  <div aria-hidden="true"></div>
+                  <div aria-hidden="true"></div>
+                  <div aria-hidden="true"></div>
+                  <div aria-hidden="true"></div>
                 </button>
               );
             })}
