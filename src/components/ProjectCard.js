@@ -1,7 +1,7 @@
-function ProjectCard({ title, image }) {
+function ProjectCard({ title, image, className = '', imageClassName = '' }) {
   return (
-    <div className="hover-3d">
-      <img src={image} alt={title} className="size-10 rounded-box object-cover" />
+    <div className={`hover-3d ${className}`.trim()}>
+      <img src={image} alt={title} className={`rounded-box object-cover ${imageClassName}`.trim()} />
       <div></div><div></div><div></div><div></div>
       <div></div><div></div><div></div><div></div>
     </div>
