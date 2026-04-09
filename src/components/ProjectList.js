@@ -1,27 +1,30 @@
 import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
+import mixologyImage from '../assets/images/mixology/MIX_Scr.jpg';
+import overtownImage from '../assets/images/overtown/overtown_hero.png';
+import espressoImage from '../assets/images/espresso/Espresso_Hero.png';
 
 const projects = [
   {
-    title: 'Project Alpha',
-    description: 'A full-stack web application',
-    image: 'https://pighub.top/data/炸猪(十猪一桶).jpg',
-    details: '哈基米哈基米哈基米哈基米哈基米哈基米哈基米',
-    href: '#',
+    title: 'Periodic Table of Mixology',
+    description: 'Interactive cocktail explorer rebuilt in React',
+    image: mixologyImage,
+    details: 'A portfolio rebuild of an old Webflow prototype with searchable cocktail data, mix mode, and reusable React components.',
+    href: '/projects/periodic-table-of-mixology',
   },
   {
-    title: 'Project Beta',
-    description: 'Mobile-first responsive dashboard',
-    image: 'https://pighub.top/data/旋转猪(快).gif',
-    details: '哈基米哈基米哈基米哈基米哈基米哈基米哈基米',
-    href: '#',
+    title: 'Project Lifehack — Espresso Helper',
+    description: 'Physical computing + interaction design',
+    image: espressoImage,
+    details: 'An iterative smart espresso helper that evolved from a playful prototype into a more usable second version.',
+    href: '/projects/auto-espresso',
   },
   {
-    title: 'Interactive Piggy Bank',
-    description: 'REST API with authentication',
-    image: 'https://pighub.top/data/猪之暗面.jpg',
-    details: '哈基米哈基米哈基米哈基米哈基米哈基米哈基米',
-    href: '/projects/interactive-piggy-bank',
+    title: 'Telling Overtown Stories',
+    description: 'Immersive storytelling and community history',
+    image: overtownImage,
+    details: 'A virtual exhibit experience that extends Overtown mural narratives through interactive storytelling and VR.',
+    href: '/projects/telling-overtown-stories',
   },
 ];
 
@@ -39,7 +42,7 @@ function ProjectList() {
             <div>{project.title}</div>
             <div className="text-xs uppercase font-semibold opacity-60">{project.description}</div>
           </div>
-          <p class="list-col-wrap text-xs">
+          <p className="list-col-wrap text-xs text-base-content/70">
             {project.details}
           </p>
           <Link to={project.href} className="btn btn-square btn-ghost">

@@ -5,6 +5,7 @@ import ProjectList from './components/ProjectList';
 import InteractivePiggyBank from './pages/InteractivePiggyBank';
 import TellingOvertownStories from './pages/TellingOvertownStories';
 import ProjectAutoEspresso from './pages/ProjectAutoEspresso';
+import PeriodicTableOfMixology from './pages/PeriodicTableOfMixology';
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/projects/interactive-piggy-bank" element={<InteractivePiggyBank />} />
         <Route path="/projects/telling-overtown-stories" element={<TellingOvertownStories />} />
         <Route path="/projects/auto-espresso" element={<ProjectAutoEspresso />} />
+        <Route path="/projects/periodic-table-of-mixology" element={<PeriodicTableOfMixology />} />
       </Routes>
     </BrowserRouter>
   );
