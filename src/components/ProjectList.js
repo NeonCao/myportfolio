@@ -3,6 +3,7 @@ import ProjectCard from './ProjectCard';
 import mixologyImage from '../assets/images/mixology/MIX_Scr.jpg';
 import overtownImage from '../assets/images/overtown/overtown_hero.png';
 import espressoImage from '../assets/images/espresso/Espresso_Hero.png';
+import umCampusXplorerImage from '../assets/images/um-campus-xplorer/UMCR_Hero.jpg';
 
 const projects = [
   {
@@ -25,6 +26,13 @@ const projects = [
     image: overtownImage,
     details: 'A virtual exhibit experience that extends Overtown mural narratives through interactive storytelling and VR.',
     href: '/projects/telling-overtown-stories',
+  },
+  {
+    title: 'UM Campus Xplorer',
+    description: 'AR campus navigation concept',
+    image: umCampusXplorerImage,
+    details: 'An augmented reality campus wayfinding concept that overlays building, room, and path guidance directly into the real world.',
+    href: '/projects/um-campus-xplorer',
   },
 ];
 
