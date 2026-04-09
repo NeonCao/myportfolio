@@ -1,7 +1,7 @@
 import ProjectHero from '../components/ProjectHero';
 import MixologyExplorer from '../components/MixologyExplorer';
 
-import heroImage from '../assets/images/mixology/MIX_Scr.jpg';
+import heroImage from '../assets/images/mixology/MIX_Hero.png';
 import posterImage from '../assets/images/mixology/MIX_Blog_step0_1.jpg';
 import versionOneImage from '../assets/images/mixology/Screenshot-2025-04-08-021110.jpg';
 import versionTwoImage from '../assets/images/mixology/MIX_Blog_step2_1.jpg';
