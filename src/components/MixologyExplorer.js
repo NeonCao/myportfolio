@@ -536,105 +536,109 @@ function MixologyExplorer() {
         </div>
       </div>
 
-      <div className="overflow-x-auto pb-2">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,3fr)_minmax(300px,1fr)] xl:items-start">
+        <div className="overflow-x-auto pb-2">
         <div
-          className="grid gap-2 rounded-[2rem] border border-base-300 bg-base-100 p-4 shadow-2xl"
+          className="grid gap-1.5 rounded-[2rem] border border-base-300 bg-base-100 p-3 shadow-2xl"
           style={{
-            gridTemplateColumns: 'repeat(11, minmax(82px, 1fr))',
-            gridTemplateRows: 'repeat(8, minmax(82px, 1fr))',
-            minWidth: '1120px',
+            gridTemplateColumns: 'repeat(11, minmax(72px, 1fr))',
+            gridTemplateRows: 'repeat(8, minmax(58px, 1fr))',
+            minWidth: '930px',
           }}
         >
           <div
-            className="flex flex-col items-center justify-center rounded-[1.75rem] border border-base-300 bg-gradient-to-br from-base-200 via-base-100 to-base-200 px-6 py-4 text-center shadow-inner"
+            className="flex flex-col items-center justify-center rounded-[1.6rem] border border-base-300 bg-gradient-to-br from-base-200 via-base-100 to-base-200 px-5 py-2 text-center shadow-inner"
             style={{ gridColumn: '3 / 10', gridRow: '1 / 3' }}
           >
-            <p className="text-xs uppercase tracking-[0.45em] text-base-content/50">Periodic Table</p>
-            <h3 className="mt-3 text-2xl font-bold leading-tight xl:text-4xl">
+            <p className="text-[10px] uppercase tracking-[0.45em] text-base-content/50 xl:text-xs">
+              Periodic Table
+            </p>
+            <h3 className="mt-1.5 text-lg font-bold leading-tight xl:text-3xl">
               Periodic Table
               <br />
               <span className="italic font-medium">of</span>
               <br />
               Mixology
             </h3>
-            <p className="mt-3 max-w-md text-xs leading-relaxed text-base-content/65 xl:text-sm">
+            <p className="mt-1.5 max-w-md text-[10px] leading-relaxed text-base-content/65 xl:text-xs">
               Same cocktail positions as the original poster-inspired prototype, rebuilt with React state and
               DaisyUI components.
             </p>
           </div>
 
-          {[customCocktail, ...regularCocktails].map((cocktail) => {
-            const theme = familyTheme[cocktail.family] || familyTheme.All;
-            const isSelected = !mixMode && selectedCocktailId === cocktail.index;
-            const isMixed = mixSelection.includes(cocktail.index);
-            const isMatch =
-              cocktail.index === 0 ? true : matchesActiveFilters(cocktail, search, activeFamily);
+            {[customCocktail, ...regularCocktails].map((cocktail) => {
+              const theme = familyTheme[cocktail.family] || familyTheme.All;
+              const isSelected = !mixMode && selectedCocktailId === cocktail.index;
+              const isMixed = mixSelection.includes(cocktail.index);
+              const isMatch =
+                cocktail.index === 0 ? true : matchesActiveFilters(cocktail, search, activeFamily);
 
-            return (
-              <button
+              return (
+                <button
                 key={cocktail.index}
                 type="button"
                 onClick={() => handleCardSelect(cocktail)}
-                className={`card aspect-square border text-left shadow-lg transition hover:-translate-y-1 hover:shadow-2xl ${
+                className={`card aspect-[1.08/1] border text-left shadow-lg transition hover:-translate-y-1 hover:shadow-2xl ${
                   isSelected || isMixed ? `ring-2 ${theme.ring}` : 'border-base-300'
                 } ${cocktail.index === 0 && mixMode ? 'opacity-50' : ''} ${
                   isMatch ? 'bg-base-100' : 'bg-base-200/80 opacity-35 grayscale'
-                }`}
-                disabled={cocktail.index === 0 && mixMode}
-                style={{
-                  gridColumn: cocktail.position.column,
-                  gridRow: cocktail.position.row,
-                }}
-              >
-                <div className="card-body justify-between gap-2 p-3">
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.3em] text-base-content/50">
-                        {cocktail.index === 0 ? 'Custom' : String(cocktail.index).padStart(2, '0')}
-                      </p>
-                      <h3 className="mt-1 text-xl font-bold xl:text-2xl">{cocktail.symbol}</h3>
+                  }`}
+                  disabled={cocktail.index === 0 && mixMode}
+                  style={{
+                    gridColumn: cocktail.position.column,
+                    gridRow: cocktail.position.row,
+                  }}
+                >
+                  <div className="card-body justify-between gap-1 p-2 xl:p-2.5">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.24em] text-base-content/50 xl:text-xs">
+                          {cocktail.index === 0 ? 'Custom' : String(cocktail.index).padStart(2, '0')}
+                        </p>
+                        <h3 className="mt-0.5 text-base font-bold xl:text-lg">{cocktail.symbol}</h3>
+                      </div>
+                      {cocktail.iconSrc ? (
+                        <img
+                          src={cocktail.iconSrc}
+                          alt=""
+                          className="h-7 w-7 object-contain opacity-90 xl:h-9 xl:w-9"
+                        />
+                      ) : null}
                     </div>
-                    {cocktail.iconSrc ? (
-                      <img
-                        src={cocktail.iconSrc}
-                        alt=""
-                        className="h-9 w-9 object-contain opacity-90 xl:h-12 xl:w-12"
-                      />
-                    ) : null}
+                    <div>
+                      <p className="text-[11px] font-semibold leading-tight xl:text-xs">{cocktail.name}</p>
+                      <p className="mt-1 text-[8px] text-base-content/60 xl:text-[9px]">
+                        {cocktail.index === 0 ? 'Build a brand-new combo' : cocktail.family}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold leading-tight xl:text-base">{cocktail.name}</p>
-                    <p className="mt-2 text-[10px] text-base-content/60 xl:text-xs">
-                      {cocktail.index === 0 ? 'Build a brand-new combo' : cocktail.family}
-                    </p>
-                  </div>
-                </div>
-              </button>
-            );
-          })}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(380px,0.95fr)_minmax(260px,0.55fr)]">
-        <div>{renderDetailPanel()}</div>
+        <div className="space-y-6">
+          {renderDetailPanel()}
 
-        <div className="card bg-base-100 shadow-xl border border-base-300">
-          <div className="card-body">
-            <h3 className="card-title">How This React Rebuild Works</h3>
-            <ul className="space-y-3 text-sm leading-relaxed text-base-content/75">
-              <li>
-                Cocktail data and SVG icons were extracted from the old Webflow prototype and normalized into a
-                local React data module.
-              </li>
-              <li>
-                Search now filters against names, symbols, ingredients, and spirit families without any direct
-                DOM manipulation.
-              </li>
-              <li>
-                The tasting notes in this rebuild are local flavor forecasts generated from ingredient patterns,
-                so the page stays fully self-contained.
-              </li>
-            </ul>
+          <div className="card bg-base-100 shadow-xl border border-base-300">
+            <div className="card-body">
+              <h3 className="card-title">How This React Rebuild Works</h3>
+              <ul className="space-y-3 text-sm leading-relaxed text-base-content/75">
+                <li>
+                  Cocktail data and SVG icons were extracted from the old Webflow prototype and normalized into a
+                  local React data module.
+                </li>
+                <li>
+                  Search now filters against names, symbols, ingredients, and spirit families without any direct
+                  DOM manipulation.
+                </li>
+                <li>
+                  The tasting notes in this rebuild are local flavor forecasts generated from ingredient patterns,
+                  so the page stays fully self-contained.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
