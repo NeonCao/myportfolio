@@ -44,57 +44,57 @@ body {
 .hover-3d > :nth-child(2) {
   top: 0;
   left: 0;
-  width: 33.333%;
-  height: 33.333%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d > :nth-child(3) {
   top: 0;
-  left: 33.333%;
-  width: 33.333%;
-  height: 33.333%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d > :nth-child(4) {
   top: 0;
   right: 0;
-  width: 33.333%;
-  height: 33.333%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d > :nth-child(5) {
-  top: 33.333%;
+  top: 25%;
   left: 0;
-  width: 33.333%;
-  height: 33.333%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d > :nth-child(6) {
-  top: 33.333%;
+  top: 25%;
   right: 0;
-  width: 33.333%;
-  height: 33.333%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d > :nth-child(7) {
   bottom: 0;
   left: 0;
-  width: 33.333%;
-  height: 33.333%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d > :nth-child(8) {
   bottom: 0;
-  left: 33.333%;
-  width: 33.333%;
-  height: 33.333%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d > :nth-child(9) {
   right: 0;
   bottom: 0;
-  width: 33.333%;
-  height: 33.333%;
+  width: 50%;
+  height: 50%;
 }
 
 .hover-3d:has(> :nth-child(2):hover) > :first-child {

@@ -1,6 +1,6 @@
 import ProjectHero from '../components/ProjectHero';
-import BuildStep from '../components/BuildStep';
 import SectionDivider from '../components/SectionDivider';
+import TextRichStep from '../components/TextRichStep';
 
 import heroImage from '../assets/images/stellar-life-cycle/Stellar_Hero.jpeg';
 import introImage2 from '../assets/images/stellar-life-cycle/Stellar_Intro_P2.jpeg';
@@ -22,51 +22,112 @@ const sources = [
   'National Geographic for visual inspiration and editorial tone',
 ];
 
-const graphChoices = [
+const processSteps = [
   {
     number: 1,
-    title: 'Hertzsprung-Russell Diagram',
-    text: `The H-R diagram became the project’s anchor because it directly visualizes the relationship between stellar luminosity and temperature. It makes stellar evolution easier to understand by revealing large-scale patterns such as the main sequence, giant branch, and white dwarf sequence.\n\nThat structure helped translate astronomy into something readers could scan visually instead of only reading as text.`,
-    image: graphChoice1,
+    title: 'Define The Scope And Gather Source Material',
+    intro:
+      'The project started with a broad fascination for astronomy, but the real design work began by narrowing that interest into a manageable editorial story. Instead of trying to explain all of astronomy, the article focused on stellar evolution and a few specific visual systems that could carry the narrative.',
+    sections: [
+      {
+        heading: 'Why narrowing the topic mattered',
+        body:
+          'The subject was too large to be useful if treated as one giant information dump. Focusing on the H-R diagram, the lifecycle sequence, and stellar classification created a tighter story and made the eventual layouts more readable.',
+      },
+      {
+        heading: 'How references were used',
+        body:
+          'The raw material came from a mix of scientific and editorial sources, then got redesigned into a more cohesive visual language. The process was not just collecting facts, but translating them into something that felt curated and understandable.',
+      },
+    ],
+    bullets: sources,
+    images: [
+      { src: dataSourceImage, caption: 'Research references and early source gathering' },
+    ],
   },
   {
     number: 2,
-    title: 'Stellar Evolution Step Chart',
-    text: `A step chart worked well for showing the sequential nature of stellar evolution. Breaking the process into clear stages — nebula, protostar, main sequence, red giant, and stellar remnant — made the lifecycle easier to follow.\n\nEven though each star’s exact path depends on mass and other factors, the step format communicates the broad story cleanly.`,
-    image: graphChoice2,
+    title: 'Choose Visual Forms That Match The Story',
+    intro:
+      'Once the scope was clear, the next challenge was choosing visualization types that actually fit the material. This was less about decoration and more about making each idea legible through the right format.',
+    sections: [
+      {
+        heading: 'H-R diagram',
+        body:
+          'The H-R diagram became the anchor because it naturally shows relationships between luminosity and temperature. It gave the project a scientifically grounded centerpiece and made stellar evolution easier to interpret visually.',
+      },
+      {
+        heading: 'Step chart',
+        body:
+          'The lifecycle chart worked because stellar evolution is sequential. A step-based format gave the article a clear narrative spine and helped readers follow the transition from nebula to stellar remnant.',
+      },
+      {
+        heading: 'Classification table',
+        body:
+          'The classification chart was the most reference-oriented of the three. It provided a structured place for spectral classes, temperatures, colors, and examples, balancing the more expressive diagrams with something concrete.',
+      },
+    ],
+    images: [
+      { src: graphChoice1, caption: 'Hertzsprung-Russell diagram direction' },
+      { src: graphChoice2, caption: 'Lifecycle step chart direction' },
+      { src: graphChoice3, caption: 'Classification chart direction' },
+    ],
   },
   {
     number: 3,
-    title: 'Stellar Classification Chart',
-    text: `A structured chart was the best fit for comparing spectral classes, temperature ranges, colors, and examples of well-known stars. Unlike a more decorative graphic, this format made it easy to organize mixed kinds of information without losing clarity.\n\nIt also gave the project a practical reference layer to complement the more narrative diagrams.`,
-    image: graphChoice3,
+    title: 'Iterate The Editorial Voice And Composition',
+    intro:
+      'A major part of the build process was not technical at all. It was editorial. The project changed tone, density, and image strategy several times before the final direction felt right.',
+    sections: [
+      {
+        heading: 'Version 1 to Version 2',
+        body:
+          'The first version leaned more academic and newspaper-like. That was useful for structure, but it felt dry. The second version pivoted toward a more immersive, image-rich direction inspired by National Geographic, which made the story feel more alive.',
+      },
+      {
+        heading: 'Version 3',
+        body:
+          'By the third version, all three core visualizations were in place. The project was finally structurally complete, but it still needed stronger explanatory context and more polish in how the text and visuals supported each other.',
+      },
+      {
+        heading: 'Version 4',
+        body:
+          'The final version filled in empty spaces with star-specific details, improved text arrangement, and added more interpretation around each chart. That was the step that made the whole piece feel complete rather than just assembled.',
+      },
+    ],
+    images: [
+      { src: version1, caption: 'Version 1' },
+      { src: version2, caption: 'Version 2' },
+      { src: version3, caption: 'Version 3' },
+      { src: version4, caption: 'Version 4' },
+    ],
+    imageLeft: true,
   },
-];
-
-const versions = [
   {
-    number: '01',
-    title: 'Version 1',
-    text: 'The earliest version centered on getting the H-R diagram in place and establishing an academic editorial tone inspired by The Economist. It built the core foundation, but still felt more formal than immersive.',
-    image: version1,
-  },
-  {
-    number: '02',
-    title: 'Version 2',
-    text: 'This iteration shifted away from the earlier newspaper-like tone and moved closer to a National Geographic-inspired style, with stronger visuals, better image use, and improved reading flow in the first half of the page.',
-    image: version2,
-  },
-  {
-    number: '03',
-    title: 'Version 3',
-    text: 'By version three, all three main visual systems were present: the H-R diagram, the stellar evolution step chart, and the classification chart. The content became more complete, even though it still needed richer context and supporting detail.',
-    image: version3,
-  },
-  {
-    number: '04',
-    title: 'Version 4',
-    text: 'The final version filled in earlier gaps with detailed star annotations, more polished text placement, and better contextual writing around each visualization. This is where the project started to feel cohesive as both an article and a visual system.',
-    image: version4,
+    number: 4,
+    title: 'Reflect On What The Process Taught',
+    intro:
+      'The project reinforced that a strong visualization piece is not only about accuracy. It is also about pacing, hierarchy, and deciding how much context a reader needs at each moment.',
+    sections: [
+      {
+        heading: 'Balancing information with readability',
+        body:
+          'One of the core lessons was that dense information does not automatically become useful when placed on a page. It has to be edited, staged, and supported with enough explanation that the reader can stay oriented.',
+      },
+      {
+        heading: 'Choosing the right chart for the right relationship',
+        body:
+          'Another important lesson was chart selection. The project became stronger by moving away from default chart types and instead choosing forms that matched the structure of the content: relational, sequential, or reference-based.',
+      },
+      {
+        heading: 'Combining editorial and data design',
+        body:
+          'The final outcome sits somewhere between infographic, article, and visual essay. That blend was one of the most valuable parts of the process, because it pushed the work beyond isolated charts into a more complete reading experience.',
+      },
+    ],
+    images: [
+      { src: reflectionImage, caption: 'Final reflection and presentation spread' },
+    ],
   },
 ];
 
@@ -83,7 +144,7 @@ function StellarLifeCycle() {
           <div>
             <div className="badge badge-primary badge-outline mb-4">Making-of Article</div>
             <h1 className="text-4xl font-bold md:text-5xl">
-              Turning astronomical fascination into an editorial data story
+              Turning astronomical fascination into a built editorial data story
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-base-content/75">
               This project grew out of a fascination with the cosmos and the way star systems are represented in
@@ -91,9 +152,9 @@ function StellarLifeCycle() {
               evolution, combining astronomy, editorial storytelling, and visual design.
             </p>
             <p className="mt-4 leading-relaxed text-base-content/75">
-              The final work centers on three main visualization systems: a Hertzsprung-Russell diagram, a step
-              chart showing the lifecycle of stars, and a classification chart summarizing the major spectral
-              classes. Together they make a dense topic more approachable and visually memorable.
+              This page now focuses more explicitly on the building process: how the topic was narrowed, how the
+              visual systems were chosen, how the editorial direction changed across versions, and what that
+              iteration taught along the way.
             </p>
           </div>
 
@@ -112,9 +173,9 @@ function StellarLifeCycle() {
                   <div className="stat-desc">Stellar evolution, classification, and astronomy context</div>
                 </div>
                 <div className="stat">
-                  <div className="stat-title">Format</div>
-                  <div className="stat-value">Editorial</div>
-                  <div className="stat-desc">A data story designed to be informative and enjoyable to read</div>
+                  <div className="stat-title">Case Study Lens</div>
+                  <div className="stat-value">Process</div>
+                  <div className="stat-desc">Research, graph choice, iteration, and reflection</div>
                 </div>
               </div>
             </div>
@@ -154,88 +215,23 @@ function StellarLifeCycle() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] items-center">
-          <div className="overflow-hidden rounded-[2rem] shadow-2xl">
-            <img src={dataSourceImage} alt="Stellar data sources" className="w-full object-cover" />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold">Data Sources</h2>
-            <p className="mt-5 leading-relaxed text-base-content/75">
-              Accuracy mattered, so the article pulled from multiple reference sources and then reworked the raw
-              material into a more cohesive visual narrative. The goal was not just to collect information, but
-              to redesign it into something easier to read and more visually compelling.
-            </p>
-            <ul className="mt-6 space-y-3 text-sm leading-relaxed text-base-content/75">
-              {sources.map((source) => (
-                <li key={source}>{source}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <div className="max-w-6xl mx-auto px-6">
-        <SectionDivider label="Graph Choices" />
+        <SectionDivider label="Building Process" />
       </div>
 
       <section className="max-w-6xl mx-auto px-6 py-16">
-        {graphChoices.map((choice, index) => (
-          <BuildStep
-            key={choice.number}
-            number={choice.number}
-            title={choice.title}
-            text={choice.text}
-            images={[{ src: choice.image, caption: choice.title }]}
-            imageLeft={index % 2 === 1}
+        {processSteps.map((step) => (
+          <TextRichStep
+            key={step.number}
+            number={step.number}
+            title={step.title}
+            intro={step.intro}
+            sections={step.sections}
+            bullets={step.bullets}
+            images={step.images}
+            imageLeft={step.imageLeft}
           />
         ))}
-      </section>
-
-      <section className="bg-base-100">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <h2 className="text-4xl font-bold mb-8">Version History</h2>
-          <div className="grid gap-8 lg:grid-cols-2">
-            {versions.map((version) => (
-              <article key={version.number} className="card bg-base-200 shadow-xl overflow-hidden">
-                <figure>
-                  <img src={version.image} alt={version.title} className="w-full object-cover" />
-                </figure>
-                <div className="card-body">
-                  <p className="text-sm uppercase tracking-[0.3em] text-base-content/50">{version.number}</p>
-                  <h3 className="card-title text-2xl">{version.title}</h3>
-                  <p className="text-base-content/75 leading-relaxed">{version.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] items-center">
-          <div>
-            <h2 className="text-3xl font-bold">Reflection & What I Learnt</h2>
-            <p className="mt-5 leading-relaxed text-base-content/75">
-              One of the biggest lessons from this project was the importance of balancing factual depth with
-              readability. Complex topics do not automatically become understandable just because the data is
-              accurate; they need structure, context, and visual pacing.
-            </p>
-            <p className="mt-4 leading-relaxed text-base-content/75">
-              The project also reinforced how much chart selection shapes understanding. Instead of defaulting to
-              generic chart types, the work became stronger by choosing formats that better matched the story of
-              stellar evolution and the relationships between star properties.
-            </p>
-            <p className="mt-4 leading-relaxed text-base-content/75">
-              Overall, this was a valuable exercise in combining data, illustration, layout, and editorial voice
-              into one coherent piece. It pushed the work beyond a simple visualization exercise and closer to a
-              designed reading experience.
-            </p>
-          </div>
-          <div className="overflow-hidden rounded-[2rem] shadow-2xl">
-            <img src={reflectionImage} alt="Stellar reflection layout" className="w-full object-cover" />
-          </div>
-        </div>
       </section>
     </div>
   );
