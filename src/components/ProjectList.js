@@ -5,6 +5,7 @@ import overtownImage from '../assets/images/overtown/overtown_hero.png';
 import espressoImage from '../assets/images/espresso/Espresso_Hero.png';
 import umCampusXplorerImage from '../assets/images/um-campus-xplorer/UMCR_Hero.jpg';
 import stellarImage from '../assets/images/stellar-life-cycle/Stellar_Hero.jpeg';
+import noteTakingImage from '../assets/images/design-note-taking/Untitled-4.png';
 
 const projects = [
   {
@@ -41,6 +42,13 @@ const projects = [
     image: stellarImage,
     details: 'A making-of article about designing an astronomy-focused data story through diagrams, charts, imagery, and iteration.',
     href: '/projects/the-stellar-life-cycle',
+  },
+  {
+    title: 'Research Case Study: Note-Taking for Design Students',
+    description: 'Context-rich UX research case study',
+    image: noteTakingImage,
+    details: 'An interview-driven study about creative note-taking workflows, synthesis patterns, and product recommendations for design students.',
+    href: '/projects/design-student-note-taking',
   },
 ];
 

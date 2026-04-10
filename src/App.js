@@ -8,6 +8,7 @@ import ProjectAutoEspresso from './pages/ProjectAutoEspresso';
 import PeriodicTableOfMixology from './pages/PeriodicTableOfMixology';
 import UMCampusXplorer from './pages/UMCampusXplorer';
 import StellarLifeCycle from './pages/StellarLifeCycle';
+import DesignStudentNotetaking from './pages/DesignStudentNotetaking';
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/projects/periodic-table-of-mixology" element={<PeriodicTableOfMixology />} />
         <Route path="/projects/um-campus-xplorer" element={<UMCampusXplorer />} />
         <Route path="/projects/the-stellar-life-cycle" element={<StellarLifeCycle />} />
+        <Route path="/projects/design-student-note-taking" element={<DesignStudentNotetaking />} />
       </Routes>
     </BrowserRouter>
   );

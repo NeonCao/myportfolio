@@ -57,7 +57,7 @@ function TextRichStep({
   );
 
   return (
-    <section className="grid gap-10 border-t border-base-300 py-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-start">
+    <section className="grid gap-10 border-t border-base-300 py-16 lg:grid-cols-[minmax(0,3fr)_minmax(280px,2fr)] lg:items-start">
       {imageLeft ? imageBlock : textBlock}
       {imageLeft ? textBlock : imageBlock}
     </section>
