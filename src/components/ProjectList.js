@@ -6,6 +6,7 @@ import espressoImage from '../assets/images/espresso/Espresso_Hero.png';
 import umCampusXplorerImage from '../assets/images/um-campus-xplorer/UMCR_Hero.jpg';
 import stellarImage from '../assets/images/stellar-life-cycle/Stellar_Hero.jpeg';
 import noteTakingImage from '../assets/images/design-note-taking/Untitled-4.png';
+import cardSortingImage from '../assets/images/um-card-sorting/Untitled-1_2.png';
 
 const projects = [
   {
@@ -49,6 +50,13 @@ const projects = [
     image: noteTakingImage,
     details: 'An interview-driven study about creative note-taking workflows, synthesis patterns, and product recommendations for design students.',
     href: '/projects/design-student-note-taking',
+  },
+  {
+    title: 'Card Sorting Study for UM Interactive Media Site',
+    description: 'Information architecture research case study',
+    image: cardSortingImage,
+    details: 'A context-rich card sorting study that combines questionnaires, clustering analysis, quotes, and a navigation redesign direction.',
+    href: '/projects/um-card-sorting-study',
   },
 ];
 

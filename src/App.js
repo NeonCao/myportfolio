@@ -9,6 +9,7 @@ import PeriodicTableOfMixology from './pages/PeriodicTableOfMixology';
 import UMCampusXplorer from './pages/UMCampusXplorer';
 import StellarLifeCycle from './pages/StellarLifeCycle';
 import DesignStudentNotetaking from './pages/DesignStudentNotetaking';
+import UMCardSortingStudy from './pages/UMCardSortingStudy';
 
 function Home() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/projects/um-campus-xplorer" element={<UMCampusXplorer />} />
         <Route path="/projects/the-stellar-life-cycle" element={<StellarLifeCycle />} />
         <Route path="/projects/design-student-note-taking" element={<DesignStudentNotetaking />} />
+        <Route path="/projects/um-card-sorting-study" element={<UMCardSortingStudy />} />
       </Routes>
     </BrowserRouter>
   );
