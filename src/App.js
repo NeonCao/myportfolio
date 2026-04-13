@@ -7,9 +7,11 @@ import TellingOvertownStories from './pages/TellingOvertownStories';
 import ProjectAutoEspresso from './pages/ProjectAutoEspresso';
 import PeriodicTableOfMixology from './pages/PeriodicTableOfMixology';
 import UMCampusXplorer from './pages/UMCampusXplorer';
+import ARCalorieVisualizer from './pages/ARCalorieVisualizer';
 import StellarLifeCycle from './pages/StellarLifeCycle';
 import DesignStudentNotetaking from './pages/DesignStudentNotetaking';
 import UMCardSortingStudy from './pages/UMCardSortingStudy';
+import ProjectAboutMyself from './pages/ProjectAboutMyself';
 
 function Home() {
   return (
@@ -31,9 +33,11 @@ function App() {
         <Route path="/projects/auto-espresso" element={<ProjectAutoEspresso />} />
         <Route path="/projects/periodic-table-of-mixology" element={<PeriodicTableOfMixology />} />
         <Route path="/projects/um-campus-xplorer" element={<UMCampusXplorer />} />
+        <Route path="/projects/ar-calorie-visualizer" element={<ARCalorieVisualizer />} />
         <Route path="/projects/the-stellar-life-cycle" element={<StellarLifeCycle />} />
         <Route path="/projects/design-student-note-taking" element={<DesignStudentNotetaking />} />
         <Route path="/projects/um-card-sorting-study" element={<UMCardSortingStudy />} />
+        <Route path="/projects/about-myself" element={<ProjectAboutMyself />} />
       </Routes>
     </BrowserRouter>
   );

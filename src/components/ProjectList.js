@@ -3,10 +3,13 @@ import ProjectCard from './ProjectCard';
 import mixologyImage from '../assets/images/mixology/MIX_Scr.jpg';
 import overtownImage from '../assets/images/overtown/overtown_hero.png';
 import espressoImage from '../assets/images/espresso/Espresso_Hero.png';
+import piggyBankImage from '../assets/images/piggy-bank/PIGGY_Hero.png';
 import umCampusXplorerImage from '../assets/images/um-campus-xplorer/UMCR_Hero.jpg';
+import arCalorieImage from '../assets/images/ar-calorie-visualizer/hero.jpg';
 import stellarImage from '../assets/images/stellar-life-cycle/Stellar_Hero.jpeg';
 import noteTakingImage from '../assets/images/design-note-taking/Untitled-4.png';
 import cardSortingImage from '../assets/images/um-card-sorting/Untitled-1_2.png';
+import aboutMyselfImage from '../assets/images/project-about-myself/IMG_1744.JPG';
 
 const projects = [
   {
@@ -24,6 +27,13 @@ const projects = [
     href: '/projects/auto-espresso',
   },
   {
+    title: 'Interactive Piggy Bank',
+    description: 'Family-centered financial learning app',
+    image: piggyBankImage,
+    details: 'A dual-interface app concept that helps children build money habits while giving parents tools to guide saving, spending, and goal setting.',
+    href: '/projects/interactive-piggy-bank',
+  },
+  {
     title: 'Telling Overtown Stories',
     description: 'Immersive storytelling and community history',
     image: overtownImage,
@@ -36,6 +46,13 @@ const projects = [
     image: umCampusXplorerImage,
     details: 'An augmented reality campus wayfinding concept that overlays building, room, and path guidance directly into the real world.',
     href: '/projects/um-campus-xplorer',
+  },
+  {
+    title: 'AR Calorie Visualizer',
+    description: 'OCR-powered food feedback in AR',
+    image: arCalorieImage,
+    details: 'An augmented reality experiment that reads nutrition labels and turns calorie counts into grounded 3D chip piles to make food data easier to picture.',
+    href: '/projects/ar-calorie-visualizer',
   },
   {
     title: 'The Stellar Life Cycle: A Cosmic Journey Through Data',
@@ -57,6 +74,13 @@ const projects = [
     image: cardSortingImage,
     details: 'A context-rich card sorting study that combines questionnaires, clustering analysis, quotes, and a navigation redesign direction.',
     href: '/projects/um-card-sorting-study',
+  },
+  {
+    title: 'Project About Myself',
+    description: 'Kinetic storytelling and physical computing',
+    image: aboutMyselfImage,
+    details: 'A course project that turns cooking, gaming, and programming into a planetary-gear-inspired mechanical self-portrait.',
+    href: '/projects/about-myself',
   },
 ];
 
