@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import ProjectList from './components/ProjectList';
+import PersonalHistory from './components/PersonalHistory';
 import InteractivePiggyBank from './pages/InteractivePiggyBank';
 import TellingOvertownStories from './pages/TellingOvertownStories';
 import ProjectAutoEspresso from './pages/ProjectAutoEspresso';
@@ -12,6 +12,7 @@ import StellarLifeCycle from './pages/StellarLifeCycle';
 import DesignStudentNotetaking from './pages/DesignStudentNotetaking';
 import UMCardSortingStudy from './pages/UMCardSortingStudy';
 import ProjectAboutMyself from './pages/ProjectAboutMyself';
+import Projects from './pages/Projects';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
 
@@ -20,7 +21,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <ProjectList />
+      <PersonalHistory />
     </>
   );
 }
@@ -35,6 +36,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/projects/interactive-piggy-bank" element={<InteractivePiggyBank />} />
         <Route path="/projects/telling-overtown-stories" element={<TellingOvertownStories />} />
         <Route path="/projects/auto-espresso" element={<ProjectAutoEspresso />} />

@@ -1,5 +1,15 @@
 import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { applyTheme, DARK_THEME, getActiveTheme, LIGHT_THEME } from '../utils/theme';
+
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/projects', label: 'Projects' },
+];
+
+function navLinkClass({ isActive }) {
+  return isActive ? 'active' : '';
+}
 
 function Header() {
   const [theme, setTheme] = useState(getActiveTheme);
@@ -36,32 +46,26 @@ function Header() {
             </svg>
           </div>
           <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li><a href="#item1">Item 1</a></li>
-            <li>
-              <a href="#parent">Parent</a>
-              <ul className="p-2">
-                <li><a href="#submenu1">Submenu 1</a></li>
-                <li><a href="#submenu2">Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a href="#item3">Item 3</a></li>
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink to={item.to} className={navLinkClass}>
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
-        <a href="#home" className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="btn btn-ghost text-xl">daisyUI</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li><a href="#item1">Item 1</a></li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2 bg-base-100 w-40 z-1">
-                <li><a href="#submenu1">Submenu 1</a></li>
-                <li><a href="#submenu2">Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><a href="#item3">Item 3</a></li>
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <NavLink to={item.to} className={navLinkClass}>
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="navbar-end">
