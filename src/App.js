@@ -12,6 +12,9 @@ import StellarLifeCycle from './pages/StellarLifeCycle';
 import DesignStudentNotetaking from './pages/DesignStudentNotetaking';
 import UMCardSortingStudy from './pages/UMCardSortingStudy';
 import ProjectAboutMyself from './pages/ProjectAboutMyself';
+import { useEffect } from 'react';
+import { applyTheme, getActiveTheme } from './utils/theme';
+
 
 function Home() {
   return (
@@ -23,6 +26,10 @@ function Home() {
 }
 
 function App() {
+  useEffect(() => {
+    applyTheme(getActiveTheme());
+  }, []);
+
   return (
     <BrowserRouter>
       <Header />

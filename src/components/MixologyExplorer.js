@@ -459,27 +459,63 @@ function MixologyExplorer() {
     <div className="space-y-8">
       <div className="card bg-base-100 shadow-xl border border-base-300">
         <div className="card-body gap-5">
-          <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Interactive Explorer</p>
-              <h2 className="mt-2 text-4xl font-bold">Periodic Table of Mixology</h2>
-              <p className="mt-3 max-w-3xl text-base-content/70">
-                Search by ingredient, browse by spirit family, or turn on mix mode to predict what happens
-                when two archived cocktails collide.
-              </p>
-            </div>
+          <div>
+            <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Interactive Explorer</p>
+            <h2 className="mt-2 text-4xl font-bold">Periodic Table of Mixology</h2>
+            <p className="mt-3 max-w-3xl text-base-content/70">
+              Search by ingredient, browse by spirit family, or turn on mix mode to predict what happens
+              when two archived cocktails collide.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
+            {mixMode ? (
+              <div className="alert alert-info flex-1">
+                <span>
+                  Select up to two cocktails from the table. The detail panel will turn into a combined flavor
+                  forecast as soon as both are chosen.
+                </span>
+              </div>
+            ) : (
+              <div className="alert flex-1">
+                <span>
+                  You can use filters to narrow down to cocktails that contain specific ingredients, or use
+                  search bar to find specific ingredients.
+                </span>
+              </div>
+            )}
             <button
               type="button"
-              className={`btn ${mixMode ? 'btn-accent' : 'btn-outline'}`}
+              className={`btn ${mixMode ? 'btn-accent' : 'btn-outline'} lg:self-stretch`}
               onClick={toggleMixMode}
             >
               {mixMode ? 'Exit Mix Mode' : 'Start Mix Mode'}
             </button>
           </div>
+        
 
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto]">
-            <label className="form-control">
-              <div className="label">
+          <div className="flex flex-wrap items-end gap-4">
+            <div className="flex min-w-0 flex-1 flex-wrap gap-2 md:pb-1">
+              {families.map((family) => {
+                const theme = familyTheme[family] || familyTheme.All;
+                const isActive = activeFamily === family;
+
+                return (
+                  <button
+                    key={family}
+                    type="button"
+                    className="cursor-pointer border-0 bg-transparent p-0 shadow-none hover:bg-transparent focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-content/30"
+                    onClick={() => setActiveFamily(family)}
+                    aria-pressed={isActive}
+                  >
+                    <span className={`badge ${theme.badge} ${isActive ? '' : 'badge-dash'}`}>
+                      {family}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            <label className="form-control w-full md:w-80 md:flex-none">
+              <div className="label pb-2">
                 <span className="label-text uppercase tracking-[0.3em] text-base-content/50">
                   Search Ingredients
                 </span>
@@ -492,47 +528,13 @@ function MixologyExplorer() {
                 placeholder="Try lime, vodka, cranberry, pineapple..."
               />
             </label>
-            <div className="stats shadow bg-base-200">
+            <div className="stats w-full bg-base-200 shadow sm:w-auto md:flex-none">
               <div className="stat px-6">
                 <div className="stat-title">Matches</div>
                 <div className="stat-value text-3xl">{matchedCount}</div>
               </div>
             </div>
           </div>
-
-          <div className="flex flex-wrap gap-2">
-            {families.map((family) => {
-              const theme = familyTheme[family] || familyTheme.All;
-              const isActive = activeFamily === family;
-
-              return (
-                <button
-                  key={family}
-                  type="button"
-                  className={`btn btn-sm ${isActive ? '' : 'btn-outline'}`}
-                  onClick={() => setActiveFamily(family)}
-                >
-                  <span className={`badge ${theme.badge} border-0`}>{family}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {mixMode ? (
-            <div className="alert alert-info">
-              <span>
-                Select up to two cocktails from the table. The detail panel will turn into a combined flavor
-                forecast as soon as both are chosen.
-              </span>
-            </div>
-          ) : (
-            <div className="alert">
-              <span>
-                Filters keep the original periodic-table positions intact. Non-matching cocktails stay in place
-                and fade back so the table shape remains readable.
-              </span>
-            </div>
-          )}
         </div>
       </div>
 

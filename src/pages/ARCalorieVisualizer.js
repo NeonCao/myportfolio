@@ -3,7 +3,7 @@ import SectionDivider from '../components/SectionDivider';
 import ResearchInsightCard from '../components/ResearchInsightCard';
 import ProblemSolutionCard from '../components/ProblemSolutionCard';
 
-import heroImage from '../assets/images/ar-calorie-visualizer/hero.jpg';
+import heroImage from '../assets/images/ar-calorie-visualizer/Calories_Hero.png';
 import sceneImage from '../assets/images/ar-calorie-visualizer/scene.jpg';
 import futureTrackingImage from '../assets/images/ar-calorie-visualizer/future-tracking.webp';
 import futureNutritionImage from '../assets/images/ar-calorie-visualizer/future-nutrition.webp';

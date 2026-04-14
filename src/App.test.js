@@ -1,8 +1,18 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { fireEvent, render, screen } from '@testing-library/react';
+import Header from './components/Header';
+import { DARK_THEME } from './utils/theme';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders the header theme switch and toggles the theme', () => {
+  window.localStorage.clear();
+  document.documentElement.removeAttribute('data-theme');
+
+  render(<Header />);
+
+  const toggleInput = screen.getByRole('checkbox', { name: /toggle color theme/i });
+  expect(toggleInput).toBeInTheDocument();
+
+  fireEvent.click(toggleInput);
+
+  expect(document.documentElement.getAttribute('data-theme')).toBe(DARK_THEME);
+  expect(window.localStorage.getItem('theme')).toBe(DARK_THEME);
 });
