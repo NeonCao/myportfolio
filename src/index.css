@@ -152,3 +152,35 @@ body {
     filter: none;
   }
 }
+
+.hero-text-rotate {
+  display: inline-grid;
+  height: 1.35em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.hero-text-rotate-track {
+  display: grid;
+  justify-items: start;
+  grid-auto-rows: 1.35em;
+  transform: translateY(calc(var(--hero-role-index, 0) * -1.35em));
+  transition: transform 320ms ease;
+  will-change: transform;
+}
+
+.hero-text-rotate-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-height: 1.35em;
+  border-radius: 9999px;
+  padding: 0 0.65rem;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text-rotate-track {
+    transition: none;
+  }
+}

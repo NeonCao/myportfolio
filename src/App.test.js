@@ -11,6 +11,7 @@ jest.mock(
         {children}
       </a>
     ),
+    useLocation: () => ({ pathname: '/' }),
   }),
   { virtual: true }
 );

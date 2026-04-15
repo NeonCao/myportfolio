@@ -1,5 +1,6 @@
 import ProjectHero from '../components/ProjectHero';
 import BuildStep from '../components/BuildStep';
+import DemoVideo from '../components/DemoVideo';
 import SectionDivider from '../components/SectionDivider';
 
 import heroImg from '../assets/images/espresso/Espresso_Hero.png';
@@ -173,42 +174,28 @@ function ProjectAutoEspresso() {
           <div className="grid md:grid-cols-2 gap-8">
 
             {/* V1 */}
-            <div>
-              <p className="text-xs uppercase tracking-widest opacity-50 mb-3">Version 1</p>
-              <div className="relative w-full mb-4" style={{ paddingTop: '56.25%' }}>
-                <iframe
-                  src="https://www.youtube.com/embed/QYC5_dHZU3c?rel=0&controls=1"
-                  title="Project Espresso - Demo Video"
-                  frameBorder="0"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full rounded-box"
-                />
-              </div>
+            <DemoVideo
+              label="Version 1"
+              title="Project Espresso - Demo Video"
+              embedUrl="https://www.youtube.com/embed/QYC5_dHZU3c?rel=0&controls=1"
+            >
               <p className="text-sm tracking-widest opacity-80 mb-3">V1 Code: </p>
               <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code.py" target="_blank" rel="noreferrer" className="link link-primary text-sm break-all">
                 github.com — Espresso_Code.py
               </a>
-            </div>
+            </DemoVideo>
 
             {/* V2 */}
-            <div>
-              <p className="text-xs uppercase tracking-widest opacity-50 mb-3">Version 2</p>
-              <div className="relative w-full mb-4" style={{ paddingTop: '56.25%' }}>
-                <iframe
-                  src="https://www.youtube.com/embed/7ZJGDpsL6N4"
-                  title="Espresso Helper V2 Demo"
-                  frameBorder="0"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full rounded-box"
-                />
-              </div>
+            <DemoVideo
+              label="Version 2"
+              title="Espresso Helper V2 Demo"
+              embedUrl="https://www.youtube.com/embed/7ZJGDpsL6N4"
+            >
               <p className="text-sm tracking-widest opacity-80 mb-3">V2 Code: </p>
               <a href="https://github.com/NeonCao/CIM_683/blob/main/Espresso_Code_V2.py" target="_blank" rel="noreferrer" className="link link-primary text-sm break-all">
                 github.com — Espresso_Code_V2.py
               </a>
-            </div>
+            </DemoVideo>
 
           </div>
         </div>

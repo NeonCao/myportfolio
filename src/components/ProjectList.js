@@ -11,6 +11,23 @@ import noteTakingImage from '../assets/images/design-note-taking/Untitled-4.png'
 import cardSortingImage from '../assets/images/um-card-sorting/Untitled-1_2.png';
 import aboutMyselfImage from '../assets/images/project-about-myself/IMG_1744.JPG';
 
+const memoryGradenImage = `data:image/svg+xml;utf8,${encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0f172a" />
+        <stop offset="55%" stop-color="#1d4ed8" />
+        <stop offset="100%" stop-color="#86efac" />
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="675" fill="url(#bg)" />
+    <path d="M0 535 C170 420 360 610 560 500 S930 420 1200 585 L1200 675 L0 675 Z" fill="#052e16" opacity="0.78" />
+    <path d="M0 575 C240 470 450 660 720 560 S1010 500 1200 620 L1200 675 L0 675 Z" fill="#14532d" opacity="0.55" />
+    <circle cx="920" cy="150" r="95" fill="#fef3c7" opacity="0.9" />
+    <text x="70" y="520" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="68" font-weight="700">Memory Graden</text>
+  </svg>
+`)}`;
+
 const projects = [
   {
     title: 'Periodic Table of Mixology',
@@ -81,6 +98,13 @@ const projects = [
     image: aboutMyselfImage,
     details: 'A course project that turns cooking, gaming, and programming into a planetary-gear-inspired mechanical self-portrait.',
     href: '/projects/about-myself',
+  },
+  {
+    title: 'Memory Graden',
+    description: 'Mixed reality memory-care concept',
+    image: memoryGradenImage,
+    details: 'An MR and AI-assisted concept that turns family photos into explorable 3D memory anchors for people living with Alzheimer’s and memory loss.',
+    href: '/projects/memory-graden',
   },
 ];
 

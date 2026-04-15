@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import HeaderBreadcrumbs from './HeaderBreadcrumbs';
 import { applyTheme, DARK_THEME, getActiveTheme, LIGHT_THEME } from '../utils/theme';
 
 const navItems = [
@@ -55,7 +56,7 @@ function Header() {
             ))}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">daisyUI</Link>
+        <HeaderBreadcrumbs />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

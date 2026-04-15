@@ -12,16 +12,92 @@ import StellarLifeCycle from './pages/StellarLifeCycle';
 import DesignStudentNotetaking from './pages/DesignStudentNotetaking';
 import UMCardSortingStudy from './pages/UMCardSortingStudy';
 import ProjectAboutMyself from './pages/ProjectAboutMyself';
+import MemoryGraden from './pages/MemoryGraden';
 import Projects from './pages/Projects';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
 
+const educationHistory = [
+  {
+    period: 'Aug 2024 - Dec 2025',
+    title: 'Master of Science in Experience and Information Design',
+    organization: 'University of Miami',
+    description:
+      'Focused on user research, AI, and Mixed Reality, Learning and Development applications that prioritize user needs and the best practices of AI and Mixed Reality’s integration.',
+    relatedWork: [
+      { label: 'Note-Taking Study', to: '/projects/design-student-note-taking' },
+      { label: 'UM Card Sorting', to: '/projects/um-card-sorting-study' },
+      { label: 'UM Campus Xplorer', to: '/projects/um-campus-xplorer' },
+    ],
+  },
+  {
+    period: 'Aug 2018 - May 2022',
+    title: 'Bachelor of Science in Computer Science',
+    organization: 'University of Miami',
+    description:
+      'Getting into the world of coding, learning programming languages like C#, Java, Python and Swift, exploring the fundatmentals of software development, and learning differnet algorthimes and data structures.',
+    relatedWork: [
+      { label: 'Espresso Helper', to: '/projects/auto-espresso' },
+      { label: 'Project About Myself', to: '/projects/about-myself' },
+    ],
+  },
+];
+
+const workHistory = [
+  {
+    period: 'May 2025 - Feb 2026',
+    title: 'Unity Developer',
+    organization: 'The VESL Lab (University of Miami)',
+    lanePreference: 0,
+    description:
+      'Deliver consistent C# scripts and algorithms to support the Unity project of the University, as well as Design ideas and UX ideas. Using best practices of Virtual Reality, AI and Database Integration to create a seamless experience for both teacher and students.',
+    relatedWork: [
+      { label: 'AR Calorie Visualizer', to: '/projects/ar-calorie-visualizer' },
+      { label: 'UM Campus Xplorer', to: '/projects/um-campus-xplorer' },
+    ],
+  },
+  {
+    period: 'Sep 2025 - Jan 2026',
+    title: 'Research Assistant',
+    organization: 'University of Miami',
+    lanePreference: 1,
+    description:
+      'Research and help utilize new technologies in Unity to recreate a video clip into a 3D, immersive, dreamlike storytelling experience.',
+    relatedWork: [
+      { label: 'Telling Overtown Stories', to: '/projects/telling-overtown-stories' },
+      { label: 'AR Calorie Visualizer', to: '/projects/ar-calorie-visualizer' },
+    ],
+  },
+  {
+    period: 'Nov 2023 - Aug 2024',
+    title: 'AI Algorithm developer Intern',
+    organization: 'KingSoft Cloud',
+    description:
+      'Develop an OCR and AI Algorithm for PDF recognition, also implement an API to use LLM to help find specific topics and related texts in various document types, and successfully integrate that function into the Financial Report Reviewing Tool developed by the company',
+    relatedWork: [],
+  },
+  {
+    period: 'Jun 2021 - Aug 2021',
+    title: 'Software Engineer Intern',
+    organization: 'Beijing Universal Prosperity Company',
+    description:
+      'Analyzed and developed technical and functional specifications for the Database and backend of qualification exam services serving up to thousands of employees using MySQL, Tomcat, Spring Boot, React, and Java.',
+    relatedWork: [],
+  },
+];
 
 function Home() {
   return (
     <>
       <Hero />
-      <PersonalHistory />
+      <div id="personal-history">
+        <PersonalHistory
+          educationHistory={educationHistory}
+          workHistory={workHistory}
+          heading="Education on the left, work on the right"
+          intro="A timeline view for showing your academic path and professional experience side by side."
+        />
+      </div>
     </>
   );
 }
@@ -47,6 +123,7 @@ function App() {
         <Route path="/projects/design-student-note-taking" element={<DesignStudentNotetaking />} />
         <Route path="/projects/um-card-sorting-study" element={<UMCardSortingStudy />} />
         <Route path="/projects/about-myself" element={<ProjectAboutMyself />} />
+        <Route path="/projects/memory-graden" element={<MemoryGraden />} />
       </Routes>
     </BrowserRouter>
   );

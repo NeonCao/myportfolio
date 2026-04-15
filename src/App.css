@@ -41,3 +41,53 @@
     transform: rotate(360deg);
   }
 }
+
+.hero-text-rotate {
+  display: inline-grid;
+  height: 1.35em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.hero-text-rotate-track {
+  display: grid;
+  justify-items: start;
+  animation: hero-role-rotate 10s ease-in-out infinite;
+}
+
+.hero-text-rotate-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35em;
+  border-radius: 9999px;
+  padding: 0 0.65rem;
+  white-space: nowrap;
+}
+
+@keyframes hero-role-rotate {
+  0%,
+  18% {
+    transform: translateY(0);
+  }
+  25%,
+  43% {
+    transform: translateY(-100%);
+  }
+  50%,
+  68% {
+    transform: translateY(-200%);
+  }
+  75%,
+  93% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text-rotate-track {
+    animation: none;
+  }
+}
