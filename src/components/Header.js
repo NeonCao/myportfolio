@@ -6,6 +6,7 @@ import { applyTheme, DARK_THEME, getActiveTheme, LIGHT_THEME } from '../utils/th
 const navItems = [
   { to: '/', label: 'Home' },
   { to: '/projects', label: 'Projects' },
+  { to: '/gallery', label: 'Gallary' },
 ];
 
 function navLinkClass({ isActive }) {

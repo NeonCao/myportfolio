@@ -306,8 +306,7 @@ function MobileHistoryList({ title, items, badgeClass }) {
 function PersonalHistory({
   educationHistory = [],
   workHistory = [],
-  heading = 'Education on the left, work on the right',
-  intro = 'A timeline view for showing your academic path and professional experience side by side.',
+  heading = 'Recent Personal History',
 }) {
   const educationItems = useMemo(() => layoutLane(educationHistory, 'education'), [educationHistory]);
   const workItems = useMemo(() => layoutLane(workHistory, 'work'), [workHistory]);
@@ -392,7 +391,6 @@ function PersonalHistory({
         <div className="mb-10 max-w-3xl">
           <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Personal History</p>
           <h2 className="mt-3 text-4xl font-bold sm:text-5xl">{heading}</h2>
-          <p className="mt-4 leading-relaxed text-base-content/72">{intro}</p>
         </div>
 
         <div className="rounded-[2rem] border border-base-300 bg-base-100 p-6 shadow-2xl sm:p-8">

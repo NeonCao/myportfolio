@@ -98,35 +98,35 @@ body {
 }
 
 .hover-3d:has(> :nth-child(2):hover) > :first-child {
-  transform: rotateX(7deg) rotateY(-7deg) translateZ(10px);
+  transform: rotateX(-7deg) rotateY(7deg) translateZ(10px);
 }
 
 .hover-3d:has(> :nth-child(3):hover) > :first-child {
-  transform: rotateX(8deg) translateZ(10px);
-}
-
-.hover-3d:has(> :nth-child(4):hover) > :first-child {
-  transform: rotateX(7deg) rotateY(7deg) translateZ(10px);
-}
-
-.hover-3d:has(> :nth-child(5):hover) > :first-child {
-  transform: rotateY(-8deg) translateZ(10px);
-}
-
-.hover-3d:has(> :nth-child(6):hover) > :first-child {
-  transform: rotateY(8deg) translateZ(10px);
-}
-
-.hover-3d:has(> :nth-child(7):hover) > :first-child {
-  transform: rotateX(-7deg) rotateY(-7deg) translateZ(10px);
-}
-
-.hover-3d:has(> :nth-child(8):hover) > :first-child {
   transform: rotateX(-8deg) translateZ(10px);
 }
 
+.hover-3d:has(> :nth-child(4):hover) > :first-child {
+  transform: rotateX(-7deg) rotateY(-7deg) translateZ(10px);
+}
+
+.hover-3d:has(> :nth-child(5):hover) > :first-child {
+  transform: rotateY(8deg) translateZ(10px);
+}
+
+.hover-3d:has(> :nth-child(6):hover) > :first-child {
+  transform: rotateY(-8deg) translateZ(10px);
+}
+
+.hover-3d:has(> :nth-child(7):hover) > :first-child {
+  transform: rotateX(7deg) rotateY(7deg) translateZ(10px);
+}
+
+.hover-3d:has(> :nth-child(8):hover) > :first-child {
+  transform: rotateX(8deg) translateZ(10px);
+}
+
 .hover-3d:has(> :nth-child(9):hover) > :first-child {
-  transform: rotateX(-7deg) rotateY(7deg) translateZ(10px);
+  transform: rotateX(7deg) rotateY(-7deg) translateZ(10px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -183,4 +183,14 @@ body {
   .hero-text-rotate-track {
     transition: none;
   }
+}
+
+.gallery-masonry {
+  column-count: 4;
+  column-gap: 2px;
+}
+
+.gallery-masonry-item {
+  break-inside: avoid;
+  margin-bottom: 2px;
 }

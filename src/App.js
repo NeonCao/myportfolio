@@ -13,6 +13,7 @@ import DesignStudentNotetaking from './pages/DesignStudentNotetaking';
 import UMCardSortingStudy from './pages/UMCardSortingStudy';
 import ProjectAboutMyself from './pages/ProjectAboutMyself';
 import MemoryGraden from './pages/MemoryGraden';
+import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
@@ -94,8 +95,7 @@ function Home() {
         <PersonalHistory
           educationHistory={educationHistory}
           workHistory={workHistory}
-          heading="Education on the left, work on the right"
-          intro="A timeline view for showing your academic path and professional experience side by side."
+          heading="Recent Personal History"
         />
       </div>
     </>
@@ -124,6 +124,8 @@ function App() {
         <Route path="/projects/um-card-sorting-study" element={<UMCardSortingStudy />} />
         <Route path="/projects/about-myself" element={<ProjectAboutMyself />} />
         <Route path="/projects/memory-graden" element={<MemoryGraden />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery/:photoSlug" element={<Gallery />} />
       </Routes>
     </BrowserRouter>
   );

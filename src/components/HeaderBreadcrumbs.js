@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { getGalleryPhotoBySlug } from '../data/galleryPhotos';
 
 const projectPageNames = {
   '/projects/interactive-piggy-bank': 'Interactive Piggy Bank',
@@ -36,6 +37,21 @@ function getBreadcrumbItems(pathname) {
 
   if (pathname === '/projects') {
     return [home, { to: '/projects', label: 'Projects' }];
+  }
+
+  if (pathname === '/gallery') {
+    return [home, { to: '/gallery', label: 'Gallary' }];
+  }
+
+  if (pathname.startsWith('/gallery/')) {
+    const photoSlug = pathname.split('/')[2];
+    const photo = getGalleryPhotoBySlug(photoSlug);
+
+    return [
+      home,
+      { to: '/gallery', label: 'Gallary' },
+      { to: pathname, label: photo?.baseName || 'Photo' },
+    ];
   }
 
   if (pathname.startsWith('/projects/')) {

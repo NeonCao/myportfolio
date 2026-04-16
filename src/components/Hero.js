@@ -50,15 +50,15 @@ function Hero() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-content/78 md:text-lg">
-            I build thoughtful digital experiences across UX, frontend development, research, and immersive media,
-            with a focus on making technology feel clear, human, and worth exploring.
+            I build thoughtful digital experiences across UX, frontend development, backend development, and immersive media,
+            with a focus on making technology feel easy-accessible, ai-driven, and worth exploring.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/projects" className="btn btn-primary">
               View Projects
             </Link>
             <a href="#personal-history" className="btn btn-outline text-neutral-content">
-              See My History
+              See My Personal History
             </a>
           </div>
         </div>
