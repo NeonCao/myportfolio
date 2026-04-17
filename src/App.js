@@ -18,6 +18,25 @@ import Projects from './pages/Projects';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
 
+function getRouterBasename() {
+  const publicUrl = process.env.PUBLIC_URL;
+
+  if (!publicUrl) {
+    return undefined;
+  }
+
+  try {
+    const { pathname } = new URL(publicUrl, window.location.origin);
+    const normalizedPath = pathname.replace(/\/$/, '');
+
+    return normalizedPath || undefined;
+  } catch {
+    return publicUrl.replace(/\/$/, '') || undefined;
+  }
+}
+
+const routerBasename = getRouterBasename();
+
 const educationHistory = [
   {
     period: 'Aug 2024 - Dec 2025',
@@ -108,7 +127,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

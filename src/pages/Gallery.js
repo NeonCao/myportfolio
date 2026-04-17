@@ -40,49 +40,33 @@ function LazyGalleryPhoto({ photo }) {
   }, [shouldLoad]);
 
   useEffect(() => {
-    if (!shouldLoad) {
-      return undefined;
-    }
-
-    let isCancelled = false;
-    const image = new Image();
-
-    image.src = photo.src;
-    image.decoding = 'async';
-    image.onload = () => {
-      if (!isCancelled) {
-        setIsLoaded(true);
-      }
-    };
-    image.onerror = () => {
-      if (!isCancelled) {
-        setIsLoaded(true);
-      }
-    };
-
-    return () => {
-      isCancelled = true;
-      image.onload = null;
-      image.onerror = null;
-    };
-  }, [photo.src, shouldLoad]);
+    setIsLoaded(false);
+  }, [photo.src]);
 
   return (
-    <div ref={tileRef} className="hover-3d">
-      {isLoaded ? (
-        <img
-          src={photo.src}
-          alt={photo.alt}
-          className="block h-auto w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-      ) : (
+    <div ref={tileRef} className="hover-3d gallery-photo-tile">
+      <div className="gallery-photo-media min-h-56 sm:min-h-72">
+        {shouldLoad ? (
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            className={`block w-full object-cover transition-opacity duration-200 ${
+              isLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setIsLoaded(true)}
+            onError={() => setIsLoaded(true)}
+          />
+        ) : null}
+
+        {!isLoaded ? (
         <div
-          className="skeleton min-h-56 w-full rounded-[inherit] sm:min-h-72"
+          className="skeleton absolute inset-0 w-full rounded-[inherit]"
           aria-hidden="true"
         ></div>
-      )}
+        ) : null}
+      </div>
       <div></div>
       <div></div>
       <div></div>

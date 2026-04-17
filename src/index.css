@@ -65,6 +65,23 @@ body {
   will-change: transform;
 }
 
+.gallery-photo-tile > :first-child {
+  display: block;
+  height: auto;
+}
+
+.gallery-photo-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.gallery-photo-media > img {
+  display: block;
+  height: auto;
+  backface-visibility: hidden;
+}
+
 .hover-3d:hover > :first-child {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
   filter: saturate(1.03);
