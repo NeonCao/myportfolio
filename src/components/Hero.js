@@ -24,9 +24,10 @@ function Hero() {
     <div className="hero relative min-h-screen overflow-hidden bg-[#0a0a0c]">
       <ASMRStaticBackground />
       <div className="hero-overlay bg-black/45"></div>
-      <div className="hero-content relative z-10 text-neutral-content text-center">
-        <div className="max-w-3xl">
-          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-neutral-content/70">Portfolio</p>
+      <div className="hero-content relative z-10 w-full px-4 text-neutral-content text-center sm:px-6">
+        <div className="w-full max-w-4xl rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-md md:px-10 md:py-10">
+          <p className="text-sm uppercase tracking-[0.35em] text-neutral-content/70">Portfolio</p>
+          <div className="mx-auto my-5 h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <h1 className="text-4xl font-bold leading-tight md:text-6xl">
             <span>Hello, I&apos;m Neon Cao, a </span>
             <span className="hero-text-rotate">
