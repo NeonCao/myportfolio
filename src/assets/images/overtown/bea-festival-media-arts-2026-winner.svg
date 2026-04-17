@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">BEA Festival of Media Arts 2026 Winner badge</title>
+  <desc id="desc">A laurel badge for Winner, BEA Festival of Media Arts 2026.</desc>
+  <defs>
+    <style>
+      .white { fill: #f5f5f5; }
+      .winner {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 86px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      .bea {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 50px;
+        font-weight: 700;
+      }
+      .festival {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 68px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      .media {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 70px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      .year {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 96px;
+        font-weight: 700;
+        letter-spacing: 3px;
+      }
+    </style>
+    <g id="leaf">
+      <ellipse class="white" cx="0" cy="0" rx="14" ry="34" transform="rotate(-30)" />
+    </g>
+  </defs>
+
+  <g transform="translate(150 0)">
+    <use href="#leaf" transform="translate(0 220) rotate(-70)" />
+    <use href="#leaf" transform="translate(18 272) rotate(-60)" />
+    <use href="#leaf" transform="translate(34 326) rotate(-50)" />
+    <use href="#leaf" transform="translate(48 382) rotate(-40)" />
+    <use href="#leaf" transform="translate(60 440) rotate(-30)" />
+    <use href="#leaf" transform="translate(70 498) rotate(-20)" />
+    <use href="#leaf" transform="translate(78 558) rotate(-10)" />
+    <use href="#leaf" transform="translate(84 618) rotate(0)" />
+    <use href="#leaf" transform="translate(90 678) rotate(10)" />
+    <use href="#leaf" transform="translate(100 734) rotate(20)" />
+  </g>
+
+  <g transform="translate(750 0) scale(-1 1)">
+    <use href="#leaf" transform="translate(0 220) rotate(-70)" />
+    <use href="#leaf" transform="translate(18 272) rotate(-60)" />
+    <use href="#leaf" transform="translate(34 326) rotate(-50)" />
+    <use href="#leaf" transform="translate(48 382) rotate(-40)" />
+    <use href="#leaf" transform="translate(60 440) rotate(-30)" />
+    <use href="#leaf" transform="translate(70 498) rotate(-20)" />
+    <use href="#leaf" transform="translate(78 558) rotate(-10)" />
+    <use href="#leaf" transform="translate(84 618) rotate(0)" />
+    <use href="#leaf" transform="translate(90 678) rotate(10)" />
+    <use href="#leaf" transform="translate(100 734) rotate(20)" />
+  </g>
+
+  <path class="white" d="M320 780 C360 748 392 716 432 680" fill="none" stroke="#f5f5f5" stroke-width="8" stroke-linecap="round" />
+  <path class="white" d="M580 780 C540 748 508 716 468 680" fill="none" stroke="#f5f5f5" stroke-width="8" stroke-linecap="round" />
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M242 340 A94 94 0 1 1 402 288" stroke="#19c7d8" stroke-width="5" />
+    <path d="M248 332 A86 86 0 1 1 395 285" stroke="#f7d64b" stroke-width="5" />
+    <path d="M254 324 A78 78 0 1 1 389 282" stroke="#f8688c" stroke-width="5" />
+    <path d="M260 316 A70 70 0 1 1 383 280" stroke="#8fe36c" stroke-width="5" />
+  </g>
+
+  <text class="white winner" x="450" y="140" text-anchor="middle">WINNER</text>
+  <text class="white bea" x="514" y="248" text-anchor="middle">BEA</text>
+  <text class="white festival" x="500" y="350" text-anchor="middle">FESTIVAL OF</text>
+  <text class="white media" x="500" y="430" text-anchor="middle">MEDIA ARTS</text>
+  <text class="white year" x="450" y="620" text-anchor="middle">2026</text>
+</svg>

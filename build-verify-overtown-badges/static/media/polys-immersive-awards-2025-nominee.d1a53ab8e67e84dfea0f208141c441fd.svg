@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">The Polys Immersive Awards 2025 Nominee badge</title>
+  <desc id="desc">A laurel badge for The Polys Immersive Awards 2025 Nominee, Education Experience of the Year, Saying Their Names.</desc>
+  <defs>
+    <style>
+      .white { fill: #f5f5f5; }
+      .script {
+        font-family: "Brush Script MT", "Segoe Script", cursive;
+        font-size: 98px;
+        font-weight: 600;
+      }
+      .headline {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 58px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .large {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 70px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+      }
+      .name {
+        font-family: "Arial Narrow", Arial, sans-serif;
+        font-size: 58px;
+        font-weight: 700;
+      }
+    </style>
+    <g id="leaf">
+      <ellipse class="white" cx="0" cy="0" rx="20" ry="58" transform="rotate(-26)" />
+    </g>
+  </defs>
+
+  <g transform="translate(178 790)">
+    <use href="#leaf" transform="rotate(-64) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-54) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-44) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-34) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-24) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-14) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-4) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(6) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(16) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(26) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(36) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(46) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(56) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(66) translate(0 -270)" />
+  </g>
+
+  <g transform="translate(722 790) scale(-1 1)">
+    <use href="#leaf" transform="rotate(-64) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-54) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-44) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-34) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-24) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-14) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(-4) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(6) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(16) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(26) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(36) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(46) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(56) translate(0 -270)" />
+    <use href="#leaf" transform="rotate(66) translate(0 -270)" />
+  </g>
+
+  <circle class="white" cx="450" cy="1024" r="18" />
+
+  <text class="white script" x="450" y="150" text-anchor="middle">The Polys</text>
+  <text class="white headline" x="450" y="245" text-anchor="middle">Immersive Awards</text>
+  <text class="white large" x="450" y="360" text-anchor="middle">2025 NOMINEE</text>
+  <text class="white large" x="450" y="510" text-anchor="middle">EDUCATION</text>
+  <text class="white large" x="450" y="610" text-anchor="middle">EXPERIENCE OF THE YEAR</text>
+  <text class="white name" x="450" y="770" text-anchor="middle">Saying Their Names</text>
+</svg>

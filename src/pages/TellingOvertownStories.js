@@ -3,6 +3,8 @@ import DemoVideo from '../components/DemoVideo';
 import SectionDivider from '../components/SectionDivider';
 
 import heroImg from '../assets/images/overtown/overtown_hero.png';
+import polysAwardBadge from '../assets/images/overtown/polys-immersive-awards-2025-nominee.svg';
+import beaAwardBadge from '../assets/images/overtown/bea-festival-media-arts-2026-winner.svg';
 
 const snapshotStats = [
   {
@@ -123,6 +125,17 @@ const videoCards = [
   },
 ];
 
+const awardBadges = [
+  {
+    image: polysAwardBadge,
+    alt: 'The Polys Immersive Awards 2025 Nominee badge for Saying Their Names',
+  },
+  {
+    image: beaAwardBadge,
+    alt: 'BEA Festival of Media Arts 2026 Winner badge',
+  },
+];
+
 const badgeClasses = {
   primary: 'badge-primary',
   secondary: 'badge-secondary',
@@ -146,6 +159,16 @@ function PortalCard({ eyebrow, title, summary, accent }) {
       <div className={`badge badge-outline ${badgeClasses[accent] || badgeClasses.primary}`}>{eyebrow}</div>
       <h3 className="mt-5 text-2xl font-semibold leading-tight">{title}</h3>
       <p className="mt-4 leading-relaxed text-base-content/72">{summary}</p>
+    </article>
+  );
+}
+
+function AwardBadgeCard({ image, alt }) {
+  return (
+    <article className="rounded-[1.5rem] border border-white/10 bg-neutral p-3 text-neutral-content shadow-xl">
+      <div className="flex min-h-[12rem] items-center justify-center rounded-[1.2rem] bg-black/60 p-3">
+        <img src={image} alt={alt} className="max-h-[13rem] w-full object-contain" loading="lazy" />
+      </div>
     </article>
   );
 }
@@ -202,6 +225,14 @@ function TellingOvertownStories() {
                   <p className="mt-2 text-sm leading-relaxed text-base-content/68">{stat.description}</p>
                 </div>
               ))}
+            </div>
+            <div className="mt-6">
+              <p className="text-xs uppercase tracking-[0.28em] text-base-content/50">Recognition</p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {awardBadges.map((badge) => (
+                  <AwardBadgeCard key={badge.alt} {...badge} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
