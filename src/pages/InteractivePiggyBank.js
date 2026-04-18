@@ -2,6 +2,7 @@ import ProjectHero from '../components/ProjectHero';
 import SectionDivider from '../components/SectionDivider';
 import TextRichStepTextFocused from '../components/TextRichStepTextFocused';
 import ResearchInsightCard from '../components/ResearchInsightCard';
+import PiggyBankPrototypePhone from '../components/PiggyBankPrototypePhone';
 
 import heroImage from '../assets/images/piggy-bank/PIGGY_Hero.png';
 import research1 from '../assets/images/piggy-bank/PiggyBank_RunThough_1_P1.jpg';
@@ -370,6 +371,8 @@ function InteractivePiggyBank() {
           </div>
         </div>
       </section>
+
+      <PiggyBankPrototypePhone />
     </div>
   );
 }

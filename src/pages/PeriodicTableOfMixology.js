@@ -225,12 +225,19 @@ function PeriodicTableOfMixology() {
             <img src={recapImage} alt="Mixology project reflection collage" className="h-full w-full object-cover" />
           </figure>
           <div className="card-body justify-center p-8 md:p-12">
-            <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">What This Page Adds</p>
-            <h2 className="mt-3 text-3xl font-bold">A portfolio page that behaves like the project it describes</h2>
+            <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Project Summary</p>
+            <h2 className="mt-3 text-3xl font-bold">A playful concept that became a stronger UX case study</h2>
             <p className="mt-5 leading-relaxed text-base-content/75">
-              Instead of stopping at screenshots and write-up, this version turns the case study back into a
-              working artifact. That makes the project easier to understand, easier to demo, and much closer to
-              how someone would actually experience the design.
+              This project started with a cocktail poster that looked beautiful but could not really be explored.
+              Through several iterations, it became a more interactive experience with clearer structure, better
+              search, improved visuals, and a rebuilt React version that lets the case study and the working
+              product live together.
+            </p>
+            <p className="mt-4 leading-relaxed text-base-content/75">
+              What I learned most from this project is that good design is not just about making something look
+              interesting. It is about making it easier to understand, easier to use, and easier to improve over
+              time. Reworking this idea taught me how much thoughtful iteration, user feedback, and stronger
+              frontend structure can transform a fun visual concept into a more intentional product experience.
             </p>
           </div>
         </div>

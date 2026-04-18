@@ -1,70 +1,34 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { galleryPhotos, getGalleryPhotoBySlug } from '../data/galleryPhotos';
 
 function LazyGalleryPhoto({ photo }) {
-  const tileRef = useRef(null);
-  const [shouldLoad, setShouldLoad] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    if (shouldLoad || typeof IntersectionObserver === 'undefined') {
-      setShouldLoad(true);
-      return undefined;
-    }
-
-    const currentTile = tileRef.current;
-
-    if (!currentTile) {
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-
-        if (entry?.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: '220px 0px',
-        threshold: 0.01,
-      }
-    );
-
-    observer.observe(currentTile);
-
-    return () => observer.disconnect();
-  }, [shouldLoad]);
 
   useEffect(() => {
     setIsLoaded(false);
   }, [photo.src]);
 
   return (
-    <div ref={tileRef} className="hover-3d gallery-photo-tile">
-      <div className="gallery-photo-media min-h-56 sm:min-h-72">
-        {shouldLoad ? (
-          <img
-            src={photo.src}
-            alt={photo.alt}
-            className={`block w-full object-cover transition-opacity duration-200 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            loading="lazy"
-            decoding="async"
-            onLoad={() => setIsLoaded(true)}
-            onError={() => setIsLoaded(true)}
-          />
-        ) : null}
+    <div className="hover-3d gallery-photo-tile">
+      <div className="gallery-photo-media">
+        <img
+          src={photo.src}
+          alt={photo.alt}
+          className={`block h-auto w-full transition-opacity duration-200 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setIsLoaded(true)}
+          onError={() => setIsLoaded(true)}
+        />
 
         {!isLoaded ? (
-        <div
-          className="skeleton absolute inset-0 w-full rounded-[inherit]"
-          aria-hidden="true"
-        ></div>
+          <div
+            className="skeleton absolute inset-0 w-full rounded-[inherit]"
+            aria-hidden="true"
+          ></div>
         ) : null}
       </div>
       <div></div>
