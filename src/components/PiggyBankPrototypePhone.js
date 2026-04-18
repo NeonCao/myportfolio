@@ -7,29 +7,7 @@ function PiggyBankPrototypePhone() {
   return (
     <section className="bg-base-100">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,1.08fr)]">
-          <div className="max-w-xl">
-            <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Prototype Preview</p>
-            <h2 className="mt-3 text-4xl font-bold">Explore the final mobile concept inside the case study</h2>
-            <p className="mt-5 leading-relaxed text-base-content/75">
-              This embedded prototype lets you scroll through the Interactive Piggy Bank experience in a
-              phone-sized frame, closer to how the concept was presented during the design process.
-            </p>
-            <p className="mt-4 leading-relaxed text-base-content/75">
-              If Figma blocks the embed in your browser, the prototype is still available in a separate tab.
-            </p>
-            <div className="mt-6">
-              <a
-                href={prototypeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-primary rounded-full px-6"
-              >
-                Open Figma Prototype
-              </a>
-            </div>
-          </div>
-
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(320px,1.08fr)_minmax(0,0.92fr)]">
           <div className="flex justify-center">
             <div className="w-full max-w-4xl overflow-hidden rounded-[2rem] border border-base-300 bg-base-200 p-3 shadow-2xl">
               <div className="overflow-hidden rounded-[1.5rem] border border-base-300 bg-white">
@@ -41,6 +19,28 @@ function PiggyBankPrototypePhone() {
                   allowFullScreen
                 />
               </div>
+            </div>
+          </div>
+
+          <div className="max-w-xl lg:justify-self-end">
+            <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Prototype Preview</p>
+            <h2 className="mt-3 text-4xl font-bold">Final prototype as Figma Demo</h2>
+            <p className="mt-5 leading-relaxed text-base-content/75">
+              This embedded prototype lets you scroll through the Interactive Piggy Bank experience in a
+              phone-sized frame, just the same asthe concept was presented during the design process. if prompted, use Flow 0 for the complete experience.
+            </p>
+            <p className="mt-4 leading-relaxed text-base-content/75">
+              If Figma blocks the embed in your browser, the prototype is still available in a separate tab.
+            </p>
+            <div className="mt-6">
+              <a
+                href={prototypeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary rounded-full px-6"
+              >
+                Open Figma Prototype in a new tab
+              </a>
             </div>
           </div>
         </div>

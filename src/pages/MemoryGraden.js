@@ -1,33 +1,7 @@
 import DemoVideo from '../components/DemoVideo';
 import ProjectHero from '../components/ProjectHero';
 import SectionDivider from '../components/SectionDivider';
-
-const memoryGradenVisual = `data:image/svg+xml;utf8,${encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
-    <defs>
-      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#0f172a" />
-        <stop offset="45%" stop-color="#1d4ed8" />
-        <stop offset="100%" stop-color="#86efac" />
-      </linearGradient>
-      <radialGradient id="glow" cx="52%" cy="42%" r="58%">
-        <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.95" />
-        <stop offset="100%" stop-color="#fef3c7" stop-opacity="0" />
-      </radialGradient>
-    </defs>
-    <rect width="1600" height="900" fill="url(#bg)" />
-    <circle cx="1180" cy="170" r="220" fill="url(#glow)" />
-    <path d="M0 700 C250 560 420 770 640 650 S1100 540 1600 760 L1600 900 L0 900 Z" fill="#082f49" opacity="0.75" />
-    <path d="M0 760 C280 640 520 850 770 720 S1240 610 1600 800 L1600 900 L0 900 Z" fill="#14532d" opacity="0.6" />
-    <circle cx="320" cy="300" r="6" fill="#fef3c7" />
-    <circle cx="400" cy="220" r="4" fill="#fef3c7" />
-    <circle cx="500" cy="340" r="5" fill="#fef3c7" />
-    <circle cx="1250" cy="320" r="5" fill="#dbeafe" />
-    <circle cx="1320" cy="390" r="4" fill="#dbeafe" />
-    <text x="120" y="705" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="84" font-weight="700">Memory Graden</text>
-    <text x="125" y="765" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">RE:MEMBER · MEMORY GARDEN FOR ALZHEIMER'S</text>
-  </svg>
-`)}`;
+import heroImage from '../assets/images/memory_garden/memory_garden_Hero.png';
 
 const snapshotStats = [
   {
@@ -126,7 +100,7 @@ function InsightCard({ title, text }) {
 function MemoryGraden() {
   return (
     <div className="min-h-screen bg-base-200">
-      <ProjectHero title="Memory Graden" image={memoryGradenVisual} />
+      <ProjectHero title="Memory Graden" image={heroImage} />
 
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)]">

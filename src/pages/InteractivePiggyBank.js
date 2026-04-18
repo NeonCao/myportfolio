@@ -44,8 +44,8 @@ const snapshotStats = [
   },
   {
     label: 'Roles',
-    value: 'UX/UI',
-    description: 'I contributed as both a UI/UX designer and a UX research partner on the project.',
+    value: 'UX/Dev',
+    description: 'I contributed as UI/UX designer, UX researcher as well as prototype developer in the project.',
   },
 ];
 
