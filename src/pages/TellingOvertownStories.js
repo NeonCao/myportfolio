@@ -3,6 +3,13 @@ import DemoVideo from '../components/DemoVideo';
 import SectionDivider from '../components/SectionDivider';
 
 import heroImg from '../assets/images/overtown/overtown_hero.png';
+import longshoremenMuralImage from '../assets/images/overtown/LongShoreMen_Rebuild_Mural.png';
+import longshoremenSceneImage from '../assets/images/overtown/LongShoreMen_Rebuild_Scene.png';
+import familyTreeMuralImage from '../assets/images/overtown/FamilyTree_Rebuild_Mural.png';
+import familyTreeSceneImage from '../assets/images/overtown/FamilyTree_Rebuild_Scene.png';
+import gameChangersMuralImage from '../assets/images/overtown/GameChangers_Rebuild_Mural.png';
+import gameChangersSceneImage from '../assets/images/overtown/GameChangers_Rebuild_Scene.png';
+import overtownHubSceneImage from '../assets/images/overtown/Overtown_Rebuild_Scene.png';
 import polysAwardBadge from '../assets/images/overtown/polys-immersive-awards-2025-nominee.svg';
 import beaAwardBadge from '../assets/images/overtown/bea-festival-media-arts-2026-winner.svg';
 
@@ -33,12 +40,23 @@ const snapshotStats = [
   },
 ];
 
-const portalCards = [
+const portalExperiences = [
   {
     eyebrow: 'Portal 01',
     title: "International Longshoremen's Association, Local 1416",
     summary:
       'This mural portal brings visitors into the Port of Miami in the 1930s so they can understand how union formation changed wages, work, and the path to middle-class stability for many Black workers in Miami.',
+    muralImage: longshoremenMuralImage,
+    muralAlt: "International Longshoremen's Association mural in Overtown",
+    sceneImage: longshoremenSceneImage,
+    sceneAlt: "Rebuilt Longshoremen portal scene from Telling Overtown Stories",
+    context:
+      'The mural becomes a gateway into labor history rather than a static wall image. In the digital version, the port setting, atmosphere, and surrounding details help visitors feel the stakes of organizing work, wages, and dignity in a city shaped by Black labor.',
+    highlights: [
+      'Connects public art to Black labor history in Miami.',
+      'Uses environmental storytelling to make union formation feel situated and lived-in.',
+      'Shows how a mural can open into a larger historical world instead of ending at the wall.',
+    ],
     accent: 'primary',
   },
   {
@@ -46,6 +64,17 @@ const portalCards = [
     title: 'OVERtown: Our Family Tree',
     summary:
       'This experience centers the former law office of Judge Lawson E. Thomas and uses the mural as a gateway into Overtown family history, civic dignity, and the neighborhood figures who shaped Black public life in Miami.',
+    muralImage: familyTreeMuralImage,
+    muralAlt: 'Our Family Tree mural in Overtown',
+    sceneImage: familyTreeSceneImage,
+    sceneAlt: 'Rebuilt Family Tree portal scene from Telling Overtown Stories',
+    context:
+      'This portal leans into memory, lineage, and civic presence. The rebuilt scene helps the mural feel less like a single commemorative surface and more like an entry point into the people, places, and institutions that held Overtown together across generations.',
+    highlights: [
+      'Frames the mural around family memory and neighborhood legacy.',
+      'Centers Judge Lawson E. Thomas and the civic spaces connected to Black public life.',
+      'Extends portraiture into an explorable environment with stronger emotional context.',
+    ],
     accent: 'secondary',
   },
   {
@@ -53,6 +82,17 @@ const portalCards = [
     title: 'Overtown Pitch: Game Changers',
     summary:
       'This portal reframes the mural as a street-festival experience tied to Black global soccer stars and the community pride sparked by the Miami Edison Senior High School girls soccer team.',
+    muralImage: gameChangersMuralImage,
+    muralAlt: 'Game Changers mural in Overtown',
+    sceneImage: gameChangersSceneImage,
+    sceneAlt: 'Rebuilt Game Changers portal scene from Telling Overtown Stories',
+    context:
+      'The sports portal broadens the exhibit’s tone without losing its community focus. It links global Black athletic achievement with local pride, creating a more celebratory space that still speaks to identity, aspiration, and representation in Overtown.',
+    highlights: [
+      'Combines mural storytelling with a more playful, festival-like spatial tone.',
+      'Ties neighborhood pride to both global soccer culture and Miami Edison achievement.',
+      'Shows the exhibit could shift mood across portals while staying rooted in place.',
+    ],
     accent: 'accent',
   },
 ];
@@ -153,12 +193,52 @@ function InsightCard({ title, text }) {
   );
 }
 
-function PortalCard({ eyebrow, title, summary, accent }) {
+function PortalExperienceCard({
+  eyebrow,
+  title,
+  summary,
+  context,
+  highlights = [],
+  muralImage,
+  muralAlt,
+  sceneImage,
+  sceneAlt,
+  accent,
+}) {
   return (
-    <article className="rounded-[1.75rem] border border-base-300 bg-base-100 p-6 shadow-xl">
-      <div className={`badge badge-outline ${badgeClasses[accent] || badgeClasses.primary}`}>{eyebrow}</div>
-      <h3 className="mt-5 text-2xl font-semibold leading-tight">{title}</h3>
-      <p className="mt-4 leading-relaxed text-base-content/72">{summary}</p>
+    <article className="overflow-hidden rounded-[2rem] border border-base-300 bg-base-100 shadow-2xl">
+      <div className="grid gap-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
+        <div className="grid gap-4 border-b border-base-300 bg-base-200 p-4 lg:border-b-0 lg:border-r">
+          <figure className="space-y-2">
+            <img src={muralImage} alt={muralAlt} className="h-full w-full rounded-[1.4rem] object-cover shadow-lg" />
+            <figcaption className="text-center text-xs uppercase tracking-[0.24em] text-base-content/50">
+              Original Mural
+            </figcaption>
+          </figure>
+          <figure className="space-y-2">
+            <img src={sceneImage} alt={sceneAlt} className="h-full w-full rounded-[1.4rem] object-cover shadow-lg" />
+            <figcaption className="text-center text-xs uppercase tracking-[0.24em] text-base-content/50">
+              Rebuilt Portal Scene
+            </figcaption>
+          </figure>
+        </div>
+
+        <div className="p-6 md:p-8">
+          <div className={`badge badge-outline ${badgeClasses[accent] || badgeClasses.primary}`}>{eyebrow}</div>
+          <h3 className="mt-5 text-3xl font-semibold leading-tight">{title}</h3>
+          <p className="mt-4 leading-relaxed text-base-content/72">{summary}</p>
+          <p className="mt-4 leading-relaxed text-base-content/72">{context}</p>
+
+          <div className="mt-6 rounded-[1.4rem] bg-base-200 p-5">
+            <p className="text-xs uppercase tracking-[0.3em] text-base-content/45">What This Portal Adds</p>
+            <ul className="mt-4 space-y-3 leading-relaxed text-base-content/72">
+              {highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </article>
   );
 }
@@ -184,7 +264,7 @@ function TellingOvertownStories() {
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)]">
           <div>
-            <div className="badge badge-primary badge-outline mb-4">Community-Centered VR Storytelling</div>
+            <div className="badge badge-primary badge-outline mb-4">Community-Centered VR Storytelling Exhibition</div>
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">
               Turning Overtown&apos;s public murals into immersive portals for history, memory, and place
             </h1>
@@ -282,18 +362,65 @@ function TellingOvertownStories() {
       </div>
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <div className="max-w-4xl">
-          <h2 className="text-4xl font-bold">Each environment expands a mural into a fuller world</h2>
-          <p className="mt-5 leading-relaxed text-base-content/75">
-            The public-facing article about the project explains that users begin in a virtual Overtown, approach
-            the murals, and then step inside them. That structure made the exhibit feel less like a gallery page
-            and more like a sequence of interactive historical worlds.
-          </p>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.92fr)] lg:items-center">
+          <div className="max-w-4xl">
+            <h2 className="text-4xl font-bold">Each environment expands a mural into a fuller world</h2>
+            <p className="mt-5 leading-relaxed text-base-content/75">
+              The public-facing article about the project explains that users begin in a virtual Overtown, approach
+              the murals, and then step inside them. That structure made the exhibit feel less like a gallery page
+              and more like a sequence of interactive historical worlds.
+            </p>
+            <p className="mt-4 leading-relaxed text-base-content/75">
+              With the rebuilt mural and scene images included here, the design move becomes much easier to read.
+              Each portal starts from a public artwork in the neighborhood, then translates that artwork into a
+              spatial environment with its own mood, context, and storytelling purpose.
+            </p>
+            <p className="mt-4 leading-relaxed text-base-content/75">
+              These comparisons also show that the digital spaces are not simple copies. They are interpretations.
+              The project chooses what to emphasize, what atmosphere to build, and how to turn a still image into
+              a place visitors can move through.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border border-base-300 shadow-2xl">
+            <img
+              src={overtownHubSceneImage}
+              alt="Rebuilt Overtown hub scene from the Telling Overtown Stories experience"
+              className="w-full object-cover"
+            />
+          </div>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {portalCards.map((card) => (
-            <PortalCard key={card.title} {...card} />
+        <div className="mt-12 rounded-[1.75rem] border border-base-300 bg-base-100 p-6 shadow-xl">
+          <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Reading The Portal Structure</p>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <div className="rounded-[1.25rem] bg-base-200 p-5">
+              <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">1. Start at the mural</p>
+              <p className="mt-3 leading-relaxed text-base-content/72">
+                The physical artwork anchors each story in a real public site, keeping the history tied to place
+                instead of abstracting it away from the neighborhood.
+              </p>
+            </div>
+            <div className="rounded-[1.25rem] bg-base-200 p-5">
+              <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">2. Rebuild the world</p>
+              <p className="mt-3 leading-relaxed text-base-content/72">
+                The virtual scene interprets the mural into a navigable environment, adding scale, atmosphere, and
+                spatial cues that deepen the original story.
+              </p>
+            </div>
+            <div className="rounded-[1.25rem] bg-base-200 p-5">
+              <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">3. Enter the story</p>
+              <p className="mt-3 leading-relaxed text-base-content/72">
+                That shift from viewing to entering is the core interaction pattern of the exhibit and the reason
+                the murals feel like portals instead of references.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 space-y-8">
+          {portalExperiences.map((portal) => (
+            <PortalExperienceCard key={portal.title} {...portal} />
           ))}
         </div>
       </section>

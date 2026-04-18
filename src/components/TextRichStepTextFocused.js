@@ -8,7 +8,7 @@ function TextRichStepTextFocused({
   imageLeft = false,
 }) {
   const textBlock = (
-    <div className={`space-y-6 lg:col-span-3 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+    <div className={`sticky top-28 self-start space-y-6 lg:col-span-3 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
       <div>
         <p className="mb-2 text-xs uppercase tracking-[0.35em] opacity-50">Step {number}</p>
         <h3 className="text-3xl font-bold leading-tight">{title}</h3>
