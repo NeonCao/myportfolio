@@ -17,6 +17,7 @@ import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
+import NavigationEffects from './components/NavigationEffects';
 
 function getRouterBasename() {
   const publicUrl = process.env.PUBLIC_URL;
@@ -128,6 +129,7 @@ function App() {
 
   return (
     <BrowserRouter basename={routerBasename}>
+      <NavigationEffects basename={routerBasename} />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
