@@ -13,6 +13,7 @@ const projectPageNames = {
   '/projects/um-card-sorting-study': 'Card Sorting Study for UM Interactive Media Site',
   '/projects/about-myself': 'Project About Myself',
   '/projects/memory-graden': 'Memory Graden',
+  '/projects/lexilearn': 'LexiLearn',
 };
 
 function FolderIcon() {

@@ -6,6 +6,7 @@ function TextRichStep({
   bullets = [],
   images = [],
   imageLeft = false,
+  showTopBorder = true,
 }) {
   const textBlock = (
     <div className="space-y-6 lg:sticky lg:top-28 lg:self-start">
@@ -57,7 +58,11 @@ function TextRichStep({
   );
 
   return (
-    <section className="grid gap-10 border-t border-base-300 py-16 lg:grid-cols-[minmax(0,3fr)_minmax(280px,2fr)] lg:items-start">
+    <section
+      className={`grid gap-10 py-16 lg:grid-cols-[minmax(0,3fr)_minmax(280px,2fr)] lg:items-start ${
+        showTopBorder ? 'border-t border-base-300' : ''
+      }`}
+    >
       {imageLeft ? imageBlock : textBlock}
       {imageLeft ? textBlock : imageBlock}
     </section>

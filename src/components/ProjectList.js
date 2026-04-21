@@ -11,6 +11,7 @@ import noteTakingImage from '../assets/images/design-note-taking/Untitled-4.png'
 import cardSortingImage from '../assets/images/um-card-sorting/Untitled-1_2.png';
 import aboutMyselfImage from '../assets/images/project-about-myself/IMG_1744.JPG';
 import memoryGradenImage from '../assets/images/memory_garden/memory_garden_Hero.png';
+import lexiLearnImage from '../assets/images/lexilearn/lexiLearn_Hero.png';
 
 const projects = [
   {
@@ -19,6 +20,13 @@ const projects = [
     image: mixologyImage,
     details: 'A portfolio rebuild of an old Webflow prototype with searchable cocktail data, mix mode, and reusable React components.',
     href: '/projects/periodic-table-of-mixology',
+  },
+  {
+    title: 'Memory Graden',
+    description: 'Mixed reality memory-care concept for Alzheimer’s patients',
+    image: memoryGradenImage,
+    details: 'An MR and AI-assisted concept that turns family photos into explorable 3D memory anchors for people living with Alzheimer’s and memory loss.',
+    href: '/projects/memory-graden',
   },
   {
     title: 'Project Lifehack — Espresso Helper',
@@ -84,11 +92,11 @@ const projects = [
     href: '/projects/about-myself',
   },
   {
-    title: 'Memory Graden',
-    description: 'Mixed reality memory-care concept for Alzheimer’s patients',
-    image: memoryGradenImage,
-    details: 'An MR and AI-assisted concept that turns family photos into explorable 3D memory anchors for people living with Alzheimer’s and memory loss.',
-    href: '/projects/memory-graden',
+    title: 'Lexi Learn',
+    description: 'VR + AI literacy learning for children',
+    image: lexiLearnImage,
+    details: 'An ongoing research project exploring adaptive literacy learning in immersive virtual environments through AI, play, and multisensory design.',
+    href: '/projects/lexilearn',
   },
 ];
 

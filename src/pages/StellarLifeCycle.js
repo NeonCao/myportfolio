@@ -219,8 +219,8 @@ function StellarLifeCycle() {
         <SectionDivider label="Building Process" />
       </div>
 
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        {processSteps.map((step) => (
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        {processSteps.map((step, index) => (
           <TextRichStep
             key={step.number}
             number={step.number}
@@ -230,6 +230,7 @@ function StellarLifeCycle() {
             bullets={step.bullets}
             images={step.images}
             imageLeft={step.imageLeft}
+            showTopBorder={index > 0}
           />
         ))}
       </section>
