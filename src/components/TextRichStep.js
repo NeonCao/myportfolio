@@ -8,7 +8,7 @@ function TextRichStep({
   imageLeft = false,
 }) {
   const textBlock = (
-    <div className="sticky top-28 self-start space-y-6">
+    <div className="space-y-6 lg:sticky lg:top-28 lg:self-start">
       <div>
         <p className="text-xs uppercase tracking-[0.35em] opacity-50 mb-2">Step {number}</p>
         <h3 className="text-3xl font-bold leading-tight">{title}</h3>

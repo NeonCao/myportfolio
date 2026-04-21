@@ -46,9 +46,14 @@ const educationHistory = [
     description:
       'Focused on user research, AI, and Mixed Reality, Learning and Development applications that prioritize user needs and the best practices of AI and Mixed Reality’s integration.',
     relatedWork: [
-      { label: 'Note-Taking Study', to: '/projects/design-student-note-taking' },
-      { label: 'UM Card Sorting', to: '/projects/um-card-sorting-study' },
       { label: 'UM Campus Xplorer', to: '/projects/um-campus-xplorer' },
+      { label: 'Espresso Helper', to: '/projects/auto-espresso' },
+      { label: 'Project About Myself', to: '/projects/about-myself' },
+      { label: 'Telling Overtown Stories', to: '/projects/telling-overtown-stories' },
+      { label: 'AR Calorie Visualizer', to: '/projects/ar-calorie-visualizer' },
+      { label: 'Stellar Life Cycle', to: '/projects/the-stellar-life-cycle' },
+      { label: 'Periodic Table of Mixology', to: '/projects/periodic-table-of-mixology' },
+      
     ],
   },
   {
@@ -58,8 +63,6 @@ const educationHistory = [
     description:
       'Getting into the world of coding, learning programming languages like C#, Java, Python and Swift, exploring the fundatmentals of software development, and learning differnet algorthimes and data structures.',
     relatedWork: [
-      { label: 'Espresso Helper', to: '/projects/auto-espresso' },
-      { label: 'Project About Myself', to: '/projects/about-myself' },
     ],
   },
 ];
@@ -73,8 +76,7 @@ const workHistory = [
     description:
       'Deliver consistent C# scripts and algorithms to support the Unity project of the University, as well as Design ideas and UX ideas. Using best practices of Virtual Reality, AI and Database Integration to create a seamless experience for both teacher and students.',
     relatedWork: [
-      { label: 'AR Calorie Visualizer', to: '/projects/ar-calorie-visualizer' },
-      { label: 'UM Campus Xplorer', to: '/projects/um-campus-xplorer' },
+      { label: 'Memory Garden', to: '/projects/memory-graden' },
     ],
   },
   {
@@ -85,8 +87,10 @@ const workHistory = [
     description:
       'Research and help utilize new technologies in Unity to recreate a video clip into a 3D, immersive, dreamlike storytelling experience.',
     relatedWork: [
-      { label: 'Telling Overtown Stories', to: '/projects/telling-overtown-stories' },
-      { label: 'AR Calorie Visualizer', to: '/projects/ar-calorie-visualizer' },
+      
+      { label: 'Note-Taking Study', to: '/projects/design-student-note-taking' },
+      { label: 'UM Card Sorting', to: '/projects/um-card-sorting-study' },
+      { label: 'Interactive Piggy Bank', to: '/projects/interactive-piggy-bank' },
     ],
   },
   {

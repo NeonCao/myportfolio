@@ -10,8 +10,8 @@ import familyTreeSceneImage from '../assets/images/overtown/FamilyTree_Rebuild_S
 import gameChangersMuralImage from '../assets/images/overtown/GameChangers_Rebuild_Mural.png';
 import gameChangersSceneImage from '../assets/images/overtown/GameChangers_Rebuild_Scene.png';
 import overtownHubSceneImage from '../assets/images/overtown/Overtown_Rebuild_Scene.png';
-import polysAwardBadge from '../assets/images/overtown/polys-immersive-awards-2025-nominee.svg';
-import beaAwardBadge from '../assets/images/overtown/bea-festival-media-arts-2026-winner.svg';
+import overtownPrizeOne from '../assets/images/overtown/OverTown_Prize_1.png';
+import overtownPrizeTwo from '../assets/images/overtown/OverTown_Prize_2.png';
 
 const snapshotStats = [
   {
@@ -22,9 +22,9 @@ const snapshotStats = [
   },
   {
     label: 'Format',
-    value: 'VR Exhibit',
+    value: 'VR Story Scenes',
     description:
-      'The project turns public murals into explorable portals that can be experienced on the web, on laptops, and in headsets.',
+      'The project turns public murals into gamified interactive scenes where users uncover history through objects, narration, and exploration.',
   },
   {
     label: 'Partners',
@@ -42,56 +42,56 @@ const snapshotStats = [
 
 const portalExperiences = [
   {
-    eyebrow: 'Portal 01',
+    eyebrow: 'Story Scene 01',
     title: "International Longshoremen's Association, Local 1416",
     summary:
-      'This mural portal brings visitors into the Port of Miami in the 1930s so they can understand how union formation changed wages, work, and the path to middle-class stability for many Black workers in Miami.',
+      'This interactive scene brings visitors into the Port of Miami in the 1930s, where objects in the environment reveal how union formation changed wages, working conditions, and the path to middle-class stability for many Black workers in Miami.',
     muralImage: longshoremenMuralImage,
     muralAlt: "International Longshoremen's Association mural in Overtown",
     sceneImage: longshoremenSceneImage,
-    sceneAlt: "Rebuilt Longshoremen portal scene from Telling Overtown Stories",
+    sceneAlt: "Rebuilt Longshoremen interactive scene from Telling Overtown Stories",
     context:
-      'The mural becomes a gateway into labor history rather than a static wall image. In the digital version, the port setting, atmosphere, and surrounding details help visitors feel the stakes of organizing work, wages, and dignity in a city shaped by Black labor.',
+      'The mural becomes a playable sequence of historical discovery rather than a static wall image. As visitors interact with meaningful objects in the port setting, they hear how each detail connects to labor, organizing, dignity, and the broader story of Black workers shaping Miami.',
     highlights: [
-      'Connects public art to Black labor history in Miami.',
-      'Uses environmental storytelling to make union formation feel situated and lived-in.',
-      'Shows how a mural can open into a larger historical world instead of ending at the wall.',
+      'Turns public art into an object-based labor history experience.',
+      'Uses interaction and narration to reveal union history step by step.',
+      'Shows how the mural’s symbols connect to larger changes in work, wages, and community stability.',
     ],
     accent: 'primary',
   },
   {
-    eyebrow: 'Portal 02',
+    eyebrow: 'Story Scene 02',
     title: 'OVERtown: Our Family Tree',
     summary:
-      'This experience centers the former law office of Judge Lawson E. Thomas and uses the mural as a gateway into Overtown family history, civic dignity, and the neighborhood figures who shaped Black public life in Miami.',
+      'This scene centers the former law office of Judge Lawson E. Thomas and uses interactive memory objects to reveal Overtown family history, civic dignity, and the neighborhood figures who shaped Black public life in Miami.',
     muralImage: familyTreeMuralImage,
     muralAlt: 'Our Family Tree mural in Overtown',
     sceneImage: familyTreeSceneImage,
-    sceneAlt: 'Rebuilt Family Tree portal scene from Telling Overtown Stories',
+    sceneAlt: 'Rebuilt Family Tree interactive scene from Telling Overtown Stories',
     context:
-      'This portal leans into memory, lineage, and civic presence. The rebuilt scene helps the mural feel less like a single commemorative surface and more like an entry point into the people, places, and institutions that held Overtown together across generations.',
+      'This experience leans into memory, lineage, and civic presence. Instead of asking viewers to absorb the mural all at once, the scene lets them uncover the story through focused interactions, making the people, places, and institutions behind the artwork easier to understand.',
     highlights: [
-      'Frames the mural around family memory and neighborhood legacy.',
-      'Centers Judge Lawson E. Thomas and the civic spaces connected to Black public life.',
-      'Extends portraiture into an explorable environment with stronger emotional context.',
+      'Frames family memory and neighborhood legacy as a sequence of discoveries.',
+      'Centers Judge Lawson E. Thomas through spatial context and interactive story beats.',
+      'Transforms portraiture into a dynamic storyline with stronger emotional context.',
     ],
     accent: 'secondary',
   },
   {
-    eyebrow: 'Portal 03',
+    eyebrow: 'Story Scene 03',
     title: 'Overtown Pitch: Game Changers',
     summary:
-      'This portal reframes the mural as a street-festival experience tied to Black global soccer stars and the community pride sparked by the Miami Edison Senior High School girls soccer team.',
+      'This scene reframes the mural as a gamified street-festival experience tied to Black global soccer stars and the community pride sparked by the Miami Edison Senior High School girls soccer team.',
     muralImage: gameChangersMuralImage,
     muralAlt: 'Game Changers mural in Overtown',
     sceneImage: gameChangersSceneImage,
-    sceneAlt: 'Rebuilt Game Changers portal scene from Telling Overtown Stories',
+    sceneAlt: 'Rebuilt Game Changers interactive scene from Telling Overtown Stories',
     context:
-      'The sports portal broadens the exhibit’s tone without losing its community focus. It links global Black athletic achievement with local pride, creating a more celebratory space that still speaks to identity, aspiration, and representation in Overtown.',
+      'The sports scene broadens the exhibit’s tone without losing its community focus. Through playful interaction, users move from visual recognition into a clearer understanding of how athletic achievement, local pride, identity, and representation connect inside the mural’s story.',
     highlights: [
-      'Combines mural storytelling with a more playful, festival-like spatial tone.',
-      'Ties neighborhood pride to both global soccer culture and Miami Edison achievement.',
-      'Shows the exhibit could shift mood across portals while staying rooted in place.',
+      'Combines mural storytelling with a playful, game-like spatial tone.',
+      'Uses interaction to connect global soccer culture with Miami Edison achievement.',
+      'Shows how each mural can have its own rhythm while still revealing history step by step.',
     ],
     accent: 'accent',
   },
@@ -106,12 +106,12 @@ const contributionCards = [
   {
     title: 'Most of the codebase',
     text:
-      'My contribution covered almost all of the coding work, which meant translating the team’s research and design intent into an explorable, interactive VR experience.',
+      'My contribution covered almost all of the coding work, which meant translating the team’s research and design intent into interactive VR scenes where objects, triggers, and story moments worked together.',
   },
   {
     title: 'Shared scene production',
     text:
-      'Alongside the implementation work, I also helped build roughly half of the scenes, so my role extended into environmental assembly and spatial storytelling polish.',
+      'Alongside the implementation work, I also helped build roughly half of the scenes, so my role extended into environmental assembly, interaction placement, and spatial storytelling polish.',
   },
 ];
 
@@ -129,7 +129,7 @@ const processCards = [
   {
     title: 'Designed for access',
     text:
-      'A core goal was making the stories available beyond the physical mural sites, so the final experience was framed as a way to bring Overtown history to audiences who may never visit the neighborhood in person.',
+      'A core goal was making the stories understandable beyond the physical mural sites, so the final experience used interaction to guide audiences through history rather than asking them to interpret the murals alone.',
   },
 ];
 
@@ -167,12 +167,12 @@ const videoCards = [
 
 const awardBadges = [
   {
-    image: polysAwardBadge,
-    alt: 'The Polys Immersive Awards 2025 Nominee badge for Saying Their Names',
+    image: overtownPrizeOne,
+    alt: 'Overtown project prize badge 1',
   },
   {
-    image: beaAwardBadge,
-    alt: 'BEA Festival of Media Arts 2026 Winner badge',
+    image: overtownPrizeTwo,
+    alt: 'Overtown project prize badge 2',
   },
 ];
 
@@ -218,7 +218,7 @@ function PortalExperienceCard({
           <figure className="space-y-2">
             <img src={sceneImage} alt={sceneAlt} className="h-full w-full rounded-[1.4rem] object-cover shadow-lg" />
             <figcaption className="text-center text-xs uppercase tracking-[0.24em] text-base-content/50">
-              Rebuilt Portal Scene
+              Rebuilt Interactive Scene
             </figcaption>
           </figure>
         </div>
@@ -230,7 +230,7 @@ function PortalExperienceCard({
           <p className="mt-4 leading-relaxed text-base-content/72">{context}</p>
 
           <div className="mt-6 rounded-[1.4rem] bg-base-200 p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-base-content/45">What This Portal Adds</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-base-content/45">What This Scene Adds</p>
             <ul className="mt-4 space-y-3 leading-relaxed text-base-content/72">
               {highlights.map((highlight) => (
                 <li key={highlight}>{highlight}</li>
@@ -266,19 +266,18 @@ function TellingOvertownStories() {
           <div>
             <div className="badge badge-primary badge-outline mb-4">Community-Centered VR Storytelling Exhibition</div>
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-              Turning Overtown&apos;s public murals into immersive portals for history, memory, and place
+              Turning Overtown&apos;s public murals into interactive story scenes
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-base-content/75">
               Telling Overtown Stories, Saying Their Names is an immersive virtual exhibit developed in the
               University of Miami&apos;s Collaborative Innovation Lab with Miami MoCAAD. The project reimagines
-              murals in historic Overtown as interactive portals, giving audiences a way to move through the
-              stories behind the artwork instead of only standing in front of it.
+              murals in historic Overtown as gamified interactive scenes, giving audiences a way to reveal the
+              history behind each artwork through exploration, object interaction, and guided storytelling.
             </p>
             <p className="mt-4 leading-relaxed text-base-content/75">
-              The official project framing emphasizes accessibility, community memory, and cultural preservation.
-              That became the design challenge: build something immersive enough to deepen curiosity, but grounded
-              enough to honor the neighborhood, the people represented, and the public-art context the work comes
-              from.
+              Each mural was transformed from a static image into a dynamic storyline. Users interact with objects
+              that played critical roles in the history, hear how those moments changed the larger story, and uncover
+              the mural&apos;s meaning step by step instead of receiving it as a single block of information.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -326,14 +325,14 @@ function TellingOvertownStories() {
             <p className="mt-6 leading-relaxed text-base-content/75">
               The University of Miami reporting around the project describes Overtown as a neighborhood with deep
               cultural significance that is still unfamiliar to many people outside it. The experience responds to
-              that gap by using VR as a form of historical access: not as spectacle for its own sake, but as a way
-              to help more people step into the context surrounding the murals.
+              that gap by using VR as a form of guided historical access: not as spectacle for its own sake, but as
+              a way to help more people actively uncover the context surrounding the murals.
             </p>
             <p className="mt-4 leading-relaxed text-base-content/75">
               Miami MoCAAD&apos;s own project description also frames the work as a blend of art, history, and
               technology. That combination is what makes the project strong. It treats murals as more than surfaces
-              to be viewed; they become entry points into labor history, civic life, sports culture, and the living
-              resilience of Overtown.
+              to be viewed; they become interactive narrative systems where meaningful objects, audio, and spatial
+              cues gradually reveal labor history, civic life, sports culture, and the living resilience of Overtown.
             </p>
           </div>
 
@@ -345,8 +344,8 @@ function TellingOvertownStories() {
             </div>
             <div className="stat">
               <div className="stat-title">Core Interaction</div>
-              <div className="stat-value">Portal-Based</div>
-              <div className="stat-desc">Users walk into murals to uncover deeper historical context</div>
+              <div className="stat-value">Object-Based</div>
+              <div className="stat-desc">Users interact with scene objects to unlock story moments</div>
             </div>
             <div className="stat">
               <div className="stat-title">Public Launch</div>
@@ -358,27 +357,28 @@ function TellingOvertownStories() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6">
-        <SectionDivider label="Three Murals, Three Portals" />
+        <SectionDivider label="Three Murals, Three Interactive Stories" />
       </div>
 
       <section className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.92fr)] lg:items-center">
           <div className="max-w-4xl">
-            <h2 className="text-4xl font-bold">Each environment expands a mural into a fuller world</h2>
+            <h2 className="text-4xl font-bold">Each environment turns a mural into a step-by-step storyline</h2>
             <p className="mt-5 leading-relaxed text-base-content/75">
               The public-facing article about the project explains that users begin in a virtual Overtown, approach
-              the murals, and then step inside them. That structure made the exhibit feel less like a gallery page
-              and more like a sequence of interactive historical worlds.
+              the murals, and then step inside them. In our experience, stepping inside is not passive. Each mural
+              becomes a game-like scene where users interact with objects, trigger narration, and reveal how key
+              historical changes affected the whole story.
             </p>
             <p className="mt-4 leading-relaxed text-base-content/75">
               With the rebuilt mural and scene images included here, the design move becomes much easier to read.
-              Each portal starts from a public artwork in the neighborhood, then translates that artwork into a
-              spatial environment with its own mood, context, and storytelling purpose.
+              Each experience starts from a public artwork in the neighborhood, then translates that artwork into a
+              spatial storyline with its own mood, interaction pattern, and historical learning path.
             </p>
             <p className="mt-4 leading-relaxed text-base-content/75">
-              These comparisons also show that the digital spaces are not simple copies. They are interpretations.
-              The project chooses what to emphasize, what atmosphere to build, and how to turn a still image into
-              a place visitors can move through.
+              These comparisons also show that the digital spaces are not simple copies. They are interpretations:
+              the project chooses which objects matter, what order the story should unfold in, and how interaction
+              can help viewers truly understand the history behind the murals.
             </p>
           </div>
 
@@ -392,7 +392,7 @@ function TellingOvertownStories() {
         </div>
 
         <div className="mt-12 rounded-[1.75rem] border border-base-300 bg-base-100 p-6 shadow-xl">
-          <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Reading The Portal Structure</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Reading The Interaction Structure</p>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             <div className="rounded-[1.25rem] bg-base-200 p-5">
               <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">1. Start at the mural</p>
@@ -402,17 +402,17 @@ function TellingOvertownStories() {
               </p>
             </div>
             <div className="rounded-[1.25rem] bg-base-200 p-5">
-              <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">2. Rebuild the world</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">2. Interact with key objects</p>
               <p className="mt-3 leading-relaxed text-base-content/72">
-                The virtual scene interprets the mural into a navigable environment, adding scale, atmosphere, and
-                spatial cues that deepen the original story.
+                The virtual scene turns important historical symbols into touchpoints. Users discover the story by
+                choosing objects, listening to their meaning, and connecting them to the bigger narrative.
               </p>
             </div>
             <div className="rounded-[1.25rem] bg-base-200 p-5">
-              <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">3. Enter the story</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-base-content/45">3. Reveal the story step by step</p>
               <p className="mt-3 leading-relaxed text-base-content/72">
-                That shift from viewing to entering is the core interaction pattern of the exhibit and the reason
-                the murals feel like portals instead of references.
+                History unfolds through a sequence of interactions, changing the mural from a static image into a
+                dynamic storyline that viewers can understand through action.
               </p>
             </div>
           </div>
@@ -430,7 +430,7 @@ function TellingOvertownStories() {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
             <div>
               <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">My Contribution</p>
-              <h2 className="mt-3 text-4xl font-bold">Leading development while helping shape the virtual spaces</h2>
+              <h2 className="mt-3 text-4xl font-bold">Leading development while shaping interactive story scenes</h2>
               <p className="mt-6 leading-relaxed text-base-content/75">
                 My role on this project was Development Lead. I handled nearly all of the coding work needed to
                 bring the exhibit together, which meant taking the team&apos;s design and research decisions and
@@ -440,7 +440,8 @@ function TellingOvertownStories() {
                 My contribution also extended past implementation alone. I participated in about half of the scene
                 building, so my work sat at the intersection of engineering and environment production. That made
                 the role especially satisfying: I was not only wiring the experience together technically, but also
-                helping shape how visitors would move through and feel those historical spaces.
+                helping decide how visitors would move through the scene, what objects they would notice, and how
+                each interaction would reveal another part of the history.
               </p>
               <p className="mt-4 leading-relaxed text-base-content/75">
                 Because the project was collaborative and community-oriented, the job was not just &quot;make it
@@ -489,13 +490,14 @@ function TellingOvertownStories() {
             <p className="mt-6 leading-relaxed text-base-content/75">
               What makes this piece stand out in my portfolio is that it was designed to live in public. The
               experience was launched for community audiences, showcased with headsets in Overtown, and positioned
-              as a way for younger audiences and remote visitors to access stories that might otherwise stay tied to
-              one physical location.
+              as a way for younger audiences and remote visitors to actively learn stories that might otherwise
+              stay tied to one physical location.
             </p>
             <p className="mt-4 leading-relaxed text-base-content/75">
               The official School of Communication project page also notes that the work received a 2025 Silver
               ADDY. That recognition matters, but the more meaningful outcome is that the project helped extend a
-              community storytelling effort into a durable digital format.
+              community storytelling effort into a durable interactive format, where viewers could uncover history
+              through movement, objects, and listening instead of only looking.
             </p>
           </div>
 

@@ -158,6 +158,23 @@ function computePlacedItems(items, measuredHeights, minIndex) {
   });
 }
 
+function HistoryLogo({ item }) {
+  return (
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-base-300 bg-base-200 shadow-sm">
+      {item.logo ? (
+        <img
+          src={item.logo}
+          alt={item.logoAlt || `${item.organization} logo`}
+          className="h-full w-full object-contain"
+          loading="lazy"
+        />
+      ) : (
+        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/40">Icon</span>
+      )}
+    </div>
+  );
+}
+
 function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
   const blockRef = useRef(null);
   const isEducation = item.kind === 'education';
@@ -208,9 +225,7 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
           <div className={`badge badge-sm ${badgeClass}`}>{isEducation ? 'Education' : 'Work'}</div>
           <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">{item.period}</time>
           <div className={rowClass}>
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-dashed border-base-300 bg-base-200 text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/40">
-              Icon
-            </div>
+            <HistoryLogo item={item} />
             <div className={side === 'left' ? 'md:text-right' : ''}>
               <div className="text-lg font-black leading-tight">{item.title}</div>
               <div className="mt-1 text-sm font-semibold text-primary">{item.organization}</div>
@@ -272,9 +287,7 @@ function MobileHistoryList({ title, items, badgeClass }) {
               <div className={`badge badge-sm ${badgeClass}`}>{title}</div>
               <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">{item.period}</time>
               <div className="mt-3 flex items-start gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-dashed border-base-300 bg-base-200 text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/40">
-                  Icon
-                </div>
+                <HistoryLogo item={item} />
                 <div>
                   <div className="text-lg font-black leading-tight">{item.title}</div>
                   <div className="mt-1 text-sm font-semibold text-primary">{item.organization}</div>
