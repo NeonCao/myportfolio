@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/myportfolio/static/css/main.bd166748.css",
-    "main.js": "/myportfolio/static/js/main.33ef2e01.js",
+    "main.css": "/myportfolio/static/css/main.335f2fa8.css",
+    "main.js": "/myportfolio/static/js/main.1eb51905.js",
     "static/js/453.612f53fa.chunk.js": "/myportfolio/static/js/453.612f53fa.chunk.js",
     "static/media/IMG_20190616_124431.jpg": "/myportfolio/static/media/IMG_20190616_124431.e38a7d904a2ba2a0d029.jpg",
     "static/media/IMG_20210518_152709.jpg": "/myportfolio/static/media/IMG_20210518_152709.f97770b85f8771aee7c0.jpg",
@@ -55,6 +55,7 @@
     "static/media/Espresso_V2_P2_img4.png": "/myportfolio/static/media/Espresso_V2_P2_img4.bebda29e01a8e74f2e4a.png",
     "static/media/IMG_0975.JPEG": "/myportfolio/static/media/IMG_0975.3e2ab50c29c6337ef03d.JPEG",
     "static/media/Stellar_Reflection_P1.jpeg": "/myportfolio/static/media/Stellar_Reflection_P1.3a1ce965fdb592711890.jpeg",
+    "static/media/OverTown_Prize_2.png": "/myportfolio/static/media/OverTown_Prize_2.7da5579030c9a936897a.png",
     "static/media/Stellar_DataSource_P1.png": "/myportfolio/static/media/Stellar_DataSource_P1.2eabe971011be4ed7b7b.png",
     "static/media/IMG_2538.JPEG": "/myportfolio/static/media/IMG_2538.cfb797af6d24ead2bbee.JPEG",
     "static/media/MIX_hifi_58.jpg": "/myportfolio/static/media/MIX_hifi_58.5279eaaa91f049c2987c.jpg",
@@ -80,6 +81,7 @@
     "static/media/MIX_icon8.svg": "/myportfolio/static/media/MIX_icon8.e8e707780e69612a1424.svg",
     "static/media/_search-2041815_1280.jpg": "/myportfolio/static/media/67cb73c5413fbc8af9bdb492_search-2041815_1280.d98f3bccc6a12f07a84a.jpg",
     "static/media/Stellar_ChoiceOfGraphs_P1.jpeg": "/myportfolio/static/media/Stellar_ChoiceOfGraphs_P1.f2c3e3ad73b8e182d483.jpeg",
+    "static/media/OverTown_Prize_1.png": "/myportfolio/static/media/OverTown_Prize_1.17132a2ffc23aeaa68d0.png",
     "static/media/P12.png": "/myportfolio/static/media/P12.41552066544be8dd547b.png",
     "static/media/MIX_hifi_32.png": "/myportfolio/static/media/MIX_hifi_32.57989499fb1b1940fc10.png",
     "static/media/Espresso_V2_P2_img1.png": "/myportfolio/static/media/Espresso_V2_P2_img1.6181a8ed47a96a898e43.png",
@@ -174,6 +176,7 @@
     "static/media/MIX_hifi_53.jpg": "/myportfolio/static/media/MIX_hifi_53.b1de1faacff33b44be98.jpg",
     "static/media/cellphone-2590471_1280.jpg": "/myportfolio/static/media/cellphone-2590471_1280.5ee340c83ba0d1caaf54.jpg",
     "static/media/Untitled-1_1.png": "/myportfolio/static/media/Untitled-1_1.d628508ad95fa4e26da3.png",
+    "static/media/Logo_UniversityofMiami.png": "/myportfolio/static/media/Logo_UniversityofMiami.96240c0bf3bd9a3db1ad.png",
     "static/media/Stellar_VersionHistory_P4.jpeg": "/myportfolio/static/media/Stellar_VersionHistory_P4.add72b753263136ff581.jpeg",
     "static/media/MIX_hifi_41-p-1080.jpg": "/myportfolio/static/media/MIX_hifi_41-p-1080.7f834f21e7c4541a216f.jpg",
     "static/media/icon-Analyze-Data.png": "/myportfolio/static/media/icon-Analyze-Data.c4df6de4b3ebe91cdb5a.png",
@@ -283,6 +286,7 @@
     "static/media/MIX_hifi_18.webp": "/myportfolio/static/media/MIX_hifi_18.26109378687bee1f2f65.webp",
     "static/media/MIX_hifi_33-p-800.jpg": "/myportfolio/static/media/MIX_hifi_33-p-800.a16c04b0a83960bd92b7.jpg",
     "static/media/MIX_hifi_42.jpg": "/myportfolio/static/media/MIX_hifi_42.78448ca106971b2ad53b.jpg",
+    "static/media/Logo_BJUPI.png": "/myportfolio/static/media/Logo_BJUPI.2bc55db16180a701b768.png",
     "static/media/MIX_hifi_28-p-800.webp": "/myportfolio/static/media/MIX_hifi_28-p-800.dd694c7a717efcd3b84a.webp",
     "static/media/PiggyBank_Conclusion_P1.jpg": "/myportfolio/static/media/PiggyBank_Conclusion_P1.f1ef8b9505531c9abf11.jpg",
     "static/media/MIX_hifi_41-p-500.jpg": "/myportfolio/static/media/MIX_hifi_41-p-500.a96bff01e735ba5954a6.jpg",
@@ -329,6 +333,7 @@
     "static/media/Espresso_V2_P3_img2.png": "/myportfolio/static/media/Espresso_V2_P3_img2.53488e731f6d2c3f3f9a.png",
     "static/media/MIX_hifi_39-p-500.webp": "/myportfolio/static/media/MIX_hifi_39-p-500.fc62b9ee6eb010741bb7.webp",
     "static/media/MIX_hifi_33-p-500.jpg": "/myportfolio/static/media/MIX_hifi_33-p-500.6d3c169c39582e84044a.jpg",
+    "static/media/Logo_KingSoftCloud.png": "/myportfolio/static/media/Logo_KingSoftCloud.89ea903389d613bb9ce2.png",
     "static/media/MIX_hifi_1-p-500.webp": "/myportfolio/static/media/MIX_hifi_1-p-500.e81dbb6cfd49e65e61e6.webp",
     "static/media/MIX_hifi_26-p-500.webp": "/myportfolio/static/media/MIX_hifi_26-p-500.aa30b0310b215a246fd5.webp",
     "static/media/MIX_hifi_45.webp": "/myportfolio/static/media/MIX_hifi_45.34f1718ce1f5dd169ce1.webp",
@@ -339,8 +344,6 @@
     "static/media/MIX_hifi_15-p-800.webp": "/myportfolio/static/media/MIX_hifi_15-p-800.3b83aee8a764df215ad0.webp",
     "static/media/MIX_hifi_45-p-500.webp": "/myportfolio/static/media/MIX_hifi_45-p-500.b464cd86629b11b6b6bc.webp",
     "static/media/MIX_hifi_15-p-500.webp": "/myportfolio/static/media/MIX_hifi_15-p-500.8082c89f31b21f70cf42.webp",
-    "static/media/bea-festival-media-arts-2026-winner.svg": "/myportfolio/static/media/bea-festival-media-arts-2026-winner.d20585856ad4e50b76cc18976de49d02.svg",
-    "static/media/polys-immersive-awards-2025-nominee.svg": "/myportfolio/static/media/polys-immersive-awards-2025-nominee.92b3498ae19c264b82e99736aba8bcbc.svg",
     "static/media/MIX_icon1.svg": "/myportfolio/static/media/MIX_icon1.6c074b54dbafab6a168b.svg",
     "static/media/MIX_Blog_step3_L1.svg": "/myportfolio/static/media/MIX_Blog_step3_L1.9f1443fd8ac35544757d.svg",
     "static/media/MIX_icon2.svg": "/myportfolio/static/media/MIX_icon2.ca5f426d972d554b5e63.svg",
@@ -383,12 +386,12 @@
     "static/media/MIX_icon32.svg": "/myportfolio/static/media/MIX_icon32.3131833b5a0488673b40.svg",
     "static/media/MIX_icon34.svg": "/myportfolio/static/media/MIX_icon34.3b9d3d1b03cc2eefc0e4.svg",
     "static/media/MIX_icon36.svg": "/myportfolio/static/media/MIX_icon36.8c6a30c9e9a4a34dfd6e.svg",
-    "main.bd166748.css.map": "/myportfolio/static/css/main.bd166748.css.map",
-    "main.33ef2e01.js.map": "/myportfolio/static/js/main.33ef2e01.js.map",
+    "main.335f2fa8.css.map": "/myportfolio/static/css/main.335f2fa8.css.map",
+    "main.1eb51905.js.map": "/myportfolio/static/js/main.1eb51905.js.map",
     "453.612f53fa.chunk.js.map": "/myportfolio/static/js/453.612f53fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd166748.css",
-    "static/js/main.33ef2e01.js"
+    "static/css/main.335f2fa8.css",
+    "static/js/main.1eb51905.js"
   ]
 }
