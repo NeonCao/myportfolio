@@ -47,7 +47,7 @@ function Hero() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-content/78 md:text-lg">
-            I build thoughtful digital experiences across UX, frontend development, backend development, and immersive media,
+            I build thoughtful digital experiences across UX, front/backend development, mixed reality, AI integration, and data structures, 
             with a focus on making technology feel easy-accessible, ai-driven, and worth exploring.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -75,10 +75,31 @@ function Hero() {
               </svg>
               My LinkedIn
             </a>
+            <a
+              href="https://github.com/NeonCao"
+              target="_blank"
+              rel="noreferrer"
+              className="btn border-white/20 bg-[#181717] text-white hover:border-white/35 hover:bg-[#242424]"
+            >
+              <svg
+                aria-label="GitHub logo"
+                width="18"
+                height="18"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 2C6.477 2 2 6.589 2 12.253c0 4.53 2.865 8.371 6.839 9.727.5.094.683-.222.683-.494 0-.244-.009-.89-.014-1.747-2.782.62-3.369-1.375-3.369-1.375-.455-1.185-1.11-1.5-1.11-1.5-.908-.636.069-.623.069-.623 1.004.072 1.532 1.057 1.532 1.057.892 1.567 2.341 1.115 2.91.852.091-.663.349-1.115.635-1.371-2.221-.259-4.555-1.138-4.555-5.064 0-1.119.39-2.034 1.03-2.75-.103-.259-.446-1.302.098-2.713 0 0 .84-.276 2.75 1.05A9.34 9.34 0 0 1 12 6.988c.85.004 1.705.118 2.504.346 1.909-1.326 2.747-1.05 2.747-1.05.546 1.411.203 2.454.1 2.713.641.716 1.029 1.631 1.029 2.75 0 3.936-2.338 4.802-4.566 5.056.359.317.679.944.679 1.902 0 1.372-.013 2.478-.013 2.815 0 .274.18.593.688.493C19.138 20.621 22 16.782 22 12.253 22 6.589 17.523 2 12 2Z" />
+              </svg>
+              My GitHub
+            </a>
             <a href="#personal-history" className="btn btn-outline text-neutral-content">
               See My Personal History
             </a>
           </div>
+          <p className="mt-5 text-sm font-medium text-neutral-content/62">
+            This whole site was designed and built by me using React.
+          </p>
         </div>
       </div>
     </div>

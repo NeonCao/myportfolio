@@ -14,11 +14,13 @@ import UMCardSortingStudy from './pages/UMCardSortingStudy';
 import ProjectAboutMyself from './pages/ProjectAboutMyself';
 import MemoryGraden from './pages/MemoryGraden';
 import LexiLearn from './pages/LexiLearn';
+import AnalyticsDashboard from './pages/AnalyticsDashboard';
 import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
 import NavigationEffects from './components/NavigationEffects';
+import SiteClickTracker from './components/SiteClickTracker';
 import universityOfMiamiLogo from './assets/images/index_Page/Logo_UniversityofMiami.png';
 import kingSoftCloudLogo from './assets/images/index_Page/Logo_KingSoftCloud.png';
 import bjupiLogo from './assets/images/index_Page/Logo_BJUPI.png';
@@ -150,6 +152,7 @@ function App() {
   return (
     <BrowserRouter basename={routerBasename}>
       <NavigationEffects basename={routerBasename} />
+      <SiteClickTracker />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -166,6 +169,7 @@ function App() {
         <Route path="/projects/about-myself" element={<ProjectAboutMyself />} />
         <Route path="/projects/memory-graden" element={<MemoryGraden />} />
         <Route path="/projects/lexilearn" element={<LexiLearn />} />
+        <Route path="/analytics" element={<AnalyticsDashboard />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/gallery/:photoSlug" element={<Gallery />} />
       </Routes>

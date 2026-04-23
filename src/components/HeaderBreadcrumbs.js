@@ -44,6 +44,10 @@ function getBreadcrumbItems(pathname) {
     return [home, { to: '/gallery', label: 'Gallary' }];
   }
 
+  if (pathname === '/analytics') {
+    return [home, { to: '/analytics', label: 'Analytics' }];
+  }
+
   if (pathname.startsWith('/gallery/')) {
     const photoSlug = pathname.split('/')[2];
     const photo = getGalleryPhotoBySlug(photoSlug);
