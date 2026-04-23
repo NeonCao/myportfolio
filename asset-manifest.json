@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/myportfolio/static/css/main.335f2fa8.css",
-    "main.js": "/myportfolio/static/js/main.1eb51905.js",
+    "main.css": "/myportfolio/static/css/main.cfc4da19.css",
+    "main.js": "/myportfolio/static/js/main.7224a0f4.js",
     "static/js/453.612f53fa.chunk.js": "/myportfolio/static/js/453.612f53fa.chunk.js",
     "static/media/IMG_20190616_124431.jpg": "/myportfolio/static/media/IMG_20190616_124431.e38a7d904a2ba2a0d029.jpg",
     "static/media/IMG_20210518_152709.jpg": "/myportfolio/static/media/IMG_20210518_152709.f97770b85f8771aee7c0.jpg",
@@ -67,6 +67,7 @@
     "static/media/future-tracking.webp": "/myportfolio/static/media/future-tracking.ebaf5076363b8fd74908.webp",
     "static/media/UMXRP_StoryBoard_P3.png": "/myportfolio/static/media/UMXRP_StoryBoard_P3.b3865861dff53d9855e8.png",
     "static/media/IMG_2474.JPEG": "/myportfolio/static/media/IMG_2474.3cd9d9f23891f80f5af6.JPEG",
+    "static/media/OverTown_Prize_1.png": "/myportfolio/static/media/OverTown_Prize_1.87b7e7547d03f91929c0.png",
     "static/media/Espresso_Img4.png": "/myportfolio/static/media/Espresso_Img4.8c470750bbf1da8be0cd.png",
     "static/media/MIX_hifi_47.jpg": "/myportfolio/static/media/MIX_hifi_47.392831908fc03f828b13.jpg",
     "static/media/P3_Gaming.jpg": "/myportfolio/static/media/P3_Gaming.f9c1bf624bee07008610.jpg",
@@ -81,7 +82,6 @@
     "static/media/MIX_icon8.svg": "/myportfolio/static/media/MIX_icon8.e8e707780e69612a1424.svg",
     "static/media/_search-2041815_1280.jpg": "/myportfolio/static/media/67cb73c5413fbc8af9bdb492_search-2041815_1280.d98f3bccc6a12f07a84a.jpg",
     "static/media/Stellar_ChoiceOfGraphs_P1.jpeg": "/myportfolio/static/media/Stellar_ChoiceOfGraphs_P1.f2c3e3ad73b8e182d483.jpeg",
-    "static/media/OverTown_Prize_1.png": "/myportfolio/static/media/OverTown_Prize_1.17132a2ffc23aeaa68d0.png",
     "static/media/P12.png": "/myportfolio/static/media/P12.41552066544be8dd547b.png",
     "static/media/MIX_hifi_32.png": "/myportfolio/static/media/MIX_hifi_32.57989499fb1b1940fc10.png",
     "static/media/Espresso_V2_P2_img1.png": "/myportfolio/static/media/Espresso_V2_P2_img1.6181a8ed47a96a898e43.png",
@@ -126,6 +126,7 @@
     "static/media/UMCR_Hero.jpg": "/myportfolio/static/media/UMCR_Hero.c9359a258a309e07b466.jpg",
     "static/media/Calories_Hero.png": "/myportfolio/static/media/Calories_Hero.a93da513678341d33836.png",
     "static/media/PiggyBank_Challenges_P1.png": "/myportfolio/static/media/PiggyBank_Challenges_P1.69c4093812614b6f499c.png",
+    "static/media/lexiLearn_Hero.png": "/myportfolio/static/media/lexiLearn_Hero.b13ee109c5b45a7651f9.png",
     "static/media/MIX_hifi_39.webp": "/myportfolio/static/media/MIX_hifi_39.da0b8519cb884d0f2a76.webp",
     "static/media/P17_icon.png": "/myportfolio/static/media/P17_icon.125eef5f48e578180806.png",
     "static/media/MIX_Blog_step2_1.jpg": "/myportfolio/static/media/MIX_Blog_step2_1.8dd779649318042eb8d0.jpg",
@@ -386,12 +387,12 @@
     "static/media/MIX_icon32.svg": "/myportfolio/static/media/MIX_icon32.3131833b5a0488673b40.svg",
     "static/media/MIX_icon34.svg": "/myportfolio/static/media/MIX_icon34.3b9d3d1b03cc2eefc0e4.svg",
     "static/media/MIX_icon36.svg": "/myportfolio/static/media/MIX_icon36.8c6a30c9e9a4a34dfd6e.svg",
-    "main.335f2fa8.css.map": "/myportfolio/static/css/main.335f2fa8.css.map",
-    "main.1eb51905.js.map": "/myportfolio/static/js/main.1eb51905.js.map",
+    "main.cfc4da19.css.map": "/myportfolio/static/css/main.cfc4da19.css.map",
+    "main.7224a0f4.js.map": "/myportfolio/static/js/main.7224a0f4.js.map",
     "453.612f53fa.chunk.js.map": "/myportfolio/static/js/453.612f53fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.335f2fa8.css",
-    "static/js/main.1eb51905.js"
+    "static/css/main.cfc4da19.css",
+    "static/js/main.7224a0f4.js"
   ]
 }
