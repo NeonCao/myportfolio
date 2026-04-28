@@ -14,6 +14,7 @@ import UMCardSortingStudy from './pages/UMCardSortingStudy';
 import ProjectAboutMyself from './pages/ProjectAboutMyself';
 import MemoryGraden from './pages/MemoryGraden';
 import LexiLearn from './pages/LexiLearn';
+import FiveStarHostRedesign from './pages/FiveStarHostRedesign';
 import AnalyticsDashboard from './pages/AnalyticsDashboard';
 import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
@@ -169,6 +170,7 @@ function App() {
         <Route path="/projects/about-myself" element={<ProjectAboutMyself />} />
         <Route path="/projects/memory-graden" element={<MemoryGraden />} />
         <Route path="/projects/lexilearn" element={<LexiLearn />} />
+        <Route path="/projects/5-star-host-web-page-redesign" element={<FiveStarHostRedesign />} />
         <Route path="/analytics" element={<AnalyticsDashboard />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/gallery/:photoSlug" element={<Gallery />} />

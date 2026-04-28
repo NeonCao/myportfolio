@@ -14,6 +14,7 @@ const projectPageNames = {
   '/projects/about-myself': 'Project About Myself',
   '/projects/memory-graden': 'Memory Graden',
   '/projects/lexilearn': 'LexiLearn',
+  '/projects/5-star-host-web-page-redesign': 'Case Study: 5-Star Host web page redesign',
 };
 
 function FolderIcon() {

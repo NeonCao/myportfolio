@@ -12,6 +12,7 @@ import cardSortingImage from '../assets/images/um-card-sorting/Untitled-1_2.png'
 import aboutMyselfImage from '../assets/images/project-about-myself/IMG_1744.JPG';
 import memoryGradenImage from '../assets/images/memory_garden/memory_garden_Hero.png';
 import lexiLearnImage from '../assets/images/lexilearn/lexiLearn_Hero.png';
+import fiveStarHostImage from '../assets/images/five-star-host/five-star-host-hero.png';
 
 const projects = [
   {
@@ -48,6 +49,13 @@ const projects = [
     image: overtownImage,
     details: 'A virtual exhibit experience that extends Overtown mural narratives through interactive storytelling and VR.',
     href: '/projects/telling-overtown-stories',
+  },
+  {
+    title: 'Case Study: 5-Star Host web page redesign',
+    description: 'Hospitality web page redesign',
+    image: fiveStarHostImage,
+    details: 'A case study page scaffold for the 5-Star Host web page redesign, ready for process notes and final deliverables.',
+    href: '/projects/5-star-host-web-page-redesign',
   },
   {
     title: 'UM Campus Xplorer',
