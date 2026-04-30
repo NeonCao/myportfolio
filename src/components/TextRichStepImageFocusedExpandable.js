@@ -7,10 +7,11 @@ function TextRichStepImageFocusedExpandable({
   sections = [],
   bullets = [],
   images = [],
-  imageLeft = false,
+  tileFit = 'cover',
+  imageLayout = 'grid',
 }) {
   const textBlock = (
-    <div className={`space-y-6 lg:sticky lg:top-28 lg:col-span-3 lg:self-start ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+    <div className="max-w-4xl space-y-6">
       <div>
         <p className="mb-2 text-xs uppercase tracking-[0.35em] opacity-50">Step {number}</p>
         <h3 className="text-3xl font-bold leading-tight">{title}</h3>
@@ -44,9 +45,9 @@ function TextRichStepImageFocusedExpandable({
   );
 
   const imageBlock = (
-    <div className={`grid gap-4 lg:col-span-7 ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+    <div className="grid gap-4">
       {images.length > 1 ? (
-        <ExpandableImageRow images={images} title={title} />
+        <ExpandableImageRow images={images} title={title} tileFit={tileFit} layout={imageLayout} />
       ) : (
         images.map((img) => (
           <figure key={img.src} className="space-y-2">
@@ -59,7 +60,7 @@ function TextRichStepImageFocusedExpandable({
   );
 
   return (
-    <section className="grid gap-10 border-t border-base-300 py-16 lg:grid-cols-10 lg:items-start">
+    <section className="space-y-10 border-t border-base-300 py-16">
       {textBlock}
       {imageBlock}
     </section>

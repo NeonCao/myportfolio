@@ -14,6 +14,11 @@ import resImg3 from '../assets/images/five-star-host/res_img3.png';
 import resImg4 from '../assets/images/five-star-host/res_img4.png';
 import resImg5 from '../assets/images/five-star-host/res_img5.png';
 import resImg6 from '../assets/images/five-star-host/res_img6.png';
+import hiFiImg1 from '../assets/images/five-star-host/High_Fi_Home.png';
+import hiFiImg2 from '../assets/images/five-star-host/High_Fi_PropertyMngmt.png';
+import hiFiImg3 from '../assets/images/five-star-host/High_Fi_Listing.png';
+import hiFiImg4 from '../assets/images/five-star-host/High_Fi_About.png';
+import hiFiImg5 from '../assets/images/five-star-host/High_Fi_Contact.png';
 
 const intro = [
   {
@@ -91,25 +96,14 @@ const redesignSteps = [
     title: 'High-Fidelity Prototyping',
     intro:
       'The high-fidelity prototype was developed directly from the low-fidelity wireframes, refining the overall structure with detailed, fully realized components. It enhances visual hierarchy, interaction clarity, and design consistency while preserving the original layout decisions. Additionally, existing images from the client’s old website were reused and integrated, ensuring visual continuity while elevating the overall presentation.',
-    sections: [
-      {
-        heading: 'Research Methodology: Site-by-Site Analysis',
-        body: 'Key Findings:',
-      },
-    ],
-    bullets: [
-      'Minimalist Design: A less-is-more approach to avoid overwhelming users with information.',
-      'Step-by-Step Guidance: Clear and concise guidance to simplify user journeys and reduce friction.',
-      'Consistent Design Language: A unified visual style to enhance brand recognition and professionalism.',
-    ],
     images: [
-      { src: resImg1, alt: 'Research finding 1' },
-      { src: resImg2, alt: 'Research finding 2' },
-      { src: resImg3, alt: 'Research finding 3' },
-      { src: resImg4, alt: 'Research finding 4' },
-      { src: resImg5, alt: 'Research finding 5' },
+      { src: hiFiImg1, alt: 'High-fidelity Home page prototype', caption: 'Home page' },
+      { src: hiFiImg2, alt: 'High-fidelity Property Management page prototype', caption: 'Property Management' },
+      { src: hiFiImg3, alt: 'High-fidelity Rental Listing page prototype', caption: 'Rental Listing' },
+      { src: hiFiImg4, alt: 'High-fidelity About page prototype', caption: 'About' },
+      { src: hiFiImg5, alt: 'High-fidelity Contact page prototype', caption: 'Contact' },
     ],
-    imageLeft: true,
+    imageLayout: 'balanced-grid',
   },
 ];
 
@@ -136,7 +130,7 @@ function FiveStarHostRedesign() {
       <section className="bg-base-100">
         <div className="max-w-6xl mx-auto px-6">
           {redesignSteps.map((step) => (
-            step.number === '1' ? (
+            step.number !== '3' ? (
               <TextRichStepImageFocused key={step.number} {...step} />
             ) : (
               <TextRichStepImageFocusedExpandable key={step.number} {...step} />
