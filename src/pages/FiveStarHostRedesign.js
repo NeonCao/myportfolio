@@ -19,6 +19,7 @@ import hiFiImg2 from '../assets/images/five-star-host/High_Fi_PropertyMngmt.png'
 import hiFiImg3 from '../assets/images/five-star-host/High_Fi_Listing.png';
 import hiFiImg4 from '../assets/images/five-star-host/High_Fi_About.png';
 import hiFiImg5 from '../assets/images/five-star-host/High_Fi_Contact.png';
+import contribuationImg3 from '../assets/images/five-star-host/contribution_img3.png';
 
 const intro = [
   {
@@ -107,6 +108,57 @@ const redesignSteps = [
   },
 ];
 
+const wireframingContributions = [
+  {
+    title: 'Property Management page',
+    body:
+      'For the Property Management service page, I improved aesthetics and usability by reorganizing and redesigning components for a clearer, more intuitive layout. Insights from Reddit and Quora informed common user questions, leading to additions like an FAQ section and a service comparison tool to support clearer understanding and better decision-making.',
+  },
+  {
+    title: 'Rental Listing page',
+    body:
+      'To give clients a tangible preview of how their properties would appear online, we designed a Rental Listing page with sample listings. This helped owners understand the platform’s value while also supporting renters through a portal linking to external listings. Across these pages, components were reorganized and redesigned to improve clarity, navigation, and ease of use.',
+  },
+  {
+    title: 'Reusable components and consistency',
+    body:
+      'I also designed reusable components to maintain cross-page consistency and streamline the design system. Through close collaboration and a shared visual style guide, we ensured the site remained cohesive, professional, and polished across all key pages.',
+    image: contribuationImg3,
+    alt: 'Reusable component examples from the 5-Star Host redesign',
+  },
+];
+
+function WireframingContributionSection() {
+  return (
+    <section className="border-t border-base-300 py-16">
+      <div className="max-w-4xl">
+        <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Wireframing Process</p>
+        <h2 className="mt-3 text-4xl font-bold">What I did during the wireframing process</h2>
+        <p className="mt-5 leading-relaxed text-base-content/75">
+          My wireframing work focused on turning research findings into clearer page structures,
+          reusable components, and more purposeful user flows for both property owners and renters.
+        </p>
+      </div>
+
+      <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        {wireframingContributions.map((item) => (
+          <article key={item.title} className="overflow-hidden rounded-[1.5rem] border border-base-300 bg-base-200/40 shadow-sm">
+            {item.image ? (
+              <div className="aspect-[4/3] overflow-hidden bg-base-200">
+                <img src={item.image} alt={item.alt || item.title} className="h-full w-full object-cover object-top" />
+              </div>
+            ) : null}
+            <div className="p-6">
+              <h3 className="text-xl font-semibold leading-tight">{item.title}</h3>
+              <p className="mt-4 leading-relaxed text-base-content/72">{item.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function FiveStarHostRedesign() {
   return (
     <main>
@@ -130,10 +182,15 @@ function FiveStarHostRedesign() {
       <section className="bg-base-100">
         <div className="max-w-6xl mx-auto px-6">
           {redesignSteps.map((step) => (
-            step.number !== '3' ? (
-              <TextRichStepImageFocused key={step.number} {...step} />
-            ) : (
+            step.number === '2' ? (
+              <div key={step.number}>
+                <TextRichStepImageFocused {...step} />
+                <WireframingContributionSection />
+              </div>
+            ) : step.number === '3' ? (
               <TextRichStepImageFocusedExpandable key={step.number} {...step} />
+            ) : (
+              <TextRichStepImageFocused key={step.number} {...step} />
             )
           ))}
         </div>
