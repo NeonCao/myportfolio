@@ -1,16 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ASMRStaticBackground from './ASMRStaticBackground';
+import { useTranslation } from '../i18n/LanguageContext';
 
-const rotatingRoles = [
-  { label: 'UX Designer', className: 'text-info' },
-  { label: 'Programmer', className: 'text-success' },
-  { label: 'Developer', className: 'text-warning-content' },
-  { label: 'Researcher', className: 'text-secondary' },
-];
+const roleClassNames = ['text-info', 'text-success', 'text-warning-content', 'text-secondary'];
 
 function Hero() {
   const [activeRoleIndex, setActiveRoleIndex] = useState(0);
+  const { t } = useTranslation();
+  const roleLabels = t('hero.roles');
+  const firstRoleLabel = roleLabels[0];
+  const rotatingRoles = useMemo(
+    () =>
+      roleLabels.map((label, index) => ({
+        label,
+        className: roleClassNames[index] || 'text-primary',
+      })),
+    [roleLabels]
+  );
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -18,7 +25,11 @@ function Hero() {
     }, 2200);
 
     return () => window.clearInterval(intervalId);
-  }, []);
+  }, [rotatingRoles.length]);
+
+  useEffect(() => {
+    setActiveRoleIndex(0);
+  }, [firstRoleLabel]);
 
   return (
     <div className="hero relative min-h-screen overflow-hidden bg-[#0a0a0c]">
@@ -26,10 +37,10 @@ function Hero() {
       <div className="hero-overlay bg-black/45"></div>
       <div className="hero-content relative z-10 w-full px-4 text-neutral-content text-center sm:px-6">
         <div className="w-full max-w-4xl rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-md md:px-10 md:py-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-neutral-content/70">Portfolio</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-neutral-content/70">{t('hero.eyebrow')}</p>
           <div className="mx-auto my-5 h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-            <span>Hello, I&apos;m Neon Cao, a </span>
+            <span>{t('hero.introPrefix')}</span>
             <span className="hero-text-rotate">
               <span
                 className="hero-text-rotate-track"
@@ -47,12 +58,11 @@ function Hero() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-content/78 md:text-lg">
-            I build thoughtful digital experiences across UX, front/backend development, mixed reality, AI integration, and data structures, 
-            with a focus on making technology feel easy-accessible, ai-driven, and worth exploring.
+            {t('hero.summary')}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/projects" className="btn btn-primary">
-              My Projects
+              {t('hero.projectsButton')}
             </Link>
             <a
               href="https://www.linkedin.com/in/wenxin-cao-80322a230/"
@@ -73,7 +83,7 @@ function Hero() {
                   fillRule="evenodd"
                 ></path>
               </svg>
-              My LinkedIn
+              {t('hero.linkedInButton')}
             </a>
             <a
               href="https://github.com/NeonCao"
@@ -91,14 +101,14 @@ function Hero() {
               >
                 <path d="M12 2C6.477 2 2 6.589 2 12.253c0 4.53 2.865 8.371 6.839 9.727.5.094.683-.222.683-.494 0-.244-.009-.89-.014-1.747-2.782.62-3.369-1.375-3.369-1.375-.455-1.185-1.11-1.5-1.11-1.5-.908-.636.069-.623.069-.623 1.004.072 1.532 1.057 1.532 1.057.892 1.567 2.341 1.115 2.91.852.091-.663.349-1.115.635-1.371-2.221-.259-4.555-1.138-4.555-5.064 0-1.119.39-2.034 1.03-2.75-.103-.259-.446-1.302.098-2.713 0 0 .84-.276 2.75 1.05A9.34 9.34 0 0 1 12 6.988c.85.004 1.705.118 2.504.346 1.909-1.326 2.747-1.05 2.747-1.05.546 1.411.203 2.454.1 2.713.641.716 1.029 1.631 1.029 2.75 0 3.936-2.338 4.802-4.566 5.056.359.317.679.944.679 1.902 0 1.372-.013 2.478-.013 2.815 0 .274.18.593.688.493C19.138 20.621 22 16.782 22 12.253 22 6.589 17.523 2 12 2Z" />
               </svg>
-              My GitHub
+              {t('hero.githubButton')}
             </a>
             <a href="#personal-history" className="btn btn-outline text-neutral-content">
-              See My Personal History
+              {t('hero.historyButton')}
             </a>
           </div>
           <p className="mt-5 text-sm font-medium text-neutral-content/62">
-            This whole site was designed and built by me using React.
+            {t('hero.siteCredit')}
           </p>
         </div>
       </div>

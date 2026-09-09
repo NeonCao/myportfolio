@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { getGalleryPhotoBySlug } from '../data/galleryPhotos';
+import { useTranslation } from '../i18n/LanguageContext';
+import { translateProjectPhrase } from '../i18n/projectPhraseTranslations';
 
 const projectPageNames = {
   '/projects/interactive-piggy-bank': 'Interactive Piggy Bank',
@@ -30,23 +32,23 @@ function FolderIcon() {
   );
 }
 
-function getBreadcrumbItems(pathname) {
-  const home = { to: '/', label: "Neon's Home" };
+function getBreadcrumbItems(pathname, t, language) {
+  const home = { to: '/', label: t('header.breadcrumbHome') };
 
   if (pathname === '/') {
     return [home];
   }
 
   if (pathname === '/projects') {
-    return [home, { to: '/projects', label: 'Projects' }];
+    return [home, { to: '/projects', label: t('header.projects') }];
   }
 
   if (pathname === '/gallery') {
-    return [home, { to: '/gallery', label: 'Gallary' }];
+    return [home, { to: '/gallery', label: t('header.gallery') }];
   }
 
   if (pathname === '/analytics') {
-    return [home, { to: '/analytics', label: 'Analytics' }];
+    return [home, { to: '/analytics', label: t('header.analytics') }];
   }
 
   if (pathname.startsWith('/gallery/')) {
@@ -55,16 +57,19 @@ function getBreadcrumbItems(pathname) {
 
     return [
       home,
-      { to: '/gallery', label: 'Gallary' },
-      { to: pathname, label: photo?.baseName || 'Photo' },
+      { to: '/gallery', label: t('header.gallery') },
+      { to: pathname, label: photo?.baseName || t('header.photo') },
     ];
   }
 
   if (pathname.startsWith('/projects/')) {
     return [
       home,
-      { to: '/projects', label: 'Projects' },
-      { to: pathname, label: projectPageNames[pathname] || 'Project' },
+      { to: '/projects', label: t('header.projects') },
+      {
+        to: pathname,
+        label: translateProjectPhrase(projectPageNames[pathname] || t('header.project'), language),
+      },
     ];
   }
 
@@ -73,7 +78,8 @@ function getBreadcrumbItems(pathname) {
 
 function HeaderBreadcrumbs() {
   const { pathname } = useLocation();
-  const items = getBreadcrumbItems(pathname);
+  const { language, t } = useTranslation();
+  const items = getBreadcrumbItems(pathname, t, language);
 
   return (
     <div className="breadcrumbs max-w-[calc(100vw-11rem)] overflow-x-auto text-sm">

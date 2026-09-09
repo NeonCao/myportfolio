@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../i18n/LanguageContext';
 
 const MONTH_NAMES = {
   jan: 0,
@@ -159,6 +160,8 @@ function computePlacedItems(items, measuredHeights, minIndex) {
 }
 
 function HistoryLogo({ item }) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-base-300 bg-base-200 shadow-sm">
       {item.logo ? (
@@ -169,13 +172,14 @@ function HistoryLogo({ item }) {
           loading="lazy"
         />
       ) : (
-        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/40">Icon</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/40">{t('history.logoFallback')}</span>
       )}
     </div>
   );
 }
 
 function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
+  const { t } = useTranslation();
   const blockRef = useRef(null);
   const isEducation = item.kind === 'education';
   const wrapperClass = side === 'left' ? 'absolute left-0 right-0 pr-4 md:text-right' : 'absolute left-0 right-0 pl-4';
@@ -220,10 +224,17 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
           expanded ? 'collapse-open' : 'collapse-close'
         }`}
       >
-        <input type="checkbox" checked={expanded} onChange={() => onToggle(item.key)} aria-label={`Toggle ${item.title}`} />
+        <input
+          type="checkbox"
+          checked={expanded}
+          onChange={() => onToggle(item.key)}
+          aria-label={t('history.toggleItem').replace('{title}', item.title)}
+        />
         <div className={collapseTitleClass}>
-          <div className={`badge badge-sm ${badgeClass}`}>{isEducation ? 'Education' : 'Work'}</div>
-          <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">{item.period}</time>
+          <div className={`badge badge-sm ${badgeClass}`}>{isEducation ? t('history.education') : t('history.work')}</div>
+          <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">
+            {item.displayPeriod || item.period}
+          </time>
           <div className={rowClass}>
             <HistoryLogo item={item} />
             <div className={side === 'left' ? 'md:text-right' : ''}>
@@ -237,7 +248,7 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
           {item.relatedWork?.length ? (
             <div className={linkGroupClass}>
               <p className={`w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/45 ${side === 'left' ? 'md:text-right' : ''}`}>
-                Related Work
+                {t('history.relatedWork')}
               </p>
               {item.relatedWork.map((project) => (
                 <Link key={`${item.title}-${project.to}`} to={project.to} className="btn btn-xs btn-outline">
@@ -253,8 +264,10 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
 }
 
 function MobileHistoryList({ title, items, badgeClass }) {
+  const { t } = useTranslation();
   const [expandedKeys, setExpandedKeys] = useState({});
-  const isEducation = title === 'Education';
+  const isEducation = title === 'education';
+  const displayTitle = isEducation ? t('history.education') : t('history.work');
   const collapseTitleClass = isEducation
     ? 'collapse-title p-4 after:start-5 after:end-auto pe-4 ps-12'
     : 'collapse-title p-4 pr-12';
@@ -268,7 +281,7 @@ function MobileHistoryList({ title, items, badgeClass }) {
 
   return (
     <div>
-      <div className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-base-content/55">{title}</div>
+      <div className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-base-content/55">{displayTitle}</div>
       <div className="space-y-4">
         {items.map((item, index) => (
           <div
@@ -281,11 +294,13 @@ function MobileHistoryList({ title, items, badgeClass }) {
               type="checkbox"
               checked={!!expandedKeys[item.key]}
               onChange={() => toggleExpanded(item.key)}
-              aria-label={`Toggle ${item.title}`}
+              aria-label={t('history.toggleItem').replace('{title}', item.title)}
             />
             <div className={collapseTitleClass}>
-              <div className={`badge badge-sm ${badgeClass}`}>{title}</div>
-              <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">{item.period}</time>
+              <div className={`badge badge-sm ${badgeClass}`}>{displayTitle}</div>
+              <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">
+                {item.displayPeriod || item.period}
+              </time>
               <div className="mt-3 flex items-start gap-3">
                 <HistoryLogo item={item} />
                 <div>
@@ -299,7 +314,7 @@ function MobileHistoryList({ title, items, badgeClass }) {
               {item.relatedWork?.length ? (
                 <div className="mt-4 flex flex-wrap gap-2">
                   <p className="w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/45">
-                    Related Work
+                    {t('history.relatedWork')}
                   </p>
                   {item.relatedWork.map((project) => (
                     <Link key={`${item.title}-${project.to}`} to={project.to} className="btn btn-xs btn-outline">
@@ -321,6 +336,7 @@ function PersonalHistory({
   workHistory = [],
   heading = 'Recent Personal History',
 }) {
+  const { t } = useTranslation();
   const educationItems = useMemo(() => layoutLane(educationHistory, 'education'), [educationHistory]);
   const workItems = useMemo(() => layoutLane(workHistory, 'work'), [workHistory]);
   const [expandedKeys, setExpandedKeys] = useState({});
@@ -402,18 +418,18 @@ function PersonalHistory({
     <section className="bg-base-200/60 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Personal History</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">{t('history.eyebrow')}</p>
           <h2 className="mt-3 text-4xl font-bold sm:text-5xl">{heading}</h2>
         </div>
 
         <div className="rounded-[2rem] border border-base-300 bg-base-100 p-6 shadow-2xl sm:p-8">
           <div className="mb-8 hidden gap-4 md:grid md:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)] md:items-center">
             <div className="text-sm font-semibold uppercase tracking-[0.3em] text-base-content/55 md:text-right">
-              Education
+              {t('history.education')}
             </div>
             <div></div>
             <div className="text-sm font-semibold uppercase tracking-[0.3em] text-base-content/55">
-              Work
+              {t('history.work')}
             </div>
           </div>
 
@@ -455,8 +471,8 @@ function PersonalHistory({
           </div>
 
           <div className="space-y-10 md:hidden">
-            <MobileHistoryList title="Education" items={keyedEducationItems} badgeClass="badge-secondary" />
-            <MobileHistoryList title="Work" items={keyedWorkItems} badgeClass="badge-accent" />
+            <MobileHistoryList title="education" items={keyedEducationItems} badgeClass="badge-secondary" />
+            <MobileHistoryList title="work" items={keyedWorkItems} badgeClass="badge-accent" />
           </div>
         </div>
       </div>

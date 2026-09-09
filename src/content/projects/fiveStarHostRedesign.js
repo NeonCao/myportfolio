@@ -1,0 +1,140 @@
+import heroImage from '../../assets/images/five-star-host/five-star-host-hero.png';
+import introImage_Client from '../../assets/images/five-star-host/img_ourClient.png';
+import introImage_Problem from '../../assets/images/five-star-host/img_theProblem.png';
+import introImage_UserGroup from '../../assets/images/five-star-host/img_userGroup.png';
+import introImage_Collaboration from '../../assets/images/five-star-host/img_ourTeam.png';
+import resImg1 from '../../assets/images/five-star-host/res_img1.png';
+import resImg2 from '../../assets/images/five-star-host/res_img2.png';
+import resImg3 from '../../assets/images/five-star-host/res_img3.png';
+import resImg4 from '../../assets/images/five-star-host/res_img4.png';
+import resImg5 from '../../assets/images/five-star-host/res_img5.png';
+import resImg6 from '../../assets/images/five-star-host/res_img6.png';
+import hiFiImg1 from '../../assets/images/five-star-host/High_Fi_Home.png';
+import hiFiImg2 from '../../assets/images/five-star-host/High_Fi_PropertyMngmt.png';
+import hiFiImg3 from '../../assets/images/five-star-host/High_Fi_Listing.png';
+import hiFiImg4 from '../../assets/images/five-star-host/High_Fi_About.png';
+import hiFiImg5 from '../../assets/images/five-star-host/High_Fi_Contact.png';
+import contribuationImg3 from '../../assets/images/five-star-host/contribution_img3.png';
+
+const fiveStarHostRedesignContent = {
+  hero: {
+    title: 'Case Study: 5-Star Host web page redesign',
+    image: heroImage,
+  },
+  findings: {
+    label: 'Project Overview',
+    heading: 'What is the problem we are trying to solve?',
+    items: [
+      {
+        summary:
+          'A property management company is shifting from basic renting to broader services and scaling operations, but its current website cannot support or communicate this expanded direction, requiring a platform that engages users and enables seamless interactions.',
+        image: introImage_Client,
+        alt: 'Our Client',
+        eyebrow: 'Our Client',
+        accent: 'primary',
+      },
+      {
+        summary:
+          'The client’s website has major usability issues: a cluttered, poorly organized layout, unclear page structures, and unfocused content that make navigation difficult. Inconsistent design and color schemes further create an unprofessional, uninviting experience.',
+        image: introImage_Problem,
+        alt: 'The Problem',
+        eyebrow: 'The Problem',
+        accent: 'secondary',
+      },
+      {
+        summary:
+          'Primary users are property owners seeking hassle-free rental management. They want a streamlined solution that removes tasks like screening, leasing, maintenance, and rent collection, while prioritizing convenience, efficiency, and clear service benefits.',
+        image: introImage_UserGroup,
+        alt: 'User Group',
+        eyebrow: 'User Group',
+        accent: 'accent',
+      },
+      {
+        summary:
+          'A team of three classmates completed a 1.5-month redesign of a property management website, quickly establishing collaboration. I redesigned key pages, built a component library, supported Figma, and ensured design consistency to deliver a cohesive, user-friendly result aligned with evolving needs.',
+        image: introImage_Collaboration,
+        alt: 'Our Team & My Role',
+        eyebrow: 'Our Team & My Role',
+        accent: 'primary',
+      },
+    ],
+  },
+  redesignSteps: [
+    {
+      number: '1',
+      title: 'Research',
+      intro:
+        'During research, we analyzed competitor sites—especially Airbnb—using usability and visual testing. We found successful platforms favor minimalist design and step-by-step flows to reduce complexity, guiding our approach to create a more efficient, user-friendly experience.',
+      sections: [
+        {
+          heading: 'Research Methodology: Site-by-Site Analysis',
+          body: 'Key Findings:',
+        },
+      ],
+      bullets: [
+        'Minimalist Design: A less-is-more approach to avoid overwhelming users with information.',
+        'Step-by-Step Guidance: Clear and concise guidance to simplify user journeys and reduce friction.',
+        'Consistent Design Language: A unified visual style to enhance brand recognition and professionalism.',
+      ],
+      images: [
+        { src: resImg1, alt: 'Research finding 1' },
+        { src: resImg2, alt: 'Research finding 2' },
+        { src: resImg3, alt: 'Research finding 3' },
+        { src: resImg4, alt: 'Research finding 4' },
+        { src: resImg5, alt: 'Research finding 5' },
+      ],
+      imageLeft: true,
+    },
+    {
+      number: '2',
+      title: 'Low-Fidelity Wireframing',
+      intro:
+        'Based on our research insights, we created low-fidelity wireframes to explore layout and structure. We focused on simplifying navigation, improving content hierarchy, and enhancing visual consistency to create a more intuitive user experience.',
+      images: [
+        { src: resImg6, alt: 'Low-fidelity wireframe' },
+      ],
+      imageLeft: false,
+    },
+    {
+      number: '3',
+      title: 'High-Fidelity Prototyping',
+      intro:
+        'The high-fidelity prototype was developed directly from the low-fidelity wireframes, refining the overall structure with detailed, fully realized components. It enhances visual hierarchy, interaction clarity, and design consistency while preserving the original layout decisions. Additionally, existing images from the client’s old website were reused and integrated, ensuring visual continuity while elevating the overall presentation.',
+      images: [
+        { src: hiFiImg1, alt: 'High-fidelity Home page prototype', caption: 'Home page' },
+        { src: hiFiImg2, alt: 'High-fidelity Property Management page prototype', caption: 'Property Management' },
+        { src: hiFiImg3, alt: 'High-fidelity Rental Listing page prototype', caption: 'Rental Listing' },
+        { src: hiFiImg4, alt: 'High-fidelity About page prototype', caption: 'About' },
+        { src: hiFiImg5, alt: 'High-fidelity Contact page prototype', caption: 'Contact' },
+      ],
+      imageLayout: 'balanced-grid',
+    },
+  ],
+  wireframingContribution: {
+    label: 'Wireframing Process',
+    heading: 'What I did during the wireframing process',
+    paragraph:
+      'My wireframing work focused on turning research findings into clearer page structures, reusable components, and more purposeful user flows for both property owners and renters.',
+    items: [
+      {
+        title: 'Property Management page',
+        body:
+          'For the Property Management service page, I improved aesthetics and usability by reorganizing and redesigning components for a clearer, more intuitive layout. Insights from Reddit and Quora informed common user questions, leading to additions like an FAQ section and a service comparison tool to support clearer understanding and better decision-making.',
+      },
+      {
+        title: 'Rental Listing page',
+        body:
+          'To give clients a tangible preview of how their properties would appear online, we designed a Rental Listing page with sample listings. This helped owners understand the platform’s value while also supporting renters through a portal linking to external listings. Across these pages, components were reorganized and redesigned to improve clarity, navigation, and ease of use.',
+      },
+      {
+        title: 'Reusable components and consistency',
+        body:
+          'I also designed reusable components to maintain cross-page consistency and streamline the design system. Through close collaboration and a shared visual style guide, we ensured the site remained cohesive, professional, and polished across all key pages.',
+        image: contribuationImg3,
+        alt: 'Reusable component examples from the 5-Star Host redesign',
+      },
+    ],
+  },
+};
+
+export default fiveStarHostRedesignContent;

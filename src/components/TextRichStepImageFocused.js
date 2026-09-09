@@ -1,3 +1,5 @@
+import { useTranslation } from '../i18n/LanguageContext';
+
 function TextRichStepImageFocused({
   number,
   title,
@@ -7,10 +9,12 @@ function TextRichStepImageFocused({
   images = [],
   imageLeft = false,
 }) {
+  const { isChinese } = useTranslation();
+  const stepLabel = isChinese ? `步骤 ${number}` : `Step ${number}`;
   const textBlock = (
     <div className={`space-y-6 lg:sticky lg:top-28 lg:col-span-3 lg:self-start ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
       <div>
-        <p className="mb-2 text-xs uppercase tracking-[0.35em] opacity-50">Step {number}</p>
+        <p className="mb-2 text-xs uppercase tracking-[0.35em] opacity-50">{stepLabel}</p>
         <h3 className="text-3xl font-bold leading-tight">{title}</h3>
       </div>
 

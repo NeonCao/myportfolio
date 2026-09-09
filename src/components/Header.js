@@ -2,12 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import HeaderBreadcrumbs from './HeaderBreadcrumbs';
 import { applyTheme, DARK_THEME, getActiveTheme, LIGHT_THEME } from '../utils/theme';
-
-const navItems = [
-  { to: '/', label: 'Home' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/gallery', label: 'Gallary' },
-];
+import { CHINESE, ENGLISH, useTranslation } from '../i18n/LanguageContext';
 
 function navLinkClass({ isActive }) {
   return isActive ? 'active' : '';
@@ -15,6 +10,7 @@ function navLinkClass({ isActive }) {
 
 function Header() {
   const [theme, setTheme] = useState(getActiveTheme);
+  const { language, t, toggleLanguage } = useTranslation();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -37,6 +33,12 @@ function Header() {
     applyTheme(nextTheme);
     setTheme(nextTheme);
   };
+  const navItems = [
+    { to: '/', label: t('header.home') },
+    { to: '/projects', label: t('header.projects') },
+    { to: '/gallery', label: t('header.gallery') },
+  ];
+  const nextLanguage = language === ENGLISH ? CHINESE : ENGLISH;
 
   return (
     <div className="navbar sticky top-0 z-50 bg-base-100 shadow-sm">
@@ -70,7 +72,16 @@ function Header() {
           ))}
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end gap-3">
+        <button
+          type="button"
+          className="btn btn-sm btn-outline min-w-20"
+          onClick={toggleLanguage}
+          aria-label={t('header.languageControl')}
+          title={t('header.languageToggle')}
+        >
+          {language.toUpperCase()} / {nextLanguage.toUpperCase()}
+        </button>
         <label
           className="toggle text-base-content"
           aria-label={`Switch to ${nextTheme} theme`}

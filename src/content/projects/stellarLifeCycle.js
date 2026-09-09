@@ -1,0 +1,191 @@
+import heroImage from '../../assets/images/stellar-life-cycle/Stellar_Hero.jpeg';
+import introImage2 from '../../assets/images/stellar-life-cycle/Stellar_Intro_P2.jpeg';
+import introImage3 from '../../assets/images/stellar-life-cycle/Stellar_Intro_P3.jpeg';
+import dataSourceImage from '../../assets/images/stellar-life-cycle/Stellar_DataSource_P1.png';
+import graphChoice1 from '../../assets/images/stellar-life-cycle/Stellar_ChoiceOfGraphs_P1.jpeg';
+import graphChoice2 from '../../assets/images/stellar-life-cycle/Stellar_ChoiceOfGraphs_P2.jpeg';
+import graphChoice3 from '../../assets/images/stellar-life-cycle/Stellar_ChoiceOfGraphs_P3.jpeg';
+import version1 from '../../assets/images/stellar-life-cycle/Stellar_VersionHistory_P1.jpeg';
+import version2 from '../../assets/images/stellar-life-cycle/Stellar_VersionHistory_P2.jpeg';
+import version3 from '../../assets/images/stellar-life-cycle/Stellar_VersionHistory_P3.jpeg';
+import version4 from '../../assets/images/stellar-life-cycle/Stellar_VersionHistory_P4.jpeg';
+import reflectionImage from '../../assets/images/stellar-life-cycle/Stellar_Reflection_P1.jpeg';
+
+const researchSources = [
+  'Wikipedia for general astronomical information',
+  'NASA for scientific reference material and imagery',
+  'Universe Today for current astronomy explainers and context',
+  'National Geographic for visual inspiration and editorial tone',
+];
+
+export const stellarLifeCycleContent = {
+  hero: {
+    title: 'The Stellar Life Cycle: A Cosmic Journey Through Data',
+    image: heroImage,
+  },
+  overview: {
+    badge: 'Making-of Article',
+    heading: 'Turning astronomical fascination into a built editorial data story',
+    paragraphs: [
+      'This project grew out of a fascination with the cosmos and the way star systems are represented in games like Elite Dangerous. That curiosity led to a data visualization piece focused on stellar evolution, combining astronomy, editorial storytelling, and visual design.',
+      'This page now focuses more explicitly on the building process: how the topic was narrowed, how the visual systems were chosen, how the editorial direction changed across versions, and what that iteration taught along the way.',
+    ],
+    focusLabel: 'Project Focus',
+    stats: [
+      {
+        title: 'Core Visualizations',
+        value: '3',
+        valueClassName: 'text-primary',
+        desc: 'H-R diagram, lifecycle chart, and classification chart',
+      },
+      {
+        title: 'Subject',
+        value: 'Stars',
+        valueClassName: 'text-secondary',
+        desc: 'Stellar evolution, classification, and astronomy context',
+      },
+      {
+        title: 'Case Study Lens',
+        value: 'Process',
+        valueClassName: '',
+        desc: 'Research, graph choice, iteration, and reflection',
+      },
+    ],
+  },
+  intro: {
+    heading: 'Intro',
+    paragraphs: [
+      'The project began with a simple question: how could the beauty and complexity of stellar evolution be translated into something more readable and engaging than a dense textbook explanation?',
+      'To answer that, the piece focused on a few carefully chosen slices of the subject rather than trying to explain the entire universe at once. That narrowing made it possible to combine factual accuracy with a more immersive and visually rich editorial tone.',
+    ],
+    images: [
+      {
+        src: heroImage,
+        alt: 'Elite Dangerous star chart inspiration',
+        className: 'md:col-span-3 overflow-hidden rounded-[1.5rem] shadow-xl',
+      },
+      {
+        src: introImage2,
+        alt: 'Stellar intro supporting visual 1',
+        className: 'overflow-hidden rounded-[1.25rem] shadow-lg',
+      },
+      {
+        src: introImage3,
+        alt: 'Stellar intro supporting visual 2',
+        className: 'overflow-hidden rounded-[1.25rem] shadow-lg',
+      },
+    ],
+    caption: 'In-game cosmic visuals helped spark the project’s original direction.',
+  },
+  sectionDividerLabel: 'Building Process',
+  processSteps: [
+    {
+      number: 1,
+      title: 'Define The Scope And Gather Source Material',
+      intro:
+        'The project started with a broad fascination for astronomy, but the real design work began by narrowing that interest into a manageable editorial story. Instead of trying to explain all of astronomy, the article focused on stellar evolution and a few specific visual systems that could carry the narrative.',
+      sections: [
+        {
+          heading: 'Why narrowing the topic mattered',
+          body:
+            'The subject was too large to be useful if treated as one giant information dump. Focusing on the H-R diagram, the lifecycle sequence, and stellar classification created a tighter story and made the eventual layouts more readable.',
+        },
+        {
+          heading: 'How references were used',
+          body:
+            'The raw material came from a mix of scientific and editorial sources, then got redesigned into a more cohesive visual language. The process was not just collecting facts, but translating them into something that felt curated and understandable.',
+        },
+      ],
+      bullets: researchSources,
+      images: [
+        { src: dataSourceImage, caption: 'Research references and early source gathering' },
+      ],
+    },
+    {
+      number: 2,
+      title: 'Choose Visual Forms That Match The Story',
+      intro:
+        'Once the scope was clear, the next challenge was choosing visualization types that actually fit the material. This was less about decoration and more about making each idea legible through the right format.',
+      sections: [
+        {
+          heading: 'H-R diagram',
+          body:
+            'The H-R diagram became the anchor because it naturally shows relationships between luminosity and temperature. It gave the project a scientifically grounded centerpiece and made stellar evolution easier to interpret visually.',
+        },
+        {
+          heading: 'Step chart',
+          body:
+            'The lifecycle chart worked because stellar evolution is sequential. A step-based format gave the article a clear narrative spine and helped readers follow the transition from nebula to stellar remnant.',
+        },
+        {
+          heading: 'Classification table',
+          body:
+            'The classification chart was the most reference-oriented of the three. It provided a structured place for spectral classes, temperatures, colors, and examples, balancing the more expressive diagrams with something concrete.',
+        },
+      ],
+      images: [
+        { src: graphChoice1, caption: 'Hertzsprung-Russell diagram direction' },
+        { src: graphChoice2, caption: 'Lifecycle step chart direction' },
+        { src: graphChoice3, caption: 'Classification chart direction' },
+      ],
+    },
+    {
+      number: 3,
+      title: 'Iterate The Editorial Voice And Composition',
+      intro:
+        'A major part of the build process was not technical at all. It was editorial. The project changed tone, density, and image strategy several times before the final direction felt right.',
+      sections: [
+        {
+          heading: 'Version 1 to Version 2',
+          body:
+            'The first version leaned more academic and newspaper-like. That was useful for structure, but it felt dry. The second version pivoted toward a more immersive, image-rich direction inspired by National Geographic, which made the story feel more alive.',
+        },
+        {
+          heading: 'Version 3',
+          body:
+            'By the third version, all three core visualizations were in place. The project was finally structurally complete, but it still needed stronger explanatory context and more polish in how the text and visuals supported each other.',
+        },
+        {
+          heading: 'Version 4',
+          body:
+            'The final version filled in empty spaces with star-specific details, improved text arrangement, and added more interpretation around each chart. That was the step that made the whole piece feel complete rather than just assembled.',
+        },
+      ],
+      images: [
+        { src: version1, caption: 'Version 1' },
+        { src: version2, caption: 'Version 2' },
+        { src: version3, caption: 'Version 3' },
+        { src: version4, caption: 'Version 4' },
+      ],
+      imageLeft: true,
+    },
+    {
+      number: 4,
+      title: 'Reflect On What The Process Taught',
+      intro:
+        'The project reinforced that a strong visualization piece is not only about accuracy. It is also about pacing, hierarchy, and deciding how much context a reader needs at each moment.',
+      sections: [
+        {
+          heading: 'Balancing information with readability',
+          body:
+            'One of the core lessons was that dense information does not automatically become useful when placed on a page. It has to be edited, staged, and supported with enough explanation that the reader can stay oriented.',
+        },
+        {
+          heading: 'Choosing the right chart for the right relationship',
+          body:
+            'Another important lesson was chart selection. The project became stronger by moving away from default chart types and instead choosing forms that matched the structure of the content: relational, sequential, or reference-based.',
+        },
+        {
+          heading: 'Combining editorial and data design',
+          body:
+            'The final outcome sits somewhere between infographic, article, and visual essay. That blend was one of the most valuable parts of the process, because it pushed the work beyond isolated charts into a more complete reading experience.',
+        },
+      ],
+      images: [
+        { src: reflectionImage, caption: 'Final reflection and presentation spread' },
+      ],
+    },
+  ],
+};
+
+export default stellarLifeCycleContent;

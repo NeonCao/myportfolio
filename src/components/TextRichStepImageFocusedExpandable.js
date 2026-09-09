@@ -1,4 +1,5 @@
 import ExpandableImageRow from './ExpandableImageRow';
+import { useTranslation } from '../i18n/LanguageContext';
 
 function TextRichStepImageFocusedExpandable({
   number,
@@ -10,10 +11,12 @@ function TextRichStepImageFocusedExpandable({
   tileFit = 'cover',
   imageLayout = 'grid',
 }) {
+  const { isChinese } = useTranslation();
+  const stepLabel = isChinese ? `步骤 ${number}` : `Step ${number}`;
   const textBlock = (
     <div className="max-w-4xl space-y-6">
       <div>
-        <p className="mb-2 text-xs uppercase tracking-[0.35em] opacity-50">Step {number}</p>
+        <p className="mb-2 text-xs uppercase tracking-[0.35em] opacity-50">{stepLabel}</p>
         <h3 className="text-3xl font-bold leading-tight">{title}</h3>
       </div>
 

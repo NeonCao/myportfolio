@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { clearClickEvents, readClickEvents, summarizeClickEvents } from '../utils/clickAnalytics';
+import { analyticsDashboardContent as content } from '../content/analyticsDashboard';
 
 function getTotalForKey(rows, key) {
   return rows.reduce((total, row) => total + row[key], 0);
@@ -41,46 +42,34 @@ function AnalyticsDashboard() {
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.72fr)] lg:items-end">
           <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">Local Site Analytics</p>
-            <h1 className="mt-3 text-5xl font-bold leading-tight md:text-6xl">Click information across the site</h1>
+            <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">{content.eyebrow}</p>
+            <h1 className="mt-3 text-5xl font-bold leading-tight md:text-6xl">{content.heading}</h1>
             <p className="mt-5 max-w-3xl leading-relaxed text-base-content/70">
-              This dashboard summarizes clicks captured by this React app in the current browser. Because the
-              portfolio is static, these numbers are local to this device unless a backend analytics service is
-              connected later.
+              {content.description}
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-base-300 bg-base-100 p-6 shadow-2xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-base-content/45">Stored Events</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-base-content/45">{content.storedEventsLabel}</p>
             <p className="mt-3 text-5xl font-black text-primary">{events.length}</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <button type="button" className="btn btn-primary" onClick={refreshEvents}>
-                Refresh Data
+                {content.refreshButtonLabel}
               </button>
               <button type="button" className="btn btn-outline" onClick={handleClearData}>
-                Clear Local Data
+                {content.clearButtonLabel}
               </button>
             </div>
           </div>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-4">
-          <div className="stat rounded-[1.5rem] border border-base-300 bg-base-100 shadow-xl">
-            <div className="stat-title">All-Time Clicks</div>
-            <div className="stat-value text-primary">{totals.allTime}</div>
-          </div>
-          <div className="stat rounded-[1.5rem] border border-base-300 bg-base-100 shadow-xl">
-            <div className="stat-title">Previous 7 Days</div>
-            <div className="stat-value">{totals.sevenDays}</div>
-          </div>
-          <div className="stat rounded-[1.5rem] border border-base-300 bg-base-100 shadow-xl">
-            <div className="stat-title">Previous 30 Days</div>
-            <div className="stat-value text-secondary">{totals.thirtyDays}</div>
-          </div>
-          <div className="stat rounded-[1.5rem] border border-base-300 bg-base-100 shadow-xl">
-            <div className="stat-title">Previous 365 Days</div>
-            <div className="stat-value text-accent">{totals.year}</div>
-          </div>
+          {content.totalsStats.map((stat) => (
+            <div key={stat.key} className="stat rounded-[1.5rem] border border-base-300 bg-base-100 shadow-xl">
+              <div className="stat-title">{stat.label}</div>
+              <div className={`stat-value ${stat.valueClassName}`}>{totals[stat.key]}</div>
+            </div>
+          ))}
         </div>
 
         <section className="mt-10 overflow-hidden rounded-[2rem] border border-base-300 bg-base-100 shadow-2xl">
@@ -88,12 +77,11 @@ function AnalyticsDashboard() {
             <table className="table table-zebra">
               <thead>
                 <tr>
-                  <th>Page</th>
-                  <th>Path</th>
-                  <th className="text-right">All Time</th>
-                  <th className="text-right">7 Days</th>
-                  <th className="text-right">30 Days</th>
-                  <th className="text-right">365 Days</th>
+                  {content.table.columns.map((column, index) => (
+                    <th key={column} className={index > 1 ? 'text-right' : undefined}>
+                      {column}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>

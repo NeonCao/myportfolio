@@ -1,3 +1,5 @@
+import { useTranslation } from '../i18n/LanguageContext';
+
 function TextRichStep({
   number,
   title,
@@ -8,10 +10,12 @@ function TextRichStep({
   imageLeft = false,
   showTopBorder = true,
 }) {
+  const { isChinese } = useTranslation();
+  const stepLabel = isChinese ? `步骤 ${number}` : `Step ${number}`;
   const textBlock = (
     <div className="space-y-6 lg:sticky lg:top-28 lg:self-start">
       <div>
-        <p className="text-xs uppercase tracking-[0.35em] opacity-50 mb-2">Step {number}</p>
+        <p className="text-xs uppercase tracking-[0.35em] opacity-50 mb-2">{stepLabel}</p>
         <h3 className="text-3xl font-bold leading-tight">{title}</h3>
       </div>
 

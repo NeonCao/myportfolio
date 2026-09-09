@@ -1,7 +1,12 @@
+import { useTranslation } from '../i18n/LanguageContext';
+
 function BuildStep({ number, title, text, images, imageLeft = false }) {
+  const { isChinese } = useTranslation();
+  const stepLabel = isChinese ? `步骤 ${number}` : `Step ${number}`;
+
   const textBlock = (
     <div className="md:sticky md:top-28 md:self-start">
-      <p className="text-xs uppercase tracking-widest opacity-50 mb-2">Step {number}</p>
+      <p className="text-xs uppercase tracking-widest opacity-50 mb-2">{stepLabel}</p>
       <h3 className="text-2xl font-bold mb-4">{title}</h3>
       <p className="text-base-content/70 leading-relaxed whitespace-pre-line">{text}</p>
     </div>
