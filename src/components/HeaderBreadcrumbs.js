@@ -3,7 +3,7 @@ import { getGalleryPhotoBySlug } from '../data/galleryPhotos';
 import { useTranslation } from '../i18n/LanguageContext';
 import { translateProjectPhrase } from '../i18n/projectPhraseTranslations';
 
-const projectPageNames = {
+export const projectPageNames = {
   '/projects/interactive-piggy-bank': 'Interactive Piggy Bank',
   '/projects/telling-overtown-stories': 'Telling Overtown Stories',
   '/projects/auto-espresso': 'Project Lifehack - Espresso Helper',

@@ -18,10 +18,12 @@ import FiveStarHostRedesign from './pages/FiveStarHostRedesign';
 import AnalyticsDashboard from './pages/AnalyticsDashboard';
 import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
+import NotFound from './pages/NotFound';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
 import NavigationEffects from './components/NavigationEffects';
 import SiteClickTracker from './components/SiteClickTracker';
+import DocumentTitle from './components/DocumentTitle';
 import { ENGLISH, LanguageProvider, useTranslation } from './i18n/LanguageContext';
 import ProjectPageTranslator from './components/ProjectPageTranslator';
 import { homeHistoryByLanguage } from './content/home';
@@ -73,6 +75,7 @@ function App() {
       <BrowserRouter basename={routerBasename}>
         <NavigationEffects basename={routerBasename} />
         <SiteClickTracker />
+        <DocumentTitle />
         <Header />
         <ProjectPageTranslator />
         <Routes>
@@ -94,6 +97,7 @@ function App() {
           <Route path="/analytics" element={<AnalyticsDashboard />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/:photoSlug" element={<Gallery />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>

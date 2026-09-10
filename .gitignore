@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local scratch files (resumes, exports, etc. — not part of the site)
+/tempFile

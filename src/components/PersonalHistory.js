@@ -18,6 +18,9 @@ const MONTH_NAMES = {
 };
 
 const MONTH_HEIGHT = 10;
+const COMPRESSED_MONTH_HEIGHT = 2.5;
+const ACTIVE_BUFFER_MONTHS = 3;
+const MIN_TICK_GAP = 28;
 const CARD_MIN_HEIGHT = 132;
 const CARD_STACK_GAP = 20;
 const CHART_BOTTOM_PADDING = 180;
@@ -129,9 +132,58 @@ function layoutLane(items, kind) {
     });
 }
 
-function getTimeMetrics(item, minIndex) {
-  const naturalTop = (item.startIndex - minIndex) * MONTH_HEIGHT;
-  const durationHeight = item.durationMonths * MONTH_HEIGHT;
+function buildActiveRanges(items) {
+  // Only the start/end of each entry is "interesting" enough to earn full calendar
+  // resolution — a multi-year entry shouldn't stretch its bar for every month it
+  // continues, only near where it actually begins or ends (or overlaps another entry).
+  const padded = items
+    .flatMap((item) => [
+      [item.startIndex - ACTIVE_BUFFER_MONTHS, item.startIndex + ACTIVE_BUFFER_MONTHS],
+      [item.endIndex - ACTIVE_BUFFER_MONTHS, item.endIndex + ACTIVE_BUFFER_MONTHS],
+    ])
+    .sort((a, b) => a[0] - b[0]);
+
+  const merged = [];
+  padded.forEach(([start, end]) => {
+    const last = merged[merged.length - 1];
+
+    if (last && start <= last[1] + 1) {
+      last[1] = Math.max(last[1], end);
+    } else {
+      merged.push([start, end]);
+    }
+  });
+
+  return merged;
+}
+
+function isMonthActive(activeRanges, month) {
+  return activeRanges.some(([start, end]) => month >= start && month <= end);
+}
+
+function buildMonthScale(minIndex, maxIndex, activeRanges) {
+  const offsets = [];
+  let y = 0;
+
+  for (let month = minIndex; month <= maxIndex; month += 1) {
+    offsets.push(y);
+    y += isMonthActive(activeRanges, month) ? MONTH_HEIGHT : COMPRESSED_MONTH_HEIGHT;
+  }
+
+  offsets.push(y);
+
+  return {
+    toY(month) {
+      const index = Math.min(Math.max(month - minIndex, 0), offsets.length - 1);
+      return offsets[index];
+    },
+    totalHeight: y,
+  };
+}
+
+function getTimeMetrics(item, scale) {
+  const naturalTop = scale.toY(item.startIndex);
+  const durationHeight = scale.toY(item.endIndex + 1) - naturalTop;
 
   return {
     naturalTop,
@@ -139,11 +191,11 @@ function getTimeMetrics(item, minIndex) {
   };
 }
 
-function computePlacedItems(items, measuredHeights, minIndex) {
+function computePlacedItems(items, measuredHeights, scale) {
   let previousBottom = -Infinity;
 
   return items.map((item) => {
-    const { naturalTop, durationHeight } = getTimeMetrics(item, minIndex);
+    const { naturalTop, durationHeight } = getTimeMetrics(item, scale);
     const measuredHeight = measuredHeights[item.key] ?? Math.max(durationHeight, CARD_MIN_HEIGHT);
     const placedTop = previousBottom === -Infinity ? naturalTop : Math.max(naturalTop, previousBottom + CARD_STACK_GAP);
 
@@ -172,7 +224,7 @@ function HistoryLogo({ item }) {
           loading="lazy"
         />
       ) : (
-        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/40">{t('history.logoFallback')}</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/60">{t('history.logoFallback')}</span>
       )}
     </div>
   );
@@ -183,8 +235,8 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
   const blockRef = useRef(null);
   const isEducation = item.kind === 'education';
   const wrapperClass = side === 'left' ? 'absolute left-0 right-0 pr-4 md:text-right' : 'absolute left-0 right-0 pl-4';
-  const durationBarClass = side === 'left' ? 'absolute right-0 w-1 rounded-full bg-secondary/70' : 'absolute left-0 w-1 rounded-full bg-accent/70';
-  const connectorClass = side === 'left' ? 'absolute right-1 h-px w-3 bg-base-300' : 'absolute left-1 h-px w-3 bg-base-300';
+  const durationBarClass = side === 'left' ? 'absolute right-0 w-1.5 rounded-full bg-secondary' : 'absolute left-0 w-1.5 rounded-full bg-accent';
+  const connectorClass = side === 'left' ? 'absolute right-1.5 h-px w-3 bg-base-300' : 'absolute left-1.5 h-px w-3 bg-base-300';
   const rowClass = side === 'left' ? 'mt-3 flex items-start gap-3 md:flex-row-reverse' : 'mt-3 flex items-start gap-3';
   const linkGroupClass = side === 'left' ? 'mt-4 flex flex-wrap gap-2 md:justify-end' : 'mt-4 flex flex-wrap gap-2';
   const badgeClass = isEducation ? 'badge-secondary' : 'badge-accent';
@@ -220,7 +272,7 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
       <div className={connectorClass} style={{ top: `${offsetInsideCard + 10}px` }}></div>
       <div
         ref={blockRef}
-        className={`collapse collapse-arrow rounded-[1.5rem] border border-base-300 bg-base-100/95 shadow-xl backdrop-blur-sm ${
+        className={`collapse collapse-arrow rounded-[1.5rem] border border-base-300 bg-base-100 shadow-xl ${
           expanded ? 'collapse-open' : 'collapse-close'
         }`}
       >
@@ -231,8 +283,8 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
           aria-label={t('history.toggleItem').replace('{title}', item.title)}
         />
         <div className={collapseTitleClass}>
-          <div className={`badge badge-sm ${badgeClass}`}>{isEducation ? t('history.education') : t('history.work')}</div>
-          <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">
+          <div className={`badge badge-sm ${badgeClass} font-semibold`}>{isEducation ? t('history.education') : t('history.work')}</div>
+          <time className="mt-3 block font-mono text-xs font-semibold uppercase tracking-[0.25em] text-base-content/70">
             {item.displayPeriod || item.period}
           </time>
           <div className={rowClass}>
@@ -244,10 +296,10 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
           </div>
         </div>
         <div className="collapse-content px-4 pb-4">
-          <p className="text-sm leading-relaxed text-base-content/72">{item.description}</p>
+          <p className="text-sm leading-relaxed text-base-content/80">{item.description}</p>
           {item.relatedWork?.length ? (
             <div className={linkGroupClass}>
-              <p className={`w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/45 ${side === 'left' ? 'md:text-right' : ''}`}>
+              <p className={`w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/60 ${side === 'left' ? 'md:text-right' : ''}`}>
                 {t('history.relatedWork')}
               </p>
               {item.relatedWork.map((project) => (
@@ -281,7 +333,7 @@ function MobileHistoryList({ title, items, badgeClass }) {
 
   return (
     <div>
-      <div className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-base-content/55">{displayTitle}</div>
+      <div className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-base-content/70">{displayTitle}</div>
       <div className="space-y-4">
         {items.map((item, index) => (
           <div
@@ -297,8 +349,8 @@ function MobileHistoryList({ title, items, badgeClass }) {
               aria-label={t('history.toggleItem').replace('{title}', item.title)}
             />
             <div className={collapseTitleClass}>
-              <div className={`badge badge-sm ${badgeClass}`}>{displayTitle}</div>
-              <time className="mt-3 block font-mono text-xs uppercase tracking-[0.25em] text-base-content/55">
+              <div className={`badge badge-sm ${badgeClass} font-semibold`}>{displayTitle}</div>
+              <time className="mt-3 block font-mono text-xs font-semibold uppercase tracking-[0.25em] text-base-content/70">
                 {item.displayPeriod || item.period}
               </time>
               <div className="mt-3 flex items-start gap-3">
@@ -310,10 +362,10 @@ function MobileHistoryList({ title, items, badgeClass }) {
               </div>
             </div>
             <div className="collapse-content px-4 pb-4">
-              <p className="text-sm leading-relaxed text-base-content/72">{item.description}</p>
+              <p className="text-sm leading-relaxed text-base-content/80">{item.description}</p>
               {item.relatedWork?.length ? (
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <p className="w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/45">
+                  <p className="w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/60">
                     {t('history.relatedWork')}
                   </p>
                   {item.relatedWork.map((project) => (
@@ -364,19 +416,22 @@ function PersonalHistory({
 
   const minIndex = Math.min(...keyedItems.map((item) => item.startIndex));
   const maxIndex = Math.max(...keyedItems.map((item) => item.endIndex));
-  const totalMonths = maxIndex - minIndex + 1;
+  const scale = useMemo(
+    () => buildMonthScale(minIndex, maxIndex, buildActiveRanges(keyedItems)),
+    [keyedItems, minIndex, maxIndex]
+  );
   const placedEducationItems = useMemo(
-    () => computePlacedItems(keyedEducationItems, measuredHeights, minIndex),
-    [keyedEducationItems, measuredHeights, minIndex]
+    () => computePlacedItems(keyedEducationItems, measuredHeights, scale),
+    [keyedEducationItems, measuredHeights, scale]
   );
   const placedWorkItems = useMemo(
-    () => computePlacedItems(keyedWorkItems, measuredHeights, minIndex),
-    [keyedWorkItems, measuredHeights, minIndex]
+    () => computePlacedItems(keyedWorkItems, measuredHeights, scale),
+    [keyedWorkItems, measuredHeights, scale]
   );
 
   const chartHeight =
     Math.max(
-      totalMonths * MONTH_HEIGHT,
+      scale.totalHeight,
       ...placedEducationItems.map((item) => item.placedTop + item.measuredHeight),
       ...placedWorkItems.map((item) => item.placedTop + item.measuredHeight)
     ) + CHART_BOTTOM_PADDING;
@@ -408,27 +463,31 @@ function PersonalHistory({
       continue;
     }
 
-    yearTicks.push({
-      year,
-      top: (yearStartIndex - minIndex) * MONTH_HEIGHT,
-    });
+    const top = scale.toY(yearStartIndex);
+    const previousTick = yearTicks[yearTicks.length - 1];
+
+    if (previousTick && top - previousTick.top < MIN_TICK_GAP) {
+      continue;
+    }
+
+    yearTicks.push({ year, top });
   }
 
   return (
     <section className="bg-base-200/60 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.35em] text-base-content/50">{t('history.eyebrow')}</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-base-content/60">{t('history.eyebrow')}</p>
           <h2 className="mt-3 text-4xl font-bold sm:text-5xl">{heading}</h2>
         </div>
 
         <div className="rounded-[2rem] border border-base-300 bg-base-100 p-6 shadow-2xl sm:p-8">
           <div className="mb-8 hidden gap-4 md:grid md:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)] md:items-center">
-            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-base-content/55 md:text-right">
+            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-base-content/70 md:text-right">
               {t('history.education')}
             </div>
             <div></div>
-            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-base-content/55">
+            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-base-content/70">
               {t('history.work')}
             </div>
           </div>
@@ -451,7 +510,7 @@ function PersonalHistory({
               <div className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-base-300"></div>
               {yearTicks.map((tick) => (
                 <div key={`year-${tick.year}`} className="absolute left-1/2 -translate-x-1/2" style={{ top: `${tick.top}px` }}>
-                  <div className="badge badge-ghost badge-sm border border-base-300 bg-base-100">{tick.year}</div>
+                  <div className="badge badge-neutral badge-sm border border-base-300 font-semibold">{tick.year}</div>
                 </div>
               ))}
             </div>

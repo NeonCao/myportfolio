@@ -11,6 +11,9 @@ export const galleryPageContent = {
   },
   photoView: {
     backLabel: 'Back To Gallary',
+    previousLabel: 'Previous photo',
+    nextLabel: 'Next photo',
+    counterSeparator: 'of',
   },
 };
 
