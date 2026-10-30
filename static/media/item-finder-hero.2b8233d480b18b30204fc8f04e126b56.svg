@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Item Finder: one item linked to its sources">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1020"/>
+      <stop offset="1" stop-color="#1c1430"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="2"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f1d79a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#f1d79a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="buyGlow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#5aa9ff" stop-opacity="0.35"/><stop offset="1" stop-color="#5aa9ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lootGlow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#b98cff" stop-opacity="0.35"/><stop offset="1" stop-color="#b98cff" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <circle cx="230" cy="170" r="420" fill="url(#buyGlow)"/>
+  <circle cx="1400" cy="760" r="460" fill="url(#lootGlow)"/>
+
+  <!-- links from the item to each source -->
+  <g fill="none" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 16">
+    <path d="M800 450 C 640 330, 470 260, 330 230" stroke="#5aa9ff"/>
+    <path d="M800 450 C 980 320, 1130 250, 1270 230" stroke="#f0b35a"/>
+    <path d="M800 450 C 640 570, 470 650, 330 680" stroke="#4fd1a1"/>
+    <path d="M800 450 C 960 580, 1130 650, 1270 680" stroke="#b98cff"/>
+    <path d="M800 450 L 800 150" stroke="#f07fb6"/>
+    <path d="M800 450 L 800 760" stroke="#47c9cf"/>
+  </g>
+
+  <!-- the item -->
+  <circle cx="800" cy="450" r="230" fill="url(#glow)"/>
+  <g transform="translate(800 450)">
+    <polygon points="0,-118 102,-59 102,59 0,118 -102,59 -102,-59" fill="#141826" stroke="#f1d79a" stroke-width="6"/>
+    <polygon points="0,-118 102,-59 0,0 -102,-59" fill="#f1d79a" fill-opacity="0.18"/>
+    <path d="M0 0V118M0 0L102 -59M0 0L-102 -59" stroke="#f1d79a" stroke-width="4" stroke-opacity="0.7"/>
+  </g>
+
+  <!-- sources -->
+  <g stroke-width="6" fill="#141826">
+    <circle cx="300" cy="225" r="62" stroke="#5aa9ff"/>
+    <circle cx="1300" cy="225" r="62" stroke="#f0b35a"/>
+    <circle cx="300" cy="685" r="62" stroke="#4fd1a1"/>
+    <circle cx="1300" cy="685" r="62" stroke="#b98cff"/>
+    <circle cx="800" cy="120" r="48" stroke="#f07fb6"/>
+    <circle cx="800" cy="790" r="48" stroke="#47c9cf"/>
+  </g>
+  <g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- buy: cart -->
+    <path d="M268 200h12l10 42h40l8-30h-52M294 262a4 4 0 1 0 0.1 0M326 262a4 4 0 1 0 0.1 0" stroke="#5aa9ff"/>
+    <!-- craft: wrench -->
+    <path d="M1318 204a22 22 0 0 0-30 28l-28 28 10 10 28-28a22 22 0 0 0 28-30l-12 12-10-2-2-10z" stroke="#f0b35a"/>
+    <!-- raw: crystal -->
+    <path d="M300 650l-30 20 12 44h36l12-44zM300 650v64M270 670l30 14 30-14" stroke="#4fd1a1"/>
+    <!-- loot: crate -->
+    <path d="M268 0" stroke="none"/>
+    <path d="M1268 678h64v40h-64zM1268 678l10-18h44l10 18M1290 698h20" stroke="#b98cff"/>
+    <!-- trade: arrows -->
+    <path d="M778 110h40l-10-10M822 130h-40l10 10" stroke="#f07fb6"/>
+    <!-- mission: flag -->
+    <path d="M786 812v-44h28l-6 10 6 10h-28" stroke="#47c9cf"/>
+  </g>
+</svg>

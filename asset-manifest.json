@@ -1,7 +1,9 @@
 {
   "files": {
-    "main.css": "/myportfolio/static/css/main.7f69a616.css",
-    "main.js": "/myportfolio/static/js/main.cbb08785.js",
+    "main.css": "/myportfolio/static/css/main.dcce9f81.css",
+    "main.js": "/myportfolio/static/js/main.aee7196a.js",
+    "static/js/322.1c66a503.chunk.js": "/myportfolio/static/js/322.1c66a503.chunk.js",
+    "static/js/576.13544cf7.chunk.js": "/myportfolio/static/js/576.13544cf7.chunk.js",
     "static/js/453.612f53fa.chunk.js": "/myportfolio/static/js/453.612f53fa.chunk.js",
     "static/media/IMG_20190616_124431.jpg": "/myportfolio/static/media/IMG_20190616_124431.e38a7d904a2ba2a0d029.jpg",
     "static/media/IMG_20210518_152709.jpg": "/myportfolio/static/media/IMG_20210518_152709.f97770b85f8771aee7c0.jpg",
@@ -367,6 +369,7 @@
     "static/media/MIX_hifi_15-p-800.webp": "/myportfolio/static/media/MIX_hifi_15-p-800.3b83aee8a764df215ad0.webp",
     "static/media/MIX_hifi_45-p-500.webp": "/myportfolio/static/media/MIX_hifi_45-p-500.b464cd86629b11b6b6bc.webp",
     "static/media/MIX_hifi_15-p-500.webp": "/myportfolio/static/media/MIX_hifi_15-p-500.8082c89f31b21f70cf42.webp",
+    "static/media/item-finder-hero.svg": "/myportfolio/static/media/item-finder-hero.2b8233d480b18b30204fc8f04e126b56.svg",
     "static/media/MIX_icon1.svg": "/myportfolio/static/media/MIX_icon1.6c074b54dbafab6a168b.svg",
     "static/media/MIX_Blog_step3_L1.svg": "/myportfolio/static/media/MIX_Blog_step3_L1.9f1443fd8ac35544757d.svg",
     "static/media/MIX_icon2.svg": "/myportfolio/static/media/MIX_icon2.ca5f426d972d554b5e63.svg",
@@ -409,12 +412,12 @@
     "static/media/MIX_icon32.svg": "/myportfolio/static/media/MIX_icon32.3131833b5a0488673b40.svg",
     "static/media/MIX_icon34.svg": "/myportfolio/static/media/MIX_icon34.3b9d3d1b03cc2eefc0e4.svg",
     "static/media/MIX_icon36.svg": "/myportfolio/static/media/MIX_icon36.8c6a30c9e9a4a34dfd6e.svg",
-    "main.7f69a616.css.map": "/myportfolio/static/css/main.7f69a616.css.map",
-    "main.cbb08785.js.map": "/myportfolio/static/js/main.cbb08785.js.map",
+    "main.dcce9f81.css.map": "/myportfolio/static/css/main.dcce9f81.css.map",
+    "main.aee7196a.js.map": "/myportfolio/static/js/main.aee7196a.js.map",
     "453.612f53fa.chunk.js.map": "/myportfolio/static/js/453.612f53fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f69a616.css",
-    "static/js/main.cbb08785.js"
+    "static/css/main.dcce9f81.css",
+    "static/js/main.aee7196a.js"
   ]
 }
