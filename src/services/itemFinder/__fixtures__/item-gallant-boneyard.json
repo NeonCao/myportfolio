@@ -1,0 +1,102 @@
+{
+ "data": {
+  "uuid": "35bbb045-3b35-47a9-a603-42cce6a804b4",
+  "slug": "gallant-boneyard-rifle",
+  "name": "Gallant \"Boneyard\" Rifle",
+  "class_name": "klwe_rifle_energy_01_white02",
+  "classification": "FPS.Weapon.Medium",
+  "classification_label": "Medium Weapon",
+  "size": 2,
+  "mass": 3.75,
+  "rarity": "Uncommon",
+  "event_source": [],
+  "is_base_variant": false,
+  "is_craftable": true,
+  "is_lootable": true,
+  "blueprint": [
+   {
+    "uuid": "fd7ffb99-40f0-4353-b09c-ed6be87a0359",
+    "name": "Gallant \"Boneyard\" Rifle",
+    "link": "https://api.star-citizen.wiki/api/blueprints/fd7ffb99-40f0-4353-b09c-ed6be87a0359"
+   }
+  ],
+  "manufacturer": {
+   "name": "Klaus & Werner",
+   "code": "KLWE",
+   "uuid": "1aa076d5-ac29-4c61-a905-d3ea39cf167a",
+   "link": "https://api.star-citizen.wiki/api/manufacturers/KLWE"
+  },
+  "type": "WeaponPersonal",
+  "type_label": "FPS Weapon",
+  "type_web_url": "https://api.star-citizen.wiki/items?filter%5Btype%5D=WeaponPersonal",
+  "sub_type": "Medium",
+  "sub_type_label": "Medium",
+  "tags": [
+   "stocked",
+   "klwe_rifle_energy_01"
+  ],
+  "shops": [],
+  "images": [
+   {
+    "source": "starcitizen.tools",
+    "original_url": "https://media.starcitizen.tools/7/7e/Gallant_-_Boneyard_-_InGame_Cutout_-_Mesh_BG.jpg?5gkf5",
+    "thumbnail_url": "https://media.starcitizen.tools/thumb/7/7e/Gallant_-_Boneyard_-_InGame_Cutout_-_Mesh_BG.jpg/600px-Gallant_-_Boneyard_-_InGame_Cutout_-_Mesh_BG.jpg.webp?5gkf5",
+    "original_width": 3840,
+    "original_height": 2160,
+    "thumbnail_width": 600,
+    "thumbnail_height": 338
+   }
+  ],
+  "uex_prices": {
+   "purchase": [
+    {
+     "price_buy": 5056,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 767,
+     "terminal_code": "LFWNPG",
+     "terminal_name": "Live Fire Pyro Gateway (Nyx)",
+     "starmap_location": {
+      "uuid": "a66119fa-6d93-4e56-bcd1-c9bd2c50beb7",
+      "name": "Pyro Gateway",
+      "slug": "pyro-gateway-2",
+      "type_name": "Manmade",
+      "parent_name": "Nyx",
+      "star_system_name": "Nyx",
+      "link": "https://api.star-citizen.wiki/api/locations/a66119fa-6d93-4e56-bcd1-c9bd2c50beb7",
+      "web_url": "https://api.star-citizen.wiki/locations/a66119fa-6d93-4e56-bcd1-c9bd2c50beb7"
+     },
+     "date_updated": "2026-09-11T02:46:42+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=gallant-\"boneyard\"-rifle&tab=about"
+    },
+    {
+     "price_buy": 5056,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 806,
+     "terminal_code": "LFWNSG",
+     "terminal_name": "Live Fire Stanton Gateway (Nyx)",
+     "starmap_location": {
+      "uuid": "6396623a-61bd-4ced-9c8b-77c47753ef8f",
+      "name": "Stanton Gateway",
+      "slug": "stanton-gateway",
+      "type_name": "Manmade",
+      "parent_name": "Nyx",
+      "star_system_name": "Nyx",
+      "link": "https://api.star-citizen.wiki/api/locations/6396623a-61bd-4ced-9c8b-77c47753ef8f",
+      "web_url": "https://api.star-citizen.wiki/locations/6396623a-61bd-4ced-9c8b-77c47753ef8f"
+     },
+     "date_updated": "2026-08-30T19:50:40+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=gallant-\"boneyard\"-rifle&tab=about"
+    }
+   ]
+  },
+  "variants": [],
+  "web_url": "https://api.star-citizen.wiki/items/gallant-boneyard-rifle",
+  "link": "https://api.star-citizen.wiki/api/items/35bbb045-3b35-47a9-a603-42cce6a804b4",
+  "updated_at": "2026-10-29T00:01:59.000000Z",
+  "version": "4.10.2-LIVE.12881860"
+ }
+}

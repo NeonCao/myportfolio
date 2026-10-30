@@ -21,11 +21,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "node scripts/check-deploy-sync.mjs && npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "data:check": "node scripts/check-game-version.mjs",
+    "data:wikelo": "node scripts/fetch-wikelo.mjs",
+    "data:missions": "node scripts/fetch-mission-rewards.mjs",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

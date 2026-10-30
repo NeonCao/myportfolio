@@ -1,0 +1,78 @@
+{
+ "data": {
+  "uuid": "4ceb21c5-48f8-418a-8188-0b0196c33505",
+  "key": "Raw_Corundum",
+  "name": "Corundum (Raw)",
+  "display_name": "Corundum (Raw) (Raw_Minerals)",
+  "slug": "corundum-raw",
+  "kind": "mineable",
+  "is_mineable": true,
+  "has_harvestables": false,
+  "has_salvage": false,
+  "methods": [
+   "Ship"
+  ],
+  "systems": [
+   "Nyx System",
+   "Pyro System",
+   "Stanton System"
+  ],
+  "locations": [
+   {
+    "name": "ARC L1",
+    "designation": null,
+    "display_name": "ARC L1",
+    "system": "Stanton System",
+    "type": "Asteroid",
+    "parent_name": "Stanton",
+    "parent_type": "Star",
+    "parent_uuid": "34ff378f-faee-47bb-b5fe-f505e665c5ca",
+    "uuid": "0b8b226a-076f-44fb-a522-dee6b0c4be4c",
+    "link": "https://api.star-citizen.wiki/api/locations/0b8b226a-076f-44fb-a522-dee6b0c4be4c",
+    "group_probability": 0.15,
+    "group_probability_percent": 15,
+    "relative_probability": 0.178,
+    "relative_probability_percent": 17.8,
+    "quality_min": 245,
+    "quality_max": 1000
+   },
+   {
+    "name": "ARC L2",
+    "designation": null,
+    "display_name": "ARC L2",
+    "system": "Stanton System",
+    "type": "Asteroid",
+    "parent_name": "Stanton",
+    "parent_type": "Star",
+    "parent_uuid": "34ff378f-faee-47bb-b5fe-f505e665c5ca",
+    "uuid": "6c9dd307-7b70-451f-bb38-9e70c0177f46",
+    "link": "https://api.star-citizen.wiki/api/locations/6c9dd307-7b70-451f-bb38-9e70c0177f46",
+    "group_probability": 0.15,
+    "group_probability_percent": 15,
+    "relative_probability": 0.178,
+    "relative_probability_percent": 17.8,
+    "quality_min": 245,
+    "quality_max": 1000
+   },
+   {
+    "name": "ARC L4",
+    "designation": null,
+    "display_name": "ARC L4",
+    "system": "Stanton System",
+    "type": "Asteroid",
+    "parent_name": "Stanton",
+    "parent_type": "Star",
+    "parent_uuid": "34ff378f-faee-47bb-b5fe-f505e665c5ca",
+    "uuid": "ba1492c3-5e0a-4e7e-83e8-f55aed92a756",
+    "link": "https://api.star-citizen.wiki/api/locations/ba1492c3-5e0a-4e7e-83e8-f55aed92a756",
+    "group_probability": 0.15,
+    "group_probability_percent": 15,
+    "relative_probability": 0.178,
+    "relative_probability_percent": 17.8,
+    "quality_min": 245,
+    "quality_max": 1000
+   }
+  ],
+  "raw_versions": []
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "data": {
+  "uuid": "7e86e2f4-6c31-41f8-9438-0fd8ad037426",
+  "key": "Dolivine",
+  "name": "Dolivine",
+  "display_name": "Dolivine (Mineral)",
+  "slug": "dolivine",
+  "description": "A dull green gemstone that is used decoratively but also can be used for industrial purposes thanks to its resistance to weathering and high density.",
+  "tier": null,
+  "density_g_per_cc": 1.4,
+  "instability": 0,
+  "resistance": 0.1,
+  "volatility": null,
+  "volatility_health_decay_per_second": null,
+  "box_sizes_scu": [
+   1,
+   2
+  ],
+  "validate_default_cargo_box": true,
+  "has_default_cargo_containers": true,
+  "is_mineable": true,
+  "has_ship_mineables": false,
+  "has_ground_vehicle_mineables": false,
+  "has_fps_mineables": true,
+  "has_harvestables": false,
+  "has_salvage": false,
+  "signature": 3000,
+  "kind": "mineable",
+  "methods": [
+   "FPS"
+  ],
+  "systems": [
+   "Pyro System",
+   "Stanton System"
+  ],
+  "locations": [
+   {
+    "name": "Aberdeen",
+    "display_name": "Aberdeen",
+    "system": "Stanton System",
+    "type": "Moon",
+    "parent_name": "Hurston",
+    "parent_type": "Planet",
+    "uuid": "f8f07f5b-1c0e-47c9-aa50-46963065bf18",
+    "link": "https://api.star-citizen.wiki/api/locations/f8f07f5b-1c0e-47c9-aa50-46963065bf18",
+    "entries": [
+     {
+      "group_name": "FPS_Mineables",
+      "resource_kind": "mineable",
+      "quality_min": 201,
+      "quality_max": 1000,
+      "entry_count": 1
+     }
+    ]
+   },
+   {
+    "name": "Adir",
+    "display_name": "Adir",
+    "system": "Pyro System",
+    "type": "Moon",
+    "parent_name": "Pyro V",
+    "parent_type": "Planet",
+    "uuid": "d8935d2e-1b10-4b50-b188-80e35dd0876a",
+    "link": "https://api.star-citizen.wiki/api/locations/d8935d2e-1b10-4b50-b188-80e35dd0876a",
+    "entries": [
+     {
+      "group_name": "FPS_Mineables",
+      "resource_kind": "mineable",
+      "quality_min": 201,
+      "quality_max": 1000,
+      "entry_count": 1
+     }
+    ]
+   }
+  ],
+  "commodity_groups": [
+   "Mineral"
+  ],
+  "link": "https://api.star-citizen.wiki/api/commodities/7e86e2f4-6c31-41f8-9438-0fd8ad037426",
+  "web_url": "https://api.star-citizen.wiki/commodities/dolivine",
+  "images": [
+   {
+    "source": "starcitizen.tools",
+    "original_url": "https://media.starcitizen.tools/b/b2/Dolivine-in-space-3.10.jpg?8mqjz",
+    "thumbnail_url": "https://media.starcitizen.tools/thumb/b/b2/Dolivine-in-space-3.10.jpg/600px-Dolivine-in-space-3.10.jpg.webp?8mqjz",
+    "original_width": 2560,
+    "original_height": 1440,
+    "thumbnail_width": 600,
+    "thumbnail_height": 338
+   }
+  ]
+ }
+}

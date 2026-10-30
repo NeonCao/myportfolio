@@ -245,3 +245,410 @@ body {
   break-inside: avoid;
   margin-bottom: 2px;
 }
+
+/* ------------------------------------------------------------------ */
+/* Visual polish layer                                                  */
+/* Everything below is progressive enhancement: unsupported browsers    */
+/* simply fall back to the plain styling above.                         */
+/* ------------------------------------------------------------------ */
+
+/* Light/glow accent used by every effect below. Light theme keeps the theme's own
+   colours; the dark theme uses a pale gold that matches its warm text tone. */
+:root {
+  --fx-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fx-accent: var(--color-primary);
+  --fx-accent-2: var(--color-accent);
+  --fx-title-b: var(--color-primary);
+  --fx-bar: linear-gradient(
+    90deg,
+    var(--color-primary),
+    color-mix(in oklab, var(--color-primary) 40%, var(--color-secondary)),
+    var(--color-accent)
+  );
+}
+
+:root[data-theme='abyss'],
+:root[data-theme='dark'] {
+  --fx-accent: oklch(88% 0.1 85);
+  --fx-accent-2: oklch(76% 0.1 78);
+  --fx-title-b: oklch(90% 0.11 88);
+  --fx-bar: linear-gradient(90deg, var(--fx-accent-2), var(--fx-accent), color-mix(in oklab, var(--fx-accent) 55%, white));
+}
+
+:root[data-theme='cupcake'] {
+  --fx-title-b: color-mix(in oklab, var(--color-secondary) 70%, var(--color-base-content));
+}
+
+/* Lets Tailwind utilities (bg-fx, from-fx, text-fx, ...) follow the accent above */
+@theme inline {
+  --color-fx: var(--fx-accent);
+  --color-fx-2: var(--fx-accent-2);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--fx-accent) 45%, transparent);
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+/* The home hero's title wraps around its rotating role chip, so keep natural wrapping */
+.hero h1 {
+  text-wrap: wrap;
+}
+
+/* Gradient page titles (the hero titles opt out with .fx-plain) */
+.page-shell h1:not(.fx-plain) {
+  background-image: linear-gradient(100deg, var(--color-base-content) 0%, var(--color-base-content) 30%, var(--fx-title-b) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Ambient glow behind page backgrounds, tiled so tall pages keep it */
+.page-shell > .bg-base-200,
+.page-shell > main[class*='bg-base-200'] {
+  background-image:
+    radial-gradient(42rem 22rem at 8% 0%, color-mix(in oklab, var(--fx-accent) 11%, transparent), transparent 70%),
+    radial-gradient(38rem 24rem at 100% 38%, color-mix(in oklab, var(--color-secondary) 16%, transparent), transparent 70%);
+  background-size: 100% 1500px;
+  background-repeat: repeat-y;
+}
+
+/* Buttons */
+.btn {
+  transition:
+    transform 0.25s var(--fx-ease),
+    box-shadow 0.25s var(--fx-ease),
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -12px color-mix(in oklab, var(--color-base-content) 55%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  box-shadow: 0 12px 30px -10px var(--color-primary);
+}
+
+/* Lifted cards (interactive .hover-3d tiles keep their own tilt effect) */
+.card:not(.hover-3d),
+.fx-lift {
+  position: relative;
+  transition:
+    transform 0.35s var(--fx-ease),
+    box-shadow 0.35s var(--fx-ease),
+    border-color 0.35s;
+}
+
+/* Invisible strip under the card so lifting it never drops the pointer off its edge */
+.card:not(.hover-3d)::after,
+.fx-lift::after {
+  content: '';
+  position: absolute;
+  inset: 100% 0 auto 0;
+  height: 10px;
+}
+
+.card:not(.hover-3d):hover,
+.fx-lift:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in oklab, var(--fx-accent) 55%, var(--color-base-300));
+  box-shadow: 0 26px 50px -24px color-mix(in oklab, var(--color-base-content) 55%, transparent);
+}
+
+.card:not(.hover-3d) figure,
+.fx-lift figure {
+  overflow: hidden;
+}
+
+.card:not(.hover-3d) figure img,
+.fx-lift figure img {
+  transition: transform 0.7s var(--fx-ease);
+}
+
+.card:not(.hover-3d):hover figure img,
+.fx-lift:hover figure img {
+  transform: scale(1.06);
+}
+
+/* Rotating light along a card's border (used on the home hero card) */
+@property --fx-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.fx-glow-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.fx-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--fx-angle),
+    transparent 0%,
+    transparent 55%,
+    color-mix(in oklab, var(--fx-accent) 85%, white) 78%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+@keyframes fx-spin {
+  to {
+    --fx-angle: 360deg;
+  }
+}
+
+@keyframes fx-rise {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+    scale: 0.985;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+    scale: none;
+  }
+}
+
+@keyframes fx-fade-up {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@keyframes fx-page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fx-kenburns {
+  from {
+    scale: 1.12;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes fx-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 8px;
+  }
+}
+
+@keyframes fx-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fx-parallax {
+  to {
+    translate: 0 12%;
+  }
+}
+
+.fx-scroll-progress {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fx-page-enter {
+    animation: fx-page-in 0.5s var(--fx-ease) backwards;
+  }
+
+  .fx-glow-border::before {
+    animation: fx-spin 7s linear infinite;
+  }
+
+  .fx-hero-image {
+    animation: fx-kenburns 2.4s var(--fx-ease) both;
+  }
+
+  .fx-hero-title {
+    animation: fx-fade-up 0.9s var(--fx-ease) 0.15s both;
+  }
+
+  .fx-hero-cue {
+    animation: fx-bob 2.2s ease-in-out infinite;
+  }
+
+  /* Scroll-driven effects: Chromium/Safari today, ignored elsewhere */
+  @supports (animation-timeline: view()) {
+    .page-shell :is(.card:not(.hover-3d), .stats, .fx-reveal, [class*='rounded-[2'], [class*='rounded-[1.75'], [class*='rounded-[1.5']):not(.hover-3d) {
+      animation: fx-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 38%;
+    }
+
+    .fx-hero-image {
+      animation: fx-kenburns 2.4s var(--fx-ease) both, fx-parallax linear both;
+      animation-timeline: auto, scroll(root);
+      animation-range: normal, 0 100vh;
+    }
+
+    .fx-scroll-progress {
+      display: block;
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 60;
+      height: 3px;
+      transform-origin: 0 50%;
+      background: var(--fx-bar);
+      animation: fx-progress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Item Finder palette                                                  */
+/* One hue per meaning (how an item is obtained, damage type, star      */
+/* system, stat group). The theme only sets lightness and chroma, so    */
+/* every tone stays readable on cupcake and on abyss.                   */
+/* ------------------------------------------------------------------ */
+
+.item-finder {
+  --if-l: 55%;
+  --if-c: 0.15;
+  --if-buy: oklch(var(--if-l) var(--if-c) 240);
+  --if-craft: oklch(calc(var(--if-l) + 6%) var(--if-c) 65);
+  --if-raw: oklch(var(--if-l) var(--if-c) 165);
+  --if-loot: oklch(var(--if-l) var(--if-c) 305);
+  --if-wikelo: oklch(var(--if-l) var(--if-c) 340);
+  --if-mission: oklch(var(--if-l) var(--if-c) 185);
+  --if-physical: oklch(var(--if-l) var(--if-c) 50);
+  --if-energy: oklch(var(--if-l) var(--if-c) 215);
+  --if-distortion: oklch(var(--if-l) var(--if-c) 290);
+  --if-thermal: oklch(var(--if-l) var(--if-c) 25);
+  --if-biochemical: oklch(var(--if-l) var(--if-c) 140);
+  --if-stun: oklch(calc(var(--if-l) + 10%) var(--if-c) 95);
+  --if-shield: oklch(var(--if-l) var(--if-c) 250);
+  --if-quantum: oklch(var(--if-l) var(--if-c) 285);
+  --if-cooler: oklch(var(--if-l) var(--if-c) 200);
+  --if-power: oklch(calc(var(--if-l) + 6%) var(--if-c) 80);
+  --if-armor: oklch(var(--if-l) var(--if-c) 155);
+  --if-stanton: oklch(var(--if-l) var(--if-c) 245);
+  --if-pyro: oklch(var(--if-l) var(--if-c) 40);
+  --if-nyx: oklch(var(--if-l) var(--if-c) 300);
+  --if-neutral: color-mix(in oklab, var(--color-base-content) 55%, transparent);
+  --tone: var(--if-neutral);
+}
+
+:root[data-theme='abyss'] .item-finder,
+:root[data-theme='dark'] .item-finder {
+  --if-l: 79%;
+  --if-c: 0.12;
+}
+
+/* Colourful but faint backdrop: one glow per acquisition route plus a HUD grid */
+.page-shell > main.item-finder {
+  background-image:
+    radial-gradient(40rem 22rem at 6% 2%, color-mix(in oklab, var(--if-buy) 14%, transparent), transparent 70%),
+    radial-gradient(34rem 22rem at 96% 8%, color-mix(in oklab, var(--if-loot) 13%, transparent), transparent 70%),
+    radial-gradient(40rem 26rem at 90% 55%, color-mix(in oklab, var(--if-craft) 10%, transparent), transparent 70%),
+    radial-gradient(36rem 24rem at 4% 75%, color-mix(in oklab, var(--if-raw) 11%, transparent), transparent 70%),
+    linear-gradient(color-mix(in oklab, var(--color-base-content) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-base-content) 4%, transparent) 1px, transparent 1px);
+  background-size: 100% 1600px, 100% 1600px, 100% 1600px, 100% 1600px, 48px 48px, 48px 48px;
+  background-repeat: repeat-y, repeat-y, repeat-y, repeat-y, repeat, repeat;
+}
+
+/* Tone helpers: set --tone (style={tone('buy')}) and pick how strongly to apply it */
+.if-text {
+  color: var(--tone);
+}
+
+.if-dot {
+  background-color: var(--tone);
+}
+
+.if-chip {
+  color: color-mix(in oklab, var(--tone) 80%, var(--color-base-content));
+  background-color: color-mix(in oklab, var(--tone) 13%, transparent);
+  border-color: color-mix(in oklab, var(--tone) 42%, transparent);
+}
+
+.if-tint {
+  background-color: color-mix(in oklab, var(--tone) 9%, var(--color-base-100));
+  border-color: color-mix(in oklab, var(--tone) 32%, var(--color-base-300));
+}
+
+.if-glow {
+  background-image: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--tone) 22%, transparent),
+    color-mix(in oklab, var(--tone) 4%, transparent) 70%
+  );
+  border-color: color-mix(in oklab, var(--tone) 45%, transparent);
+  box-shadow: 0 14px 34px -22px var(--tone);
+}
+
+.if-bar {
+  box-shadow: inset 3px 0 0 var(--tone);
+}
+
+.if-rule {
+  background-image: linear-gradient(90deg, var(--tone), color-mix(in oklab, var(--tone) 0%, transparent));
+}
+
+.if-badge {
+  color: var(--tone);
+  background-color: color-mix(in oklab, var(--tone) 15%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--tone) 35%, transparent);
+}
+
+/* daisyUI progress and range draw with currentColor */
+.if-meter {
+  color: var(--tone);
+}
+
+/* Same specificity as the global gradient title rule, declared later so it wins */
+.page-shell h1.if-title {
+  background-image: linear-gradient(100deg, var(--color-base-content) 10%, var(--if-buy) 45%, var(--if-loot) 75%, var(--if-craft));
+}
+
+/* Selected result row: the row's own tone instead of a plain outline */
+.if-selected {
+  border-color: var(--tone);
+  background-image: linear-gradient(135deg, color-mix(in oklab, var(--tone) 16%, transparent), transparent 65%);
+  box-shadow:
+    inset 4px 0 0 var(--tone),
+    0 0 0 1px var(--tone),
+    0 14px 30px -20px var(--tone);
+}

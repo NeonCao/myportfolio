@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Header from './components/Header';
+import { LanguageProvider } from './i18n/LanguageContext';
 import { DARK_THEME } from './utils/theme';
 
 jest.mock(
@@ -16,11 +17,21 @@ jest.mock(
   { virtual: true }
 );
 
+// galleryPhotos uses webpack's require.context, which Jest does not provide
+jest.mock('./data/galleryPhotos', () => ({
+  galleryPhotos: [],
+  getGalleryPhotoBySlug: () => undefined,
+}));
+
 test('renders the header theme switch and toggles the theme', () => {
   window.localStorage.clear();
   document.documentElement.removeAttribute('data-theme');
 
-  render(<Header />);
+  render(
+    <LanguageProvider>
+      <Header />
+    </LanguageProvider>
+  );
 
   const toggleInput = screen.getByRole('checkbox', { name: /toggle color theme/i });
   expect(toggleInput).toBeInTheDocument();

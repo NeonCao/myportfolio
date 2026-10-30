@@ -16,6 +16,7 @@ export const trackedPages = [
   { path: '/projects/um-card-sorting-study', label: 'Card Sorting Study for UM Interactive Media Site' },
   { path: '/projects/about-myself', label: 'Project About Myself' },
   { path: '/projects/memory-graden', label: 'Memory Graden' },
+  { path: '/projects/item-finder', label: 'Star Citizen Item Finder' },
   { path: '/gallery', label: 'Gallery' },
   { path: '/gallery/:photoSlug', label: 'Gallery Photo Detail' },
   { path: '/analytics', label: 'Analytics Dashboard' },

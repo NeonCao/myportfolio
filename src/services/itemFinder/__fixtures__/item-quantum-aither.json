@@ -1,0 +1,210 @@
+{
+ "data": {
+  "uuid": "fcfa0140-7d88-452f-aac4-668cd65c4053",
+  "slug": "aither",
+  "name": "Aither",
+  "class_name": "QDRV_RSI_S02_Aither_SCItem",
+  "type": "QuantumDrive",
+  "type_label": "Quantum Drive",
+  "sub_type": "UNDEFINED",
+  "sub_type_label": "Undefined",
+  "classification": "Ship.QuantumDrive",
+  "classification_label": "Quantum Drive",
+  "size": 2,
+  "grade": "B",
+  "class": "Civilian",
+  "mass": 630,
+  "manufacturer": {
+   "name": "Roberts Space Industries",
+   "code": "RSI",
+   "uuid": "093e6eba-93fa-4dad-b3dd-38966934e34e",
+   "link": "https://api.star-citizen.wiki/api/manufacturers/RSI"
+  },
+  "is_craftable": true,
+  "is_lootable": false,
+  "blueprint": [
+   {
+    "uuid": "9a6c9773-fb0d-453a-b36b-8dc2fdd2330a",
+    "name": "Aither",
+    "link": "https://api.star-citizen.wiki/api/blueprints/9a6c9773-fb0d-453a-b36b-8dc2fdd2330a"
+   }
+  ],
+  "dimension": {
+   "width": 0.75,
+   "height": 0.75,
+   "length": 0.75,
+   "volume": 0.252,
+   "volume_converted": 252000,
+   "volume_converted_unit": "µSCU",
+   "true_dimension": {
+    "width": 1.504,
+    "height": 1.09,
+    "length": 1.006
+   },
+   "dimensions": {
+    "width": 1.504,
+    "height": 1.09,
+    "length": 1.006
+   },
+   "cargo_dimension": {
+    "width": 0.45,
+    "height": 0.8,
+    "length": 3.32
+   },
+   "ui_dimension": {
+    "width": 0.75,
+    "height": 0.75,
+    "length": 0.75
+   }
+  },
+  "web_url": "https://api.star-citizen.wiki/items/aither",
+  "version": "4.10.2-LIVE.12881860",
+  "quantum_drive": {
+   "quantum_fuel_requirement": 0.009156,
+   "jump_range": 3.402823e+38,
+   "jump_range_formatted": "Unlimited",
+   "disconnect_range": 34693,
+   "disconnect_range_formatted": "35 km",
+   "fuel_rate": 9.156e-09,
+   "thermal_energy_draw": {
+    "pre_ramp_up": 6240,
+    "ramp_up": 6240,
+    "in_flight": 6240,
+    "ramp_down": 6240,
+    "post_ramp_down": 6240
+   },
+   "standard_jump": {
+    "drive_speed": 275942800,
+    "drive_speed_formatted": "275.9 Mm/s",
+    "cooldown_time": 12.2,
+    "stage_one_accel_rate": 5945657,
+    "stage_one_accel_rate_formatted": "5.9 Mm/s²",
+    "stage_two_accel_rate": 8994857,
+    "stage_two_accel_rate_formatted": "9 Mm/s²",
+    "engage_speed": 84000000,
+    "engage_speed_formatted": "84 Mm/s",
+    "interdiction_effect_time": 2,
+    "calibration_rate": 1000,
+    "min_calibration_requirement": 5000,
+    "max_calibration_requirement": 10000,
+    "calibration_process_angle_limit": 5,
+    "calibration_warning_angle_limit": 8,
+    "calibration_delay_in_seconds": 1.5,
+    "spool_up_time": 6.9
+   },
+   "spline_jump": {
+    "drive_speed": 400000,
+    "drive_speed_formatted": "400 km/s",
+    "cooldown_time": 16.38,
+    "stage_one_accel_rate": 250,
+    "stage_one_accel_rate_formatted": "250 m/s²",
+    "stage_two_accel_rate": 50000,
+    "stage_two_accel_rate_formatted": "50 km/s²",
+    "engage_speed": 1500,
+    "engage_speed_formatted": "1.5 km/s",
+    "interdiction_effect_time": 5,
+    "calibration_rate": 1000,
+    "min_calibration_requirement": 5000,
+    "max_calibration_requirement": 10000,
+    "calibration_process_angle_limit": 5,
+    "calibration_warning_angle_limit": 8,
+    "calibration_delay_in_seconds": 1.5,
+    "spool_up_time": 6
+   },
+   "modes": [
+    {
+     "type": "normal_jump",
+     "drive_speed": 275942800,
+     "drive_speed_formatted": "275.9 Mm/s",
+     "cooldown_time": 12.2,
+     "stage_one_accel_rate": 5945657,
+     "stage_one_accel_rate_formatted": "5.9 Mm/s²",
+     "stage_two_accel_rate": 8994857,
+     "stage_two_accel_rate_formatted": "9 Mm/s²",
+     "engage_speed": 84000000,
+     "engage_speed_formatted": "84 Mm/s",
+     "interdiction_effect_time": 2,
+     "calibration_rate": 1000,
+     "min_calibration_requirement": 5000,
+     "max_calibration_requirement": 10000,
+     "calibration_process_angle_limit": 5,
+     "calibration_warning_angle_limit": 8,
+     "calibration_delay_in_seconds": 1.5,
+     "spool_up_time": 6.9
+    },
+    {
+     "type": "spline_jump",
+     "drive_speed": 400000,
+     "drive_speed_formatted": "400 km/s",
+     "cooldown_time": 16.38,
+     "stage_one_accel_rate": 250,
+     "stage_one_accel_rate_formatted": "250 m/s²",
+     "stage_two_accel_rate": 50000,
+     "stage_two_accel_rate_formatted": "50 km/s²",
+     "engage_speed": 1500,
+     "engage_speed_formatted": "1.5 km/s",
+     "interdiction_effect_time": 5,
+     "calibration_rate": 1000,
+     "min_calibration_requirement": 5000,
+     "max_calibration_requirement": 10000,
+     "calibration_process_angle_limit": 5,
+     "calibration_warning_angle_limit": 8,
+     "calibration_delay_in_seconds": 1.5,
+     "spool_up_time": 6
+    }
+   ],
+   "fuel_consumption_scu_per_gm": 0.022,
+   "fuel_efficiency": 1.25,
+   "travel_time_10gm": {
+    "seconds": 76,
+    "formatted": "1:15"
+   }
+  },
+  "durability": {
+   "health": 470,
+   "lifetime": 0,
+   "max_lifetime": 0,
+   "repairable": true,
+   "salvageable": true,
+   "resistance": {
+    "stun": 1,
+    "energy": 0.85,
+    "thermal": 0.1,
+    "physical": 0.85,
+    "distortion": 1,
+    "biochemical": 1
+   }
+  },
+  "emission": {
+   "ir": 0,
+   "em_min": 27000,
+   "em_max": 27000,
+   "em_decay": 0.15
+  },
+  "uex_prices": {
+   "purchase": [
+    {
+     "price_buy": 84000,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 115,
+     "terminal_code": "DDGRI",
+     "terminal_name": "Dumper's Depot - GrimHEX",
+     "starmap_location": {
+      "uuid": "8cda0b9b-22a8-43fe-ac33-df7a1ba9434d",
+      "name": "Grim HEX",
+      "slug": "grim-hex",
+      "type_name": "Manmade",
+      "parent_name": "Yela",
+      "star_system_name": "Stanton",
+      "link": "https://api.star-citizen.wiki/api/locations/8cda0b9b-22a8-43fe-ac33-df7a1ba9434d",
+      "web_url": "https://api.star-citizen.wiki/locations/8cda0b9b-22a8-43fe-ac33-df7a1ba9434d"
+     },
+     "date_updated": "2026-09-03T16:13:32+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=aither&tab=about"
+    }
+   ]
+  }
+ }
+}

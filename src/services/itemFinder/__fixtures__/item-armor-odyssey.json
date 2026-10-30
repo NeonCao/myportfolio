@@ -1,0 +1,132 @@
+{
+ "data": {
+  "uuid": "fca3448d-c26c-4f09-a62e-5c4fc521b042",
+  "slug": "odyssey-helmet-tan-2",
+  "name": "Odyssey Helmet Tan",
+  "class_name": "rsi_pilot_flightsuit_helmet_01_01_jimmy",
+  "type": "Char_Armor_Helmet",
+  "type_label": "Helmet (Armor)",
+  "sub_type": "Helmet",
+  "sub_type_label": "Helmet",
+  "classification": "FPS.Armor.Helmet",
+  "classification_label": "Helmet",
+  "size": 1,
+  "mass": 5,
+  "rarity": "Common",
+  "manufacturer": {
+   "name": "Unknown",
+   "code": "UNKN",
+   "uuid": "00000000-0000-0000-0000-000000000000",
+   "link": "https://api.star-citizen.wiki/api/manufacturers/UNKN"
+  },
+  "is_craftable": false,
+  "is_lootable": false,
+  "dimension": {
+   "width": 0.75,
+   "height": 0.75,
+   "length": 0.75,
+   "volume": 0.019,
+   "volume_converted": 19000,
+   "volume_converted_unit": "µSCU",
+   "true_dimension": {
+    "width": null,
+    "height": null,
+    "length": null
+   },
+   "cargo_dimension": {
+    "width": 0.24,
+    "height": 0.34,
+    "length": 0.3
+   },
+   "ui_dimension": {
+    "width": 0.75,
+    "height": 0.75,
+    "length": 0.75
+   }
+  },
+  "web_url": "https://api.star-citizen.wiki/items/odyssey-helmet-tan-2",
+  "version": "4.10.2-LIVE.12881860",
+  "suit_armor": {
+   "slot": "Helmet",
+   "armor_type": "Helmet",
+   "type": "Helmet",
+   "garment_type": "Helmet",
+   "damage_resistance": {
+    "impact": 1,
+    "physical": {
+     "type": "physical",
+     "multiplier": 0.95,
+     "threshold": 0
+    },
+    "energy": {
+     "type": "energy",
+     "multiplier": 0.95,
+     "threshold": 0
+    },
+    "distortion": {
+     "type": "distortion",
+     "multiplier": 0.95,
+     "threshold": 0
+    },
+    "thermal": {
+     "type": "thermal",
+     "multiplier": 0.95,
+     "threshold": 0
+    },
+    "biochemical": {
+     "type": "biochemical",
+     "multiplier": 0.95,
+     "threshold": 0
+    },
+    "stun": {
+     "type": "stun",
+     "multiplier": 0.9,
+     "threshold": 0
+    }
+   },
+   "damage_resistance_map": {
+    "impact": 1,
+    "impact_change": 0,
+    "physical": 0.95,
+    "physical_change": -0.05,
+    "energy": 0.95,
+    "energy_change": -0.05,
+    "distortion": 0.95,
+    "distortion_change": -0.05,
+    "thermal": 0.95,
+    "thermal_change": -0.05,
+    "biochemical": 0.95,
+    "biochemical_change": -0.05,
+    "stun": 0.9,
+    "stun_change": -0.1
+   },
+   "protected_body_parts": [
+    "ea721959-c3e2-4df8-9ef3-8831dc98c514"
+   ],
+   "signature": {
+    "infrared": 0,
+    "electromagnetic": 2
+   },
+   "temp_resistance_min": -30,
+   "temp_resistance_max": 60,
+   "radiation_resistance": {
+    "maximum_radiation_capacity": 15200,
+    "radiation_dissipation_rate": 81
+   },
+   "gforce_resistance": 0
+  },
+  "radiation_resistance": {
+   "maximum_radiation_capacity": 15200,
+   "radiation_dissipation_rate": 81
+  },
+  "temperature_resistance": {
+   "min": -30,
+   "max": 60,
+   "minimum": -30,
+   "maximum": 60
+  },
+  "uex_prices": {
+   "purchase": []
+  }
+ }
+}

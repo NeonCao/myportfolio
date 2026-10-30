@@ -1,0 +1,24 @@
+{
+ "data": {
+  "uuid": "dc6fbcbb-5990-4ed5-82ee-93152dab7845",
+  "key": "Agricium",
+  "name": "Agricium",
+  "display_name": "Agricium (Metal)",
+  "slug": "agricium",
+  "kind": null,
+  "is_mineable": false,
+  "has_harvestables": false,
+  "has_salvage": false,
+  "methods": [],
+  "systems": [],
+  "locations": [],
+  "raw_versions": [
+   {
+    "name": "Agricium (Ore)",
+    "uuid": "fc1ec740-3047-48d8-81f0-396f4c9a90ef",
+    "web_url": "https://api.star-citizen.wiki/commodities/agricium-ore",
+    "link": "https://api.star-citizen.wiki/api/commodities/fc1ec740-3047-48d8-81f0-396f4c9a90ef"
+   }
+  ]
+ }
+}

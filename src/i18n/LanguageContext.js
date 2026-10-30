@@ -39,6 +39,11 @@ const translations = {
       toggleItem: 'Toggle {title}',
       logoFallback: 'Icon',
     },
+    footer: {
+      tagline: 'Designed and built with React.',
+      rights: 'All rights reserved.',
+      backToTop: 'Back to top',
+    },
   },
   [CHINESE]: {
     header: {
@@ -72,6 +77,11 @@ const translations = {
       relatedWork: '相关作品',
       toggleItem: '切换 {title}',
       logoFallback: '图标',
+    },
+    footer: {
+      tagline: '使用 React 设计并开发。',
+      rights: '保留所有权利。',
+      backToTop: '回到顶部',
     },
   },
 };

@@ -6,6 +6,10 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
       "port": 3000
+    },
+    {
+      "name": "portfolio-attach",
+      "url": "http://localhost:3000"
     }
   ]
 }

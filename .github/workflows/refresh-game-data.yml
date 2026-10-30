@@ -1,0 +1,133 @@
+# Keeps the Item Finder's Wikelo and mission-reward snapshots in step with the game.
+# Once a day it asks the Star Citizen Wiki API which game build its data is from (one request).
+# Only when that build is newer than the committed snapshots does it rebuild them (about 35 minutes
+# at one request per second), test and build on top of the latest master, deploy GitHub Pages and
+# then push the new data to master. Deploying before pushing means a failed deploy is retried the
+# next day instead of leaving master ahead of the live site.
+name: Refresh game data
+
+on:
+  schedule:
+    - cron: '17 6 * * *' # daily, 06:17 UTC
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild the data even if the game version did not change
+        type: boolean
+        default: false
+      force_snapshot:
+        description: Accept a snapshot that lost many entries (after a real removal in the game)
+        type: boolean
+        default: false
+      deploy_only:
+        description: Skip the data refresh and just build and deploy master
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-game-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      FORCE_SNAPSHOT: ${{ inputs.force_snapshot && '1' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Check game version
+        id: version
+        if: ${{ !inputs.deploy_only }}
+        run: node scripts/check-game-version.mjs
+
+      - name: Decide what to do
+        id: plan
+        env:
+          CHANGED: ${{ steps.version.outputs.changed }}
+          FORCE: ${{ inputs.force }}
+          DEPLOY_ONLY: ${{ inputs.deploy_only }}
+        run: |
+          refresh=false
+          if [ "$DEPLOY_ONLY" != "true" ] && { [ "$CHANGED" = "true" ] || [ "$FORCE" = "true" ]; }; then refresh=true; fi
+          echo "refresh=$refresh" >> "$GITHUB_OUTPUT"
+          echo "Refresh data: $refresh, deploy only: ${DEPLOY_ONLY:-false}"
+
+      - name: Install dependencies
+        if: steps.plan.outputs.refresh == 'true' || inputs.deploy_only
+        run: npm ci
+
+      - name: Rebuild Wikelo snapshot
+        if: steps.plan.outputs.refresh == 'true'
+        run: npm run data:wikelo
+
+      - name: Rebuild mission reward index
+        if: steps.plan.outputs.refresh == 'true'
+        run: npm run data:missions
+
+      # Commit locally, then replay on top of whatever was pushed to master during the long rebuild,
+      # so the build below contains both the latest code and the new data.
+      - name: Commit snapshots on top of the latest master
+        id: commit
+        if: steps.plan.outputs.refresh == 'true'
+        env:
+          LIVE: ${{ steps.version.outputs.live }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/wikeloContracts.json src/data/missionRewards.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Snapshots unchanged; nothing to deploy."
+            exit 0
+          fi
+          git commit -m "Refresh Item Finder game data (${LIVE:-forced refresh})"
+          git pull --rebase origin master
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies of the latest master
+        if: steps.commit.outputs.changed == 'true'
+        run: npm ci
+
+      - name: Test
+        if: steps.commit.outputs.changed == 'true' || inputs.deploy_only
+        run: npx react-scripts test --watchAll=false
+        env:
+          CI: true
+
+      - name: Build
+        if: steps.commit.outputs.changed == 'true' || inputs.deploy_only
+        run: npm run build
+        env:
+          CI: true
+
+      - name: Deploy to GitHub Pages
+        if: steps.commit.outputs.changed == 'true' || inputs.deploy_only
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+
+      - name: Push snapshots to master
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          for attempt in 1 2 3; do
+            if git push origin HEAD:master; then exit 0; fi
+            echo "Push rejected (attempt $attempt); rebasing onto the new master."
+            git pull --rebase origin master
+          done
+          echo "Could not push the new snapshots; the next run will rebuild and deploy again."
+          exit 1

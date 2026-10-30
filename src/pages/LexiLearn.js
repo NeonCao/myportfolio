@@ -16,7 +16,7 @@ function LexiLearn() {
             <div className="badge border-cyan-200/40 bg-cyan-200/10 px-4 py-3 text-cyan-100">
               {intro.badge}
             </div>
-            <h1 className="mt-6 text-5xl font-black leading-tight tracking-[-0.05em] text-[#fff7d6] md:text-7xl">
+            <h1 className="fx-plain mt-6 text-5xl font-black leading-tight tracking-[-0.05em] text-[#fff7d6] md:text-7xl">
               {intro.headline}
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-[#f6f0df]/75">

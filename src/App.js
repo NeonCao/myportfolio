@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import PersonalHistory from './components/PersonalHistory';
@@ -19,14 +19,23 @@ import AnalyticsDashboard from './pages/AnalyticsDashboard';
 import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import NotFound from './pages/NotFound';
+import ItemFinder from './pages/ItemFinder';
 import { useEffect } from 'react';
 import { applyTheme, getActiveTheme } from './utils/theme';
 import NavigationEffects from './components/NavigationEffects';
 import SiteClickTracker from './components/SiteClickTracker';
 import DocumentTitle from './components/DocumentTitle';
+import PageTransition from './components/PageTransition';
+import Footer from './components/Footer';
 import { ENGLISH, LanguageProvider, useTranslation } from './i18n/LanguageContext';
 import ProjectPageTranslator from './components/ProjectPageTranslator';
 import { homeHistoryByLanguage } from './content/home';
+
+// The Item Finder used to be a top-level tool page; keep shared links (and their search params) working.
+function MovedItemFinder() {
+  const { search, hash } = useLocation();
+  return <Navigate to={{ pathname: '/projects/item-finder', search, hash }} replace />;
+}
 
 function getRouterBasename() {
   const publicUrl = process.env.PUBLIC_URL;
@@ -55,11 +64,7 @@ function Home() {
     <>
       <Hero />
       <div id="personal-history">
-        <PersonalHistory
-          educationHistory={educationHistory}
-          workHistory={workHistory}
-          heading={t('history.heading')}
-        />
+        <PersonalHistory educationHistory={educationHistory} workHistory={workHistory} heading={t('history.heading')} />
       </div>
     </>
   );
@@ -78,27 +83,32 @@ function App() {
         <DocumentTitle />
         <Header />
         <ProjectPageTranslator />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/interactive-piggy-bank" element={<InteractivePiggyBank />} />
-          <Route path="/projects/telling-overtown-stories" element={<TellingOvertownStories />} />
-          <Route path="/projects/auto-espresso" element={<ProjectAutoEspresso />} />
-          <Route path="/projects/periodic-table-of-mixology" element={<PeriodicTableOfMixology />} />
-          <Route path="/projects/um-campus-xplorer" element={<UMCampusXplorer />} />
-          <Route path="/projects/ar-calorie-visualizer" element={<ARCalorieVisualizer />} />
-          <Route path="/projects/the-stellar-life-cycle" element={<StellarLifeCycle />} />
-          <Route path="/projects/design-student-note-taking" element={<DesignStudentNotetaking />} />
-          <Route path="/projects/um-card-sorting-study" element={<UMCardSortingStudy />} />
-          <Route path="/projects/about-myself" element={<ProjectAboutMyself />} />
-          <Route path="/projects/memory-graden" element={<MemoryGraden />} />
-          <Route path="/projects/lexilearn" element={<LexiLearn />} />
-          <Route path="/projects/5-star-host-web-page-redesign" element={<FiveStarHostRedesign />} />
-          <Route path="/analytics" element={<AnalyticsDashboard />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/gallery/:photoSlug" element={<Gallery />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <PageTransition>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/interactive-piggy-bank" element={<InteractivePiggyBank />} />
+            <Route path="/projects/telling-overtown-stories" element={<TellingOvertownStories />} />
+            <Route path="/projects/auto-espresso" element={<ProjectAutoEspresso />} />
+            <Route path="/projects/periodic-table-of-mixology" element={<PeriodicTableOfMixology />} />
+            <Route path="/projects/um-campus-xplorer" element={<UMCampusXplorer />} />
+            <Route path="/projects/ar-calorie-visualizer" element={<ARCalorieVisualizer />} />
+            <Route path="/projects/the-stellar-life-cycle" element={<StellarLifeCycle />} />
+            <Route path="/projects/design-student-note-taking" element={<DesignStudentNotetaking />} />
+            <Route path="/projects/um-card-sorting-study" element={<UMCardSortingStudy />} />
+            <Route path="/projects/about-myself" element={<ProjectAboutMyself />} />
+            <Route path="/projects/memory-graden" element={<MemoryGraden />} />
+            <Route path="/projects/lexilearn" element={<LexiLearn />} />
+            <Route path="/projects/5-star-host-web-page-redesign" element={<FiveStarHostRedesign />} />
+            <Route path="/projects/item-finder" element={<ItemFinder />} />
+            <Route path="/analytics" element={<AnalyticsDashboard />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallery/:photoSlug" element={<Gallery />} />
+            <Route path="/tools/item-finder" element={<MovedItemFinder />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </PageTransition>
+        <Footer />
       </BrowserRouter>
     </LanguageProvider>
   );

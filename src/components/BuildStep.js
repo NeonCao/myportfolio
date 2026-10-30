@@ -15,8 +15,12 @@ function BuildStep({ number, title, text, images, imageLeft = false }) {
   const imageBlock = (
     <div className="flex flex-col gap-4">
       {images.map((img, i) => (
-        <div key={i}>
-          <img src={img.src} alt={img.caption} className="w-full rounded-box object-cover" />
+        <div key={i} className="fx-reveal">
+          <img
+            src={img.src}
+            alt={img.caption}
+            className="w-full rounded-box object-cover shadow-xl ring-1 ring-base-content/10"
+          />
           {img.caption && <p className="text-xs text-center opacity-50 mt-2">{img.caption}</p>}
         </div>
       ))}

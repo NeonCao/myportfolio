@@ -1,0 +1,331 @@
+{
+ "data": {
+  "uuid": "26838ca7-418a-47d2-8429-7339ebbb8993",
+  "slug": "omnisky-iii-cannon",
+  "name": "Omnisky III Cannon",
+  "class_name": "AMRS_LaserCannon_S1",
+  "type": "WeaponGun",
+  "type_label": "Weapon Gun",
+  "sub_type": "Gun",
+  "sub_type_label": "Gun",
+  "classification": "Ship.Weapon.Gun",
+  "classification_label": "Gun",
+  "size": 1,
+  "grade": "A",
+  "class": null,
+  "mass": 144,
+  "manufacturer": {
+   "name": "Amon & Reese Co.",
+   "code": "AMRS",
+   "uuid": "eccba58a-f6d9-42e8-95c6-d0a65763e583",
+   "link": "https://api.star-citizen.wiki/api/manufacturers/AMRS"
+  },
+  "is_craftable": true,
+  "is_lootable": false,
+  "blueprint": [
+   {
+    "uuid": "280f47b7-8434-410c-b854-380768fdccec",
+    "name": "Omnisky III Cannon",
+    "link": "https://api.star-citizen.wiki/api/blueprints/280f47b7-8434-410c-b854-380768fdccec"
+   }
+  ],
+  "dimension": {
+   "width": 0.75,
+   "height": 0.75,
+   "length": 1.5,
+   "volume": 0.084,
+   "volume_converted": 84000,
+   "volume_converted_unit": "µSCU",
+   "true_dimension": {
+    "width": 0.206,
+    "height": 0.418,
+    "length": 1.508
+   },
+   "dimensions": {
+    "width": 0.206,
+    "height": 0.418,
+    "length": 1.508
+   },
+   "cargo_dimension": {
+    "width": 0.45,
+    "height": 1.11,
+    "length": 0.8
+   },
+   "ui_dimension": {
+    "width": 0.75,
+    "height": 0.75,
+    "length": 1.5
+   }
+  },
+  "web_url": "https://api.star-citizen.wiki/items/omnisky-iii-cannon",
+  "version": "4.10.2-LIVE.12881860",
+  "vehicle_weapon": {
+   "class": "Gun",
+   "type": "Laser Cannon",
+   "capacity": 0,
+   "range": 2004,
+   "damage_per_shot": 97.2,
+   "regeneration": 3,
+   "rpm": 150,
+   "damages": [
+    {
+     "type": "impact",
+     "name": "energy",
+     "damage": 97.2
+    }
+   ],
+   "modes": [
+    {
+     "mode": "Single",
+     "localised": "[AUTO]",
+     "type": "sequence",
+     "rpm": 150,
+     "rounds_per_minute": 150,
+     "ammo_per_shot": 1,
+     "pellets_per_shot": 1,
+     "damage_per_second": 243,
+     "heat_per_shot": 0,
+     "wear_per_shot": 0,
+     "heat_per_second": null,
+     "wear_per_second": null,
+     "fire_during_spin_up": null,
+     "shot_count": null,
+     "cooldown_time": null,
+     "sequence_mode": "Looping",
+     "charge_up_time": null,
+     "charge_down_time": null,
+     "full_damage_range": null,
+     "zero_damage_range": null,
+     "hit_type": null,
+     "hit_radius": null,
+     "min_energy_draw": null,
+     "max_energy_draw": null,
+     "healing_mode": null,
+     "healing_per_second": null,
+     "ammo_per_mscu": null,
+     "medical_ammo_type": null,
+     "external_healing": null,
+     "toggle": null,
+     "max_distance": null,
+     "max_sensor_distance": null,
+     "auto_dosage_modifier": null,
+     "healing_break_time": null,
+     "max_dose_for_auto_adjustment": null,
+     "battery_drain_per_second": null,
+     "material_efficiency": null,
+     "max_health_repair_rate": null,
+     "max_damage_map_repair_rate": null,
+     "health_to_ammo_ratio": null,
+     "ramp_up_time": null,
+     "ramp_down_time": null,
+     "max_vehicle_damage_ratio": null,
+     "repaired_material_ratio": null,
+     "salvage_can_fire_on_full": null,
+     "damage_threshold": null,
+     "minimum_distance": null,
+     "maximum_distance": null,
+     "beam_radius": null,
+     "collection_rate": null,
+     "energy_draw": null,
+     "mining_extractor_tag": null,
+     "toggle_mode": null
+    }
+   ],
+   "damage": {
+    "sustained_60s": 129,
+    "burst": 243,
+    "alpha_total": 97.2,
+    "max": "Infinite",
+    "maximum": "Infinite",
+    "dps": {
+     "physical": 0,
+     "energy": 243,
+     "distortion": 0,
+     "thermal": 0,
+     "biochemical": 0,
+     "stun": 0
+    },
+    "alpha": {
+     "physical": 0,
+     "energy": 97.2,
+     "distortion": 0,
+     "thermal": 0,
+     "biochemical": 0,
+     "stun": 0
+    }
+   },
+   "spread": {
+    "min": 0.45,
+    "max": 0.45,
+    "minimum": 0.45,
+    "maximum": 0.45,
+    "first_attack": 0.025,
+    "per_attack": 0.025,
+    "decay": 0.5
+   },
+   "capacitor": {
+    "max_ammo_load": 25,
+    "regen_per_second": 3,
+    "cooldown": 0.5,
+    "requested_ammo_load": 9000,
+    "costs_per_shot": 90
+   },
+   "ammunition": {
+    "uuid": "20661f50-2ba8-46bb-81c7-039c60e84e7c",
+    "size": 1,
+    "lifetime": 1.67,
+    "speed": 1200,
+    "range": 2004,
+    "capacity": 0,
+    "initial_capacity": 0,
+    "damage_falloff_level_1": 0,
+    "damage_falloff_level_2": 0,
+    "damage_falloff_level_3": 0,
+    "max_penetration_thickness": 0.5,
+    "penetration": {
+     "base_distance": 0.1428,
+     "near_radius": 0.01,
+     "far_radius": 0.01,
+     "angle": null
+    },
+    "impact_damage": [
+     {
+      "type": "impact",
+      "name": "Energy",
+      "damage": 97.2
+     }
+    ],
+    "impact_damage_map": {
+     "energy": 97.2
+    },
+    "conversion_rate": 129,
+    "impulse_scale": 1,
+    "bullet_type": -1
+   },
+   "magazine_volume": {
+    "micro_scu": 0,
+    "scu": 0
+   }
+  },
+  "ammunition": {
+   "uuid": "20661f50-2ba8-46bb-81c7-039c60e84e7c",
+   "size": 1,
+   "lifetime": 1.67,
+   "speed": 1200,
+   "range": 2004,
+   "capacity": 0,
+   "initial_capacity": 0,
+   "damage_falloff_level_1": 0,
+   "damage_falloff_level_2": 0,
+   "damage_falloff_level_3": 0,
+   "max_penetration_thickness": 0.5,
+   "penetration": {
+    "base_distance": 0.1428,
+    "near_radius": 0.01,
+    "far_radius": 0.01,
+    "angle": null
+   },
+   "impact_damage": [
+    {
+     "type": "impact",
+     "name": "Energy",
+     "damage": 97.2
+    }
+   ],
+   "impact_damage_map": {
+    "energy": 97.2
+   },
+   "conversion_rate": 129,
+   "impulse_scale": 1,
+   "bullet_type": -1
+  },
+  "durability": {
+   "health": 550,
+   "lifetime": null,
+   "max_lifetime": null,
+   "repairable": true,
+   "salvageable": true,
+   "resistance": {
+    "stun": 1,
+    "energy": 1,
+    "thermal": 1,
+    "physical": 0.6,
+    "distortion": 1,
+    "biochemical": 1
+   }
+  },
+  "emission": {
+   "ir": 0,
+   "em_min": 0,
+   "em_max": 446,
+   "em_decay": 0.15
+  },
+  "uex_prices": {
+   "purchase": [
+    {
+     "price_buy": 14845,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 191,
+     "terminal_code": "SWHL3",
+     "terminal_name": "Ship Weapons - HUR-L3",
+     "starmap_location": {
+      "uuid": "de5f2d1d-78e5-4273-8028-c06690c03685",
+      "name": "HUR-L3 Thundering Express Station",
+      "slug": "hur-l3-thundering-express-station",
+      "type_name": "Manmade_VisibleOnInteraction",
+      "parent_name": "Stanton",
+      "star_system_name": "Stanton",
+      "link": "https://api.star-citizen.wiki/api/locations/de5f2d1d-78e5-4273-8028-c06690c03685",
+      "web_url": "https://api.star-citizen.wiki/locations/de5f2d1d-78e5-4273-8028-c06690c03685"
+     },
+     "date_updated": "2026-09-30T19:51:02+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=omnisky-iii-cannon&tab=about"
+    },
+    {
+     "price_buy": 14845,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 111,
+     "terminal_code": "COUSI",
+     "terminal_name": "Cousin Crow's - Providence Platform - Orison",
+     "starmap_location": {
+      "uuid": "567f92d7-d34c-42fa-b57b-f1939d4c5f5b",
+      "name": "Orison",
+      "slug": "orison",
+      "type_name": "LandingZone",
+      "parent_name": "Crusader",
+      "star_system_name": "Stanton",
+      "link": "https://api.star-citizen.wiki/api/locations/567f92d7-d34c-42fa-b57b-f1939d4c5f5b",
+      "web_url": "https://api.star-citizen.wiki/locations/567f92d7-d34c-42fa-b57b-f1939d4c5f5b"
+     },
+     "date_updated": "2026-09-19T18:19:15+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=omnisky-iii-cannon&tab=about"
+    },
+    {
+     "price_buy": 15461,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 108,
+     "terminal_code": "CMNEW",
+     "terminal_name": "CenterMass - New Babbage",
+     "starmap_location": {
+      "uuid": "122e8057-831d-4517-a23b-0eb8382b90a2",
+      "name": "New Babbage",
+      "slug": "new-babbage",
+      "type_name": "LandingZone",
+      "parent_name": "microTech",
+      "star_system_name": "Stanton",
+      "link": "https://api.star-citizen.wiki/api/locations/122e8057-831d-4517-a23b-0eb8382b90a2",
+      "web_url": "https://api.star-citizen.wiki/locations/122e8057-831d-4517-a23b-0eb8382b90a2"
+     },
+     "date_updated": "2026-09-16T18:16:29+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=omnisky-iii-cannon&tab=about"
+    }
+   ]
+  }
+ }
+}

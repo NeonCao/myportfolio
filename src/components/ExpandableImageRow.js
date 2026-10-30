@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 function HoverImageTile({ image, fallbackAlt, onOpen, tileFit, size = 'standard' }) {
   const alt = image.alt || image.caption || fallbackAlt;
@@ -7,10 +8,13 @@ function HoverImageTile({ image, fallbackAlt, onOpen, tileFit, size = 'standard'
     'gallery-photo-media bg-base-200 shadow-xl',
     size === 'featured' ? 'h-[min(70vh,620px)]' : '',
     size === 'support' ? 'h-80 sm:h-96' : '',
-  ].filter(Boolean).join(' ');
-  const imageClassName = tileFit === 'contain'
-    ? `${size === 'standard' ? 'block h-auto' : 'h-full'} w-full object-contain`
-    : `${size === 'standard' ? 'aspect-[4/3]' : 'h-full'} w-full object-cover object-top`;
+  ]
+    .filter(Boolean)
+    .join(' ');
+  const imageClassName =
+    tileFit === 'contain'
+      ? `${size === 'standard' ? 'block h-auto' : 'h-full'} w-full object-contain`
+      : `${size === 'standard' ? 'aspect-[4/3]' : 'h-full'} w-full object-cover object-top`;
 
   return (
     <button
@@ -20,13 +24,7 @@ function HoverImageTile({ image, fallbackAlt, onOpen, tileFit, size = 'standard'
       aria-label={`Enlarge ${alt}`}
     >
       <div className={mediaClassName} style={mediaStyle}>
-        <img
-          src={image.src}
-          alt={alt}
-          className={imageClassName}
-          loading="lazy"
-          decoding="async"
-        />
+        <img src={image.src} alt={alt} className={imageClassName} loading="lazy" decoding="async" />
       </div>
       <div></div>
       <div></div>
@@ -69,7 +67,7 @@ function ExpandableImageRow({ images = [], title = 'Project image', tileFit = 'c
   }
 
   const renderImage = (image, index, size = 'standard') => (
-    <figure key={image.src || `${title}-${index}`} className="space-y-2">
+    <figure key={image.src || `${title}-${index}`} className="fx-reveal space-y-2">
       <HoverImageTile
         image={image}
         fallbackAlt={`${title} ${index + 1}`}
@@ -77,9 +75,7 @@ function ExpandableImageRow({ images = [], title = 'Project image', tileFit = 'c
         size={size}
         onOpen={() => setActiveImage(image)}
       />
-      {image.caption ? (
-        <figcaption className="text-center text-xs opacity-50">{image.caption}</figcaption>
-      ) : null}
+      {image.caption ? <figcaption className="text-center text-xs opacity-50">{image.caption}</figcaption> : null}
     </figure>
   );
 
@@ -108,10 +104,7 @@ function ExpandableImageRow({ images = [], title = 'Project image', tileFit = 'c
           {imageRows.map((row, rowIndex) => (
             <div key={`${title}-row-${rowIndex}`} className="flex justify-center gap-4">
               {row.map((image, index) => (
-                <div
-                  key={image.src || `${title}-${rowIndex}-${index}`}
-                  className="w-[calc((100%_-_2rem)/3)]"
-                >
+                <div key={image.src || `${title}-${rowIndex}-${index}`} className="w-[calc((100%_-_2rem)/3)]">
                   {renderImage(image, rowIndex * 3 + index, 'preview')}
                 </div>
               ))}
@@ -120,30 +113,31 @@ function ExpandableImageRow({ images = [], title = 'Project image', tileFit = 'c
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {images.map((image, index) => (
-            renderImage(image, index)
-          ))}
+          {images.map((image, index) => renderImage(image, index))}
         </div>
       )}
 
-      {activeImage ? (
-        <div
-          className="fixed inset-0 z-[100] overflow-y-auto bg-black/90 p-4 sm:p-8"
-          role="dialog"
-          aria-modal="true"
-          aria-label={activeImage.alt || activeImage.caption || title}
-          onClick={() => setActiveImage(null)}
-        >
-          <div className="flex min-h-full items-start justify-center">
-            <img
-              src={activeImage.src}
-              alt={activeImage.alt || activeImage.caption || title}
-              className="max-w-full rounded-[1rem] bg-base-100 object-contain shadow-2xl"
-              onClick={(event) => event.stopPropagation()}
-            />
-          </div>
-        </div>
-      ) : null}
+      {activeImage
+        ? createPortal(
+            <div
+              className="fx-page-enter fixed inset-0 z-[100] overflow-y-auto bg-black/85 p-4 backdrop-blur-md sm:p-8"
+              role="dialog"
+              aria-modal="true"
+              aria-label={activeImage.alt || activeImage.caption || title}
+              onClick={() => setActiveImage(null)}
+            >
+              <div className="flex min-h-full items-start justify-center">
+                <img
+                  src={activeImage.src}
+                  alt={activeImage.alt || activeImage.caption || title}
+                  className="max-w-full rounded-[1rem] bg-base-100 object-contain shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/10"
+                  onClick={(event) => event.stopPropagation()}
+                />
+              </div>
+            </div>,
+            document.body
+          )
+        : null}
     </>
   );
 }

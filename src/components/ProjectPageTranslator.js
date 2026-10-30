@@ -4,6 +4,8 @@ import { CHINESE, useTranslation } from '../i18n/LanguageContext';
 import { normalizeProjectPhrase, translateProjectPhrase } from '../i18n/projectPhraseTranslations';
 
 const originalTextByNode = new WeakMap();
+// Project pages that switch language themselves (and re-render too often to be walked on every change).
+const SELF_TRANSLATED_PAGES = new Set(['/projects/item-finder']);
 const ignoredTags = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'SVG', 'CANVAS', 'TEXTAREA', 'INPUT']);
 
 function shouldTranslateNode(node) {
@@ -53,10 +55,7 @@ function translateTextNode(node, language) {
 
   const originalText = originalTextByNode.get(node);
   const textForLookup = language === CHINESE ? originalText : node.textContent;
-  const translatedText = applyStepLabelTranslation(
-    translateProjectPhrase(textForLookup, language),
-    language
-  );
+  const translatedText = applyStepLabelTranslation(translateProjectPhrase(textForLookup, language), language);
 
   if (translatedText !== node.textContent) {
     node.textContent = translatedText;
@@ -79,7 +78,7 @@ function ProjectPageTranslator() {
   const { language } = useTranslation();
 
   useEffect(() => {
-    if (!pathname.startsWith('/projects')) {
+    if (!pathname.startsWith('/projects') || SELF_TRANSLATED_PAGES.has(pathname)) {
       return undefined;
     }
 

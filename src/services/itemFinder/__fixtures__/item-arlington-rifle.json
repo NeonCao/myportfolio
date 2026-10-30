@@ -1,0 +1,81 @@
+{
+  "data": {
+    "uuid": "cc95ae76-505d-4481-8639-77ae6a41b99c",
+    "slug": "arlington-rifle",
+    "name": "Arlington Rifle",
+    "class_name": "hdgw_rifle_ballistic_01",
+    "size": 2,
+    "rarity": "Common",
+    "is_base_variant": true,
+    "is_craftable": false,
+    "is_lootable": true,
+    "manufacturer": {
+      "name": "Hedeby Gunworks"
+    },
+    "type": "WeaponPersonal",
+    "type_label": "FPS Weapon",
+    "sub_type": "Medium",
+    "sub_type_label": "Medium",
+    "tags": [
+      "stocked",
+      "hdgw_rifle_ballistic_01",
+      "rifle"
+    ],
+    "entity_tag_map": [
+      {
+        "uuid": "32f67db2-bec8-420c-adff-54f16eccb98f",
+        "name": "HedebyGunworks"
+      },
+      {
+        "uuid": "3100e55a-0610-4ebb-a2da-21458bb6b46a",
+        "name": "Rifle"
+      },
+      {
+        "uuid": "a0191226-abf0-4677-b249-c3111aa7222f",
+        "name": "Weapon"
+      },
+      {
+        "uuid": "077071be-c789-4dce-a10e-f53d57c9477c",
+        "name": "LootableFromSuit"
+      },
+      {
+        "uuid": "d4c86c2f-b66a-421e-8469-506b99be9e47",
+        "name": "Rifle"
+      },
+      {
+        "uuid": "0436bd92-db4f-4c46-9ba9-75801569d825",
+        "name": "Stocked"
+      },
+      {
+        "uuid": "c959992f-d86d-4f77-8b70-609498aabec6",
+        "name": "S2"
+      },
+      {
+        "uuid": "386f5ab5-4bde-49ef-a1dd-a8a2b7d1060d",
+        "name": "Ballistic"
+      },
+      {
+        "uuid": "1a1c31a2-ea76-4907-8dfc-cb3e3b4d0b6d",
+        "name": "Crosshair"
+      },
+      {
+        "uuid": "bed8e09b-a5f2-4f4e-9be9-ab618ebfbd58",
+        "name": "CanGenerateAsLoot"
+      },
+      {
+        "uuid": "59ca5e36-b9a2-4459-ad0e-5745bcf5d899",
+        "name": "Common"
+      },
+      {
+        "uuid": "8ae3df04-8e7b-4ad0-a6f3-9b4099edfb04",
+        "name": "SoO"
+      },
+      {
+        "uuid": "991b0c8a-d267-4c90-a0d7-cb46288008b1",
+        "name": "Arlington"
+      }
+    ],
+    "version": "4.10.2-LIVE.12881860",
+    "web_url": "https://api.star-citizen.wiki/items/arlington-rifle"
+  }
+}

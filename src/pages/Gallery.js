@@ -107,7 +107,7 @@ function PhotoNavButton({ to, label, direction }) {
     <Link
       to={to}
       aria-label={label}
-      className={`btn btn-circle btn-neutral absolute top-1/2 ${positionClass} z-10 -translate-y-1/2 shadow-xl`}
+      className={`btn btn-circle absolute top-1/2 ${positionClass} z-10 -translate-y-1/2 border-white/25 bg-black/45 text-2xl text-white shadow-xl backdrop-blur-md hover:bg-black/70`}
     >
       {direction === 'previous' ? '‹' : '›'}
     </Link>
@@ -134,7 +134,13 @@ function GalleryPhotoView({ photo }) {
   }, [previousPhoto, nextPhoto, navigate]);
 
   return (
-    <main className="min-h-screen bg-base-200">
+    <main className="relative isolate min-h-screen overflow-hidden bg-base-200">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 scale-125 bg-cover bg-center opacity-45 blur-3xl saturate-150"
+        style={{ backgroundImage: `url(${photo.src})` }}
+      ></div>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-base-200/70 via-base-200/20 to-base-200/85"></div>
       <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col px-4 py-8 sm:px-6 sm:py-10">
         <div className="mb-6 flex items-center justify-between gap-4">
           <Link to="/gallery" className="btn btn-outline">
@@ -153,7 +159,7 @@ function GalleryPhotoView({ photo }) {
           <img
             src={photo.src}
             alt={photo.alt}
-            className="max-h-[78vh] max-w-full object-contain shadow-2xl"
+            className="max-h-[78vh] max-w-full rounded-lg object-contain shadow-[0_30px_90px_-20px_rgba(0,0,0,0.7)] ring-1 ring-white/10"
           />
           <PhotoNavButton to={nextPhoto && `/gallery/${nextPhoto.slug}`} label={content.photoView.nextLabel} direction="next" />
         </div>

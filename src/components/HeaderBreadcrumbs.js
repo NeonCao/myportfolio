@@ -17,6 +17,7 @@ export const projectPageNames = {
   '/projects/memory-graden': 'Memory Graden',
   '/projects/lexilearn': 'LexiLearn',
   '/projects/5-star-host-web-page-redesign': 'Case Study: 5-Star Host web page redesign',
+  '/projects/item-finder': 'Star Citizen Item Finder',
 };
 
 function FolderIcon() {

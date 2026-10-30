@@ -1,0 +1,2023 @@
+{
+ "source": "https://api.star-citizen.wiki",
+ "fetchedAt": "2026-10-29T19:16:49.595Z",
+ "gameVersion": "4.10.2-LIVE.12881860",
+ "reputationLadder": {
+  "scope_name": "Wikelo",
+  "standings": [
+   {
+    "name": "Wolf",
+    "display_name": "Very Best Customer",
+    "min_reputation": 999
+   },
+   {
+    "name": "Armour",
+    "display_name": "Very Good Customer",
+    "min_reputation": 340
+   },
+   {
+    "name": "Nothing",
+    "display_name": "New Customer",
+    "min_reputation": 0
+   }
+  ]
+ },
+ "contracts": [
+  {
+   "uuid": "b46612e0-4eae-4827-8038-e460e00f8967",
+   "title": "Big Style LMG",
+   "debug_name": "TheCollector_GMNI_LMG",
+   "not_for_release": false,
+   "work_in_progress": false,
+   "released": true,
+   "once_only": false,
+   "min_standing": null,
+   "max_standing": null,
+   "reputation_gained": [
+    {
+     "tier": null,
+     "scope": "Wikelo",
+     "amount": 10,
+     "faction": "Wikelo Emporium",
+     "faction_uuid": "5f442fdd-15cc-4f62-bd10-fce2023f4d0c"
+    }
+   ],
+   "reputation_prerequisite": null,
+   "hauling_orders": [
+    {
+     "kind": "Entity",
+     "name": "F55 LMG",
+     "uuid": "d52a4cbb-4791-476d-a104-9f21e8d3f855",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/d52a4cbb-4791-476d-a104-9f21e8d3f855",
+     "web_url": "https://api.star-citizen.wiki/items/d52a4cbb-4791-476d-a104-9f21e8d3f855"
+    },
+    {
+     "kind": "Entity",
+     "name": "Vanduul Metal",
+     "uuid": "9889fb6f-5ab7-4b8e-b553-8ad7e233741d",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/9889fb6f-5ab7-4b8e-b553-8ad7e233741d",
+     "web_url": "https://api.star-citizen.wiki/items/9889fb6f-5ab7-4b8e-b553-8ad7e233741d"
+    },
+    {
+     "kind": "Entity",
+     "name": "Jaclium (Ore)",
+     "uuid": "118652a7-cc27-44ea-b362-96fcfeef8774",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 20,
+     "min_amount": 20,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/118652a7-cc27-44ea-b362-96fcfeef8774",
+     "web_url": "https://api.star-citizen.wiki/items/118652a7-cc27-44ea-b362-96fcfeef8774"
+    }
+   ],
+   "reward_items": [
+    {
+     "name": "F55 \"Shadowflux\" LMG",
+     "uuid": "ddb8eb6e-a55d-4846-90f3-5adda9ea8e9d",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/ddb8eb6e-a55d-4846-90f3-5adda9ea8e9d",
+     "web_url": "https://api.star-citizen.wiki/items/f55-shadowflux-lmg"
+    },
+    {
+     "name": "F55 LMG Magazine (150 cap)",
+     "uuid": "daa0fe47-d6f7-44eb-a3d6-e3e13724a6ba",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/daa0fe47-d6f7-44eb-a3d6-e3e13724a6ba",
+     "web_url": "https://api.star-citizen.wiki/items/f55-lmg-magazine-150-cap"
+    }
+   ],
+   "reward_groups": [
+    {
+     "group_index": 0,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "F55 \"Shadowflux\" LMG",
+       "uuid": "ddb8eb6e-a55d-4846-90f3-5adda9ea8e9d",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/ddb8eb6e-a55d-4846-90f3-5adda9ea8e9d",
+       "web_url": "https://api.star-citizen.wiki/items/f55-shadowflux-lmg"
+      },
+      {
+       "name": "F55 LMG Magazine (150 cap)",
+       "uuid": "daa0fe47-d6f7-44eb-a3d6-e3e13724a6ba",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/daa0fe47-d6f7-44eb-a3d6-e3e13724a6ba",
+       "web_url": "https://api.star-citizen.wiki/items/f55-lmg-magazine-150-cap"
+      }
+     ]
+    }
+   ],
+   "blueprints": [
+    {
+     "drop_chance": 1,
+     "drop_chance_percent": 100,
+     "pool_uuid": "b6c1003d-3c1c-4238-a9fb-2d35fcb2ad8e",
+     "items": [
+      {
+       "name": "F55 \"Shadowflux\" LMG",
+       "uuid": "ddb8eb6e-a55d-4846-90f3-5adda9ea8e9d",
+       "item_link": "https://api.star-citizen.wiki/api/items/ddb8eb6e-a55d-4846-90f3-5adda9ea8e9d",
+       "blueprint_link": "https://api.star-citizen.wiki/api/blueprints/d5e951bf-f079-4dfb-9b95-39676059fdf1",
+       "web_item_link": "https://api.star-citizen.wiki/items/ddb8eb6e-a55d-4846-90f3-5adda9ea8e9d",
+       "web_blueprint_link": "https://api.star-citizen.wiki/blueprints/f55-shadowflux-lmg"
+      }
+     ]
+    }
+   ],
+   "prerequisite_groups": [
+    {
+     "required_count": 1,
+     "required_tags": [
+      {
+       "name": "IntroDone",
+       "uuid": "87e124b5-79d4-438d-9be4-64c6c9f755f9"
+      }
+     ],
+     "excluded_tags": [],
+     "missions": [
+      {
+       "uuid": "028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "title": "Wikelo Arrive to System",
+       "mission_type": "Collection",
+       "link": "https://api.star-citizen.wiki/api/missions/028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "web_url": "https://api.star-citizen.wiki/missions/wikelo-arrive-to-system"
+      }
+     ]
+    }
+   ],
+   "mission_tokens": null,
+   "reward_min": null,
+   "reward_max": null,
+   "reward_currency": null,
+   "game_version": "4.10.2-LIVE.12881860",
+   "web_url": "https://api.star-citizen.wiki/missions/big-style-lmg"
+  },
+  {
+   "uuid": "e05b8ffb-7455-4f24-bbcf-43e9dffc0cca",
+   "title": "Now make Polaris. Short Time Deal.",
+   "debug_name": "TheCollector_Vehicle_Polaris",
+   "not_for_release": false,
+   "work_in_progress": false,
+   "released": true,
+   "once_only": false,
+   "min_standing": null,
+   "max_standing": null,
+   "reputation_gained": [
+    {
+     "tier": null,
+     "scope": "Wikelo",
+     "amount": 1000,
+     "faction": "Wikelo Emporium",
+     "faction_uuid": "5f442fdd-15cc-4f62-bd10-fce2023f4d0c"
+    }
+   ],
+   "reputation_prerequisite": null,
+   "hauling_orders": [
+    {
+     "kind": "Entity",
+     "name": "Wikelo Favor",
+     "uuid": "3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+     "web_url": "https://api.star-citizen.wiki/items/3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae"
+    },
+    {
+     "kind": "Entity",
+     "name": "Polaris Bit",
+     "uuid": "4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 15,
+     "min_amount": 15,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+     "web_url": "https://api.star-citizen.wiki/items/4b697f15-c1e2-4b35-9b79-6bff5db9021b"
+    },
+    {
+     "kind": "Entity",
+     "name": "DCHS-05 Orbital Positioning Comp-Board",
+     "uuid": "7f2786bf-bf9a-4115-a14c-9fc0506be204",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 10,
+     "min_amount": 10,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/7f2786bf-bf9a-4115-a14c-9fc0506be204",
+     "web_url": "https://api.star-citizen.wiki/items/7f2786bf-bf9a-4115-a14c-9fc0506be204"
+    },
+    {
+     "kind": "Entity",
+     "name": "Carinite",
+     "uuid": "0b83f4b2-1d15-4843-aa94-29f2b40a5cbe",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 20,
+     "min_amount": 20,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/0b83f4b2-1d15-4843-aa94-29f2b40a5cbe",
+     "web_url": "https://api.star-citizen.wiki/items/0b83f4b2-1d15-4843-aa94-29f2b40a5cbe"
+    },
+    {
+     "kind": "Entity",
+     "name": "Irradiated Valakkar Fang (Apex)",
+     "uuid": "f8cb1253-585f-40fe-8359-6b5de284c47e",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 20,
+     "min_amount": 20,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/f8cb1253-585f-40fe-8359-6b5de284c47e",
+     "web_url": "https://api.star-citizen.wiki/items/f8cb1253-585f-40fe-8359-6b5de284c47e"
+    },
+    {
+     "kind": "Entity",
+     "name": "MG Scrip",
+     "uuid": "0df18692-2cc7-4d9d-af85-95b8a7a45419",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 20,
+     "min_amount": 20,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/0df18692-2cc7-4d9d-af85-95b8a7a45419",
+     "web_url": "https://api.star-citizen.wiki/items/0df18692-2cc7-4d9d-af85-95b8a7a45419"
+    },
+    {
+     "kind": "Entity",
+     "name": "Ace Interceptor Helmet",
+     "uuid": "c92273b0-2d7f-41b3-9fdd-af07e190a0f3",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 15,
+     "min_amount": 15,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/c92273b0-2d7f-41b3-9fdd-af07e190a0f3",
+     "web_url": "https://api.star-citizen.wiki/items/c92273b0-2d7f-41b3-9fdd-af07e190a0f3"
+    },
+    {
+     "kind": "Entity",
+     "name": "Irradiated Valakkar Pearl (Grade AAA)",
+     "uuid": "e738c105-8ef7-4238-8170-5db0c4f9c15d",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 15,
+     "min_amount": 15,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/e738c105-8ef7-4238-8170-5db0c4f9c15d",
+     "web_url": "https://api.star-citizen.wiki/items/e738c105-8ef7-4238-8170-5db0c4f9c15d"
+    },
+    {
+     "kind": "Entity",
+     "name": "UEE 6th Platoon Medal (Pristine)",
+     "uuid": "366d803c-d830-4668-8375-01776d852519",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 15,
+     "min_amount": 15,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/366d803c-d830-4668-8375-01776d852519",
+     "web_url": "https://api.star-citizen.wiki/items/366d803c-d830-4668-8375-01776d852519"
+    },
+    {
+     "kind": "Entity",
+     "name": "Carinite (Pure)",
+     "uuid": "9904aaa2-9a13-48d2-a48d-7494e60d012f",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 15,
+     "min_amount": 15,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/9904aaa2-9a13-48d2-a48d-7494e60d012f",
+     "web_url": "https://api.star-citizen.wiki/items/9904aaa2-9a13-48d2-a48d-7494e60d012f"
+    },
+    {
+     "kind": "Entity",
+     "name": "ASD Secure Drive",
+     "uuid": "60a09784-0e4c-40f3-945e-daba453f81c8",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 15,
+     "min_amount": 15,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/60a09784-0e4c-40f3-945e-daba453f81c8",
+     "web_url": "https://api.star-citizen.wiki/items/60a09784-0e4c-40f3-945e-daba453f81c8"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-PWL-1",
+     "uuid": "3836161f-d7a4-4792-b43e-2bdea8294bcc",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/3836161f-d7a4-4792-b43e-2bdea8294bcc",
+     "web_url": "https://api.star-citizen.wiki/items/3836161f-d7a4-4792-b43e-2bdea8294bcc"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-PWL-2",
+     "uuid": "ea2cddb5-2c04-4e0c-9fa2-76a4748c9398",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/ea2cddb5-2c04-4e0c-9fa2-76a4748c9398",
+     "web_url": "https://api.star-citizen.wiki/items/ea2cddb5-2c04-4e0c-9fa2-76a4748c9398"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-PWL-3",
+     "uuid": "5eac0c3e-ff6c-46f3-8067-898ad9fd5929",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/5eac0c3e-ff6c-46f3-8067-898ad9fd5929",
+     "web_url": "https://api.star-citizen.wiki/items/5eac0c3e-ff6c-46f3-8067-898ad9fd5929"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-RGL-1",
+     "uuid": "378ddc31-5d39-4511-9d77-48fc052df7b7",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/378ddc31-5d39-4511-9d77-48fc052df7b7",
+     "web_url": "https://api.star-citizen.wiki/items/378ddc31-5d39-4511-9d77-48fc052df7b7"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-RGL-2",
+     "uuid": "2043df43-9347-4e32-90a4-48494e33c08c",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/2043df43-9347-4e32-90a4-48494e33c08c",
+     "web_url": "https://api.star-citizen.wiki/items/2043df43-9347-4e32-90a4-48494e33c08c"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-RGL-3",
+     "uuid": "4f192f87-ca4a-40e2-9985-1c5bc78da461",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/4f192f87-ca4a-40e2-9985-1c5bc78da461",
+     "web_url": "https://api.star-citizen.wiki/items/4f192f87-ca4a-40e2-9985-1c5bc78da461"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-XTL-1",
+     "uuid": "817c395c-22a3-4f08-89dc-0c17ca03112c",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/817c395c-22a3-4f08-89dc-0c17ca03112c",
+     "web_url": "https://api.star-citizen.wiki/items/817c395c-22a3-4f08-89dc-0c17ca03112c"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-XTL-2",
+     "uuid": "4d0b2ad9-d49f-4877-896d-84fcb78ddc38",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/4d0b2ad9-d49f-4877-896d-84fcb78ddc38",
+     "web_url": "https://api.star-citizen.wiki/items/4d0b2ad9-d49f-4877-896d-84fcb78ddc38"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-XTL-3",
+     "uuid": "1b4efba7-c395-4c46-b2e5-ebeae4961f24",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/1b4efba7-c395-4c46-b2e5-ebeae4961f24",
+     "web_url": "https://api.star-citizen.wiki/items/1b4efba7-c395-4c46-b2e5-ebeae4961f24"
+    }
+   ],
+   "reward_items": [
+    {
+     "name": "RSI Polaris Wikelo Special",
+     "uuid": "bc4aa5c5-2e9b-40d6-aa95-0757a763efff",
+     "amount": 1,
+     "send_to_home": false,
+     "link": "https://api.star-citizen.wiki/api/items/bc4aa5c5-2e9b-40d6-aa95-0757a763efff",
+     "web_url": "https://api.star-citizen.wiki/items/rsi-polaris-wikelo-special"
+    }
+   ],
+   "reward_groups": [
+    {
+     "group_index": 0,
+     "weight": null,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "RSI Polaris Wikelo Special",
+       "uuid": "bc4aa5c5-2e9b-40d6-aa95-0757a763efff",
+       "amount": 1,
+       "send_to_home": false,
+       "link": "https://api.star-citizen.wiki/api/items/bc4aa5c5-2e9b-40d6-aa95-0757a763efff",
+       "web_url": "https://api.star-citizen.wiki/items/rsi-polaris-wikelo-special"
+      }
+     ]
+    }
+   ],
+   "blueprints": null,
+   "prerequisite_groups": [
+    {
+     "required_count": 1,
+     "required_tags": [
+      {
+       "name": "IntroDone",
+       "uuid": "87e124b5-79d4-438d-9be4-64c6c9f755f9"
+      }
+     ],
+     "excluded_tags": [],
+     "missions": [
+      {
+       "uuid": "028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "title": "Wikelo Arrive to System",
+       "mission_type": "Collection",
+       "link": "https://api.star-citizen.wiki/api/missions/028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "web_url": "https://api.star-citizen.wiki/missions/wikelo-arrive-to-system"
+      }
+     ]
+    }
+   ],
+   "mission_tokens": {
+    "destination|ListAll": [
+     "Wikelo Emporium Kinga Station",
+     "Wikelo Emporium Dasi Station",
+     "Wikelo Emporium Selo Station"
+    ]
+   },
+   "reward_min": null,
+   "reward_max": null,
+   "reward_currency": null,
+   "game_version": "4.10.2-LIVE.12881860",
+   "web_url": "https://api.star-citizen.wiki/missions/now-make-polaris-short-time-deal"
+  },
+  {
+   "uuid": "77fa8882-e82f-4c97-9cab-a7151758cb99",
+   "title": "Special Idris For Killing",
+   "debug_name": "TheCollector_Vehicle_Super_Idris",
+   "not_for_release": false,
+   "work_in_progress": false,
+   "released": true,
+   "once_only": false,
+   "min_standing": null,
+   "max_standing": null,
+   "reputation_gained": null,
+   "reputation_prerequisite": {
+    "faction": "Wikelo Emporium",
+    "faction_uuid": "5f442fdd-15cc-4f62-bd10-fce2023f4d0c",
+    "scope": "Wikelo",
+    "scope_uuid": "041cce33-d883-4d0b-8ae6-2f4928f2e590",
+    "min_standing": {
+     "name": "Very Best Customer",
+     "min_reputation": 999
+    },
+    "max_standing": {
+     "name": "Very Best Customer",
+     "min_reputation": 999
+    }
+   },
+   "hauling_orders": [
+    {
+     "kind": "Entity",
+     "name": "Wikelo Favor",
+     "uuid": "3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": 50,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+     "web_url": "https://api.star-citizen.wiki/items/3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae"
+    },
+    {
+     "kind": "Entity",
+     "name": "Polaris Bit",
+     "uuid": "4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": 50,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+     "web_url": "https://api.star-citizen.wiki/items/4b697f15-c1e2-4b35-9b79-6bff5db9021b"
+    },
+    {
+     "kind": "Entity",
+     "name": "DCHS-05 Orbital Positioning Comp-Board",
+     "uuid": "7f2786bf-bf9a-4115-a14c-9fc0506be204",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": 50,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/7f2786bf-bf9a-4115-a14c-9fc0506be204",
+     "web_url": "https://api.star-citizen.wiki/items/7f2786bf-bf9a-4115-a14c-9fc0506be204"
+    },
+    {
+     "kind": "Entity",
+     "name": "Carinite",
+     "uuid": "0b83f4b2-1d15-4843-aa94-29f2b40a5cbe",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": 50,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/0b83f4b2-1d15-4843-aa94-29f2b40a5cbe",
+     "web_url": "https://api.star-citizen.wiki/items/0b83f4b2-1d15-4843-aa94-29f2b40a5cbe"
+    },
+    {
+     "kind": "Entity",
+     "name": "Irradiated Valakkar Fang (Apex)",
+     "uuid": "f8cb1253-585f-40fe-8359-6b5de284c47e",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": 50,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/f8cb1253-585f-40fe-8359-6b5de284c47e",
+     "web_url": "https://api.star-citizen.wiki/items/f8cb1253-585f-40fe-8359-6b5de284c47e"
+    },
+    {
+     "kind": "Entity",
+     "name": "MG Scrip",
+     "uuid": "0df18692-2cc7-4d9d-af85-95b8a7a45419",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": 50,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/0df18692-2cc7-4d9d-af85-95b8a7a45419",
+     "web_url": "https://api.star-citizen.wiki/items/0df18692-2cc7-4d9d-af85-95b8a7a45419"
+    },
+    {
+     "kind": "Entity",
+     "name": "Ace Interceptor Helmet",
+     "uuid": "c92273b0-2d7f-41b3-9fdd-af07e190a0f3",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": 50,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/c92273b0-2d7f-41b3-9fdd-af07e190a0f3",
+     "web_url": "https://api.star-citizen.wiki/items/c92273b0-2d7f-41b3-9fdd-af07e190a0f3"
+    },
+    {
+     "kind": "Entity",
+     "name": "Irradiated Valakkar Pearl (Grade AAA)",
+     "uuid": "e738c105-8ef7-4238-8170-5db0c4f9c15d",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 30,
+     "min_amount": 30,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/e738c105-8ef7-4238-8170-5db0c4f9c15d",
+     "web_url": "https://api.star-citizen.wiki/items/e738c105-8ef7-4238-8170-5db0c4f9c15d"
+    },
+    {
+     "kind": "Entity",
+     "name": "UEE 6th Platoon Medal (Pristine)",
+     "uuid": "366d803c-d830-4668-8375-01776d852519",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 30,
+     "min_amount": 30,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/366d803c-d830-4668-8375-01776d852519",
+     "web_url": "https://api.star-citizen.wiki/items/366d803c-d830-4668-8375-01776d852519"
+    },
+    {
+     "kind": "Entity",
+     "name": "Carinite (Pure)",
+     "uuid": "9904aaa2-9a13-48d2-a48d-7494e60d012f",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 30,
+     "min_amount": 30,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/9904aaa2-9a13-48d2-a48d-7494e60d012f",
+     "web_url": "https://api.star-citizen.wiki/items/9904aaa2-9a13-48d2-a48d-7494e60d012f"
+    },
+    {
+     "kind": "Entity",
+     "name": "ASD Secure Drive",
+     "uuid": "60a09784-0e4c-40f3-945e-daba453f81c8",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 30,
+     "min_amount": 30,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/60a09784-0e4c-40f3-945e-daba453f81c8",
+     "web_url": "https://api.star-citizen.wiki/items/60a09784-0e4c-40f3-945e-daba453f81c8"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-PWL-1",
+     "uuid": "3836161f-d7a4-4792-b43e-2bdea8294bcc",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/3836161f-d7a4-4792-b43e-2bdea8294bcc",
+     "web_url": "https://api.star-citizen.wiki/items/3836161f-d7a4-4792-b43e-2bdea8294bcc"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-PWL-2",
+     "uuid": "ea2cddb5-2c04-4e0c-9fa2-76a4748c9398",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/ea2cddb5-2c04-4e0c-9fa2-76a4748c9398",
+     "web_url": "https://api.star-citizen.wiki/items/ea2cddb5-2c04-4e0c-9fa2-76a4748c9398"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-PWL-3",
+     "uuid": "5eac0c3e-ff6c-46f3-8067-898ad9fd5929",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/5eac0c3e-ff6c-46f3-8067-898ad9fd5929",
+     "web_url": "https://api.star-citizen.wiki/items/5eac0c3e-ff6c-46f3-8067-898ad9fd5929"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-RGL-1",
+     "uuid": "378ddc31-5d39-4511-9d77-48fc052df7b7",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/378ddc31-5d39-4511-9d77-48fc052df7b7",
+     "web_url": "https://api.star-citizen.wiki/items/378ddc31-5d39-4511-9d77-48fc052df7b7"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-RGL-2",
+     "uuid": "2043df43-9347-4e32-90a4-48494e33c08c",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/2043df43-9347-4e32-90a4-48494e33c08c",
+     "web_url": "https://api.star-citizen.wiki/items/2043df43-9347-4e32-90a4-48494e33c08c"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-RGL-3",
+     "uuid": "4f192f87-ca4a-40e2-9985-1c5bc78da461",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/4f192f87-ca4a-40e2-9985-1c5bc78da461",
+     "web_url": "https://api.star-citizen.wiki/items/4f192f87-ca4a-40e2-9985-1c5bc78da461"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-XTL-1",
+     "uuid": "817c395c-22a3-4f08-89dc-0c17ca03112c",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/817c395c-22a3-4f08-89dc-0c17ca03112c",
+     "web_url": "https://api.star-citizen.wiki/items/817c395c-22a3-4f08-89dc-0c17ca03112c"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-XTL-2",
+     "uuid": "4d0b2ad9-d49f-4877-896d-84fcb78ddc38",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/4d0b2ad9-d49f-4877-896d-84fcb78ddc38",
+     "web_url": "https://api.star-citizen.wiki/items/4d0b2ad9-d49f-4877-896d-84fcb78ddc38"
+    },
+    {
+     "kind": "Entity",
+     "name": "RCMBNT-XTL-3",
+     "uuid": "1b4efba7-c395-4c46-b2e5-ebeae4961f24",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 5,
+     "min_amount": 5,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/1b4efba7-c395-4c46-b2e5-ebeae4961f24",
+     "web_url": "https://api.star-citizen.wiki/items/1b4efba7-c395-4c46-b2e5-ebeae4961f24"
+    }
+   ],
+   "reward_items": [
+    {
+     "name": "Aegis Idris-P Wikelo War Special",
+     "uuid": "deb6d97e-38ce-48a2-9e12-d63eb01a0207",
+     "amount": 1,
+     "send_to_home": false,
+     "link": "https://api.star-citizen.wiki/api/items/deb6d97e-38ce-48a2-9e12-d63eb01a0207",
+     "web_url": "https://api.star-citizen.wiki/items/aegis-idris-p-wikelo-war-special"
+    }
+   ],
+   "reward_groups": [
+    {
+     "group_index": 0,
+     "weight": null,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Aegis Idris-P Wikelo War Special",
+       "uuid": "deb6d97e-38ce-48a2-9e12-d63eb01a0207",
+       "amount": 1,
+       "send_to_home": false,
+       "link": "https://api.star-citizen.wiki/api/items/deb6d97e-38ce-48a2-9e12-d63eb01a0207",
+       "web_url": "https://api.star-citizen.wiki/items/aegis-idris-p-wikelo-war-special"
+      }
+     ]
+    }
+   ],
+   "blueprints": null,
+   "prerequisite_groups": [
+    {
+     "required_count": 1,
+     "required_tags": [
+      {
+       "name": "IntroDone",
+       "uuid": "87e124b5-79d4-438d-9be4-64c6c9f755f9"
+      }
+     ],
+     "excluded_tags": [],
+     "missions": [
+      {
+       "uuid": "028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "title": "Wikelo Arrive to System",
+       "mission_type": "Collection",
+       "link": "https://api.star-citizen.wiki/api/missions/028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "web_url": "https://api.star-citizen.wiki/missions/wikelo-arrive-to-system"
+      }
+     ]
+    }
+   ],
+   "mission_tokens": null,
+   "reward_min": null,
+   "reward_max": null,
+   "reward_currency": null,
+   "game_version": "4.10.2-LIVE.12881860",
+   "web_url": "https://api.star-citizen.wiki/missions/special-idris-for-killing"
+  },
+  {
+   "uuid": "318bc17e-1b97-4ba5-a527-0c81076ef811",
+   "title": "Test Armor",
+   "debug_name": "TheCollector_Battle",
+   "not_for_release": false,
+   "work_in_progress": false,
+   "released": true,
+   "once_only": false,
+   "min_standing": null,
+   "max_standing": null,
+   "reputation_gained": [
+    {
+     "tier": null,
+     "scope": "Wikelo",
+     "amount": 25,
+     "faction": "Wikelo Emporium",
+     "faction_uuid": "5f442fdd-15cc-4f62-bd10-fce2023f4d0c"
+    }
+   ],
+   "reputation_prerequisite": null,
+   "hauling_orders": [
+    {
+     "kind": "Entity",
+     "name": "Yormandi Eye",
+     "uuid": "124da32f-de8f-45f6-a2f1-81fd47752b2d",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 14,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/124da32f-de8f-45f6-a2f1-81fd47752b2d",
+     "web_url": "https://api.star-citizen.wiki/items/124da32f-de8f-45f6-a2f1-81fd47752b2d"
+    },
+    {
+     "kind": "Entity",
+     "name": "Yormandi Tongue",
+     "uuid": "2845e7ee-2f52-471b-a0a7-05ca11908fe6",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 7,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/2845e7ee-2f52-471b-a0a7-05ca11908fe6",
+     "web_url": "https://api.star-citizen.wiki/items/2845e7ee-2f52-471b-a0a7-05ca11908fe6"
+    },
+    {
+     "kind": "Entity",
+     "name": "Palatino Helmet",
+     "uuid": "138ffa9b-26b2-4b6f-b831-425948234fb2",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/138ffa9b-26b2-4b6f-b831-425948234fb2",
+     "web_url": "https://api.star-citizen.wiki/items/138ffa9b-26b2-4b6f-b831-425948234fb2"
+    },
+    {
+     "kind": "Entity",
+     "name": "Palatino Arms",
+     "uuid": "018cf498-5ff0-4382-9549-372dc92c6a9c",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/018cf498-5ff0-4382-9549-372dc92c6a9c",
+     "web_url": "https://api.star-citizen.wiki/items/018cf498-5ff0-4382-9549-372dc92c6a9c"
+    },
+    {
+     "kind": "Entity",
+     "name": "Palatino Legs",
+     "uuid": "987c74f3-73bc-40fa-b3ba-71fc6379321d",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/987c74f3-73bc-40fa-b3ba-71fc6379321d",
+     "web_url": "https://api.star-citizen.wiki/items/987c74f3-73bc-40fa-b3ba-71fc6379321d"
+    },
+    {
+     "kind": "Entity",
+     "name": "Palatino Core",
+     "uuid": "cef54c0b-81d1-4ccb-a67f-f7304f198184",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/cef54c0b-81d1-4ccb-a67f-f7304f198184",
+     "web_url": "https://api.star-citizen.wiki/items/cef54c0b-81d1-4ccb-a67f-f7304f198184"
+    },
+    {
+     "kind": "Entity",
+     "name": "Palatino Backpack",
+     "uuid": "3e79b1d5-d213-4c0d-b212-eba3399bcfa2",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/3e79b1d5-d213-4c0d-b212-eba3399bcfa2",
+     "web_url": "https://api.star-citizen.wiki/items/3e79b1d5-d213-4c0d-b212-eba3399bcfa2"
+    }
+   ],
+   "reward_items": [
+    {
+     "name": "Palatino Helmet Mark I",
+     "uuid": "bd63d750-e7ba-4670-8948-1d89fbe633bb",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/bd63d750-e7ba-4670-8948-1d89fbe633bb",
+     "web_url": "https://api.star-citizen.wiki/items/palatino-helmet-mark-i"
+    },
+    {
+     "name": "Palatino Arms Mark I",
+     "uuid": "e0d886f5-a721-4f1d-ae5a-ac8d14d2415c",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/e0d886f5-a721-4f1d-ae5a-ac8d14d2415c",
+     "web_url": "https://api.star-citizen.wiki/items/palatino-arms-mark-i"
+    },
+    {
+     "name": "Palatino Legs Mark I",
+     "uuid": "fe1f3199-6680-4929-b511-7a85dc73437f",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/fe1f3199-6680-4929-b511-7a85dc73437f",
+     "web_url": "https://api.star-citizen.wiki/items/palatino-legs-mark-i"
+    },
+    {
+     "name": "Palatino Core Mark I",
+     "uuid": "1458af3d-cdbd-4ad0-862c-e2bc0de06958",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/1458af3d-cdbd-4ad0-862c-e2bc0de06958",
+     "web_url": "https://api.star-citizen.wiki/items/palatino-core-mark-i"
+    },
+    {
+     "name": "Palatino Backpack Mark I",
+     "uuid": "877290d3-a275-414f-9eb1-7d2fce3c4fdb",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/877290d3-a275-414f-9eb1-7d2fce3c4fdb",
+     "web_url": "https://api.star-citizen.wiki/items/palatino-backpack-mark-i"
+    }
+   ],
+   "reward_groups": [
+    {
+     "group_index": 0,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Palatino Helmet Mark I",
+       "uuid": "bd63d750-e7ba-4670-8948-1d89fbe633bb",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/bd63d750-e7ba-4670-8948-1d89fbe633bb",
+       "web_url": "https://api.star-citizen.wiki/items/palatino-helmet-mark-i"
+      },
+      {
+       "name": "Palatino Arms Mark I",
+       "uuid": "e0d886f5-a721-4f1d-ae5a-ac8d14d2415c",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/e0d886f5-a721-4f1d-ae5a-ac8d14d2415c",
+       "web_url": "https://api.star-citizen.wiki/items/palatino-arms-mark-i"
+      },
+      {
+       "name": "Palatino Legs Mark I",
+       "uuid": "fe1f3199-6680-4929-b511-7a85dc73437f",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/fe1f3199-6680-4929-b511-7a85dc73437f",
+       "web_url": "https://api.star-citizen.wiki/items/palatino-legs-mark-i"
+      },
+      {
+       "name": "Palatino Core Mark I",
+       "uuid": "1458af3d-cdbd-4ad0-862c-e2bc0de06958",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/1458af3d-cdbd-4ad0-862c-e2bc0de06958",
+       "web_url": "https://api.star-citizen.wiki/items/palatino-core-mark-i"
+      },
+      {
+       "name": "Palatino Backpack Mark I",
+       "uuid": "877290d3-a275-414f-9eb1-7d2fce3c4fdb",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/877290d3-a275-414f-9eb1-7d2fce3c4fdb",
+       "web_url": "https://api.star-citizen.wiki/items/palatino-backpack-mark-i"
+      }
+     ]
+    }
+   ],
+   "blueprints": null,
+   "prerequisite_groups": [
+    {
+     "required_count": 1,
+     "required_tags": [
+      {
+       "name": "IntroDone",
+       "uuid": "87e124b5-79d4-438d-9be4-64c6c9f755f9"
+      }
+     ],
+     "excluded_tags": [],
+     "missions": [
+      {
+       "uuid": "028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "title": "Wikelo Arrive to System",
+       "mission_type": "Collection",
+       "link": "https://api.star-citizen.wiki/api/missions/028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "web_url": "https://api.star-citizen.wiki/missions/wikelo-arrive-to-system"
+      }
+     ]
+    }
+   ],
+   "mission_tokens": null,
+   "reward_min": null,
+   "reward_max": null,
+   "reward_currency": null,
+   "game_version": "4.10.2-LIVE.12881860",
+   "web_url": "https://api.star-citizen.wiki/missions/test-armor"
+  },
+  {
+   "uuid": "1141c381-b38d-47af-b8eb-9b8a35985a8e",
+   "title": "Turn Things to Favor",
+   "debug_name": "TheCollector_Favours_Caranite",
+   "not_for_release": false,
+   "work_in_progress": false,
+   "released": true,
+   "once_only": false,
+   "min_standing": null,
+   "max_standing": null,
+   "reputation_gained": null,
+   "reputation_prerequisite": null,
+   "hauling_orders": [
+    {
+     "kind": "Entity",
+     "name": "Carinite",
+     "uuid": "0b83f4b2-1d15-4843-aa94-29f2b40a5cbe",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 50,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/0b83f4b2-1d15-4843-aa94-29f2b40a5cbe",
+     "web_url": "https://api.star-citizen.wiki/items/0b83f4b2-1d15-4843-aa94-29f2b40a5cbe"
+    }
+   ],
+   "reward_items": [
+    {
+     "name": "Wikelo Favor",
+     "uuid": "3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+     "amount": 1,
+     "send_to_home": false,
+     "link": "https://api.star-citizen.wiki/api/items/3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+     "web_url": "https://api.star-citizen.wiki/items/wikelo-favor"
+    }
+   ],
+   "reward_groups": [
+    {
+     "group_index": 0,
+     "weight": null,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Wikelo Favor",
+       "uuid": "3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+       "amount": 1,
+       "send_to_home": false,
+       "link": "https://api.star-citizen.wiki/api/items/3b1cf59f-1e6b-4a91-9edb-f8c5ddf791ae",
+       "web_url": "https://api.star-citizen.wiki/items/wikelo-favor"
+      }
+     ]
+    }
+   ],
+   "blueprints": null,
+   "prerequisite_groups": [
+    {
+     "required_count": 1,
+     "required_tags": [
+      {
+       "name": "IntroDone",
+       "uuid": "87e124b5-79d4-438d-9be4-64c6c9f755f9"
+      }
+     ],
+     "excluded_tags": [],
+     "missions": [
+      {
+       "uuid": "028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "title": "Wikelo Arrive to System",
+       "mission_type": "Collection",
+       "link": "https://api.star-citizen.wiki/api/missions/028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "web_url": "https://api.star-citizen.wiki/missions/wikelo-arrive-to-system"
+      }
+     ]
+    }
+   ],
+   "mission_tokens": {
+    "destination|ListAll": [
+     "Wikelo Emporium Kinga Station",
+     "Wikelo Emporium Dasi Station",
+     "Wikelo Emporium Selo Station"
+    ]
+   },
+   "reward_min": null,
+   "reward_max": null,
+   "reward_currency": null,
+   "game_version": "4.10.2-LIVE.12881860",
+   "web_url": "https://api.star-citizen.wiki/missions/turn-things-to-favor"
+  },
+  {
+   "uuid": "2597ef18-f1d5-4d97-bba4-8b6f900ded50",
+   "title": "Very Hungry",
+   "debug_name": "TheCollector_FoodOrder",
+   "not_for_release": false,
+   "work_in_progress": false,
+   "released": true,
+   "once_only": false,
+   "min_standing": null,
+   "max_standing": null,
+   "reputation_gained": null,
+   "reputation_prerequisite": null,
+   "hauling_orders": [
+    {
+     "kind": "Entity",
+     "name": "Berry Blend Smoothie",
+     "uuid": "0794d4f6-1e8b-4ad4-afea-df58458ef5e9",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/0794d4f6-1e8b-4ad4-afea-df58458ef5e9",
+     "web_url": "https://api.star-citizen.wiki/items/0794d4f6-1e8b-4ad4-afea-df58458ef5e9"
+    },
+    {
+     "kind": "Entity",
+     "name": "Ermer Family Farms Fat Free Ice Cream",
+     "uuid": "7441f131-fa39-452c-89a7-ef23b41fee52",
+     "items": [],
+     "max_scu": null,
+     "min_scu": null,
+     "max_amount": 1,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/items/7441f131-fa39-452c-89a7-ef23b41fee52",
+     "web_url": "https://api.star-citizen.wiki/items/7441f131-fa39-452c-89a7-ef23b41fee52"
+    }
+   ],
+   "reward_items": [
+    {
+     "name": "IAE 2951 Hat Blue",
+     "uuid": "1e8c8486-7a7e-433a-9c44-81e10f611370",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/1e8c8486-7a7e-433a-9c44-81e10f611370",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2951-hat-blue"
+    },
+    {
+     "name": "IAE 2951 T-Shirt Blue",
+     "uuid": "d01bb888-e787-463a-8d9c-68fcaae49826",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/d01bb888-e787-463a-8d9c-68fcaae49826",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2951-t-shirt-blue"
+    },
+    {
+     "name": "IAE 2951 T-Shirt White",
+     "uuid": "71bdf45a-a250-4417-85c0-634185808d6a",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/71bdf45a-a250-4417-85c0-634185808d6a",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2951-t-shirt-white"
+    },
+    {
+     "name": "IAE 2951 Hat White",
+     "uuid": "61877a59-553f-495e-84a2-9655bcdd5a46",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/61877a59-553f-495e-84a2-9655bcdd5a46",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2951-hat-white"
+    },
+    {
+     "name": "IAE 2951 Hat Blue",
+     "uuid": "f83214d0-3abf-4f1f-98ef-0e53ec30fcb3",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/f83214d0-3abf-4f1f-98ef-0e53ec30fcb3",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2951-hat-blue-2"
+    },
+    {
+     "name": "IAE 2952 T-shirt Black",
+     "uuid": "934b6be5-af09-41bc-a804-c0857200548e",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/934b6be5-af09-41bc-a804-c0857200548e",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2952-t-shirt-black"
+    },
+    {
+     "name": "IAE 2952 T-shirt Red",
+     "uuid": "5d09f182-57a0-456f-a263-36634d76744d",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/5d09f182-57a0-456f-a263-36634d76744d",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2952-t-shirt-red"
+    },
+    {
+     "name": "IAE 2952 Hat Red",
+     "uuid": "850439d1-2689-44d0-872f-86e06d437ff9",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/850439d1-2689-44d0-872f-86e06d437ff9",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2952-hat-red"
+    },
+    {
+     "name": "IAE 2953 Hat Purple",
+     "uuid": "46f648b2-d6a2-4c9c-82a4-9dd1ee5f516b",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/46f648b2-d6a2-4c9c-82a4-9dd1ee5f516b",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2953-hat-purple"
+    },
+    {
+     "name": "IAE 2953 Shirt Purple",
+     "uuid": "45823952-1cad-458f-a8a3-02cb83ad548d",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/45823952-1cad-458f-a8a3-02cb83ad548d",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2953-shirt-purple"
+    },
+    {
+     "name": "IAE 2953 Shirt White",
+     "uuid": "13f24921-b9c2-4d3d-9231-86e97bd95c01",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/13f24921-b9c2-4d3d-9231-86e97bd95c01",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2953-shirt-white"
+    },
+    {
+     "name": "IAE 2953 Hat White",
+     "uuid": "0d385856-b8fc-46b7-b0e6-4a242c7c9c67",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/0d385856-b8fc-46b7-b0e6-4a242c7c9c67",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2953-hat-white"
+    },
+    {
+     "name": "IAE 2954 T-Shirt Purple",
+     "uuid": "437d5974-713c-4384-bafd-8b2149f727ea",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/437d5974-713c-4384-bafd-8b2149f727ea",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2954-t-shirt-purple"
+    },
+    {
+     "name": "IAE 2954 Hat Purple",
+     "uuid": "29a75b64-4a86-423c-98e8-feccd35e6809",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/29a75b64-4a86-423c-98e8-feccd35e6809",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2954-hat-purple-3"
+    },
+    {
+     "name": "IAE 2954 T-Shirt White",
+     "uuid": "d6807e5b-232a-4974-af0c-038499f96977",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/d6807e5b-232a-4974-af0c-038499f96977",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2954-t-shirt-white-3"
+    },
+    {
+     "name": "IAE 2954 Hat White",
+     "uuid": "26887e82-4683-4ef2-b7e7-9e308911b069",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/26887e82-4683-4ef2-b7e7-9e308911b069",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2954-hat-white"
+    },
+    {
+     "name": "IAE 2954 Hat White",
+     "uuid": "26887e82-4683-4ef2-b7e7-9e308911b069",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/26887e82-4683-4ef2-b7e7-9e308911b069",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2954-hat-white"
+    },
+    {
+     "name": "IAE 2954 T-Shirt White",
+     "uuid": "d6807e5b-232a-4974-af0c-038499f96977",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/d6807e5b-232a-4974-af0c-038499f96977",
+     "web_url": "https://api.star-citizen.wiki/items/iae-2954-t-shirt-white-3"
+    },
+    {
+     "name": "Coda \"Ascension\" Pistol",
+     "uuid": "1c3b19d9-6e60-4ec6-8fe2-968079e6edbc",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/1c3b19d9-6e60-4ec6-8fe2-968079e6edbc",
+     "web_url": "https://api.star-citizen.wiki/items/coda-ascension-pistol"
+    },
+    {
+     "name": "Coda Pistol Magazine (6 cap)",
+     "uuid": "90b873da-1d15-48ba-86f5-f5633e958c33",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/90b873da-1d15-48ba-86f5-f5633e958c33",
+     "web_url": "https://api.star-citizen.wiki/items/coda-pistol-magazine-6-cap"
+    },
+    {
+     "name": "Karna \"Ascension\" Rifle",
+     "uuid": "ddda1704-45d6-4db8-8e66-4cbb588dfdbe",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/ddda1704-45d6-4db8-8e66-4cbb588dfdbe",
+     "web_url": "https://api.star-citizen.wiki/items/karna-ascension-rifle"
+    },
+    {
+     "name": "Karna Rifle Battery (35 cap)",
+     "uuid": "91cfb7dc-660b-4505-b86a-6028c9a3f54d",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/91cfb7dc-660b-4505-b86a-6028c9a3f54d",
+     "web_url": "https://api.star-citizen.wiki/items/karna-rifle-battery-35-cap"
+    },
+    {
+     "name": "Demeco \"Red Alert\" LMG",
+     "uuid": "78300945-3145-4747-9b71-893a37152048",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/78300945-3145-4747-9b71-893a37152048",
+     "web_url": "https://api.star-citizen.wiki/items/demeco-red-alert-lmg"
+    },
+    {
+     "name": "Demeco LMG Battery (100 cap)",
+     "uuid": "b62224ba-5c56-4306-857a-70de7d570767",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/b62224ba-5c56-4306-857a-70de7d570767",
+     "web_url": "https://api.star-citizen.wiki/items/demeco-lmg-battery-100-cap"
+    },
+    {
+     "name": "Gallant \"Red Alert\" Rifle",
+     "uuid": "4a1b92d4-103b-42b5-97b1-8dee5479e770",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/4a1b92d4-103b-42b5-97b1-8dee5479e770",
+     "web_url": "https://api.star-citizen.wiki/items/gallant-red-alert-rifle"
+    },
+    {
+     "name": "Gallant Rifle Battery (45 cap)",
+     "uuid": "0988e9ce-5f5d-4eb8-83a7-dc70f187579d",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/0988e9ce-5f5d-4eb8-83a7-dc70f187579d",
+     "web_url": "https://api.star-citizen.wiki/items/gallant-rifle-battery-45-cap"
+    },
+    {
+     "name": "Ravager-212 \"Red Alert\" Twin Shotgun",
+     "uuid": "ab479579-efda-45e3-b2f5-a08650708cf7",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/ab479579-efda-45e3-b2f5-a08650708cf7",
+     "web_url": "https://api.star-citizen.wiki/items/ravager-212-red-alert-twin-shotgun"
+    },
+    {
+     "name": "Ravager-212 Twin Shotgun Magazine (16 cap)",
+     "uuid": "3326f182-d089-45d5-b090-f438d6f65f17",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/3326f182-d089-45d5-b090-f438d6f65f17",
+     "web_url": "https://api.star-citizen.wiki/items/ravager-212-twin-shotgun-magazine-16-cap"
+    },
+    {
+     "name": "P8-SC \"Red Alert\" SMG",
+     "uuid": "7a81b598-ce83-44e0-88f9-482e528c3747",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/7a81b598-ce83-44e0-88f9-482e528c3747",
+     "web_url": "https://api.star-citizen.wiki/items/p8-sc-red-alert-smg"
+    },
+    {
+     "name": "P8-SC SMG Magazine (45 cap)",
+     "uuid": "90adb28a-049e-4357-8000-a4bb75bb7f6f",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/90adb28a-049e-4357-8000-a4bb75bb7f6f",
+     "web_url": "https://api.star-citizen.wiki/items/p8-sc-smg-magazine-45-cap"
+    },
+    {
+     "name": "A03 \"Red Alert\" Sniper Rifle",
+     "uuid": "89a070b3-4abc-466e-915c-55a6bd2fd441",
+     "amount": 1,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/89a070b3-4abc-466e-915c-55a6bd2fd441",
+     "web_url": "https://api.star-citizen.wiki/items/a03-red-alert-sniper-rifle"
+    },
+    {
+     "name": "A03 Sniper Rifle Magazine (15 cap)",
+     "uuid": "c12a76b1-80b2-4db5-9648-20a1cd0f4d67",
+     "amount": 20,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/c12a76b1-80b2-4db5-9648-20a1cd0f4d67",
+     "web_url": "https://api.star-citizen.wiki/items/a03-sniper-rifle-magazine-15-cap"
+    },
+    {
+     "name": "Citrus Beef Burrito",
+     "uuid": "1dfebe81-c6b7-4102-9b5e-0ebe2faa44d3",
+     "amount": 69,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/1dfebe81-c6b7-4102-9b5e-0ebe2faa44d3",
+     "web_url": "https://api.star-citizen.wiki/items/citrus-beef-burrito"
+    },
+    {
+     "name": "Snaggle Stick (Smoke Daddy)",
+     "uuid": "99123640-9527-46f6-8fb2-e7eaf2e60a42",
+     "amount": 420,
+     "send_to_home": null,
+     "link": "https://api.star-citizen.wiki/api/items/99123640-9527-46f6-8fb2-e7eaf2e60a42",
+     "web_url": "https://api.star-citizen.wiki/items/snaggle-stick-smoke-daddy"
+    }
+   ],
+   "reward_groups": [
+    {
+     "group_index": 0,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2951 Hat Blue",
+       "uuid": "1e8c8486-7a7e-433a-9c44-81e10f611370",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/1e8c8486-7a7e-433a-9c44-81e10f611370",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2951-hat-blue"
+      },
+      {
+       "name": "IAE 2951 T-Shirt Blue",
+       "uuid": "d01bb888-e787-463a-8d9c-68fcaae49826",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/d01bb888-e787-463a-8d9c-68fcaae49826",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2951-t-shirt-blue"
+      }
+     ]
+    },
+    {
+     "group_index": 1,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2951 T-Shirt White",
+       "uuid": "71bdf45a-a250-4417-85c0-634185808d6a",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/71bdf45a-a250-4417-85c0-634185808d6a",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2951-t-shirt-white"
+      },
+      {
+       "name": "IAE 2951 Hat White",
+       "uuid": "61877a59-553f-495e-84a2-9655bcdd5a46",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/61877a59-553f-495e-84a2-9655bcdd5a46",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2951-hat-white"
+      }
+     ]
+    },
+    {
+     "group_index": 2,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2951 Hat Blue",
+       "uuid": "f83214d0-3abf-4f1f-98ef-0e53ec30fcb3",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/f83214d0-3abf-4f1f-98ef-0e53ec30fcb3",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2951-hat-blue-2"
+      },
+      {
+       "name": "IAE 2952 T-shirt Black",
+       "uuid": "934b6be5-af09-41bc-a804-c0857200548e",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/934b6be5-af09-41bc-a804-c0857200548e",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2952-t-shirt-black"
+      }
+     ]
+    },
+    {
+     "group_index": 3,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2952 T-shirt Red",
+       "uuid": "5d09f182-57a0-456f-a263-36634d76744d",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/5d09f182-57a0-456f-a263-36634d76744d",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2952-t-shirt-red"
+      },
+      {
+       "name": "IAE 2952 Hat Red",
+       "uuid": "850439d1-2689-44d0-872f-86e06d437ff9",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/850439d1-2689-44d0-872f-86e06d437ff9",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2952-hat-red"
+      }
+     ]
+    },
+    {
+     "group_index": 4,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2953 Hat Purple",
+       "uuid": "46f648b2-d6a2-4c9c-82a4-9dd1ee5f516b",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/46f648b2-d6a2-4c9c-82a4-9dd1ee5f516b",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2953-hat-purple"
+      },
+      {
+       "name": "IAE 2953 Shirt Purple",
+       "uuid": "45823952-1cad-458f-a8a3-02cb83ad548d",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/45823952-1cad-458f-a8a3-02cb83ad548d",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2953-shirt-purple"
+      }
+     ]
+    },
+    {
+     "group_index": 5,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2953 Shirt White",
+       "uuid": "13f24921-b9c2-4d3d-9231-86e97bd95c01",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/13f24921-b9c2-4d3d-9231-86e97bd95c01",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2953-shirt-white"
+      },
+      {
+       "name": "IAE 2953 Hat White",
+       "uuid": "0d385856-b8fc-46b7-b0e6-4a242c7c9c67",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/0d385856-b8fc-46b7-b0e6-4a242c7c9c67",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2953-hat-white"
+      }
+     ]
+    },
+    {
+     "group_index": 6,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2954 T-Shirt Purple",
+       "uuid": "437d5974-713c-4384-bafd-8b2149f727ea",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/437d5974-713c-4384-bafd-8b2149f727ea",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2954-t-shirt-purple"
+      },
+      {
+       "name": "IAE 2954 Hat Purple",
+       "uuid": "29a75b64-4a86-423c-98e8-feccd35e6809",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/29a75b64-4a86-423c-98e8-feccd35e6809",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2954-hat-purple-3"
+      }
+     ]
+    },
+    {
+     "group_index": 7,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2954 T-Shirt White",
+       "uuid": "d6807e5b-232a-4974-af0c-038499f96977",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/d6807e5b-232a-4974-af0c-038499f96977",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2954-t-shirt-white-3"
+      },
+      {
+       "name": "IAE 2954 Hat White",
+       "uuid": "26887e82-4683-4ef2-b7e7-9e308911b069",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/26887e82-4683-4ef2-b7e7-9e308911b069",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2954-hat-white"
+      }
+     ]
+    },
+    {
+     "group_index": 8,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "IAE 2954 Hat White",
+       "uuid": "26887e82-4683-4ef2-b7e7-9e308911b069",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/26887e82-4683-4ef2-b7e7-9e308911b069",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2954-hat-white"
+      },
+      {
+       "name": "IAE 2954 T-Shirt White",
+       "uuid": "d6807e5b-232a-4974-af0c-038499f96977",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/d6807e5b-232a-4974-af0c-038499f96977",
+       "web_url": "https://api.star-citizen.wiki/items/iae-2954-t-shirt-white-3"
+      }
+     ]
+    },
+    {
+     "group_index": 9,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Coda \"Ascension\" Pistol",
+       "uuid": "1c3b19d9-6e60-4ec6-8fe2-968079e6edbc",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/1c3b19d9-6e60-4ec6-8fe2-968079e6edbc",
+       "web_url": "https://api.star-citizen.wiki/items/coda-ascension-pistol"
+      },
+      {
+       "name": "Coda Pistol Magazine (6 cap)",
+       "uuid": "90b873da-1d15-48ba-86f5-f5633e958c33",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/90b873da-1d15-48ba-86f5-f5633e958c33",
+       "web_url": "https://api.star-citizen.wiki/items/coda-pistol-magazine-6-cap"
+      }
+     ]
+    },
+    {
+     "group_index": 10,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Karna \"Ascension\" Rifle",
+       "uuid": "ddda1704-45d6-4db8-8e66-4cbb588dfdbe",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/ddda1704-45d6-4db8-8e66-4cbb588dfdbe",
+       "web_url": "https://api.star-citizen.wiki/items/karna-ascension-rifle"
+      },
+      {
+       "name": "Karna Rifle Battery (35 cap)",
+       "uuid": "91cfb7dc-660b-4505-b86a-6028c9a3f54d",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/91cfb7dc-660b-4505-b86a-6028c9a3f54d",
+       "web_url": "https://api.star-citizen.wiki/items/karna-rifle-battery-35-cap"
+      }
+     ]
+    },
+    {
+     "group_index": 11,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Demeco \"Red Alert\" LMG",
+       "uuid": "78300945-3145-4747-9b71-893a37152048",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/78300945-3145-4747-9b71-893a37152048",
+       "web_url": "https://api.star-citizen.wiki/items/demeco-red-alert-lmg"
+      },
+      {
+       "name": "Demeco LMG Battery (100 cap)",
+       "uuid": "b62224ba-5c56-4306-857a-70de7d570767",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/b62224ba-5c56-4306-857a-70de7d570767",
+       "web_url": "https://api.star-citizen.wiki/items/demeco-lmg-battery-100-cap"
+      }
+     ]
+    },
+    {
+     "group_index": 12,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Gallant \"Red Alert\" Rifle",
+       "uuid": "4a1b92d4-103b-42b5-97b1-8dee5479e770",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/4a1b92d4-103b-42b5-97b1-8dee5479e770",
+       "web_url": "https://api.star-citizen.wiki/items/gallant-red-alert-rifle"
+      },
+      {
+       "name": "Gallant Rifle Battery (45 cap)",
+       "uuid": "0988e9ce-5f5d-4eb8-83a7-dc70f187579d",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/0988e9ce-5f5d-4eb8-83a7-dc70f187579d",
+       "web_url": "https://api.star-citizen.wiki/items/gallant-rifle-battery-45-cap"
+      }
+     ]
+    },
+    {
+     "group_index": 13,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Ravager-212 \"Red Alert\" Twin Shotgun",
+       "uuid": "ab479579-efda-45e3-b2f5-a08650708cf7",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/ab479579-efda-45e3-b2f5-a08650708cf7",
+       "web_url": "https://api.star-citizen.wiki/items/ravager-212-red-alert-twin-shotgun"
+      },
+      {
+       "name": "Ravager-212 Twin Shotgun Magazine (16 cap)",
+       "uuid": "3326f182-d089-45d5-b090-f438d6f65f17",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/3326f182-d089-45d5-b090-f438d6f65f17",
+       "web_url": "https://api.star-citizen.wiki/items/ravager-212-twin-shotgun-magazine-16-cap"
+      }
+     ]
+    },
+    {
+     "group_index": 14,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "P8-SC \"Red Alert\" SMG",
+       "uuid": "7a81b598-ce83-44e0-88f9-482e528c3747",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/7a81b598-ce83-44e0-88f9-482e528c3747",
+       "web_url": "https://api.star-citizen.wiki/items/p8-sc-red-alert-smg"
+      },
+      {
+       "name": "P8-SC SMG Magazine (45 cap)",
+       "uuid": "90adb28a-049e-4357-8000-a4bb75bb7f6f",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/90adb28a-049e-4357-8000-a4bb75bb7f6f",
+       "web_url": "https://api.star-citizen.wiki/items/p8-sc-smg-magazine-45-cap"
+      }
+     ]
+    },
+    {
+     "group_index": 15,
+     "weight": 1,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "A03 \"Red Alert\" Sniper Rifle",
+       "uuid": "89a070b3-4abc-466e-915c-55a6bd2fd441",
+       "amount": 1,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/89a070b3-4abc-466e-915c-55a6bd2fd441",
+       "web_url": "https://api.star-citizen.wiki/items/a03-red-alert-sniper-rifle"
+      },
+      {
+       "name": "A03 Sniper Rifle Magazine (15 cap)",
+       "uuid": "c12a76b1-80b2-4db5-9648-20a1cd0f4d67",
+       "amount": 20,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/c12a76b1-80b2-4db5-9648-20a1cd0f4d67",
+       "web_url": "https://api.star-citizen.wiki/items/a03-sniper-rifle-magazine-15-cap"
+      }
+     ]
+    },
+    {
+     "group_index": 16,
+     "weight": 0,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Citrus Beef Burrito",
+       "uuid": "1dfebe81-c6b7-4102-9b5e-0ebe2faa44d3",
+       "amount": 69,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/1dfebe81-c6b7-4102-9b5e-0ebe2faa44d3",
+       "web_url": "https://api.star-citizen.wiki/items/citrus-beef-burrito"
+      }
+     ]
+    },
+    {
+     "group_index": 17,
+     "weight": 0,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Snaggle Stick (Smoke Daddy)",
+       "uuid": "99123640-9527-46f6-8fb2-e7eaf2e60a42",
+       "amount": 420,
+       "send_to_home": null,
+       "link": "https://api.star-citizen.wiki/api/items/99123640-9527-46f6-8fb2-e7eaf2e60a42",
+       "web_url": "https://api.star-citizen.wiki/items/snaggle-stick-smoke-daddy"
+      }
+     ]
+    }
+   ],
+   "blueprints": null,
+   "prerequisite_groups": [
+    {
+     "required_count": 1,
+     "required_tags": [
+      {
+       "name": "IntroDone",
+       "uuid": "87e124b5-79d4-438d-9be4-64c6c9f755f9"
+      }
+     ],
+     "excluded_tags": [],
+     "missions": [
+      {
+       "uuid": "028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "title": "Wikelo Arrive to System",
+       "mission_type": "Collection",
+       "link": "https://api.star-citizen.wiki/api/missions/028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "web_url": "https://api.star-citizen.wiki/missions/wikelo-arrive-to-system"
+      }
+     ]
+    }
+   ],
+   "mission_tokens": {
+    "destination|ListAll": [
+     "Wikelo Emporium Kinga Station",
+     "Wikelo Emporium Dasi Station",
+     "Wikelo Emporium Selo Station"
+    ]
+   },
+   "reward_min": null,
+   "reward_max": null,
+   "reward_currency": null,
+   "game_version": "4.10.2-LIVE.12881860",
+   "web_url": "https://api.star-citizen.wiki/missions/very-hungry"
+  },
+  {
+   "uuid": "82a0d506-def3-4ab5-b0e0-8833c7102f34",
+   "title": "Want Polaris? Need something special.",
+   "debug_name": "TheCollector_Favours_PolarisParts",
+   "not_for_release": false,
+   "work_in_progress": false,
+   "released": true,
+   "once_only": false,
+   "min_standing": null,
+   "max_standing": null,
+   "reputation_gained": null,
+   "reputation_prerequisite": null,
+   "hauling_orders": [
+    {
+     "kind": "Resource",
+     "name": "Quantainium",
+     "uuid": "bde5a2c8-2ef4-46ac-9403-2fcb79e4016c",
+     "items": [],
+     "max_scu": 24,
+     "min_scu": 24,
+     "max_amount": null,
+     "min_amount": null,
+     "max_container_size": -1,
+     "link": "https://api.star-citizen.wiki/api/commodities/bde5a2c8-2ef4-46ac-9403-2fcb79e4016c",
+     "web_url": "https://api.star-citizen.wiki/commodities/bde5a2c8-2ef4-46ac-9403-2fcb79e4016c"
+    }
+   ],
+   "reward_items": [
+    {
+     "name": "Polaris Bit",
+     "uuid": "4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+     "amount": 1,
+     "send_to_home": false,
+     "link": "https://api.star-citizen.wiki/api/items/4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+     "web_url": "https://api.star-citizen.wiki/items/polaris-bit"
+    }
+   ],
+   "reward_groups": [
+    {
+     "group_index": 0,
+     "weight": null,
+     "award_only_to_mission_owner": true,
+     "items": [
+      {
+       "name": "Polaris Bit",
+       "uuid": "4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+       "amount": 1,
+       "send_to_home": false,
+       "link": "https://api.star-citizen.wiki/api/items/4b697f15-c1e2-4b35-9b79-6bff5db9021b",
+       "web_url": "https://api.star-citizen.wiki/items/polaris-bit"
+      }
+     ]
+    }
+   ],
+   "blueprints": null,
+   "prerequisite_groups": [
+    {
+     "required_count": 1,
+     "required_tags": [
+      {
+       "name": "IntroDone",
+       "uuid": "87e124b5-79d4-438d-9be4-64c6c9f755f9"
+      }
+     ],
+     "excluded_tags": [],
+     "missions": [
+      {
+       "uuid": "028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "title": "Wikelo Arrive to System",
+       "mission_type": "Collection",
+       "link": "https://api.star-citizen.wiki/api/missions/028d7a46-bd97-4e32-a5bf-0b1775f05e1c",
+       "web_url": "https://api.star-citizen.wiki/missions/wikelo-arrive-to-system"
+      }
+     ]
+    }
+   ],
+   "mission_tokens": {
+    "destination|ListAll": [
+     "Wikelo Emporium Kinga Station",
+     "Wikelo Emporium Dasi Station",
+     "Wikelo Emporium Selo Station"
+    ]
+   },
+   "reward_min": null,
+   "reward_max": null,
+   "reward_currency": null,
+   "game_version": "4.10.2-LIVE.12881860",
+   "web_url": "https://api.star-citizen.wiki/missions/want-polaris-need-something-special"
+  }
+ ]
+}

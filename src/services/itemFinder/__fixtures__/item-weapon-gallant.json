@@ -1,0 +1,426 @@
+{
+ "data": {
+  "uuid": "8bc41f99-ad80-4050-99ff-958c0b54c973",
+  "slug": "gallant-rifle",
+  "name": "Gallant Rifle",
+  "class_name": "klwe_rifle_energy_01",
+  "type": "WeaponPersonal",
+  "type_label": "FPS Weapon",
+  "sub_type": "Medium",
+  "sub_type_label": "Medium",
+  "classification": "FPS.Weapon.Medium",
+  "classification_label": "Medium Weapon",
+  "size": 2,
+  "mass": 3.75,
+  "rarity": "Common",
+  "manufacturer": {
+   "name": "Klaus & Werner",
+   "code": "KLWE",
+   "uuid": "1aa076d5-ac29-4c61-a905-d3ea39cf167a",
+   "link": "https://api.star-citizen.wiki/api/manufacturers/KLWE"
+  },
+  "is_craftable": true,
+  "is_lootable": true,
+  "blueprint": [
+   {
+    "uuid": "5c6fa3ff-5913-4d74-aa4c-8a1f0b40bc23",
+    "name": "Gallant Rifle",
+    "link": "https://api.star-citizen.wiki/api/blueprints/5c6fa3ff-5913-4d74-aa4c-8a1f0b40bc23"
+   }
+  ],
+  "dimension": {
+   "width": 0.75,
+   "height": 0.75,
+   "length": 1.5,
+   "volume": 0.013,
+   "volume_converted": 13000,
+   "volume_converted_unit": "µSCU",
+   "true_dimension": {
+    "width": 0.05,
+    "height": 0.234,
+    "length": 0.733
+   },
+   "dimensions": {
+    "width": 0.05,
+    "height": 0.234,
+    "length": 0.733
+   },
+   "cargo_dimension": {
+    "width": 0.08,
+    "height": 0.25,
+    "length": 0.85
+   },
+   "ui_dimension": {
+    "width": 0.75,
+    "height": 0.75,
+    "length": 1.5
+   }
+  },
+  "web_url": "https://api.star-citizen.wiki/items/gallant-rifle",
+  "version": "4.10.2-LIVE.12881860",
+  "personal_weapon": {
+   "class": "Energy (Laser)",
+   "type": "Assault Rifle",
+   "magazine_type": "",
+   "magazine_size": 45,
+   "effective_range": 4800,
+   "capacity": 45,
+   "range": 4800,
+   "damage_per_shot": 21,
+   "pellets_per_shot": 1,
+   "rof": 900,
+   "rpm": 900,
+   "damages": [
+    {
+     "type": "impact",
+     "name": "energy",
+     "damage": 21
+    }
+   ],
+   "modes": [
+    {
+     "mode": "Burst",
+     "localised": "[BURST]",
+     "type": "burst",
+     "rpm": 900,
+     "ammo_per_shot": 1,
+     "pellets_per_shot": 1,
+     "damage_per_second": 315,
+     "heat_per_shot": 2.8,
+     "wear_per_shot": 0.04,
+     "heat_per_second": null,
+     "wear_per_second": null,
+     "fire_during_spin_up": null,
+     "shot_count": 3,
+     "cooldown_time": 0.25,
+     "sequence_mode": null,
+     "charge_up_time": null,
+     "charge_down_time": null,
+     "full_damage_range": null,
+     "zero_damage_range": null,
+     "hit_type": null,
+     "hit_radius": null,
+     "min_energy_draw": null,
+     "max_energy_draw": null,
+     "healing_mode": null,
+     "healing_per_second": null,
+     "ammo_per_mscu": null,
+     "medical_ammo_type": null,
+     "external_healing": null,
+     "toggle": null,
+     "max_distance": null,
+     "max_sensor_distance": null,
+     "auto_dosage_modifier": null,
+     "healing_break_time": null,
+     "max_dose_for_auto_adjustment": null,
+     "battery_drain_per_second": null,
+     "material_efficiency": null,
+     "max_health_repair_rate": null,
+     "max_damage_map_repair_rate": null,
+     "health_to_ammo_ratio": null,
+     "ramp_up_time": null,
+     "ramp_down_time": null,
+     "max_vehicle_damage_ratio": null,
+     "repaired_material_ratio": null,
+     "salvage_can_fire_on_full": null,
+     "damage_threshold": null,
+     "minimum_distance": null,
+     "maximum_distance": null,
+     "beam_radius": null,
+     "collection_rate": null,
+     "energy_draw": null,
+     "mining_extractor_tag": null,
+     "toggle_mode": null
+    }
+   ],
+   "fire_mode": "Burst",
+   "damage": {
+    "dps_total": 315,
+    "alpha_total": 21,
+    "max": 945,
+    "maximum": 945,
+    "dps": {
+     "physical": 0,
+     "energy": 315,
+     "distortion": 0,
+     "thermal": 0,
+     "biochemical": 0,
+     "stun": 0
+    },
+    "alpha": {
+     "physical": 0,
+     "energy": 21,
+     "distortion": 0,
+     "thermal": 0,
+     "biochemical": 0,
+     "stun": 0
+    }
+   },
+   "spread": {
+    "min": 0.05,
+    "max": 2.41,
+    "minimum": 0.05,
+    "maximum": 2.41,
+    "first_attack": 1.21,
+    "per_attack": 1.03,
+    "decay": 5
+   },
+   "ads_spread": {
+    "min": null,
+    "max": null,
+    "minimum": null,
+    "maximum": null,
+    "first_attack": 1.21,
+    "per_attack": 1.03,
+    "decay": 5
+   },
+   "ammunition": {
+    "uuid": "ee8f19ed-edd8-44ce-baa1-743afd10d5ce",
+    "size": 1,
+    "lifetime": 4,
+    "speed": 1200,
+    "range": 4800,
+    "capacity": 45,
+    "initial_capacity": 45,
+    "damage_falloff_level_1": 0,
+    "damage_falloff_level_2": 0,
+    "damage_falloff_level_3": 0,
+    "max_penetration_thickness": 0.3,
+    "penetration": {
+     "base_distance": 0,
+     "near_radius": 0.5,
+     "far_radius": 5,
+     "angle": null
+    },
+    "impact_damage": [
+     {
+      "type": "impact",
+      "name": "Energy",
+      "damage": 21
+     }
+    ],
+    "impact_damage_map": {
+     "energy": 21
+    },
+    "damage_drop_min_distance": {
+     "stun": 0,
+     "energy": 0,
+     "thermal": 0,
+     "physical": 0,
+     "distortion": 0,
+     "biochemical": 0,
+     "total": 0
+    },
+    "damage_drop_per_meter": {
+     "stun": 0,
+     "energy": 0,
+     "thermal": 0,
+     "physical": 0,
+     "distortion": 0,
+     "biochemical": 0,
+     "total": 0
+    },
+    "damage_drop_min_damage": {
+     "stun": 0,
+     "energy": 0,
+     "thermal": 0,
+     "physical": 0,
+     "distortion": 0,
+     "biochemical": 0,
+     "total": 0
+    },
+    "bullet_impulse_falloff": {
+     "min_distance": 0,
+     "drop_falloff": 0.0025,
+     "max_falloff": 0.5
+    },
+    "conversion_rate": 1,
+    "impulse_scale": 1,
+    "bullet_type": 2,
+    "damage_falloffs": {
+     "min_distance": {
+      "Stun": 0,
+      "Energy": 0,
+      "Thermal": 0,
+      "Physical": 0,
+      "Distortion": 0,
+      "Biochemical": 0
+     },
+     "per_meter": {
+      "Stun": 0,
+      "Energy": 0,
+      "Thermal": 0,
+      "Physical": 0,
+      "Distortion": 0,
+      "Biochemical": 0
+     },
+     "min_damage": {
+      "Stun": 0,
+      "Energy": 0,
+      "Thermal": 0,
+      "Physical": 0,
+      "Distortion": 0,
+      "Biochemical": 0
+     }
+    }
+   }
+  },
+  "ammunition": {
+   "uuid": "ee8f19ed-edd8-44ce-baa1-743afd10d5ce",
+   "size": 1,
+   "lifetime": 4,
+   "speed": 1200,
+   "range": 4800,
+   "capacity": 45,
+   "initial_capacity": 45,
+   "damage_falloff_level_1": 0,
+   "damage_falloff_level_2": 0,
+   "damage_falloff_level_3": 0,
+   "max_penetration_thickness": 0.3,
+   "penetration": {
+    "base_distance": 0,
+    "near_radius": 0.5,
+    "far_radius": 5,
+    "angle": null
+   },
+   "impact_damage": [
+    {
+     "type": "impact",
+     "name": "Energy",
+     "damage": 21
+    }
+   ],
+   "impact_damage_map": {
+    "energy": 21
+   },
+   "damage_drop_min_distance": {
+    "stun": 0,
+    "energy": 0,
+    "thermal": 0,
+    "physical": 0,
+    "distortion": 0,
+    "biochemical": 0,
+    "total": 0
+   },
+   "damage_drop_per_meter": {
+    "stun": 0,
+    "energy": 0,
+    "thermal": 0,
+    "physical": 0,
+    "distortion": 0,
+    "biochemical": 0,
+    "total": 0
+   },
+   "damage_drop_min_damage": {
+    "stun": 0,
+    "energy": 0,
+    "thermal": 0,
+    "physical": 0,
+    "distortion": 0,
+    "biochemical": 0,
+    "total": 0
+   },
+   "bullet_impulse_falloff": {
+    "min_distance": 0,
+    "drop_falloff": 0.0025,
+    "max_falloff": 0.5
+   },
+   "conversion_rate": 1,
+   "impulse_scale": 1,
+   "bullet_type": 2,
+   "damage_falloffs": {
+    "min_distance": {
+     "Stun": 0,
+     "Energy": 0,
+     "Thermal": 0,
+     "Physical": 0,
+     "Distortion": 0,
+     "Biochemical": 0
+    },
+    "per_meter": {
+     "Stun": 0,
+     "Energy": 0,
+     "Thermal": 0,
+     "Physical": 0,
+     "Distortion": 0,
+     "Biochemical": 0
+    },
+    "min_damage": {
+     "Stun": 0,
+     "Energy": 0,
+     "Thermal": 0,
+     "Physical": 0,
+     "Distortion": 0,
+     "Biochemical": 0
+    }
+   }
+  },
+  "uex_prices": {
+   "purchase": [
+    {
+     "price_buy": 4640,
+     "price_sell": null,
+     "price_rent": null,
+     "terminal_id": 488,
+     "terminal_code": "GUROD",
+     "terminal_name": "Guns - Rod's Fuel 'N Supplies",
+     "starmap_location": {
+      "uuid": "1711f3cc-59ef-4b08-a762-19d8691ae268",
+      "name": "Rod's Fuel 'N Supplies",
+      "slug": "rods-fuel-n-supplies",
+      "type_name": "Manmade_VisibleOnInteraction",
+      "parent_name": "Pyro",
+      "star_system_name": "Pyro",
+      "link": "https://api.star-citizen.wiki/api/locations/1711f3cc-59ef-4b08-a762-19d8691ae268",
+      "web_url": "https://api.star-citizen.wiki/locations/1711f3cc-59ef-4b08-a762-19d8691ae268"
+     },
+     "date_updated": "2026-10-15T21:28:58+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=gallant-rifle&tab=about"
+    },
+    {
+     "price_buy": 4640,
+     "price_sell": null,
+     "price_rent": null,
+     "terminal_id": 502,
+     "terminal_code": "GUORB",
+     "terminal_name": "Guns - Orbituary",
+     "starmap_location": {
+      "uuid": "28e220ba-ba74-42eb-bae5-382475eba65d",
+      "name": "Orbituary",
+      "slug": "orbituary",
+      "type_name": "Manmade",
+      "parent_name": "Bloom",
+      "star_system_name": "Pyro",
+      "link": "https://api.star-citizen.wiki/api/locations/28e220ba-ba74-42eb-bae5-382475eba65d",
+      "web_url": "https://api.star-citizen.wiki/locations/28e220ba-ba74-42eb-bae5-382475eba65d"
+     },
+     "date_updated": "2026-09-03T20:27:14+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=gallant-rifle&tab=about"
+    },
+    {
+     "price_buy": 4640,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 437,
+     "terminal_code": "GNCHE",
+     "terminal_name": "Guns - Checkmate",
+     "starmap_location": {
+      "uuid": "07463f54-4ecd-4323-8a28-fb65b8a4ebca",
+      "name": "Checkmate",
+      "slug": "checkmate",
+      "type_name": "Manmade_VisibleOnInteraction",
+      "parent_name": "Pyro",
+      "star_system_name": "Pyro",
+      "link": "https://api.star-citizen.wiki/api/locations/07463f54-4ecd-4323-8a28-fb65b8a4ebca",
+      "web_url": "https://api.star-citizen.wiki/locations/07463f54-4ecd-4323-8a28-fb65b8a4ebca"
+     },
+     "date_updated": "2026-09-03T16:51:07+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=gallant-rifle&tab=about"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "data": {
+  "uuid": "280f47b7-8434-410c-b854-380768fdccec",
+  "key": "BP_CRAFT_AMRS_LaserCannon_S1",
+  "output_item_uuid": "26838ca7-418a-47d2-8429-7339ebbb8993",
+  "output_name": "Omnisky III Cannon",
+  "craft_time_seconds": 540,
+  "craft_time_label": "9 minutes",
+  "is_available_by_default": false,
+  "game_version": "4.10.2-LIVE.12881860",
+  "unlocking_missions_count": 1,
+  "ingredients": [
+   {
+    "name": "Agricium",
+    "kind": "resource",
+    "resource_type_uuid": "dc6fbcbb-5990-4ed5-82ee-93152dab7845",
+    "item_uuid": null,
+    "quantity_scu": 0.36,
+    "quantity": null,
+    "link": "https://api.star-citizen.wiki/api/commodities/fc1ec740-3047-48d8-81f0-396f4c9a90ef",
+    "web_url": "https://api.star-citizen.wiki/commodities/fc1ec740-3047-48d8-81f0-396f4c9a90ef"
+   },
+   {
+    "name": "Hadanite",
+    "kind": "item",
+    "resource_type_uuid": null,
+    "item_uuid": "125dd723-95ad-488d-830f-62c954445ca1",
+    "quantity_scu": null,
+    "quantity": 7,
+    "link": "https://api.star-citizen.wiki/api/items/125dd723-95ad-488d-830f-62c954445ca1",
+    "web_url": "https://api.star-citizen.wiki/items/125dd723-95ad-488d-830f-62c954445ca1"
+   },
+   {
+    "name": "Dolivine",
+    "kind": "item",
+    "resource_type_uuid": null,
+    "item_uuid": "20094ded-ad04-46a3-b734-9e37aa3154b3",
+    "quantity_scu": null,
+    "quantity": 7,
+    "link": "https://api.star-citizen.wiki/api/items/20094ded-ad04-46a3-b734-9e37aa3154b3",
+    "web_url": "https://api.star-citizen.wiki/items/20094ded-ad04-46a3-b734-9e37aa3154b3"
+   }
+  ],
+  "requirement_groups": [
+   {
+    "key": "FRAME",
+    "name": "Frame",
+    "kind": "group",
+    "required_count": 1,
+    "modifiers": [
+     {
+      "property_key": "health_maxhealth",
+      "property_uuid": null,
+      "label": "Integrity",
+      "better_when": "higher",
+      "quality_range": {
+       "min": 0,
+       "max": 1000
+      },
+      "modifier_range": {
+       "at_min_quality": 0.9,
+       "at_max_quality": 1.1
+      },
+      "value_range_type": "linear",
+      "value_segments": null
+     }
+    ],
+    "children": [
+     {
+      "key": null,
+      "kind": "resource",
+      "uuid": "dc6fbcbb-5990-4ed5-82ee-93152dab7845",
+      "name": "Agricium",
+      "required_count": null,
+      "quantity": null,
+      "quantity_scu": 0.36,
+      "min_quality": 1,
+      "modifiers": [],
+      "ore_uuid": "fc1ec740-3047-48d8-81f0-396f4c9a90ef"
+     }
+    ]
+   },
+   {
+    "key": "EMITTER",
+    "name": "Emitter",
+    "kind": "group",
+    "required_count": 1,
+    "modifiers": [
+     {
+      "property_key": "weapon_damage",
+      "property_uuid": null,
+      "label": "Impact Force",
+      "better_when": "higher",
+      "quality_range": {
+       "min": 0,
+       "max": 1000
+      },
+      "modifier_range": {
+       "at_min_quality": 0.95,
+       "at_max_quality": 1.05
+      },
+      "value_range_type": "linear",
+      "value_segments": null
+     }
+    ],
+    "children": [
+     {
+      "key": null,
+      "kind": "item",
+      "uuid": "125dd723-95ad-488d-830f-62c954445ca1",
+      "name": "Hadanite",
+      "required_count": null,
+      "quantity": 7,
+      "quantity_scu": null,
+      "min_quality": 1,
+      "modifiers": []
+     }
+    ]
+   },
+   {
+    "key": "APERTURE IRIS",
+    "name": "Aperture Iris",
+    "kind": "group",
+    "required_count": 1,
+    "modifiers": [
+     {
+      "property_key": "weapon_damage",
+      "property_uuid": null,
+      "label": "Impact Force",
+      "better_when": "higher",
+      "quality_range": {
+       "min": 0,
+       "max": 1000
+      },
+      "modifier_range": {
+       "at_min_quality": 0.95,
+       "at_max_quality": 1.05
+      },
+      "value_range_type": "linear",
+      "value_segments": null
+     }
+    ],
+    "children": [
+     {
+      "key": null,
+      "kind": "item",
+      "uuid": "20094ded-ad04-46a3-b734-9e37aa3154b3",
+      "name": "Dolivine",
+      "required_count": null,
+      "quantity": 7,
+      "quantity_scu": null,
+      "min_quality": 1,
+      "modifiers": []
+     }
+    ]
+   }
+  ],
+  "unlocking_missions": [
+   {
+    "title": "Tactical Strike Group Needed",
+    "debug_name": "InterSec_Nyx_TSG_FullStrikeOnStation",
+    "reward_scope": "Assassination",
+    "chance": 1,
+    "web_url": "https://api.star-citizen.wiki/missions/24ac3c24-ed16-43f5-bb1c-626f0261fcb5"
+   }
+  ],
+  "unlocking_missions_grouped": [
+   {
+    "label": "Guaranteed",
+    "chance": 1,
+    "missions": [
+     {
+      "title": "Tactical Strike Group Needed",
+      "reward_scope": "Assassination",
+      "count": 1,
+      "web_url": "https://api.star-citizen.wiki/missions/24ac3c24-ed16-43f5-bb1c-626f0261fcb5"
+     }
+    ]
+   }
+  ]
+ }
+}

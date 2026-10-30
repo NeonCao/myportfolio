@@ -1,0 +1,85 @@
+{
+ "data": {
+  "uuid": "fd7ffb99-40f0-4353-b09c-ed6be87a0359",
+  "key": "BP_CRAFT_klwe_rifle_energy_01_white02",
+  "category_uuid": "f9ccf95d-ad0e-4c33-97e0-e56c847a7e37",
+  "output_item_uuid": "35bbb045-3b35-47a9-a603-42cce6a804b4",
+  "output_name": "Gallant \"Boneyard\" Rifle",
+  "output_class": "klwe_rifle_energy_01_white02",
+  "craft_time_seconds": 150,
+  "craft_time_label": "2 minutes 30 seconds",
+  "is_available_by_default": false,
+  "game_version": "4.10.2-LIVE.12881860",
+  "ingredient_count": 3,
+  "unlocking_missions_count": 0,
+  "ingredients": [
+   {
+    "name": "Corundum",
+    "kind": "resource",
+    "resource_type_uuid": "4236c16b-c47f-4083-9e26-4313733f2326",
+    "item_uuid": null,
+    "quantity_scu": 0.04,
+    "quantity": null,
+    "link": "https://api.star-citizen.wiki/api/commodities/4ceb21c5-48f8-418a-8188-0b0196c33505",
+    "web_url": "https://api.star-citizen.wiki/commodities/4ceb21c5-48f8-418a-8188-0b0196c33505"
+   },
+   {
+    "name": "Copper",
+    "kind": "resource",
+    "resource_type_uuid": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
+    "item_uuid": null,
+    "quantity_scu": 0.02,
+    "quantity": null,
+    "link": "https://api.star-citizen.wiki/api/commodities/d4ba4af8-80f1-4a8a-b8cd-5ba7e37c005c",
+    "web_url": "https://api.star-citizen.wiki/commodities/d4ba4af8-80f1-4a8a-b8cd-5ba7e37c005c"
+   },
+   {
+    "name": "Dolivine",
+    "kind": "item",
+    "resource_type_uuid": null,
+    "item_uuid": "20094ded-ad04-46a3-b734-9e37aa3154b3",
+    "quantity_scu": null,
+    "quantity": 1,
+    "link": "https://api.star-citizen.wiki/api/items/20094ded-ad04-46a3-b734-9e37aa3154b3",
+    "web_url": "https://api.star-citizen.wiki/items/20094ded-ad04-46a3-b734-9e37aa3154b3"
+   }
+  ],
+  "dismantle_returns": [
+   {
+    "name": "Copper",
+    "resource_type_uuid": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
+    "quantity_scu": 0.01,
+    "link": "https://api.star-citizen.wiki/api/commodities/a789f57a-e12b-4bcd-8132-e0c03d84fc89",
+    "web_url": "https://api.star-citizen.wiki/commodities/a789f57a-e12b-4bcd-8132-e0c03d84fc89"
+   },
+   {
+    "name": "Corundum",
+    "resource_type_uuid": "4236c16b-c47f-4083-9e26-4313733f2326",
+    "quantity_scu": 0.02,
+    "link": "https://api.star-citizen.wiki/api/commodities/4236c16b-c47f-4083-9e26-4313733f2326",
+    "web_url": "https://api.star-citizen.wiki/commodities/4236c16b-c47f-4083-9e26-4313733f2326"
+   }
+  ],
+  "output": {
+   "uuid": "35bbb045-3b35-47a9-a603-42cce6a804b4",
+   "name": "Gallant \"Boneyard\" Rifle",
+   "class": "klwe_rifle_energy_01_white02",
+   "type": "WeaponPersonal",
+   "type_label": "FPS Weapon",
+   "sub_type": "Medium",
+   "subtype": "Medium",
+   "grade": "1",
+   "item_web_url": "https://api.star-citizen.wiki/items/35bbb045-3b35-47a9-a603-42cce6a804b4"
+  },
+  "web_url": "https://api.star-citizen.wiki/blueprints/gallant-boneyard-rifle",
+  "output_item_web_url": "https://api.star-citizen.wiki/items/35bbb045-3b35-47a9-a603-42cce6a804b4",
+  "dismantle": {
+   "time_seconds": 15,
+   "time_label": "15 seconds",
+   "efficiency": 0.5
+  },
+  "unlocking_missions": [],
+  "unlocking_missions_grouped": [],
+  "link": "https://api.star-citizen.wiki/api/blueprints/fd7ffb99-40f0-4353-b09c-ed6be87a0359"
+ }
+}

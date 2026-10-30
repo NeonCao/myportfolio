@@ -224,7 +224,9 @@ function HistoryLogo({ item }) {
           loading="lazy"
         />
       ) : (
-        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/60">{t('history.logoFallback')}</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/60">
+          {t('history.logoFallback')}
+        </span>
       )}
     </div>
   );
@@ -235,8 +237,12 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
   const blockRef = useRef(null);
   const isEducation = item.kind === 'education';
   const wrapperClass = side === 'left' ? 'absolute left-0 right-0 pr-4 md:text-right' : 'absolute left-0 right-0 pl-4';
-  const durationBarClass = side === 'left' ? 'absolute right-0 w-1.5 rounded-full bg-secondary' : 'absolute left-0 w-1.5 rounded-full bg-accent';
-  const connectorClass = side === 'left' ? 'absolute right-1.5 h-px w-3 bg-base-300' : 'absolute left-1.5 h-px w-3 bg-base-300';
+  const durationBarClass =
+    side === 'left'
+      ? 'absolute right-0 w-1.5 rounded-full bg-secondary'
+      : 'absolute left-0 w-1.5 rounded-full bg-accent';
+  const connectorClass =
+    side === 'left' ? 'absolute right-1.5 h-px w-3 bg-base-300' : 'absolute left-1.5 h-px w-3 bg-base-300';
   const rowClass = side === 'left' ? 'mt-3 flex items-start gap-3 md:flex-row-reverse' : 'mt-3 flex items-start gap-3';
   const linkGroupClass = side === 'left' ? 'mt-4 flex flex-wrap gap-2 md:justify-end' : 'mt-4 flex flex-wrap gap-2';
   const badgeClass = isEducation ? 'badge-secondary' : 'badge-accent';
@@ -268,7 +274,10 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
 
   return (
     <article className={wrapperClass} style={adjustedStyle}>
-      <div className={durationBarClass} style={{ top: `${offsetInsideCard}px`, height: `${item.durationHeight}px` }}></div>
+      <div
+        className={durationBarClass}
+        style={{ top: `${offsetInsideCard}px`, height: `${item.durationHeight}px` }}
+      ></div>
       <div className={connectorClass} style={{ top: `${offsetInsideCard + 10}px` }}></div>
       <div
         ref={blockRef}
@@ -283,7 +292,9 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
           aria-label={t('history.toggleItem').replace('{title}', item.title)}
         />
         <div className={collapseTitleClass}>
-          <div className={`badge badge-sm ${badgeClass} font-semibold`}>{isEducation ? t('history.education') : t('history.work')}</div>
+          <div className={`badge badge-sm ${badgeClass} font-semibold`}>
+            {isEducation ? t('history.education') : t('history.work')}
+          </div>
           <time className="mt-3 block font-mono text-xs font-semibold uppercase tracking-[0.25em] text-base-content/70">
             {item.displayPeriod || item.period}
           </time>
@@ -299,7 +310,9 @@ function HistoryBlock({ item, side, expanded, onToggle, onHeightChange }) {
           <p className="text-sm leading-relaxed text-base-content/80">{item.description}</p>
           {item.relatedWork?.length ? (
             <div className={linkGroupClass}>
-              <p className={`w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/60 ${side === 'left' ? 'md:text-right' : ''}`}>
+              <p
+                className={`w-full text-xs font-semibold uppercase tracking-[0.24em] text-base-content/60 ${side === 'left' ? 'md:text-right' : ''}`}
+              >
                 {t('history.relatedWork')}
               </p>
               {item.relatedWork.map((project) => (
@@ -383,11 +396,7 @@ function MobileHistoryList({ title, items, badgeClass }) {
   );
 }
 
-function PersonalHistory({
-  educationHistory = [],
-  workHistory = [],
-  heading = 'Recent Personal History',
-}) {
+function PersonalHistory({ educationHistory = [], workHistory = [], heading = 'Recent Personal History' }) {
   const { t } = useTranslation();
   const educationItems = useMemo(() => layoutLane(educationHistory, 'education'), [educationHistory]);
   const workItems = useMemo(() => layoutLane(workHistory, 'work'), [workHistory]);
@@ -492,7 +501,10 @@ function PersonalHistory({
             </div>
           </div>
 
-          <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)] md:gap-6" style={{ minHeight: `${chartHeight}px` }}>
+          <div
+            className="hidden md:grid md:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)] md:gap-6"
+            style={{ minHeight: `${chartHeight}px` }}
+          >
             <div className="relative">
               {placedEducationItems.map((item, index) => (
                 <HistoryBlock
@@ -507,9 +519,13 @@ function PersonalHistory({
             </div>
 
             <div className="relative">
-              <div className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-base-300"></div>
+              <div className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-base-content/30 to-transparent"></div>
               {yearTicks.map((tick) => (
-                <div key={`year-${tick.year}`} className="absolute left-1/2 -translate-x-1/2" style={{ top: `${tick.top}px` }}>
+                <div
+                  key={`year-${tick.year}`}
+                  className="absolute left-1/2 -translate-x-1/2"
+                  style={{ top: `${tick.top}px` }}
+                >
                   <div className="badge badge-neutral badge-sm border border-base-300 font-semibold">{tick.year}</div>
                 </div>
               ))}

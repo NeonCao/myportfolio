@@ -51,6 +51,10 @@ export const projectPhraseTranslations = {
   'Kinetic storytelling and physical computing': '动态叙事与实体计算',
   'A course project that turns cooking, gaming, and programming into a planetary-gear-inspired mechanical self-portrait.':
     '一个课程项目，把烹饪、游戏和编程转化为受行星齿轮启发的机械自画像。',
+  'Star Citizen Item Finder': '星际公民物品寻找器',
+  'Fan tool that traces how to obtain any in-game item': '追溯游戏内任意物品获取方式的粉丝工具',
+  'A React tool on the Star Citizen Wiki API that traces shop prices, crafting blueprints, mining sources, loot pools, Wikelo trades and mission rewards for any item, with data snapshots refreshed by a scheduled GitHub Action.':
+    '基于 Star Citizen Wiki API 的 React 工具，可追溯任意物品的商店价格、制作蓝图、开采来源、掉落池、Wikelo 兑换和任务奖励，数据快照由定时 GitHub Action 自动更新。',
   'Lexi Learn': 'Lexi Learn',
   'LexiLearn': 'LexiLearn',
   'VR + AI literacy learning for children': '面向儿童的 VR + AI 读写学习',

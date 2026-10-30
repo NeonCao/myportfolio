@@ -32,25 +32,19 @@ function Hero() {
   }, [firstRoleLabel]);
 
   return (
-    <div className="hero relative min-h-screen overflow-hidden bg-[#0a0a0c]">
+    <div className="hero relative min-h-[calc(100svh-4rem)] overflow-hidden bg-[#0a0a0c]">
       <ASMRStaticBackground />
       <div className="hero-overlay bg-black/45"></div>
       <div className="hero-content relative z-10 w-full px-4 text-neutral-content text-center sm:px-6">
-        <div className="w-full max-w-4xl rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-md md:px-10 md:py-10">
+        <div className="fx-glow-border w-full max-w-4xl rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-md md:px-10 md:py-10">
           <p className="text-sm uppercase tracking-[0.35em] text-neutral-content/70">{t('hero.eyebrow')}</p>
           <div className="mx-auto my-5 h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+          <h1 className="fx-plain text-4xl font-bold leading-tight md:text-6xl">
             <span>{t('hero.introPrefix')}</span>
             <span className="hero-text-rotate">
-              <span
-                className="hero-text-rotate-track"
-                style={{ '--hero-role-index': activeRoleIndex }}
-              >
+              <span className="hero-text-rotate-track" style={{ '--hero-role-index': activeRoleIndex }}>
                 {rotatingRoles.map((role) => (
-                  <span
-                    key={role.label}
-                    className={`hero-text-rotate-chip ${role.className}`}
-                  >
+                  <span key={role.label} className={`hero-text-rotate-chip ${role.className}`}>
                     {role.label}
                   </span>
                 ))}
@@ -107,11 +101,28 @@ function Hero() {
               {t('hero.historyButton')}
             </a>
           </div>
-          <p className="mt-5 text-sm font-medium text-neutral-content/62">
-            {t('hero.siteCredit')}
-          </p>
+          <p className="mt-5 text-sm font-medium text-neutral-content/62">{t('hero.siteCredit')}</p>
         </div>
       </div>
+      <a
+        href="#personal-history"
+        aria-label={t('hero.historyButton')}
+        className="fx-hero-cue absolute inset-x-0 bottom-6 z-10 mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-neutral-content/80 backdrop-blur hover:text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          className="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </a>
     </div>
   );
 }

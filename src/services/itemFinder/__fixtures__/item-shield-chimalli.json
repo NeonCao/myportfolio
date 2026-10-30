@@ -1,0 +1,237 @@
+{
+ "data": {
+  "uuid": "8c2b0c60-881b-4163-9d72-b6b74806735a",
+  "slug": "5ma-chimalli",
+  "name": "5MA 'Chimalli'",
+  "class_name": "SHLD_BEHR_S02_5MA_SCItem",
+  "type": "Shield",
+  "type_label": "Shield",
+  "sub_type": "UNDEFINED",
+  "sub_type_label": "Undefined",
+  "classification": "Ship.Shield",
+  "classification_label": "Shield",
+  "size": 2,
+  "grade": "C",
+  "class": "Civilian",
+  "mass": 440,
+  "manufacturer": {
+   "name": "Behring Applied Technology",
+   "code": "BEHR",
+   "uuid": "65a5d887-3b21-4046-a718-6912c0c7c3be",
+   "link": "https://api.star-citizen.wiki/api/manufacturers/BEHR"
+  },
+  "is_craftable": true,
+  "is_lootable": false,
+  "blueprint": [
+   {
+    "uuid": "6a4393b4-b7fe-4913-85bc-dc803dc73acb",
+    "name": "5MA 'Chimalli'",
+    "link": "https://api.star-citizen.wiki/api/blueprints/6a4393b4-b7fe-4913-85bc-dc803dc73acb"
+   }
+  ],
+  "dimension": {
+   "width": 0.75,
+   "height": 0.75,
+   "length": 0.75,
+   "volume": 0.252,
+   "volume_converted": 252000,
+   "volume_converted_unit": "µSCU",
+   "true_dimension": {
+    "width": 1.492,
+    "height": 0.514,
+    "length": 0.491
+   },
+   "dimensions": {
+    "width": 1.492,
+    "height": 0.514,
+    "length": 0.491
+   },
+   "cargo_dimension": {
+    "width": 0.45,
+    "height": 0.8,
+    "length": 3.32
+   },
+   "ui_dimension": {
+    "width": 0.75,
+    "height": 0.75,
+    "length": 0.75
+   }
+  },
+  "web_url": "https://api.star-citizen.wiki/items/5ma-chimalli",
+  "version": "4.10.2-LIVE.12881860",
+  "shield": {
+   "max_health": 10000,
+   "regen_rate": 1900,
+   "regen_time": 5.26,
+   "decay_ratio": 0.25,
+   "reserve_pool": {
+    "regen_rate": 4750,
+    "regen_time": 2.11,
+    "initial_health_ratio": 1,
+    "max_health_ratio": 1,
+    "regen_rate_ratio": 1,
+    "drain_rate_ratio": 2.5
+   },
+   "regen_delay": {
+    "downed": 11,
+    "damage": 5.5
+   },
+   "electrical_charge_damage_resistance": 0,
+   "absorption": {
+    "physical": {
+     "min": 0,
+     "max": 0.45
+    },
+    "energy": {
+     "min": 1,
+     "max": 1
+    },
+    "distortion": {
+     "min": 1,
+     "max": 1
+    },
+    "thermal": {
+     "min": 1,
+     "max": 1
+    },
+    "biochemical": {
+     "min": 1,
+     "max": 1
+    },
+    "stun": {
+     "min": 1,
+     "max": 1
+    }
+   },
+   "resistance": {
+    "physical": {
+     "min": 0,
+     "max": 0.25
+    },
+    "energy": {
+     "min": 0,
+     "max": 0
+    },
+    "distortion": {
+     "min": 0.75,
+     "max": 0.95
+    },
+    "thermal": {
+     "min": 0,
+     "max": 0
+    },
+    "biochemical": {
+     "min": 0,
+     "max": 0
+    },
+    "stun": {
+     "min": 0,
+     "max": 0
+    }
+   },
+   "max_shield_health": 10000,
+   "max_shield_regen": 1900
+  },
+  "durability": {
+   "health": 410,
+   "lifetime": 0,
+   "max_lifetime": 0,
+   "repairable": true,
+   "salvageable": true,
+   "resistance": {
+    "stun": 1,
+    "energy": 0.9,
+    "thermal": 0.1,
+    "physical": 0.9,
+    "distortion": 1,
+    "biochemical": 1
+   }
+  },
+  "emission": {
+   "ir": 0,
+   "em_min": 765,
+   "em_max": 1350,
+   "em_decay": 0.15
+  },
+  "distortion": {
+   "decay_rate": 233.33,
+   "decay_delay": 3,
+   "max": 3500,
+   "maximum": 3500,
+   "overload_ratio": null,
+   "warning_ratio": 0.75,
+   "recovery_ratio": 0,
+   "recovery_time": null,
+   "power_ratio_at_max_distortion": 0,
+   "power_change_only_at_max_distortion": 0,
+   "shutdown_time": 18
+  },
+  "uex_prices": {
+   "purchase": [
+    {
+     "price_buy": 30000,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 135,
+     "terminal_code": "PBCL5",
+     "terminal_name": "Platinum Bay - CRU-L5",
+     "starmap_location": {
+      "uuid": "5905eecd-258a-4046-ad08-90571c41b03c",
+      "name": "CRU-L5 Beautiful Glen Station",
+      "slug": "cru-l5-beautiful-glen-station",
+      "type_name": "Manmade_VisibleOnInteraction",
+      "parent_name": "Stanton",
+      "star_system_name": "Stanton",
+      "link": "https://api.star-citizen.wiki/api/locations/5905eecd-258a-4046-ad08-90571c41b03c",
+      "web_url": "https://api.star-citizen.wiki/locations/5905eecd-258a-4046-ad08-90571c41b03c"
+     },
+     "date_updated": "2026-09-18T23:43:57+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=5ma-'chimalli'&tab=about"
+    },
+    {
+     "price_buy": 29992,
+     "price_sell": 820,
+     "price_rent": null,
+     "terminal_id": 133,
+     "terminal_code": "PBCL1",
+     "terminal_name": "Platinum Bay - CRU-L1",
+     "starmap_location": {
+      "uuid": "75e777cf-a055-4bc3-8ca7-602eb38be4f3",
+      "name": "CRU-L1 Ambitious Dream Station",
+      "slug": "cru-l1-ambitious-dream-station",
+      "type_name": "Manmade_VisibleOnInteraction",
+      "parent_name": "Stanton",
+      "star_system_name": "Stanton",
+      "link": "https://api.star-citizen.wiki/api/locations/75e777cf-a055-4bc3-8ca7-602eb38be4f3",
+      "web_url": "https://api.star-citizen.wiki/locations/75e777cf-a055-4bc3-8ca7-602eb38be4f3"
+     },
+     "date_updated": "2026-09-11T13:25:51+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=5ma-'chimalli'&tab=about"
+    },
+    {
+     "price_buy": 30000,
+     "price_sell": 0,
+     "price_rent": null,
+     "terminal_id": 114,
+     "terminal_code": "DDA18",
+     "terminal_name": "Dumper's Depot - Area 18",
+     "starmap_location": {
+      "uuid": "c6535844-c615-494e-9dc1-c2d0c6e7190a",
+      "name": "Area18",
+      "slug": "area18",
+      "type_name": "LandingZone",
+      "parent_name": "ArcCorp",
+      "star_system_name": "Stanton",
+      "link": "https://api.star-citizen.wiki/api/locations/c6535844-c615-494e-9dc1-c2d0c6e7190a",
+      "web_url": "https://api.star-citizen.wiki/locations/c6535844-c615-494e-9dc1-c2d0c6e7190a"
+     },
+     "date_updated": "2026-08-29T15:49:54+00:00",
+     "game_version": "4.10.2-LIVE.12881860",
+     "uex_link": "https://uexcorp.space/items/info?name=5ma-'chimalli'&tab=about"
+    }
+   ]
+  }
+ }
+}
