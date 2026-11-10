@@ -1,6 +1,6 @@
-# Keeps the Item Finder's Wikelo and mission-reward snapshots in step with the game.
+# Keeps the Item Finder's Wikelo, mission-reward and contract snapshots in step with the game.
 # Once a day it asks the Star Citizen Wiki API which game build its data is from (one request).
-# Only when that build is newer than the committed snapshots does it rebuild them (about 35 minutes
+# Only when that build is newer than the committed snapshots does it rebuild them (about 45 minutes
 # at one request per second), test and build on top of the latest master, deploy GitHub Pages and
 # then push the new data to master. Deploying before pushing means a failed deploy is retried the
 # next day instead of leaving master ahead of the live site.
@@ -77,6 +77,10 @@ jobs:
         if: steps.plan.outputs.refresh == 'true'
         run: npm run data:missions
 
+      - name: Rebuild contract index
+        if: steps.plan.outputs.refresh == 'true'
+        run: npm run data:contracts
+
       # Commit locally, then replay on top of whatever was pushed to master during the long rebuild,
       # so the build below contains both the latest code and the new data.
       - name: Commit snapshots on top of the latest master
@@ -87,7 +91,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/wikeloContracts.json src/data/missionRewards.json
+          git add src/data/wikeloContracts.json src/data/missionRewards.json src/data/missions.json
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Snapshots unchanged; nothing to deploy."

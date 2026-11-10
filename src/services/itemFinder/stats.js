@@ -210,6 +210,18 @@ function volumeStat(dimension) {
   return stat('volume', volume, unit);
 }
 
+// The real size of the item in metres, as opposed to the box it takes up in an inventory.
+function dimensionStat(dimension) {
+  const size = dimension?.true_dimension ?? dimension?.dimensions;
+  const sides = [num(size?.width), num(size?.height), num(size?.length)];
+
+  if (sides.some((side) => side === null || side <= 0)) {
+    return stat('dimensions', null, '', 'text');
+  }
+
+  return stat('dimensions', `${sides.map((side) => Number(side.toFixed(2))).join(' × ')} m`, '', 'text');
+}
+
 function generalGroup(raw) {
   return {
     key: 'general',
@@ -219,6 +231,8 @@ function generalGroup(raw) {
       stat('itemClass', raw.class ?? null, '', 'text'),
       stat('mass', num(raw.mass), 'kg'),
       volumeStat(raw.dimension),
+      dimensionStat(raw.dimension),
+      stat('carryCapacity', num(raw.inventory?.scu), 'SCU', 'scu'),
     ],
     pills: [],
   };

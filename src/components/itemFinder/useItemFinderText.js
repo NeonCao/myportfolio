@@ -11,5 +11,5 @@ export function useItemFinderText() {
   const text = itemFinderContent[language] || itemFinderContent.en;
   const fmt = useCallback((key, values) => format(text[key] ?? key, values), [text]);
 
-  return { text, fmt };
+  return { text, fmt, language };
 }

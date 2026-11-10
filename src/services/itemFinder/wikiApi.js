@@ -41,6 +41,58 @@ export function normalizeOffers(purchase = []) {
     .sort((a, b) => a.price - b.price);
 }
 
+// Descriptions arrive per language ({ en_EN, zh_CN, ... }); older records carry a plain string.
+function normalizeDescription(description) {
+  const text = (value) => (typeof value === 'string' && value.trim() ? value.trim() : null);
+
+  if (typeof description === 'string') {
+    return { en: text(description), zh: null };
+  }
+
+  return { en: text(description?.en_EN), zh: text(description?.zh_CN) };
+}
+
+// What can be attached to the item: optics and barrels on a weapon, weapons and magazines on armour.
+// Numbered copies of the same slot ("Spare Weapon Magazine 1" to "8") are counted on one line.
+export function normalizePorts(ports = []) {
+  const slots = new Map();
+
+  ports.forEach((port) => {
+    const name = String(port.display_name ?? port.name ?? '')
+      .replace(/\s+\d+$/, '')
+      .trim();
+
+    // "Item Grab" is how the game lets a hand hold the item, not something a player fits.
+    if (!name || /^item grab/i.test(name)) {
+      return;
+    }
+
+    const fitted = port.equipped_item?.uuid
+      ? { uuid: port.equipped_item.uuid, name: port.equipped_item.name ?? null }
+      : null;
+    const min = port.sizes?.min ?? port.size ?? null;
+    const max = port.sizes?.max ?? port.size ?? null;
+    const key = [name, min, max, fitted?.uuid ?? ''].join('|');
+    const known = slots.get(key);
+
+    if (known) {
+      known.count += 1;
+    } else {
+      slots.set(key, { key, name, min, max, fitted, count: 1 });
+    }
+  });
+
+  return [...slots.values()];
+}
+
+// Skins and editions of the same item, sent only when the request asks for them.
+function normalizeVariants(variants, ownId) {
+  return (Array.isArray(variants) ? variants : [])
+    .filter((variant) => variant?.uuid && variant.name && variant.uuid !== ownId)
+    .map((variant) => ({ uuid: variant.uuid, name: variant.name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
 export function normalizeItem(raw) {
   return {
     uuid: raw.uuid,
@@ -48,7 +100,8 @@ export function normalizeItem(raw) {
     name: raw.name,
     className: raw.class_name ?? null,
     typeLabel: raw.type_label ?? null,
-    subTypeLabel: raw.sub_type_label ?? null,
+    // The API spells out a missing sub-type as "Undefined".
+    subTypeLabel: /^undefined$/i.test(raw.sub_type_label ?? '') ? null : (raw.sub_type_label ?? null),
     rarity: raw.rarity ?? null,
     size: raw.size ?? null,
     grade: raw.grade ?? null,
@@ -72,6 +125,9 @@ export function normalizeItem(raw) {
     version: raw.version ?? null,
     webUrl: raw.web_url ?? null,
     image: pickItemImage(raw.images),
+    description: normalizeDescription(raw.description),
+    slots: normalizePorts(raw.ports ?? []),
+    variants: normalizeVariants(raw.variants, raw.uuid),
   };
 }
 
@@ -296,9 +352,12 @@ export function createWikiApi({
   return {
     searchItems({ query, category = '', baseOnly = false, itemSize = '', sort = 'name', page = 1, size = 8 }) {
       const trimmed = query.trim();
+      // Categories written as "type:Cooler" filter on the item type; the rest are the API's own categories.
+      const byType = category.startsWith('type:');
       const params = {
         [trimmed.includes('_') ? 'filter[class_name]' : 'filter[name]']: trimmed,
-        'filter[category]': category,
+        'filter[category]': byType ? '' : category,
+        'filter[type]': byType ? category.slice(5) : '',
         'filter[variants]': baseOnly ? 'false' : '',
         'filter[size]': itemSize,
         'page[size]': size,
@@ -320,7 +379,7 @@ export function createWikiApi({
 
     getItem(idOrSlug) {
       return memo(`item:${idOrSlug}`, async () => {
-        const item = normalizeItem((await get(`/items/${encodeURIComponent(idOrSlug)}`)).data);
+        const item = normalizeItem((await get(`/items/${encodeURIComponent(idOrSlug)}`, { include: 'variants' })).data);
 
         // Pages open items by slug (search) or uuid (trade links); remember both so neither refetches.
         [item.uuid, item.slug].forEach((key) => {
