@@ -29,6 +29,7 @@
     "data:check": "node scripts/check-game-version.mjs",
     "data:wikelo": "node scripts/fetch-wikelo.mjs",
     "data:missions": "node scripts/fetch-mission-rewards.mjs",
+    "data:contracts": "node scripts/fetch-missions.mjs",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

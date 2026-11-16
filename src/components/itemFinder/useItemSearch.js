@@ -21,7 +21,8 @@ const IDLE_STATE = {
 
 export function useItemSearch({ query, category, baseOnly, itemSize = '', sort = 'name' }) {
   const trimmed = query.trim();
-  const enabled = trimmed.length >= MIN_QUERY_LENGTH;
+  // A chosen category can be browsed without typing anything.
+  const enabled = trimmed.length >= MIN_QUERY_LENGTH || (!trimmed && Boolean(category));
   const [state, setState] = useState(IDLE_STATE);
   const latestRequest = useRef(0);
   const lastRun = useRef({ page: 1, append: false });

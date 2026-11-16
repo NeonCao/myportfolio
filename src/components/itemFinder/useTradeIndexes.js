@@ -1,5 +1,6 @@
 import { useEffect, useSyncExternalStore } from 'react';
 import { loadMissionRewardIndex } from '../../services/itemFinder/missionRewards';
+import { loadMissionIndex } from '../../services/itemFinder/missions';
 import { loadWikeloIndex } from '../../services/itemFinder/wikelo';
 
 // One shared state per static index, so every row, tile and section sees the same loading/error state
@@ -47,3 +48,4 @@ function createSharedResource(load) {
 
 export const useWikeloIndex = createSharedResource(loadWikeloIndex);
 export const useMissionRewardIndex = createSharedResource(loadMissionRewardIndex);
+export const useMissionIndex = createSharedResource(loadMissionIndex);

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { wikiApi } from '../services/itemFinder/wikiApi';
 import { MISSING, formatPrice } from '../services/itemFinder/format';
 import { summarizeItem } from '../services/itemFinder/provenance';
@@ -10,7 +10,9 @@ import Icon from '../components/itemFinder/icons';
 import ItemChips from '../components/itemFinder/ItemChips';
 import ItemImage from '../components/itemFinder/ItemImage';
 import ItemSearch, { ITEM_SIZES } from '../components/itemFinder/ItemSearch';
+import OpenItemLink from '../components/itemFinder/OpenItemLink';
 import { lootPoolLabel } from '../components/itemFinder/LootPanel';
+import MissionGrinder from '../components/itemFinder/MissionGrinder';
 import RelatedTools from '../components/itemFinder/RelatedTools';
 import StatsPanel from '../components/itemFinder/StatsPanel';
 import { formatStat } from '../components/itemFinder/statFormat';
@@ -32,7 +34,12 @@ const SOURCE_LEGEND = [
   { key: 'wikelo', label: 'glanceWikelo' },
   { key: 'mission', label: 'glanceMissions' },
 ];
-const VIEWS = ['items', 'wikelo'];
+const VIEWS = ['items', 'wikelo', 'missions'];
+const VIEW_STYLE = {
+  items: { tone: 'energy', icon: 'buy', label: 'viewItems' },
+  wikelo: { tone: 'wikelo', icon: 'wikelo', label: 'viewWikelo' },
+  missions: { tone: 'mission', icon: 'mission', label: 'viewMissions' },
+};
 
 function useDebounced(value, delay) {
   const [debounced, setDebounced] = useState(value);
@@ -98,6 +105,80 @@ function countLabel(count, status, key, text, fmt) {
   return count ? fmt(key, { count }) : text.noneShort;
 }
 
+const VARIANTS_SHOWN = 12;
+
+// Skins and editions of the same item; each one opens in this panel.
+function ItemVariants({ item }) {
+  const { fmt } = useItemFinderText();
+  const [showAll, setShowAll] = useState(false);
+  const variants = showAll ? item.variants : item.variants.slice(0, VARIANTS_SHOWN);
+
+  return (
+    <section>
+      <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-base-content/70">
+        {fmt('variantsTitle', { count: item.variants.length })}
+      </h3>
+      <ul className="flex flex-wrap gap-1.5">
+        {variants.map((variant) => (
+          <li key={variant.uuid}>
+            <OpenItemLink
+              id={variant.uuid}
+              className="inline-flex rounded-full border border-base-300 bg-base-100/70 px-2.5 py-1 text-xs hover:border-base-content/40"
+            >
+              {variant.name}
+            </OpenItemLink>
+          </li>
+        ))}
+        {!showAll && item.variants.length > VARIANTS_SHOWN ? (
+          <li>
+            <button type="button" className="btn btn-xs btn-ghost" onClick={() => setShowAll(true)}>
+              {fmt('variantsMore', { count: item.variants.length })}
+            </button>
+          </li>
+        ) : null}
+      </ul>
+    </section>
+  );
+}
+
+// What fits on the item, with whatever it ships with fitted.
+function ItemSlots({ item }) {
+  const { text, fmt } = useItemFinderText();
+
+  return (
+    <section>
+      <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-base-content/70">{text.slotsTitle}</h3>
+      <ul className="grid gap-x-6 gap-y-1 sm:grid-cols-2">
+        {item.slots.map((slot) => (
+          <li
+            key={slot.key}
+            className="flex flex-wrap items-baseline justify-between gap-x-3 border-b border-dashed border-base-300 py-1.5 text-sm"
+          >
+            <span>
+              {slot.name}
+              {slot.count > 1 ? <span className="text-base-content/60"> ×{slot.count}</span> : null}
+            </span>
+            <span className="text-right font-mono text-xs tabular-nums text-base-content/70">
+              {slot.min !== null
+                ? fmt(slot.max !== null && slot.max !== slot.min ? 'slotSizeRange' : 'slotSize', slot)
+                : null}
+              {slot.fitted ? (
+                <>
+                  {' · '}
+                  {text.slotFitted}
+                  <OpenItemLink id={slot.fitted.uuid} className="link link-hover font-sans">
+                    {slot.fitted.name ?? MISSING}
+                  </OpenItemLink>
+                </>
+              ) : null}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 function CopyLinkButton() {
   const { text } = useItemFinderText();
   const [copied, setCopied] = useState(false);
@@ -128,7 +209,7 @@ function CopyLinkButton() {
 
 // Rendered with key={slug}, so a new item always starts from a fresh loading state.
 function SelectedItem({ slug, focusRequested, onFocusHandled, onLoaded }) {
-  const { text, fmt } = useItemFinderText();
+  const { text, fmt, language } = useItemFinderText();
   const state = useAsync(() => wikiApi.getItem(slug), [slug]);
   const wikelo = useWikeloIndex();
   const missions = useMissionRewardIndex();
@@ -171,6 +252,8 @@ function SelectedItem({ slug, focusRequested, onFocusHandled, onLoaded }) {
   const summary = summarizeItem(item);
   const headline = item.stats.headline;
   const counts = tradeSourceCounts(item, wikelo, missions);
+  // The page language first, English when the item has no text in it.
+  const description = (language === 'zh' ? item.description.zh : null) ?? item.description.en;
 
   return (
     <div className="space-y-8">
@@ -253,7 +336,7 @@ function SelectedItem({ slug, focusRequested, onFocusHandled, onLoaded }) {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-base-300 pt-3 text-xs text-base-content/60">
           {item.className ? (
             <span>
-              {text.classNameLabel} <span className="font-mono text-base-content/80">{item.className}</span>
+              {text.classNameLabel} <span className="break-all font-mono text-base-content/80">{item.className}</span>
             </span>
           ) : null}
           <span>
@@ -266,6 +349,15 @@ function SelectedItem({ slug, focusRequested, onFocusHandled, onLoaded }) {
           ) : null}
           <span className="ml-auto flex items-center gap-1">
             <CopyLinkButton />
+            {item.isCraftable ? (
+              <Link
+                to={{ search: `?${new URLSearchParams({ view: 'missions', mq: item.name })}` }}
+                className="btn btn-xs btn-ghost gap-1"
+              >
+                <Icon name="mission" className="h-3.5 w-3.5" />
+                {text.findContracts}
+              </Link>
+            ) : null}
             {item.webUrl ? (
               <a href={item.webUrl} target="_blank" rel="noreferrer" className="btn btn-xs btn-ghost gap-1">
                 <Icon name="external" className="h-3.5 w-3.5" />
@@ -276,6 +368,15 @@ function SelectedItem({ slug, focusRequested, onFocusHandled, onLoaded }) {
         </div>
       </header>
 
+      {description ? (
+        <section>
+          <h3 className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-base-content/70">
+            {text.descriptionTitle}
+          </h3>
+          <p className="max-w-3xl whitespace-pre-line text-sm leading-relaxed text-base-content/80">{description}</p>
+        </section>
+      ) : null}
+
       {item.stats.groups.length ? (
         <section>
           <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-base-content/70">
@@ -284,6 +385,9 @@ function SelectedItem({ slug, focusRequested, onFocusHandled, onLoaded }) {
           <StatsPanel stats={item.stats} />
         </section>
       ) : null}
+
+      {item.slots.length ? <ItemSlots item={item} /> : null}
+      {item.variants.length ? <ItemVariants key={`variants-${item.uuid}`} item={item} /> : null}
 
       <AcquisitionPanel key={item.uuid} item={item} />
     </div>
@@ -440,21 +544,21 @@ function ItemFinder() {
                   updateParams({ view: value === 'items' ? null : value }, { replace: false });
                 }
               }}
-              style={tone(value === 'wikelo' ? 'wikelo' : 'energy')}
+              style={tone(VIEW_STYLE[value].tone)}
               className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                 view === value ? 'if-chip' : 'border-base-300 bg-base-100/70 hover:border-base-content/40'
               }`}
             >
-              <Icon name={value === 'wikelo' ? 'wikelo' : 'buy'} className="h-4 w-4" />
-              {value === 'wikelo' ? text.viewWikelo : text.viewItems}
+              <Icon name={VIEW_STYLE[value].icon} className="h-4 w-4" />
+              {text[VIEW_STYLE[value].label]}
             </button>
           ))}
         </div>
 
-        {view === 'wikelo' ? (
-          <WikeloEmporium />
-        ) : (
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:items-start">
+        {view === 'wikelo' ? <WikeloEmporium /> : null}
+        {view === 'missions' ? <MissionGrinder /> : null}
+        {view === 'items' ? (
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:items-start">
             <div className="lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
               <ItemSearch
                 draft={draft}
@@ -490,7 +594,7 @@ function ItemFinder() {
               )}
             </div>
           </div>
-        )}
+        ) : null}
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <RelatedTools />

@@ -6,6 +6,7 @@ function OpenItemLink({ id, className = '', children, ...props }) {
   const next = new URLSearchParams(params);
   next.set('item', id);
   next.delete('view');
+  next.delete('mq');
 
   return (
     <Link to={{ search: `?${next.toString()}` }} state={{ focusItem: id }} className={className} {...props}>
